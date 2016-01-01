@@ -206,7 +206,7 @@ Public Class FrmTestMaken
                 'Look whether the database with existing questions is building. Will cause duplicates if not properly handled.
                 If buildDatabase = True Then
                     listDB.Items.Add(newItem)
-                Else
+                Else 
                     listPanel.Items.Add(newItem)
                 End If
 
