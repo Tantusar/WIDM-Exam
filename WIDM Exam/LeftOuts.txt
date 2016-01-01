@@ -1,0 +1,213 @@
+﻿ If question = 1 Then
+            Try
+                Dim lines() As String = IO.File.ReadAllLines(FrmOpenTest.txtTest.Text)
+                txtQuestion.Text = lines(1)
+                tempAnswer = lines(2)
+                l1.Text = lines(3)
+                l2.Text = lines(4)
+                If lines(5) = "" Then
+                    b3.Visible = False
+                    l3.Visible = False
+                Else
+                    l3.Text = lines(5)
+                End If
+                If lines(6) = "" Then
+                    b4.Visible = False
+                    l4.Visible = False
+                Else
+                    l4.Text = lines(6)
+                End If
+                If lines(7) = "" Then
+                    b5.Visible = False
+                    l5.Visible = False
+                Else
+                    l5.Text = lines(7)
+                End If
+                If lines(8) = "" Then
+                    b6.Visible = False
+                    l6.Visible = False
+                Else
+                    l6.Text = lines(8)
+                End If
+                If lines(9) = "" Then
+                    b7.Visible = False
+                    l7.Visible = False
+                Else
+                    l7.Text = lines(9)
+                End If
+                If lines(10) = "" Then
+                    b8.Visible = False
+                    l8.Visible = False
+                Else
+                    l8.Text = lines(10)
+                End If
+                If lines(11) = "" Then
+                    b9.Visible = False
+                    l9.Visible = False
+                Else
+                    l9.Text = lines(11)
+                End If
+                If lines(12) = "" Then
+                    b10.Visible = False
+                    l10.Visible = False
+                Else
+                    l10.Text = lines(12)
+                End If
+                'l4.Text = lines(6)
+                'l5.Text = lines(7)
+                'l6.Text = lines(8)
+                'l7.Text = lines(9)
+                'l8.Text = lines(10)
+                'l9.Text = lines(11)
+                'l10.Text = lines(12)
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+
+
+			Dim tempFile As String
+                    If Dir(FrmOpenTest.txtKandidaten.Text & "score") <> "" Then
+                    Else
+                        Dim Write2 As New System.IO.StreamWriter(FrmOpenTest.txtKandidaten.Text & "score")
+                        Write2.Write("")
+                        Write2.Close()
+                    End If
+                    Dim Read As New System.IO.StreamReader(FrmOpenTest.txtKandidaten.Text & "score")
+                    tempFile = Read.ReadToEnd
+                    Read.Close()
+                    Dim Write As New System.IO.StreamWriter(FrmOpenTest.txtKandidaten.Text & "score")
+                    Write.Write(tempFile)
+                    'Write.WriteLine(FrmEnterName.TextBox1.Text)
+                    If FrmOpenTest.rVast.Checked Then
+                        Write.WriteLine(result)
+                    ElseIf FrmOpenTest.rApart.Checked Then
+                        Write.WriteLine(answersRight)
+                    End If
+                    Write.Close()
+                    If FrmOpenTest.rApart.Checked Then
+                        Dim tempFile2 As String
+                        If Dir(FrmOpenTest.txtKandidaten.Text & "score2") <> "" Then
+                        Else
+                            Dim Write3 As New System.IO.StreamWriter(FrmOpenTest.txtKandidaten.Text & "score2")
+                            Write3.Write("")
+                            Write3.Close()
+                        End If
+                        Dim Read2 As New System.IO.StreamReader(FrmOpenTest.txtKandidaten.Text & "score2")
+                        tempFile2 = Read2.ReadToEnd
+                        Read2.Close()
+                        Dim Write4 As New System.IO.StreamWriter(FrmOpenTest.txtKandidaten.Text & "score2")
+                        Write4.Write(tempFile)
+                        'Write.WriteLine(FrmEnterName.TextBox1.Text)
+                        Write4.WriteLine(time)
+                        Write4.Close()
+                    End If
+                    Dim tempFile3 As String
+                    If Dir(FrmOpenTest.txtKandidaten.Text & "candidates") <> "" Then
+                    Else
+                        Dim Write5 As New System.IO.StreamWriter(FrmOpenTest.txtKandidaten.Text & "candidates")
+                        Write5.Write("")
+                        Write5.Close()
+                    End If
+                    Dim Read3 As New System.IO.StreamReader(FrmOpenTest.txtKandidaten.Text & "candidates")
+                    tempFile3 = Read3.ReadToEnd
+                    Read3.Close()
+                    Dim Write6 As New System.IO.StreamWriter(FrmOpenTest.txtKandidaten.Text & "candidates")
+                    Write6.Write(tempFile3)
+                    Write6.WriteLine(FrmEnterName.TextBox1.Text)
+                    Write6.Close()
+
+
+
+    Sub CoreDownload()
+        'downloads core files
+        Try
+
+            Dim myClient As New WebClient()
+            AddHandler myClient.DownloadProgressChanged, AddressOf DownloadProgressCallback
+
+            AddHandler myClient.DownloadFileCompleted, AddressOf DownloadFileUnzip
+            Dim url As New Uri("http://thelegend.crzyproductions.com/core.zip")
+            Dim file As String = My.Application.Info.DirectoryPath & "\Patch\core.zip"
+
+
+
+            myClient.DownloadFileAsync(url, file)
+
+        Catch ex As Exception
+            'Catches error and displays it.
+            MessageBox.Show(ex.Message)
+        End Try
+
+        'Moves updater.xml out of patch so old one gets replaced.
+        Dim FileToCopy As String
+        Dim NewCopy As String
+        FileToCopy = (My.Application.Info.DirectoryPath & "\Patch\updater.xml")
+        NewCopy = (My.Application.Info.DirectoryPath & "\updater.xml")
+        'Copies ver.txt to different folder.
+        If System.IO.File.Exists(FileToCopy) = True Then
+            File.Delete("updater.xml")
+            System.IO.File.Copy(FileToCopy, NewCopy)
+        End If
+
+    End Sub
+
+    Sub SoundDownload()
+        'Downloads sound files
+        Try
+
+            Dim myClient As New WebClient()
+            Dim url As New Uri("http://thelegend.crzyproductions.com/sound.zip")
+            Dim file As String = My.Application.Info.DirectoryPath & "\Patch\sound.zip"
+
+            AddHandler myClient.DownloadProgressChanged, AddressOf DownloadProgressCallback
+
+            AddHandler myClient.DownloadFileCompleted, AddressOf DownloadFileUnzip
+
+            myClient.DownloadFileAsync(url, file)
+        Catch ex As Exception
+            'Catches error and displays it.
+            MessageBox.Show(ex.Message)
+        End Try
+
+        'Moves updater.xml out of patch so old one gets replaced.
+        Dim FileToCopy As String
+        Dim NewCopy As String
+        FileToCopy = (My.Application.Info.DirectoryPath & "\Patch\updater.xml")
+        NewCopy = (My.Application.Info.DirectoryPath & "\updater.xml")
+        'Copies ver.txt to different folder.
+        If System.IO.File.Exists(FileToCopy) = True Then
+            File.Delete("updater.xml")
+            System.IO.File.Copy(FileToCopy, NewCopy)
+        End If
+    End Sub
+
+    Sub GfxDownload()
+        'Downloads graphic files
+        Try
+
+            Dim myClient As New WebClient()
+            Dim url As New Uri("http://thelegend.crzyproductions.com/gfx.zip")
+            Dim file As String = My.Application.Info.DirectoryPath & "\Patch\gfx.zip"
+
+            AddHandler myClient.DownloadProgressChanged, AddressOf DownloadProgressCallback
+
+            AddHandler myClient.DownloadFileCompleted, AddressOf DownloadFileUnzip
+
+            myClient.DownloadFileAsync(url, file)
+        Catch ex As Exception
+            'Catches error and displays it.
+            MessageBox.Show(ex.Message)
+        End Try
+
+        'Moves updater.xml out of patch so old one gets replaced.
+        Dim FileToCopy As String
+        Dim NewCopy As String
+        FileToCopy = (My.Application.Info.DirectoryPath & "\Patch\updater.xml")
+        NewCopy = (My.Application.Info.DirectoryPath & "\updater.xml")
+        'Copies ver.txt to different folder.
+        If System.IO.File.Exists(FileToCopy) = True Then
+            File.Delete("updater.xml")
+            System.IO.File.Copy(FileToCopy, NewCopy)
+        End If
+    End Sub

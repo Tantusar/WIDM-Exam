@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E303E609-0D66-4CC2-BBF3-C5BA787E0F1F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WIDM_Exam.My.MyApplication</StartupObject>
+    <RootNamespace>WIDM_Exam</RootNamespace>
+    <AssemblyName>WIDM Exam</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WIDM Exam.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WIDM Exam.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Wie is de Mol Examen_32512.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoUpdater.NET">
+      <HintPath>..\..\SomToday Scraper1\SomToday Scraper\bin\Debug\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="classAnswer.vb" />
+    <Compile Include="classEnDe.vb" />
+    <Compile Include="classQuestion.vb" />
+    <Compile Include="eClient.vb" />
+    <Compile Include="eIO.vb" />
+    <Compile Include="eLoadSettings.vb" />
+    <Compile Include="eServer.vb" />
+    <Compile Include="Extensions.vb" />
+    <Compile Include="FrmIdentify.designer.vb">
+      <DependentUpon>FrmIdentify.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIdentify.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOpenTest.Designer.vb">
+      <DependentUpon>FrmOpenTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOpenTest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTestMaken.Designer.vb">
+      <DependentUpon>FrmTestMaken.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTestMaken.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTest.Designer.vb">
+      <DependentUpon>FrmTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOver.Designer.vb">
+      <DependentUpon>FrmOver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdater.designer.vb">
+      <DependentUpon>FrmUpdater.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdater.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPercentage.Designer.vb">
+      <DependentUpon>FrmPercentage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPercentage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEnterName.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEnterName.Designer.vb">
+      <DependentUpon>FrmEnterName.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExecutie.Designer.vb">
+      <DependentUpon>FrmExecutie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExecutie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPassword.Designer.vb">
+      <DependentUpon>FrmPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmResult.Designer.vb">
+      <DependentUpon>FrmResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmResult.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStartExecutie.Designer.vb">
+      <DependentUpon>FrmStartExecutie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStartExecutie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="langChooser.vb" />
+    <Compile Include="langEN.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>langEN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="langNL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>langNL.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewItemComparer.vb" />
+    <Compile Include="ListViewItemComparerInteger.vb" />
+    <Compile Include="loadFont.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="classEnDe.resx">
+      <DependentUpon>classEnDe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIdentify.en.resx">
+      <DependentUpon>FrmIdentify.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIdentify.resx">
+      <DependentUpon>FrmIdentify.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEnterName.en.resx">
+      <DependentUpon>FrmEnterName.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpenTest.af.resx">
+      <DependentUpon>FrmOpenTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpenTest.ar.resx">
+      <DependentUpon>FrmOpenTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpenTest.en.resx">
+      <DependentUpon>FrmOpenTest.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpenTest.he.resx">
+      <DependentUpon>FrmOpenTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpenTest.nl-NL.resx">
+      <DependentUpon>FrmOpenTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpenTest.resx">
+      <DependentUpon>FrmOpenTest.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOver.en.resx">
+      <DependentUpon>FrmOver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPassword.af.resx">
+      <DependentUpon>FrmPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPassword.en.resx">
+      <DependentUpon>FrmPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPercentage.en.resx">
+      <DependentUpon>FrmPercentage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmResult.en.resx">
+      <DependentUpon>FrmResult.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStartExecutie.af.resx">
+      <DependentUpon>FrmStartExecutie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStartExecutie.en.resx">
+      <DependentUpon>FrmStartExecutie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTest.en.resx">
+      <DependentUpon>FrmTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTestMaken.en.resx">
+      <DependentUpon>FrmTestMaken.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTestMaken.resx">
+      <DependentUpon>FrmTestMaken.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTest.resx">
+      <DependentUpon>FrmTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOver.resx">
+      <DependentUpon>FrmOver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdater.en.resx">
+      <DependentUpon>FrmUpdater.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdater.resx">
+      <DependentUpon>FrmUpdater.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPercentage.resx">
+      <DependentUpon>FrmPercentage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEnterName.resx">
+      <DependentUpon>FrmEnterName.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExecutie.resx">
+      <DependentUpon>FrmExecutie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPassword.resx">
+      <DependentUpon>FrmPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmResult.resx">
+      <DependentUpon>FrmResult.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStartExecutie.resx">
+      <DependentUpon>FrmStartExecutie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="langEN.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>langEN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="langNL.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>langNL.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\OCRAEXT.TTF" />
+    <None Include="Resources\SmallLogoDark.png" />
+    <None Include="Resources\WIDM Tekstjegeluid.wav" />
+    <None Include="Resources\WIDM Percentagegeluid.wav" />
+    <None Include="Resources\logowidm.png" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\cross.png" />
+    <None Include="Resources\WIDM logo test.png" />
+    <Content Include="LeftOuts.txt" />
+    <None Include="Resources\header.png" />
+    <None Include="Resources\header2.png" />
+    <None Include="Resources\headerstretch.png" />
+    <None Include="Resources\Klikgeluid_louder.wav" />
+    <None Include="Resources\WIDM Roodschermgeluid.wav" />
+    <None Include="Resources\Logo dark.png" />
+    <None Include="Resources\Button.png" />
+    <None Include="Resources\Groenscherm.png" />
+    <None Include="Resources\Roodscherm.png" />
+    <None Include="Resources\backgroundheader_1920x800_afl1_header.jpg" />
+    <None Include="Resources\aButton.gif" />
+    <None Include="Resources\button_2004.PNG" />
+    <None Include="Resources\WIDM logo 2004.jpg" />
+    <None Include="Resources\backgroundheader_1920x800_afl3_header.jpg" />
+    <None Include="Resources\Roodscherm_oud.png" />
+    <None Include="Resources\Groenscherm_2.bmp" />
+    <None Include="Resources\Groenscherm_oud.png" />
+    <None Include="Resources\Roodscherm_2.bmp" />
+    <None Include="Resources\Wie is de Mol Examen_32512.png" />
+    <None Include="Resources\header 2014.png" />
+    <None Include="Resources\header 2014_2.png" />
+    <None Include="Resources\Logo oud.jpg" />
+    <None Include="Resources\gb.png" />
+    <None Include="Resources\nl.png" />
+    <None Include="Resources\2000px-Fingerprint_picture.svg.png" />
+    <None Include="Resources\Background enter name US.png" />
+    <None Include="Resources\Logo 2004 groter zonder logo.jpg" />
+    <None Include="Resources\US_Background.png" />
+    <None Include="Resources\Background question US.png" />
+    <None Include="Resources\US_Logo.png" />
+    <None Include="Resources\background2.png" />
+    <None Include="Resources\Groen oud.png" />
+    <None Include="Resources\Rood oud.png" />
+    <None Include="Resources\backgroundheader_2013_small.jpg" />
+    <None Include="Resources\backgroundheader_2013.jpg" />
+    <None Include="Resources\Groen 2015.png" />
+    <None Include="Resources\Rood 2015.png" />
+    <None Include="Resources\widmroodscherm2015metvinger.png" />
+    <None Include="Resources\widmgroenscherm2015metvinger.png" />
+    <None Include="Resources\Logo.jpg" />
+    <None Include="Resources\Background.png" />
+    <None Include="Resources\Button unpressed.png" />
+    <None Include="Resources\Animated.gif" />
+    <None Include="Resources\Button pressed cross.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\Button pressed.png" />
+    <Content Include="Wie is de Mol Examen_32512.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
