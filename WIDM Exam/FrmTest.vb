@@ -2,6 +2,7 @@
 Imports System.Net
 Imports System.Security.Cryptography
 Imports System.Xml
+Imports Newtonsoft.Json
 
 Public Class FrmTest
     Dim closePass As Boolean = False
@@ -12,20 +13,38 @@ Public Class FrmTest
     Dim answer As String
     Dim value As Integer = 0
     Dim locationValue As Integer = 0
-    Dim qAnswers As String
     Dim qAmount As Integer
-    Dim ReadOnly randomValuesLeft As New ListBox
     Public spacebetweenanswers As Integer = My.Settings.numRuimteTussenAntwoorden2
     Public spacebetweenanswershorizontal As Integer = My.Settings.numRuimteTussenAntwoordenHorizontaal
     Dim b As PictureBox
     Public s As PictureBox
     Dim correctanswertemp As String
-    Dim ReadOnly qAnswerstxt As New TextBox
     Dim amountQuestions As Integer
     Dim amountAnswers As Integer = 0
     Dim wedstrijdantwoordentemp As String = ""
     Dim buttonpressed As Boolean = False
     Dim rand As New Random
+
+    Dim Questions As New List(Of Question)
+
+    Private Sub Open()
+        Try
+            Dim objStreamReader As New StreamReader(FrmOpenTest.file)
+            Dim output As String = objStreamReader.ReadToEnd()
+            objStreamReader.Close()
+
+            Dim JSONdeserialized As Question() = JsonConvert.DeserializeObject(Of Question())(output)
+
+            'Loop through questions
+            For Each item In JSONdeserialized
+                'Add them to the list
+                Questions.Add(item)
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information)
+        End Try
+
+    End Sub
 
     Private Sub FrmTest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         expandToMonitor(Me)
@@ -42,7 +61,7 @@ Public Class FrmTest
 
         smallLogo.Image = My.Resources.SmallLogoDark
 
-        txtQuestion.Size = New Size(Me.Width - 200*(FrmOpenTest.dpiPercent.Text/96), txtQuestion.Size.Height)
+        txtQuestion.Size = New Size(Me.Width - 200 * (FrmOpenTest.dpiPercent.Text / 96), txtQuestion.Size.Height)
         'txtQuestion.Size = New Size(txtQuestion.Size.Width * (Me.Width / 1024), txtQuestion.Size.Height)
         If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUK.Checked Then
             'Fonts are now in the dedicated fonts section
@@ -156,50 +175,51 @@ Public Class FrmTest
 
         'For some reason, it tends to load this first before resizing the form to fill the screen. Resetting that here.
 
-        txtTekst1.Top = (Me.Height/2) - (txtTekst1.Height/2)
-        txtTekst1.Left = (Me.Width/2) - (txtTekst1.Width/2)
+        txtTekst1.Top = (Me.Height / 2) - (txtTekst1.Height / 2)
+        txtTekst1.Left = (Me.Width / 2) - (txtTekst1.Width / 2)
 
-        txtTekst2.Top = (Me.Height/2) - (txtTekst2.Height/2)
-        txtTekst2.Left = (Me.Width/2) - (txtTekst2.Width/2)
+        txtTekst2.Top = (Me.Height / 2) - (txtTekst2.Height / 2)
+        txtTekst2.Left = (Me.Width / 2) - (txtTekst2.Width / 2)
 
         txtTekst1.Width = Me.Width
         txtTekst2.Width = Me.Width
         txtTekst1.Left = 0
         txtTekst2.Left = 0
 
+        Open()
         loadQuestionAnswers()
 
         '
     End Sub
 
-    Sub addbutton()
+    Sub addbutton(ByVal answer As Answer)
         amountAnswers = amountAnswers + 1
-        qAnswerstxt.Text = qAnswers
         b = New PictureBox()
-        If FrmOpenTest.rRandom.Checked Then
-            Try
+        'If FrmOpenTest.rRandom.Checked Then
+        '    Try
 
-                'For i As Integer = 1 To randomValuesLeft.Items.Count Step 1
+        '        'For i As Integer = 1 To randomValuesLeft.Items.Count Step 1
 
-                Console.WriteLine("COUNT: " & randomValuesLeft.Items.Count)
-                'Dim selectedIndex As Integer = rand.Next(0, (randomValuesLeft.Items.Count - 1))
-                Dim selectedIndex = CInt(Int(((randomValuesLeft.Items.Count)*Rnd())))
-                Dim selectedNumber As Integer = randomValuesLeft.Items(selectedIndex)
-                value = selectedNumber
-                randomValuesLeft.Items.Remove(selectedNumber)
-
-
-                Console.WriteLine("VALUE: " & value)
-                ' MsgBox(value)
-                'Next 'i
-            Catch ex As Exception
-                MsgBox(ex.Message, MsgBoxStyle.Exclamation)
-            End Try
+        '        Console.WriteLine("COUNT: " & randomValuesLeft.Items.Count)
+        '        'Dim selectedIndex As Integer = rand.Next(0, (randomValuesLeft.Items.Count - 1))
+        '        Dim selectedIndex = CInt(Int(((randomValuesLeft.Items.Count) * Rnd())))
+        '        Dim selectedNumber As Integer = randomValuesLeft.Items(selectedIndex)
+        '        value = selectedNumber
+        '        randomValuesLeft.Items.Remove(selectedNumber)
 
 
-        Else
-            value = value + 1
-        End If
+        '        Console.WriteLine("VALUE: " & value)
+        '        ' MsgBox(value)
+        '        'Next 'i
+        '    Catch ex As Exception
+        '        MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        '    End Try
+
+
+        'Else
+        '    value = value + 1
+        'End If
+        value = answer.id
         locationValue = locationValue + 1
         Console.WriteLine("ENDVALUE: " & value)
         b.Name = "b" & value
@@ -218,31 +238,31 @@ Public Class FrmTest
         b.Size = New Size(50, 50)
         b.SizeMode = PictureBoxSizeMode.Zoom
 
-        Dim answerStop As Integer = Math.Ceiling(qAmount/2)
+        Dim answerStop As Integer = Math.Ceiling(qAmount / 2)
 
         If FrmOpenTest.rThreeRows.Checked = True Then
             If ((locationValue Mod 3) = 0) Then
-                b.Location = New Point(96 + (spacebetweenanswershorizontal*2),
-                                       spacebetweenanswers*(locationValue - 3) + 190 + (FrmOpenTest.dpiPercent.Text*2) -
+                b.Location = New Point(96 + (spacebetweenanswershorizontal * 2),
+                                       spacebetweenanswers * (locationValue - 3) + 190 + (FrmOpenTest.dpiPercent.Text * 2) -
                                        192)
             ElseIf (((locationValue + 1) Mod 3) = 0) Then
                 b.Location = New Point(96 + spacebetweenanswershorizontal,
-                                       spacebetweenanswers*(locationValue - 2) + 190 + (FrmOpenTest.dpiPercent.Text*2) -
+                                       spacebetweenanswers * (locationValue - 2) + 190 + (FrmOpenTest.dpiPercent.Text * 2) -
                                        192)
             Else
                 b.Location = New Point(96,
-                                       spacebetweenanswers*(locationValue - 1) + 190 + FrmOpenTest.dpiPercent.Text - 96)
+                                       spacebetweenanswers * (locationValue - 1) + 190 + FrmOpenTest.dpiPercent.Text - 96)
             End If
         Else
             If locationValue <= answerStop Then
                 b.Location = New Point(96,
-                                       (spacebetweenanswers*2)*(locationValue - 1) + 192 +
-                                       (FrmOpenTest.dpiPercent.Text*2) - 192)
+                                       (spacebetweenanswers * 2) * (locationValue - 1) + 192 +
+                                       (FrmOpenTest.dpiPercent.Text * 2) - 192)
 
             Else
                 b.Location = New Point(96 + spacebetweenanswershorizontal,
-                                       (spacebetweenanswers*2)*(locationValue - 1 - answerStop) + 192 +
-                                       (FrmOpenTest.dpiPercent.Text*2) - 192)
+                                       (spacebetweenanswers * 2) * (locationValue - 1 - answerStop) + 192 +
+                                       (FrmOpenTest.dpiPercent.Text * 2) - 192)
 
             End If
 
@@ -265,7 +285,7 @@ Public Class FrmTest
         l.Name = "l" & value
 
         Try
-            l.Text = qAnswerstxt.Lines(value).ToString
+            l.Text = answer.text
         Catch ex As Exception
             Console.Write(ex.Message)
         End Try
@@ -295,27 +315,27 @@ Public Class FrmTest
         l.Size = New Size(420 + (spacebetweenanswershorizontal - 500), 50 + (spacebetweenanswers - 25))
         If FrmOpenTest.rThreeRows.Checked = True Then
             If ((locationValue Mod 3) = 0) Then
-                l.Location = New Point(170 + (spacebetweenanswershorizontal*2),
-                                       spacebetweenanswers*(locationValue - 3) + 205 + (FrmOpenTest.dpiPercent.Text*2) -
+                l.Location = New Point(170 + (spacebetweenanswershorizontal * 2),
+                                       spacebetweenanswers * (locationValue - 3) + 205 + (FrmOpenTest.dpiPercent.Text * 2) -
                                        192)
             ElseIf (((locationValue + 1) Mod 3) = 0) Then
                 l.Location = New Point(170 + spacebetweenanswershorizontal,
-                                       spacebetweenanswers*(locationValue - 2) + 205 + (FrmOpenTest.dpiPercent.Text*2) -
+                                       spacebetweenanswers * (locationValue - 2) + 205 + (FrmOpenTest.dpiPercent.Text * 2) -
                                        192)
             Else
                 l.Location = New Point(170,
-                                       spacebetweenanswers*(locationValue - 1) + 205 + (FrmOpenTest.dpiPercent.Text*2) -
+                                       spacebetweenanswers * (locationValue - 1) + 205 + (FrmOpenTest.dpiPercent.Text * 2) -
                                        192)
             End If
         Else
             If locationValue <= answerStop Then
                 l.Location = New Point(170,
-                                       (spacebetweenanswers*2)*(locationValue - 1) + 205 +
-                                       (FrmOpenTest.dpiPercent.Text*2) - 192)
+                                       (spacebetweenanswers * 2) * (locationValue - 1) + 205 +
+                                       (FrmOpenTest.dpiPercent.Text * 2) - 192)
             Else
                 l.Location = New Point(170 + spacebetweenanswershorizontal,
-                                       (spacebetweenanswers*2)*(locationValue - 1 - answerStop) + 205 +
-                                       (FrmOpenTest.dpiPercent.Text*2) - 192)
+                                       (spacebetweenanswers * 2) * (locationValue - 1 - answerStop) + 205 +
+                                       (FrmOpenTest.dpiPercent.Text * 2) - 192)
             End If
         End If
         l.Visible = True
@@ -333,12 +353,10 @@ Public Class FrmTest
             If s.Name.ToString = correctanswertemp Then
                 correctAnswer()
             End If
-            Dim loadanswer = ""
-            loadanswer = s.Name.ToString
+            Dim loadanswer As Integer
             'Try
-            qAnswerstxt.Text = qAnswers
-            loadanswer = loadanswer.Replace("b", "")
-            answer = qAnswerstxt.Lines(Val(loadanswer)).ToString
+            loadanswer = CInt(s.Name.ToString.Replace("b", ""))
+            answer = Questions(question - 1).answers(loadanswer).text
             answer = Replace(answer, vbTab, "")
             'MsgBox(answer)
             'Catch ex As Exception
@@ -433,80 +451,147 @@ Public Class FrmTest
 
     Private Sub loadQuestionAnswers()
         Try
-            'Reading the file
-            Dim document As XmlReader = New XmlTextReader(FrmOpenTest.file)
-            While (document.Read())
+            amountQuestions = Questions.Count
 
-                Dim type = document.NodeType
-                'Loading the amount of questions, while not strictly necessary still useful
-                If (type = XmlNodeType.Element) Then
-                    If (document.Name = "questionscount") Then
-                        amountQuestions = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
-                    End If
-                    If (document.Name = "q" & question & "text2") Then
-                        txtTekst2.Text = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
-                    End If
-                    'Checking for text version first, if not found it will revert to a question.
-                    If (document.Name = "q" & question & "text1") Then
-                        tmTekst2.Interval = 5000
-                        txtTekst1.Text = document.ReadInnerXml.ToString
-                        txtTekst1.Visible = True
-                        txtQuestion.Visible = False
-                        smallLogo.Visible = False
-                        tmTekst1.Start()
-                        questionDisplay = questionDisplay - 1
-                    Else
-
-                        If (document.Name = "q" & question & "question") Then
-                            If FrmOpenTest.rNumberBeforeQuestion.Checked Then
-                                txtQuestion.Text = questionDisplay & ". " &
-                                                   WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
-                            Else
-                                txtQuestion.Text = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
-                            End If
-                        End If
-                        'Looking for an open question, if not found, it will continue to load the answers
-                        If document.Name = "q" & question & "openquestion" Then
-                            t1.Visible = True
-                            t2.Visible = True
-                            t3.Visible = True
-                        Else
-                            If (document.Name = "q" & question & "answers") Then
-                                qAnswers = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
-
-                            End If
-
-                            If (document.Name = "q" & question & "amount") Then
-                                randomValuesLeft.items.clear()
-                                Dim intCount0 = 0
-                                qAmount = Val(document.ReadInnerXml.ToString())
-                                For i = 1 To qAmount Step 1
-                                    randomValuesLeft.Items.Add(i)
-                                Next
-                                For intCount0 = 1 To qAmount
-                                    addbutton()
-
-                                Next
-                            End If
-
-
-                            'Write the correct answer to a temporary variable, will be used later on the buttonpressed event
-                            If (document.Name = "q" & question & "correctanswer") Then
-
-                                correctanswertemp = document.ReadInnerXml.ToString
-
-                            End If
-                        End If
-
-                    End If
-                End If
-
-            End While
-            document.Close()
-            'Determining whether this is the last question. Note the > instead of >=
             If question > amountQuestions Then
                 afterLastQuestion()
+            Else
+
+                'Index is one lower.
+                Dim index As Integer = question - 1
+
+                If Questions(index).text2 <> "" Then
+                    txtTekst2.Text = Questions(index).text2
+                End If
+                If Questions(index).text1 <> "" Then
+                    txtTekst1.Text = Questions(index).text1
+                    tmTekst2.Interval = 5000
+                    txtTekst1.Visible = True
+                    txtQuestion.Visible = False
+                    smallLogo.Visible = False
+                    tmTekst1.Start()
+                    questionDisplay = questionDisplay - 1
+                Else
+                    If FrmOpenTest.rNumberBeforeQuestion.Checked Then
+                        txtQuestion.Text = questionDisplay & ". " & Questions(index).text
+                    Else
+                        txtQuestion.Text = Questions(index).text
+                    End If
+                    'Looking for an open question, if not found, it will continue to load the answers
+                    If Questions(index).answers.Count = 0 Then
+                        t1.Visible = True
+                        t2.Visible = True
+                        t3.Visible = True
+                    Else
+                        Dim iList As New List(Of Integer)
+                        For i = 0 To Questions(index).answers.Count - 1
+                            iList.Add(i)
+                        Next
+
+                        If FrmOpenTest.rRandom.Checked Then
+                            iList.Randomize()
+                            'For i = 0 To Questions(index).answers.Count - 1
+                            '    Dim selectedIndex As Integer = CInt(Int(((iList.Count) * Rnd())))
+                            '    addbutton(Questions(index).answers(selectedIndex))
+                            '    iList.Remove(selectedIndex)
+                            'Next
+                        End If
+                        For Each item In iList
+                            addbutton(Questions(index).answers(item))
+                        Next
+
+                        'qAnswers = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
+
+                        'If (document.Name = "q" & question & "amount") Then
+                        '    randomValuesLeft.Items.Clear()
+                        '    Dim intCount0 = 0
+                        '    qAmount = Val(document.ReadInnerXml.ToString())
+                        '    For i = 1 To qAmount Step 1
+                        '        randomValuesLeft.Items.Add(i)
+                        '    Next
+                        '    For intCount0 = 1 To qAmount
+                        '        addbutton()
+
+                        '    Next
+                        'End If
+
+
+                        'Write the correct answer to a temporary variable, will be used later on the buttonpressed event
+                        correctanswertemp = Questions(index).rightAnswer
+                    End If
+                End If
             End If
+
+            'Dim document As XmlReader = New XmlTextReader(FrmOpenTest.file)
+            'While (document.Read())
+
+            '    Dim type = document.NodeType
+            '    'Loading the amount of questions, while not strictly necessary still useful
+            '    If (type = XmlNodeType.Element) Then
+            '        If (document.Name = "questionscount") Then
+            '            amountQuestions = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
+            '        End If
+            '        If (document.Name = "q" & question & "text2") Then
+            '            txtTekst2.Text = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
+            '        End If
+            '        'Checking for text version first, if not found it will revert to a question.
+            '        If (document.Name = "q" & question & "text1") Then
+            '            tmTekst2.Interval = 5000
+            '            txtTekst1.Text = document.ReadInnerXml.ToString
+            '            txtTekst1.Visible = True
+            '            txtQuestion.Visible = False
+            '            smallLogo.Visible = False
+            '            tmTekst1.Start()
+            '            questionDisplay = questionDisplay - 1
+            '        Else
+
+            '            If (document.Name = "q" & question & "question") Then
+            '                If FrmOpenTest.rNumberBeforeQuestion.Checked Then
+            '                    txtQuestion.Text = questionDisplay & ". " &
+            '                                       WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
+            '                Else
+            '                    txtQuestion.Text = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
+            '                End If
+            '            End If
+            '            'Looking for an open question, if not found, it will continue to load the answers
+            '            If document.Name = "q" & question & "openquestion" Then
+            '                t1.Visible = True
+            '                t2.Visible = True
+            '                t3.Visible = True
+            '            Else
+            '                If (document.Name = "q" & question & "answers") Then
+            '                    qAnswers = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
+
+            '                End If
+
+            '                If (document.Name = "q" & question & "amount") Then
+            '                    randomValuesLeft.items.clear()
+            '                    Dim intCount0 = 0
+            '                    qAmount = Val(document.ReadInnerXml.ToString())
+            '                    For i = 1 To qAmount Step 1
+            '                        randomValuesLeft.Items.Add(i)
+            '                    Next
+            '                    For intCount0 = 1 To qAmount
+            '                        addbutton()
+
+            '                    Next
+            '                End If
+
+
+            '                'Write the correct answer to a temporary variable, will be used later on the buttonpressed event
+            '                If (document.Name = "q" & question & "correctanswer") Then
+
+            '                    correctanswertemp = document.ReadInnerXml.ToString
+
+            '                End If
+            '            End If
+
+            '        End If
+            '    End If
+
+            'End While
+            'document.Close()
+            'Determining whether this is the last question. Note the > instead of >=
 
         Catch ex As Exception
             If My.Settings.language = "en" Then
@@ -537,7 +622,7 @@ Public Class FrmTest
         buttonpressed = False
         t1.Text = ""
         'Deleting all PictureBoxes and Labels, with exceptions
-        For i As Integer = Me.Controls.Count - 1 To 0 Step - 1
+        For i As Integer = Me.Controls.Count - 1 To 0 Step -1
             If _
                 TypeOf Me.Controls(i) Is Label And Me.Controls(i).Name <> "txtQuestion" And
                 Me.Controls(i).Name <> "txtTekst1" And Me.Controls(i).Name <> "txtTekst2" And
@@ -545,7 +630,7 @@ Public Class FrmTest
                 Me.Controls.RemoveAt(i)
             End If
         Next
-        For i As Integer = Me.Controls.Count - 1 To 0 Step - 1
+        For i As Integer = Me.Controls.Count - 1 To 0 Step -1
             If _
                 TypeOf Me.Controls(i) Is PictureBox And Me.Controls(i).Name <> "smallLogo" And
                 Me.Controls(i).Name <> "t2" Then
@@ -601,9 +686,9 @@ Public Class FrmTest
                 End Using
             End If
             If My.Settings.language = "en" Then
-                FrmResult.txtScore.Text = answersRight & " answers right in " & Val(time)/10 & " seconds."
+                FrmResult.txtScore.Text = answersRight & " answers right in " & Val(time) / 10 & " seconds."
             Else
-                FrmResult.txtScore.Text = answersRight & " antwoorden goed in " & Val(time)/10 & " seconden."
+                FrmResult.txtScore.Text = answersRight & " antwoorden goed in " & Val(time) / 10 & " seconden."
             End If
 
 

@@ -8,6 +8,10 @@
     'Tekst tussendoor
     Dim strText1 As String
     Dim strText2 As String
+    
+    Sub New()
+        
+    End Sub
 
     Sub New(_text As String, _answers As Answer(), _rightAnswer As String, ByVal _questionPoints As Integer)
         text = _text

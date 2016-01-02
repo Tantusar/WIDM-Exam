@@ -2,6 +2,10 @@
     Dim intId As Integer
     Dim strAnswer As String
 
+    Sub New()
+
+    End Sub
+
     Sub New(_id As Integer, _text As String)
         id = _id
         text = _text
@@ -12,7 +16,7 @@
             Return intId
         End Get
         Set
-            intId = value
+            intId = Value
         End Set
     End Property
 
@@ -21,7 +25,7 @@
             Return strAnswer
         End Get
         Set
-            strAnswer = value
+            strAnswer = Value
         End Set
     End Property
 End Class
