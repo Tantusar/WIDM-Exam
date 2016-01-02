@@ -238,7 +238,7 @@ Public Class FrmTest
         b.Size = New Size(50, 50)
         b.SizeMode = PictureBoxSizeMode.Zoom
 
-        Dim answerStop As Integer = Math.Ceiling(qAmount / 2)
+        Dim answerStop As Integer = Math.Ceiling(Questions(question - 1).answers.Count / 2)
 
         If FrmOpenTest.rThreeRows.Checked = True Then
             If ((locationValue Mod 3) = 0) Then

@@ -26,7 +26,7 @@
             Else
                 l.Text = Replace(item.DeviceName, "\\.\DISPLAY", "")
             End If
-
+            l.Cursor = Cursors.Hand 
             AddHandler l.Click, AddressOf ScreenClick
             Panel1.Controls.Add(l)
 
