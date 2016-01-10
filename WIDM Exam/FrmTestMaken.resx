@@ -124,8 +124,8 @@
     <value>WIDM Exam test (*.widm3)|*.widm3</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="listPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="listPanel.Groups" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -182,7 +182,7 @@
     <value>0, 0</value>
   </data>
   <data name="listPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>738, 213</value>
+    <value>746, 192</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="listPanel.TabIndex" type="System.Int32, mscorlib">
@@ -195,7 +195,7 @@
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listPanel.Parent" xml:space="preserve">
-    <value>Panel1</value>
+    <value>SplitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;listPanel.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -235,9 +235,6 @@
   </data>
   <data name="cmRawRightAnswer.Width" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="GroupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
   </data>
   <data name="&gt;&gt;Label10.Name" xml:space="preserve">
     <value>Label10</value>
@@ -371,11 +368,14 @@
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="GroupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 315</value>
+    <value>0, 0</value>
   </data>
   <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>439, 232</value>
+    <value>446, 308</value>
   </data>
   <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -390,10 +390,10 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>SplitContainer2.Panel1</value>
   </data>
   <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>0</value>
   </data>
   <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -432,7 +432,7 @@
     <value>167, 13</value>
   </data>
   <data name="txtQuestion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 21</value>
+    <value>273, 21</value>
   </data>
   <data name="txtQuestion.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -450,13 +450,13 @@
     <value>1</value>
   </data>
   <data name="Button3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>Bottom, Right</value>
   </data>
   <data name="Button3.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="Button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 200</value>
+    <value>256, 273</value>
   </data>
   <data name="Button3.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 23</value>
@@ -480,10 +480,10 @@
     <value>2</value>
   </data>
   <data name="Button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>Bottom, Right</value>
   </data>
   <data name="Button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>358, 200</value>
+    <value>365, 273</value>
   </data>
   <data name="Button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -535,7 +535,7 @@
     <value>4</value>
   </data>
   <data name="txtAnswers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="txtAnswers.Location" type="System.Drawing.Point, System.Drawing">
     <value>167, 39</value>
@@ -547,7 +547,7 @@
     <value>Both</value>
   </data>
   <data name="txtAnswers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 128</value>
+    <value>273, 201</value>
   </data>
   <data name="txtAnswers.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -664,13 +664,13 @@
     <value>0</value>
   </data>
   <data name="ComboBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="ComboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 173</value>
+    <value>167, 246</value>
   </data>
   <data name="ComboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 21</value>
+    <value>273, 21</value>
   </data>
   <data name="ComboBox1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -714,11 +714,14 @@
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="Label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 176</value>
+    <value>6, 249</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 13</value>
@@ -741,38 +744,116 @@
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="GroupBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="&gt;&gt;listDB.Name" xml:space="preserve">
+    <value>listDB</value>
   </data>
-  <data name="ColumnHeader1.Text" xml:space="preserve">
-    <value>Type</value>
+  <data name="&gt;&gt;listDB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ColumnHeader1.Width" type="System.Int32, mscorlib">
-    <value>70</value>
+  <data name="&gt;&gt;listDB.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
   </data>
-  <data name="ColumnHeader2.Text" xml:space="preserve">
-    <value>Vraag/Regel 1</value>
+  <data name="&gt;&gt;listDB.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="ColumnHeader2.Width" type="System.Int32, mscorlib">
-    <value>98</value>
+  <data name="&gt;&gt;Button4.Name" xml:space="preserve">
+    <value>Button4</value>
   </data>
-  <data name="ColumnHeader3.Text" xml:space="preserve">
-    <value>Antwoorden/Regel 2</value>
+  <data name="&gt;&gt;Button4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ColumnHeader3.Width" type="System.Int32, mscorlib">
-    <value>357</value>
+  <data name="&gt;&gt;Button4.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
   </data>
-  <data name="ColumnHeader4.Text" xml:space="preserve">
-    <value>Goede antwoord</value>
+  <data name="&gt;&gt;Button4.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="ColumnHeader4.Width" type="System.Int32, mscorlib">
-    <value>98</value>
+  <data name="&gt;&gt;Button2.Name" xml:space="preserve">
+    <value>Button2</value>
   </data>
-  <data name="ColumnHeader5.Text" xml:space="preserve">
-    <value>Aantal antwoorden</value>
+  <data name="&gt;&gt;Button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ColumnHeader5.Width" type="System.Int32, mscorlib">
-    <value>111</value>
+  <data name="&gt;&gt;Button2.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;Button2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Label8.Name" xml:space="preserve">
+    <value>Label8</value>
+  </data>
+  <data name="&gt;&gt;Label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label8.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
+    <value>Label6</value>
+  </data>
+  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtTekst2.Name" xml:space="preserve">
+    <value>txtTekst2</value>
+  </data>
+  <data name="&gt;&gt;txtTekst2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTekst2.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;txtTekst2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtTekst1.Name" xml:space="preserve">
+    <value>txtTekst1</value>
+  </data>
+  <data name="&gt;&gt;txtTekst1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTekst1.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;txtTekst1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="GroupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 308</value>
+  </data>
+  <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="GroupBox3.Text" xml:space="preserve">
+    <value>Tekst tussendoor maken/aanpassen</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Name" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
+    <value>SplitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="listDB.Groups" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -848,11 +929,44 @@
   <data name="&gt;&gt;listDB.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ColumnHeader1.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ColumnHeader1.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="ColumnHeader2.Text" xml:space="preserve">
+    <value>Vraag/Regel 1</value>
+  </data>
+  <data name="ColumnHeader2.Width" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="ColumnHeader3.Text" xml:space="preserve">
+    <value>Antwoorden/Regel 2</value>
+  </data>
+  <data name="ColumnHeader3.Width" type="System.Int32, mscorlib">
+    <value>357</value>
+  </data>
+  <data name="ColumnHeader4.Text" xml:space="preserve">
+    <value>Goede antwoord</value>
+  </data>
+  <data name="ColumnHeader4.Width" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="ColumnHeader5.Text" xml:space="preserve">
+    <value>Aantal antwoorden</value>
+  </data>
+  <data name="ColumnHeader5.Width" type="System.Int32, mscorlib">
+    <value>111</value>
+  </data>
+  <data name="Button4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="Button4.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="Button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 200</value>
+    <value>91, 273</value>
   </data>
   <data name="Button4.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 23</value>
@@ -875,8 +989,11 @@
   <data name="&gt;&gt;Button4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="Button2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="Button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>246, 200</value>
+    <value>256, 273</value>
   </data>
   <data name="Button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -953,11 +1070,14 @@
   <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="txtTekst2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="txtTekst2.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 71</value>
   </data>
   <data name="txtTekst2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 20</value>
+    <value>317, 20</value>
   </data>
   <data name="txtTekst2.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -974,11 +1094,14 @@
   <data name="&gt;&gt;txtTekst2.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="txtTekst1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="txtTekst1.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 32</value>
   </data>
   <data name="txtTekst1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 20</value>
+    <value>317, 20</value>
   </data>
   <data name="txtTekst1.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -995,149 +1118,11 @@
   <data name="&gt;&gt;txtTekst1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>457, 315</value>
-  </data>
-  <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>327, 232</value>
-  </data>
-  <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="GroupBox3.Text" xml:space="preserve">
-    <value>Tekst tussendoor maken/aanpassen</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3.Name" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="rTekstTussendoor.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="rTekstTussendoor.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rTekstTussendoor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 9</value>
-  </data>
-  <data name="rTekstTussendoor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 17</value>
-  </data>
-  <data name="rTekstTussendoor.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="rTekstTussendoor.Text" xml:space="preserve">
-    <value>Tekst tussendoor</value>
-  </data>
-  <data name="&gt;&gt;rTekstTussendoor.Name" xml:space="preserve">
-    <value>rTekstTussendoor</value>
-  </data>
-  <data name="&gt;&gt;rTekstTussendoor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rTekstTussendoor.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;rTekstTussendoor.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="rVraag.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="rVraag.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rVraag.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 9</value>
-  </data>
-  <data name="rVraag.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 17</value>
-  </data>
-  <data name="rVraag.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="rVraag.Text" xml:space="preserve">
-    <value>Vraag</value>
-  </data>
-  <data name="&gt;&gt;rVraag.Name" xml:space="preserve">
-    <value>rVraag</value>
-  </data>
-  <data name="&gt;&gt;rVraag.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rVraag.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;rVraag.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 11</value>
-  </data>
-  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
-  </data>
-  <data name="Label7.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="Label7.Text" xml:space="preserve">
-    <value>Type:</value>
-  </data>
-  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
-    <value>Label7</value>
-  </data>
-  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>261, 17</value>
   </metadata>
   <data name="OpenFileDialog1.Filter" xml:space="preserve">
     <value>WIDM Exam test (*.widm3)|*.widm3</value>
-  </data>
-  <data name="Panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 62</value>
-  </data>
-  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>738, 213</value>
-  </data>
-  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
-    <value>10</value>
   </data>
   <metadata name="ToolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>403, 17</value>
@@ -1164,24 +1149,24 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ToolStrip2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>3</value>
   </data>
   <data name="ToolStripButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVDhPjZJZTxNRHMX7hXygy+ASv4WPxrAVugABRGRz
-        SzQBI0g0GlmkWgirVWS3A2iqLIWKBYMpS+mCUAp0BTql2/E/t8oTMUxycjMz9/zOuYuE0/ClCg3fJNfy
-        FpKf0w7GOG19itPyoH9MlwoncKV4EpeLeGQWjAWuFvMLMs3oNYn4cGq+dckZwZJTQDSegkCKnCQRPE5g
-        LxiDLxxn70Isif1QHIaxmZTO6ojfqDcdcOrhXAmnNdqWHBHc7/MiEiMzTcx7Mgf/YRx7ZAhHEgwcotF9
-        cIJ1TxRGqx+T1gNwJXyUABNBKwHu9uyySaJEgDcUg/8ozpLFBrvUxr4bxfqOgOoOF76uBKBQP0oRYDBm
-        sR8TwMMmicpvMMNL42E0iSi1Chwl4PCK6QJWtwVU6p3oNXmgUI2CAPUp88YR7nR74KKKorZ8J5SeYOmH
-        QhLbvtip2bYdwe03m+ic+g15wbAI4DG7SoCuHVZdSekFjWYUPltAEUndNA8lfRf//VN52xp0Rhfk+UME
-        oGOatoVR07lFayPRWNPpRk2HKBeq9C5KdKBCt4nydjvK2tZR/noDLSN2yJUf0wDTSjhtJqWNJIKI5sq3
-        Tlb5VjsByHizdY20ihcDa5DlfUgDppaDZHb/les0nZkpuUJnZ+YyMpY221DS/AuN/SuQ5RpEgBG8NYBq
-        vZud93lU9PInHncvQ5rTD8lF2sTxxQCrK9CR1X3J+a/EO6F5/gMPOxYhze4jQCGPUYufGqQBpo3P/5UI
-        UDV9x4N2CwF6IMnU1qWG5n0EcJ67gbJhHrWtZmRk3UtJpCrjpmFmH4bpvTPXe5ZqW+ZQ9WoWGdf1PolC
-        /empQj0+Is8e9ytUY3Q9R9gNk+cPQqYcoKN6D2nuO9qwPqrcS6k9LPlCVlcoI7vr2x9epw+2h7BlTAAA
-        AABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKsSURBVDhPjZJZTxNRHMX7hXygy+ASv4WPxrAVugABRGRz
+        i0bUCBKNRhapFsIqikABO4CmglCoWDAYttIFoRToCnRKt+N/bpUnQpjk5GZm7vmdcxcJp+GLFRq+Xq7l
+        LSQfp+2PctqaJKflQf+YLuSP4lLhGC4W8EjPG/ZfLuRnZZqhKxLx4dR807wjjHmHgEgsCYEUPkogcBjH
+        TiAKbyjG3oVoArvBGHoME0md1R679ti0x6kHsyWc1rg0bw/jbrcH4SiZaWLO02n49mPYIUMoHGfgII2u
+        vSOsuiMwWn0Ys+6BK+IjBBgNWAlwu3ObTRIlAjzBKHwHMZYsNtimNrbtCFa3BFS2OvFt0Q+F+n6SAP1R
+        i+2QAG42SVRurRkeGvcjCUSolf8gDrtHTBewvCmgXO9Al8kNhWoIBKhJmtcOcKvDDSdVFLXhPaL0OEvf
+        FxLY9EaPzUubYdx8u4628T+Q5w2KAB5TywRo32LVlZSeV2dG/vNZFJDU9TNQ0nfx33+VNq9AZ3RCnjtA
+        ADqmyaUQqto2aG0kGqvaXKhqFeVEhd5JiXaU6dZR2mJDSfMqSt+sodFgg1z5KQUwLYZSZlLKSCKIaC5/
+        52CVb7QQgIzXm1ZIy3jZtwJZzscUYHwhQGbXPzmP05mZkst0NmYuIWNxwxKKGn6jrmcRsuxeEWAEb/Wj
+        Uu9i530WFbz6hScdC5Bm9UBynjZxZM7P6gp0ZI++Zp0q8U5oXvzEg9Y5SDO7CZDPY8jiowYpgGnty6kS
+        Aar6H7jXYiFAJyTp2ofJgRkvARxnbqCsnUF1kxlpGXeSEqnKuN77fRe9kzsnrvckVTdOo+L1FNKu6r0S
+        hfrzM4V6xCDPHPEpVMN0PQ3shslz+yFT9tFRfYA0+z1tWDdV7qLUTpZ8LqM9mJbZPvEXM9sPqLfmKAIA
+        AAAASUVORK5CYII=
 </value>
   </data>
   <data name="ToolStripButton4.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1196,16 +1181,16 @@
   <data name="ToolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAISSURBVDhP3Y/NaxNBHIbn4L03/wQP1tSP2Kh48CKIIHgR
-        PagnEbQElAgFRdAe0kaESGnsQcRSLRVsrfiBIB6Cp8bUdrfN2myTtHbbGrrBZr8/srvZ19l2lcaDV8Fh
-        Hmbm8Lzvb8h/subfRVnhzSln5Q/K7w8vVl527Fx8EW1r4WO0LZs9tiPUCck9i9m+3wTg0x2wdXetGtay
-        XY3VyfP2L6rT1yxhMiHwrw+cDXVCuFedsu9ZsNfSMJb6YSwPwRTG4bsSzdLhexpF2Xq7dYii2OAnYlyo
-        E1Ia3a82HYXKGeiVAahfe7CR70JtKg6pkIQ0dxcSewt1ppuSoJOJKE0c1EKdBox1Oq65DonLoD6Tgvjp
-        BkzxM21Vw/bglH9PEHyPGdtrhXowwSFn8/9Nm2ICnrEpeiYPu5qBtZqE+a0bRvkKdP4CPL0IZmR7QCbW
-        8D0TnpqDK32A82McjfXHVLwPc/k2zEocxsJF6POnoRWOw9NYMA+2BeQexeymo8LZeIuGOEJbH8Jaoa1L
-        Qetl6MVz0LiTUGePQpnZB1f90hoQPHxHovIw7O/9sIQeKidglC5R+QxtPQGVPQJlugPy1C4akG8NWLgX
-        qZoyJ3PZ5029/ARaaRAan4ZW7IXK3YFauAllLgGFjUNhroLPP/W5dFQOdUL43vbrfGrPKNe3u8akItZf
-        6YtYs6mIwifbB0L9ny5CfgJ3LecySh/iVQAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIQSURBVDhP3Y/LaxNBHMfn4L03/wQP1tRHbFQ8eBFEELyI
+        HtSTCFoCSoSCImgPaSNCpDT2IOIDSwVbKz4QxEPw1NjabpqsyTZJa7etoRts9v3e7NfZdpXGg1fBYT7M
+        zOHz/f6G/Cer9C6a59+ccJb/oPr+4ELtZdf2hRfRjjY+Rjuy2SPbQp2Q3LOY5fstAD7dAZt312xgNdtj
+        r0yetX5Rn7li8pMJnnu973SoE8K+6pZ8z4S1moa+OAh96TEMfhy+K9IsDb6nUuTNt9uEIAg2NxFjQ52Q
+        yuhepeXIVM5Aqw1B+dqH9akeNKbjEItJiIXbEPM30GR6KQk6mYDKxH411GnAWLfjGmsQ2QyasykIn67B
+        ED7TViVsD07p9wTB95ix3WaoBxMccDb+37IoBuDpG6JncLDqGZgrSRjfeqFXL0HjzsHTymBGtgZkYrbv
+        GfCUHFzxA5wf47DXHlLxLoylmzBqcejz56GVTkItHoWn5sHc2xKQexCzWo4CZ/0tbGGEtt6HuUxbF4PW
+        i9DKZ6Cyx6HMHYY8uweu8qU9IHj4jkjlp7C+D8Lk+6icgF65QOVTtPUYlPwhyDNdkKZ30ICp9oD5O5G6
+        IbFSIfu8pVUfQa0MQ+XSUMv9UNhbUIrXIRcSkPNxyMxllHJPfDYdlUKdEK6/8yqX2jXKDuxsMKmI+VcG
+        IuZcKiJzyc6hUP+ni5CfcGvnKvqVi0AAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ToolStripSplitButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1232,30 +1217,6 @@
   <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
-  <data name="ToolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIdSURBVDhPpZDva1JhFMeff6G30bsgehFRRAX1IgiCgoho
-        NSZBtdaLEcQgtggpGUOwbGxjDrM2M6uNNtRcJLFRmilTs6Rlox9rtZybeu90Xmfq1PXtPo9XbsWIxb7w
-        4XAfzvd7zj1kzbr/MqUyuRdmTC+SMDp53H7GQz+agO5pDF2OObQ/juLaowjUlmm0Dk7hav8XKM2fX0l2
-        Qkxuns/mS/gfmu/6C5KdkDuuefbYP9EHc9gA49seGEJd0AVvoCOgwfWxNqg9KrS6lbjivMR6m3rfQ7IT
-        0vucZ4+rFe09f3NcDjCI/0sfBzyJVUF7z+lCckCPeKxqANWgN85qVRbfn9+8kMfpzqAc0PlkFplcEUNj
-        CVgoPg5WXwK2QAJ2ERpAq90fh+N1HF9jGSi0fjmgfXgGghhgC3Bsgl2qVf29weSsgGL9GTlAY/uOn5eb
-        GeWmCyg2nEX+eC2yBw5C2LkHqU1bMb9+I9vAJvIxkka+5gR+HDpcCWkb+sbMyyEvykE3yp5RlEaGUbIO
-        oHivD0u3dODWbWDTC3UK5I4cRay+DlFFDdLbd4OoHk79czI1UxxvOAbdQNi1FwtbdlQ2UD74hNTiEpzv
-        eDbFFa7UqqziUX8XDUht3ibfoMX8AclMAVw6j7lkDhEuK156EZNRgTWvxD6ta1myE3LROOFt1Iezjfpx
-        NHSHcKojiJPaAGo1PhxTe1Zkf8uIXbKvVYT8Ak+vkYdu3rTiAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ToolStripButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 22</value>
-  </data>
-  <data name="ToolStripButton3.Text" xml:space="preserve">
-    <value>Verwijder regel</value>
-  </data>
   <data name="ToolStripButton5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1276,37 +1237,6 @@
   </data>
   <data name="ToolStripButton5.Text" xml:space="preserve">
     <value>Leeg lijst</value>
-  </data>
-  <data name="ToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="ToolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMRSURBVDhPTZJZTxNRGIbnSv+C8Qdo4gLReGHijWJAFhMk
-        kbhFBClL4n7hhhqUSBTBqHGJS4wxRmOMWEVSQEorpS0dEKllOqAgdEGKQKELndPpzPT1zFCBL3ny5STn
-        feY7cw6jVublzuLd9Y72/AbHbFa1Q6CdaNxWO0vy67tJbp2N23a26966wncrtNDyyqm1dk1FyAzHcXJw
-        Po5gdImZiArB4EQEV5p8ONAwFMs+YViZii5U3k3blBru9iTAeiWwPgkOjwTbmIjO4Tha+XnEJcDSa8DQ
-        6/0Y/lQL5/MsOB+uL9IEWdWtQjgmos8v47tfol1CryYRYRmJ4wsfQ9ivR8B0HiFXMxD9gznXe1huZU9q
-        grw6O1EF/VTgHJfQPy5rsh5vAtbfItg+PWbd1yD6mxD4Wg9h4ANkjxX9d8rJoiA0L2JgQgZHGQgo+KFJ
-        JDg5E2a5K1AEK4TfxxHsOYHBV6V4VK1Lsvf3rNEEuTftZI4KBgNJ8DTspnATtPMdmB24CIV0IzZyBMR3
-        CBG+Cp6XBSiubRS1sFo5VBCkgqHJpMYg5Zv9IwK951PhIhDvQYS5Sxh+koe/Yy5k1tgXxldr13U7mYmK
-        4BfDn8G3naNjW0DGShH3HUaITvLrcQ4cbh+mIglkXF0myKyxkWl63zw9gtnwBm5DFX603MU4W4jY2CEE
-        nRfw81kB+nivds0RIiH9lG1JkHHVRibDcbj/JPGubicQ8WDo6V6YqlbDRr9qachGn+sXWPo2HFRAEgoV
-        dC4Jtp+ykokQQWFzHDXlaRC7H0Bk74Gt3YE3lWtQ9taFgiaC/BQxUaYC/ZJAtfmDBCctCvZlrMKNkvUw
-        1u3G5xen8ZT14yEPPHAD9zmgzCRhXj1CxTLB1jPmWGNbV7LSrKCiQ9Y26UyyxlG6Lu2QUGKUUKyujTLs
-        bK+y8UhzNBVnmM2VxlFvOBYxm23K6LSA0SkBIymmowkN9c9HiQyLvUcRBCG0tqjFnYozzJbKtmPpulbj
-        pvL2YHq5nixStkDaf3R6slbXMrfhaEtHWomhlGEY5h965r26HWeGdwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ToolStripButton2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 22</value>
-  </data>
-  <data name="ToolStripButton2.Text" xml:space="preserve">
-    <value>Bewerken</value>
   </data>
   <data name="ToolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -1360,33 +1290,33 @@
   <data name="ToolStripButton7.Text" xml:space="preserve">
     <value>Test testen</value>
   </data>
+  <data name="ToolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH+SURBVDhPjZPvSxNxHMeXf0WEQQ+iHgg+UXwuQlhJIBSE
+        TiWEepDRs6yFD3qwBxposoIU9kQRJERJokBoRE3G8kFTb26ia2vu1Fu43Y/d3W4/evf5HvNwejo/8OIO
+        vp/3676f7905KlVPNBEtNbhC1BEnqknTNNEwjHKpVIId+XweHo9nnHptJS0snMvloKqqhSRJyGazEATB
+        lKTCc4jO3MfWRzdC3hsIvWvoZeELTMAadF0HicwrQ1EUiKKIdDoNJbWAPd8gxLVPgMIjuzaH5ZH2/SoB
+        Cx/CBDQWZFnG/uYsMhuvYOwsYu/ba2jr8ygl/Fj1PtSrBMVi0ZqZ3bO5xZ0lZLghlDU/tNgADn4+QWS6
+        H78mnKJ/7M71KsFxZP4rMusvUNYDULf7oCe7IW+4kJzqxMCtq85K1l7AczTzymAl3Av9Txck7iVik7eh
+        8hxY5lQBH15EZOkZbfs79Hg/8skeiLST7fc3IQu/zZ5TBZEfMwh/dmH1yxukgvegxrtxEHqOmLcT6t+4
+        eS5nCj4MtwFyAtHJu/C5LmGZnhoYbYeyGzXDNQXuR40wAm9hBMcRdLdi/vE1ZJIcCoWCxZmCrraLGH7Q
+        AN9IB1Zmn0ISEuYrPYqtgMz/DiW1oN5yRWBVM315KluwCxyF9VCvQhn291p1mWgmmPU8sDBlHI7/OJB2
+        E/fS6dEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ToolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ToolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="ToolStripButton1.Text" xml:space="preserve">
+    <value>Extra informatie bewerken</value>
+  </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>510, 17</value>
   </metadata>
-  <data name="Panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 281</value>
-  </data>
-  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 41</value>
-  </data>
-  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="Label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1481,7 +1411,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="LinkLabel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1562,7 +1492,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rGroepsModusTest.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="rNormalTest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1589,7 +1519,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rNormalTest.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>2</value>
   </data>
   <metadata name="OpenFileDialog2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>599, 17</value>
@@ -1617,7 +1547,7 @@
 </value>
   </data>
   <data name="Button6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>749, 127</value>
+    <value>752, 71</value>
   </data>
   <data name="Button6.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 35</value>
@@ -1632,10 +1562,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Button6.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>SplitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;Button6.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="Button5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1654,7 +1584,7 @@
 </value>
   </data>
   <data name="Button5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>749, 86</value>
+    <value>752, 30</value>
   </data>
   <data name="Button5.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 35</value>
@@ -1669,7 +1599,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Button5.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>SplitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;Button5.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -1708,7 +1638,7 @@
     <value>NoControl</value>
   </data>
   <data name="Button7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>749, 168</value>
+    <value>752, 112</value>
   </data>
   <data name="Button7.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 35</value>
@@ -1723,10 +1653,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Button7.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>SplitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;Button7.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="Button8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1754,7 +1684,7 @@
     <value>NoControl</value>
   </data>
   <data name="Button8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>749, 209</value>
+    <value>752, 153</value>
   </data>
   <data name="Button8.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 35</value>
@@ -1769,19 +1699,121 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Button8.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>SplitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;Button8.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SplitContainer1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="SplitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 56</value>
+  </data>
+  <data name="SplitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.Name" xml:space="preserve">
+    <value>SplitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>SplitContainer1</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="SplitContainer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="SplitContainer2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Panel1.Name" xml:space="preserve">
+    <value>SplitContainer2.Panel1</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Panel1.Parent" xml:space="preserve">
+    <value>SplitContainer2</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Panel2.Name" xml:space="preserve">
+    <value>SplitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Panel2.Parent" xml:space="preserve">
+    <value>SplitContainer2</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SplitContainer2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>793, 308</value>
+  </data>
+  <data name="SplitContainer2.SplitterDistance" type="System.Int32, mscorlib">
+    <value>446</value>
+  </data>
+  <data name="SplitContainer2.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Name" xml:space="preserve">
+    <value>SplitContainer2</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.Parent" xml:space="preserve">
+    <value>SplitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel2.Name" xml:space="preserve">
+    <value>SplitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>SplitContainer1</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SplitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>793, 506</value>
+  </data>
+  <data name="SplitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>194</value>
+  </data>
+  <data name="SplitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Name" xml:space="preserve">
+    <value>SplitContainer1</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
-  </data>
-  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>793, 562</value>
@@ -2120,6 +2152,12 @@
   <data name="&gt;&gt;ColumnHeader5.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ColumnHeader6.Name" xml:space="preserve">
+    <value>ColumnHeader6</value>
+  </data>
+  <data name="&gt;&gt;ColumnHeader6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;OpenFileDialog1.Name" xml:space="preserve">
     <value>OpenFileDialog1</value>
   </data>
@@ -2156,28 +2194,10 @@
   <data name="&gt;&gt;ToolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ToolStripButton3.Name" xml:space="preserve">
-    <value>ToolStripButton3</value>
-  </data>
-  <data name="&gt;&gt;ToolStripButton3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ToolStripButton5.Name" xml:space="preserve">
     <value>ToolStripButton5</value>
   </data>
   <data name="&gt;&gt;ToolStripButton5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStripSeparator2.Name" xml:space="preserve">
-    <value>ToolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;ToolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStripButton2.Name" xml:space="preserve">
-    <value>ToolStripButton2</value>
-  </data>
-  <data name="&gt;&gt;ToolStripButton2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ToolStripSeparator3.Name" xml:space="preserve">
@@ -2202,6 +2222,12 @@
     <value>ToolStripButton7</value>
   </data>
   <data name="&gt;&gt;ToolStripButton7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripButton1.Name" xml:space="preserve">
+    <value>ToolStripButton1</value>
+  </data>
+  <data name="&gt;&gt;ToolStripButton1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Timer1.Name" xml:space="preserve">
@@ -2233,12 +2259,6 @@
   </data>
   <data name="&gt;&gt;OpenFileDialog4.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnHeader6.Name" xml:space="preserve">
-    <value>ColumnHeader6</value>
-  </data>
-  <data name="&gt;&gt;ColumnHeader6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FrmTestMaken</value>

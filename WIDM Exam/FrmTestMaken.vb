@@ -4,8 +4,13 @@ Imports System.Security.Cryptography
 Imports System.Xml
 Imports Microsoft.VisualBasic.FileIO
 Imports Newtonsoft.Json
+Imports Question = WIDM_Exam.Question
 
 Public Class FrmTestMaken
+    Const Vraag = "Vraag"
+    Const TekstTussendoor = "Tekst tussendoor"
+    Const OpenVraag = "Open vraag"
+
     Dim document As XmlReader
     Dim question As String = ""
     Dim answers As String = ""
@@ -117,16 +122,6 @@ Public Class FrmTestMaken
         ComboBox1.SelectedItem = temp
     End Sub
 
-    Private Sub rVraag_CheckedChanged(sender As Object, e As EventArgs) Handles rVraag.CheckedChanged
-        If rVraag.Checked Then
-            GroupBox2.Enabled = True
-            GroupBox3.Enabled = False
-        Else
-            GroupBox2.Enabled = False
-            GroupBox3.Enabled = True
-        End If
-    End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim newItem As New ListViewItem("Tekst tussendoor") '// add text Item.
         newItem.SubItems.Add(txtTekst1.Text)
@@ -141,9 +136,9 @@ Public Class FrmTestMaken
 
     Private Sub Save()
         'Create a list
-        Dim questions As New List(Of Question)
+        Dim questions As Question() = {}
         For Each row As ListViewItem In listPanel.Items
-            If row.SubItems(0).Text = "Vraag" Then
+            If row.SubItems(0).Text = Vraag Then
                 Dim tempAnswers As Answer() = {}
                 Dim i = 0
                 'Split answers to array
@@ -152,14 +147,25 @@ Public Class FrmTestMaken
                 Next
                 'Add to list
                 questions.Add(New Question(row.SubItems(1).Text, tempAnswers, row.SubItems(5).Text, 1))
-            Else
+            ElseIf row.SubItems(0).Text = TekstTussendoor Then
                 questions.Add(New Question(row.SubItems(1).Text, row.SubItems(2).Text))
+
+            ElseIf row.SubItems(0).Text = OpenVraag Then
+                Dim openQuestion As New Question
+                openQuestion.text = row.SubItems(1).Text
+                questions.Add(openQuestion)
             End If
         Next
 
+        Dim test As New Test()
+        test.author = "Koen! :-)"
+        'TODO: Create way to use user input for author and comment.
+        test.questions = questions
+
+
         Dim objStreamWriter As New IO.StreamWriter(SaveFileDialog1.FileName)
         'Serialize list
-        objStreamWriter.Write(JsonConvert.SerializeObject(questions, Newtonsoft.Json.Formatting.Indented))
+        objStreamWriter.Write(JsonConvert.SerializeObject(test, Newtonsoft.Json.Formatting.Indented))
         objStreamWriter.Close()
     End Sub
 
@@ -180,24 +186,29 @@ Public Class FrmTestMaken
             Dim JSONdeserialized = JsonConvert.DeserializeObject(output)
 
             'Loop through questions
-            For Each item In JSONdeserialized
+            For Each item In JSONdeserialized("questions")
                 Dim newItem
                 'Check type
                 If item("text").ToString() <> "" Then
-                    newItem = New ListViewItem("Vraag") '// add text Item.
-                    newItem.SubItems.Add(item("text").ToString())
-                    Dim answerString As String = ""
-                    For Each answer In item("answers")
-                        'Add answers to string, split by ##
-                        answerString += answer("text").ToString() & "##"
-                    Next
-                    'Remove last ##, why would we want that? :-)
-                    newItem.SubItems.Add(answerString.TrimEnd("##"))
-                    Dim indexRightAnswer As Integer = Val(Replace(item("rightAnswer").ToString(), "b", ""))
-                    'Convert to val, replace bn to n.
-                    newItem.SubItems.Add(item("answers")(indexRightAnswer).ToString())
-                    newItem.SubItems.Add(item("answers").Count)
-                    newItem.SubItems.Add(item("rightAnswer").ToString())
+                    If item("answers").ToString() = "" Then
+                        newItem = New ListViewItem(OpenVraag) '// add text Item.
+                        newItem.SubItems.Add(item("text").ToString())
+                    Else
+                        newItem = New ListViewItem(Vraag) '// add text Item.
+                        newItem.SubItems.Add(item("text").ToString())
+                        Dim answerString As String = ""
+                        For Each answer In item("answers")
+                            'Add answers to string, split by ##
+                            answerString += answer("text").ToString() & "##"
+                        Next
+                        'Remove last ##, why would we want that? :-)
+                        newItem.SubItems.Add(answerString.TrimEnd("##"))
+                        Dim indexRightAnswer As Integer = Val(Replace(item("rightAnswer").ToString(), "b", ""))
+                        'Convert to val, replace bn to n.
+                        newItem.SubItems.Add(item("answers")(indexRightAnswer).ToString())
+                        newItem.SubItems.Add(item("answers").Count)
+                        newItem.SubItems.Add(item("rightAnswer").ToString())
+                    End If
                 Else
                     newItem = New ListViewItem("Tekst tussendoor") '// add text Item.
                     newItem.SubItems.Add(item("text1").ToString())
@@ -206,7 +217,7 @@ Public Class FrmTestMaken
                 'Look whether the database with existing questions is building. Will cause duplicates if not properly handled.
                 If buildDatabase = True Then
                     listDB.Items.Add(newItem)
-                Else 
+                Else
                     listPanel.Items.Add(newItem)
                 End If
 
@@ -221,7 +232,7 @@ Public Class FrmTestMaken
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs)
     End Sub
 
-    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
+    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs)
         For Each i As ListViewItem In listPanel.SelectedItems
             listPanel.Items.Remove(i)
         Next
@@ -311,19 +322,13 @@ Public Class FrmTestMaken
         Try
             Dim lvi As ListViewItem
             For Each lvi In listPanel.SelectedItems
-                If lvi.SubItems(0).Text = "Vraag" Then
-                    rVraag.Checked = True
-                    rTekstTussendoor.Checked = False
+                If lvi.SubItems(0).Text = Vraag Then
                     txtQuestion.Text = lvi.SubItems(1).Text
                     txtAnswers.Text = Replace(lvi.SubItems(2).Text, "##", vbNewLine)
                     ComboBox1.SelectedIndex = Val(Replace(lvi.SubItems(5).Text, "b", "") - 1)
-                ElseIf lvi.SubItems(0).Text = "Open vraag" Then
-                    rVraag.Checked = True
-                    rTekstTussendoor.Checked = False
+                ElseIf lvi.SubItems(0).Text = OpenVraag Then
                     txtQuestion.Text = lvi.SubItems(1).Text
-                ElseIf lvi.SubItems(0).Text = "Tekst tussendoor" Then
-                    rVraag.Checked = False
-                    rTekstTussendoor.Checked = True
+                ElseIf lvi.SubItems(0).Text = TekstTussendoor Then
                     txtTekst1.Text = lvi.SubItems(1).Text
                     txtTekst2.Text = lvi.SubItems(2).Text
                 End If
@@ -333,7 +338,7 @@ Public Class FrmTestMaken
         End Try
     End Sub
 
-    Private Sub ToolStripButton2_Click_1(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+    Private Sub ToolStripButton2_Click_1(sender As Object, e As EventArgs)
         btnBewerken()
     End Sub
 

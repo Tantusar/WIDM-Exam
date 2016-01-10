@@ -33,10 +33,10 @@ Public Class FrmTest
             Dim output As String = objStreamReader.ReadToEnd()
             objStreamReader.Close()
 
-            Dim JSONdeserialized As Question() = JsonConvert.DeserializeObject(Of Question())(output)
+            Dim JSONdeserialized As Test = JsonConvert.DeserializeObject(Of Test)(output)
 
             'Loop through questions
-            For Each item In JSONdeserialized
+            For Each item In JSONdeserialized.questions
                 'Add them to the list
                 Questions.Add(item)
             Next
@@ -478,7 +478,7 @@ Public Class FrmTest
                         txtQuestion.Text = Questions(index).text
                     End If
                     'Looking for an open question, if not found, it will continue to load the answers
-                    If Questions(index).answers.Count = 0 Then
+                    If IsNothing(Questions(index).answers) Then
                         t1.Visible = True
                         t2.Visible = True
                         t3.Visible = True

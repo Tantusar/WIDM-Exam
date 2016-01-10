@@ -108,6 +108,8 @@
     <Compile Include="classAnswer.vb" />
     <Compile Include="classEnDe.vb" />
     <Compile Include="classQuestion.vb" />
+    <Compile Include="classTest.vb" />
+    <Compile Include="classTheme.vb" />
     <Compile Include="eClient.vb" />
     <Compile Include="eIO.vb" />
     <Compile Include="eLoadSettings.vb" />
@@ -141,6 +143,12 @@
       <DependentUpon>FrmOver.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmOver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTheme.Designer.vb">
+      <DependentUpon>FrmTheme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTheme.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmUpdater.designer.vb">
@@ -284,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOver.resx">
       <DependentUpon>FrmOver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTheme.resx">
+      <DependentUpon>FrmTheme.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdater.en.resx">
       <DependentUpon>FrmUpdater.vb</DependentUpon>

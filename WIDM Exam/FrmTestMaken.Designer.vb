@@ -52,33 +52,27 @@ Partial Class FrmTestMaken
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtTekst2 = New System.Windows.Forms.TextBox()
         Me.txtTekst1 = New System.Windows.Forms.TextBox()
-        Me.rTekstTussendoor = New System.Windows.Forms.RadioButton()
-        Me.rVraag = New System.Windows.Forms.RadioButton()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSplitButton1 = New System.Windows.Forms.ToolStripSplitButton()
         Me.OudeTestOpenenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VersleuteldeTestOpenenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton7 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -94,15 +88,22 @@ Partial Class FrmTestMaken
         Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.GroupBox2.SuspendLayout
         Me.GroupBox1.SuspendLayout
         Me.GroupBox3.SuspendLayout
-        Me.Panel1.SuspendLayout
         Me.ToolStrip2.SuspendLayout
-        Me.Panel2.SuspendLayout
         CType(Me.NumericUpDown1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel3.SuspendLayout
+        CType(Me.SplitContainer1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SplitContainer1.Panel1.SuspendLayout
+        Me.SplitContainer1.Panel2.SuspendLayout
+        Me.SplitContainer1.SuspendLayout
+        CType(Me.SplitContainer2,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SplitContainer2.Panel1.SuspendLayout
+        Me.SplitContainer2.Panel2.SuspendLayout
+        Me.SplitContainer2.SuspendLayout
         Me.SuspendLayout
         '
         'SaveFileDialog1
@@ -111,8 +112,8 @@ Partial Class FrmTestMaken
         '
         'listPanel
         '
-        Me.listPanel.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.cmType, Me.cmQuestion, Me.cmAnswers, Me.cmRightAnswer, Me.cmAnswersCount, Me.cmRawRightAnswer})
         resources.ApplyResources(Me.listPanel, "listPanel")
+        Me.listPanel.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.cmType, Me.cmQuestion, Me.cmAnswers, Me.cmRightAnswer, Me.cmAnswersCount, Me.cmRawRightAnswer})
         Me.listPanel.FullRowSelect = true
         Me.listPanel.GridLines = true
         Me.listPanel.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {CType(resources.GetObject("listPanel.Groups"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups1"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups2"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups3"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups4"),System.Windows.Forms.ListViewGroup)})
@@ -150,7 +151,6 @@ Partial Class FrmTestMaken
         '
         'GroupBox2
         '
-        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.txtQuestion)
         Me.GroupBox2.Controls.Add(Me.Button3)
@@ -162,6 +162,7 @@ Partial Class FrmTestMaken
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label3)
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.TabStop = false
         '
@@ -234,7 +235,6 @@ Partial Class FrmTestMaken
         '
         'GroupBox3
         '
-        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
         Me.GroupBox3.Controls.Add(Me.listDB)
         Me.GroupBox3.Controls.Add(Me.Button4)
         Me.GroupBox3.Controls.Add(Me.Button2)
@@ -242,6 +242,7 @@ Partial Class FrmTestMaken
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.txtTekst2)
         Me.GroupBox3.Controls.Add(Me.txtTekst1)
+        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.TabStop = false
         '
@@ -312,38 +313,13 @@ Partial Class FrmTestMaken
         resources.ApplyResources(Me.txtTekst1, "txtTekst1")
         Me.txtTekst1.Name = "txtTekst1"
         '
-        'rTekstTussendoor
-        '
-        resources.ApplyResources(Me.rTekstTussendoor, "rTekstTussendoor")
-        Me.rTekstTussendoor.Name = "rTekstTussendoor"
-        Me.rTekstTussendoor.UseVisualStyleBackColor = true
-        '
-        'rVraag
-        '
-        resources.ApplyResources(Me.rVraag, "rVraag")
-        Me.rVraag.Checked = true
-        Me.rVraag.Name = "rVraag"
-        Me.rVraag.TabStop = true
-        Me.rVraag.UseVisualStyleBackColor = true
-        '
-        'Label7
-        '
-        resources.ApplyResources(Me.Label7, "Label7")
-        Me.Label7.Name = "Label7"
-        '
         'OpenFileDialog1
         '
         resources.ApplyResources(Me.OpenFileDialog1, "OpenFileDialog1")
         '
-        'Panel1
-        '
-        resources.ApplyResources(Me.Panel1, "Panel1")
-        Me.Panel1.Controls.Add(Me.listPanel)
-        Me.Panel1.Name = "Panel1"
-        '
         'ToolStrip2
         '
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton4, Me.ToolStripSplitButton1, Me.ToolStripSeparator1, Me.ToolStripButton3, Me.ToolStripButton5, Me.ToolStripSeparator2, Me.ToolStripButton2, Me.ToolStripSeparator3, Me.ToolStripButton6, Me.ToolStripSeparator4, Me.ToolStripButton7})
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton4, Me.ToolStripSplitButton1, Me.ToolStripSeparator1, Me.ToolStripButton5, Me.ToolStripSeparator3, Me.ToolStripButton6, Me.ToolStripSeparator4, Me.ToolStripButton7, Me.ToolStripButton1})
         resources.ApplyResources(Me.ToolStrip2, "ToolStrip2")
         Me.ToolStrip2.Name = "ToolStrip2"
         '
@@ -373,25 +349,10 @@ Partial Class FrmTestMaken
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
         '
-        'ToolStripButton3
-        '
-        resources.ApplyResources(Me.ToolStripButton3, "ToolStripButton3")
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        '
         'ToolStripButton5
         '
         resources.ApplyResources(Me.ToolStripButton5, "ToolStripButton5")
         Me.ToolStripButton5.Name = "ToolStripButton5"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        resources.ApplyResources(Me.ToolStripSeparator2, "ToolStripSeparator2")
-        '
-        'ToolStripButton2
-        '
-        resources.ApplyResources(Me.ToolStripButton2, "ToolStripButton2")
-        Me.ToolStripButton2.Name = "ToolStripButton2"
         '
         'ToolStripSeparator3
         '
@@ -410,20 +371,18 @@ Partial Class FrmTestMaken
         '
         'ToolStripButton7
         '
+        Me.ToolStripButton7.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         resources.ApplyResources(Me.ToolStripButton7, "ToolStripButton7")
         Me.ToolStripButton7.Name = "ToolStripButton7"
+        '
+        'ToolStripButton1
+        '
+        resources.ApplyResources(Me.ToolStripButton1, "ToolStripButton1")
+        Me.ToolStripButton1.Name = "ToolStripButton1"
         '
         'Timer1
         '
         Me.Timer1.Interval = 550
-        '
-        'Panel2
-        '
-        resources.ApplyResources(Me.Panel2, "Panel2")
-        Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.rVraag)
-        Me.Panel2.Controls.Add(Me.rTekstTussendoor)
-        Me.Panel2.Name = "Panel2"
         '
         'Label9
         '
@@ -508,36 +467,64 @@ Partial Class FrmTestMaken
         Me.Button8.Name = "Button8"
         Me.Button8.UseVisualStyleBackColor = true
         '
+        'SplitContainer1
+        '
+        resources.ApplyResources(Me.SplitContainer1, "SplitContainer1")
+        Me.SplitContainer1.Name = "SplitContainer1"
+        '
+        'SplitContainer1.Panel1
+        '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.listPanel)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button8)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button7)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button5)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button6)
+        '
+        'SplitContainer1.Panel2
+        '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
+        '
+        'SplitContainer2
+        '
+        resources.ApplyResources(Me.SplitContainer2, "SplitContainer2")
+        Me.SplitContainer2.Name = "SplitContainer2"
+        '
+        'SplitContainer2.Panel1
+        '
+        Me.SplitContainer2.Panel1.Controls.Add(Me.GroupBox2)
+        '
+        'SplitContainer2.Panel2
+        '
+        Me.SplitContainer2.Panel2.Controls.Add(Me.GroupBox3)
+        '
         'FrmTestMaken
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.Controls.Add(Me.Button8)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.rGroepsModusTest)
         Me.Controls.Add(Me.rNormalTest)
-        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.ToolStrip2)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "FrmTestMaken"
         Me.GroupBox2.ResumeLayout(false)
         Me.GroupBox2.PerformLayout
         Me.GroupBox1.ResumeLayout(false)
         Me.GroupBox3.ResumeLayout(false)
         Me.GroupBox3.PerformLayout
-        Me.Panel1.ResumeLayout(false)
         Me.ToolStrip2.ResumeLayout(false)
         Me.ToolStrip2.PerformLayout
-        Me.Panel2.ResumeLayout(false)
-        Me.Panel2.PerformLayout
         CType(Me.NumericUpDown1,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel3.ResumeLayout(false)
         Me.Panel3.PerformLayout
+        Me.SplitContainer1.Panel1.ResumeLayout(false)
+        Me.SplitContainer1.Panel2.ResumeLayout(false)
+        CType(Me.SplitContainer1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.SplitContainer1.ResumeLayout(false)
+        Me.SplitContainer2.Panel1.ResumeLayout(false)
+        Me.SplitContainer2.Panel2.ResumeLayout(false)
+        CType(Me.SplitContainer2,System.ComponentModel.ISupportInitialize).EndInit
+        Me.SplitContainer2.ResumeLayout(false)
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -562,22 +549,16 @@ End Sub
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents txtTekst2 As System.Windows.Forms.TextBox
     Friend WithEvents txtTekst1 As System.Windows.Forms.TextBox
-    Friend WithEvents rTekstTussendoor As System.Windows.Forms.RadioButton
-    Friend WithEvents rVraag As System.Windows.Forms.RadioButton
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents ToolStrip2 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton4 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents ToolStripButton5 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents rNormalTest As System.Windows.Forms.RadioButton
     Friend WithEvents rGroepsModusTest As System.Windows.Forms.RadioButton
@@ -607,10 +588,11 @@ End Sub
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents OpenFileDialog4 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents cmRawRightAnswer As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents SplitContainer2 As SplitContainer
 End Class
