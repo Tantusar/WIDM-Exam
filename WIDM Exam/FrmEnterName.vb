@@ -2,8 +2,8 @@
 
 Public Class FrmEnterName
     Public closePass As Boolean = False
-    Dim ReadOnly checkTested As New ListBox
-    Private Declare Function SetWindowTheme Lib "uxtheme"(
+    ReadOnly checkTested As New ListBox
+    Private Declare Function SetWindowTheme Lib "uxtheme" (
                                                           hWnd As IntPtr,
                                                           ByRef pszSubAppName As String,
                                                           ByRef pszSubIdList As String) _
@@ -107,16 +107,18 @@ Public Class FrmEnterName
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         expandToMonitor(Me)
 
+        FrmOpenTest.LoadTheme()
+
         If FrmOpenTest.rGeluidTest.Checked = False Then
             WMP1.settings.mute = True
         End If
 
-        Panel1.Top = (Me.Height/2) - (Panel1.Height/2)
-        Panel1.Left = (Me.Width/2) - (Panel1.Width/2)
-        Panel2.Top = (Me.Height/2) - (Panel2.Height/2)
-        Panel2.Left = (Me.Width/2) - (Panel2.Width/2)
-        Panel3.Top = (Me.Height/2) - (Panel3.Height/2)
-        Panel3.Left = (Me.Width/2) - (Panel3.Width/2)
+        Panel1.Top = (Me.Height / 2) - (Panel1.Height / 2)
+        Panel1.Left = (Me.Width / 2) - (Panel1.Width / 2)
+        Panel2.Top = (Me.Height / 2) - (Panel2.Height / 2)
+        Panel2.Left = (Me.Width / 2) - (Panel2.Width / 2)
+        Panel3.Top = (Me.Height / 2) - (Panel3.Height / 2)
+        Panel3.Left = (Me.Width / 2) - (Panel3.Width / 2)
         If FrmOpenTest.rGroep.Checked Then
             If FrmOpenTest.rCombobox.Checked Then
                 If My.Settings.language = "en" Then
@@ -143,155 +145,203 @@ Public Class FrmEnterName
 
         ComboBox1.Visible = True
         TextBox1.Visible = True
-        If FrmOpenTest.rLucidaConsole.Checked Then
-            'Default
-            Label1.Font = New Font("Lucida Console", 14, FontStyle.Regular)
-            TextBox1.Font = New Font("Lucida Console", 18, FontStyle.Regular)
-            'US
-            Label5.Font = New Font("Lucida Console", 36, FontStyle.Regular)
-            TextBox3.Font = New Font("Lucida Console", 36, FontStyle.Regular)
-            'Nostalgia
-            Label2.Font = New Font("Lucida Console", 12, FontStyle.Regular)
-            TextBox2.Font = New Font("Lucida Console", 12, FontStyle.Regular)
-            Button1.Font = New Font("Lucida Console", 11.25, FontStyle.Regular)
-        ElseIf FrmOpenTest.rOCRAEXT.Checked Then
-            'Default
-            Label1.Font = GetInstance(14, FontStyle.Regular)
-            TextBox1.Font = GetInstance(18, FontStyle.Regular)
-            'US
-            Label5.Font = GetInstance(36, FontStyle.Regular)
-            TextBox3.Font = GetInstance(36, FontStyle.Regular)
-            'Nostalgia
-            Label2.Font = GetInstance(12, FontStyle.Regular)
-            TextBox2.Font = GetInstance(12, FontStyle.Regular)
-            Button1.Font = GetInstance(11.25, FontStyle.Regular)
-        ElseIf FrmOpenTest.rComicSansMS.Checked Then
-            'Default
-            Label1.Font = New Font("Comic Sans MS", 14, FontStyle.Regular)
-            TextBox1.Font = New Font("Comic Sans MS", 18, FontStyle.Regular)
-            'US
-            Label5.Font = New Font("Comic Sans MS", 36, FontStyle.Regular)
-            TextBox3.Font = New Font("Comic Sans MS", 36, FontStyle.Regular)
-            'Nostalgia
-            Label2.Font = New Font("Comic Sans MS", 12, FontStyle.Regular)
-            TextBox2.Font = New Font("Comic Sans MS", 12, FontStyle.Regular)
-            Button1.Font = New Font("Comic Sans MS", 11.25, FontStyle.Regular)
-        ElseIf FrmOpenTest.rMicrosoftSansSerif.Checked Then
-            'Default
-            Label1.Font = New Font("Microsoft Sans Serif", 14, FontStyle.Regular)
-            TextBox1.Font = New Font("Microsoft Sans Serif", 18, FontStyle.Regular)
-            'US
-            Label5.Font = New Font("Microsoft Sans Serif", 36, FontStyle.Regular)
-            TextBox3.Font = New Font("Microsoft Sans Serif", 36, FontStyle.Regular)
-            'Nostalgia
-            Label2.Font = New Font("Microsoft Sans Serif", 12, FontStyle.Regular)
-            TextBox2.Font = New Font("Microsoft Sans Serif", 12, FontStyle.Regular)
-            Button1.Font = New Font("Microsoft Sans Serif", 11.25, FontStyle.Regular)
-        ElseIf FrmOpenTest.rUbuntuCondensed.Checked Then
-            'Default
-            Label1.Font = New Font("Ubuntu Condensed", 14)
-            TextBox1.Font = New Font("Ubuntu Condensed", 18)
-            'US
-            Label5.Font = New Font("Ubuntu Condensed", 36)
-            TextBox3.Font = New Font("Ubuntu Condensed", 36)
-            'Nostalgia
-            Label2.Font = New Font("Ubuntu Condensed", 12, FontStyle.Regular)
-            TextBox2.Font = New Font("Ubuntu Condensed", 12, FontStyle.Regular)
-            Button1.Font = New Font("Ubuntu Condensed", 11.25, FontStyle.Regular)
-        ElseIf FrmOpenTest.rMicroFLF.Checked Then
-            'Default
-            Label1.Font = New Font("MicroFLF", 14, FontStyle.Italic)
-            TextBox1.Font = New Font("MicroFLF", 18, FontStyle.Bold Or FontStyle.Italic)
-            'US
-            Label5.Font = New Font("MicroFLF", 36, FontStyle.Italic)
-            TextBox3.Font = New Font("MicroFLF", 36, FontStyle.Bold Or FontStyle.Italic)
-            'Nostalgia
-            Label2.Font = New Font("MicroFLF", 12, FontStyle.Regular)
-            TextBox2.Font = New Font("MicroFLF", 12, FontStyle.Regular)
-            Button1.Font = New Font("MicroFLF", 11.25, FontStyle.Regular)
-        ElseIf FrmOpenTest.rCustomFont.Checked Then
-            'Default
-            Label1.Font = New Font(My.Settings.customFont.OriginalFontName, 14, FontStyle.Regular)
-            TextBox1.Font = New Font(My.Settings.customFont.OriginalFontName, 18, FontStyle.Regular)
-            'US
-            Label5.Font = New Font(My.Settings.customFont.OriginalFontName, 36, FontStyle.Regular)
-            TextBox3.Font = New Font(My.Settings.customFont.OriginalFontName, 36, FontStyle.Regular)
-            'Nostalgia
-            Label2.Font = New Font(My.Settings.customFont.OriginalFontName, 12, FontStyle.Regular)
-            TextBox2.Font = New Font(My.Settings.customFont.OriginalFontName, 12, FontStyle.Regular)
-            Button1.Font = New Font(My.Settings.customFont.OriginalFontName, 11.25, FontStyle.Regular)
-        End If
+
+        'Default
+        Label1.Font = FrmOpenTest.theme.fontIntroText
+        TextBox1.Font = FrmOpenTest.theme.fontIntroTextfield
+
+        Label1.ForeColor = FrmOpenTest.theme.colorIntroText
+        TextBox1.ForeColor = FrmOpenTest.theme.colorIntroTextfield
+        'US
+        Label5.Font = FrmOpenTest.theme.fontIntroText
+        TextBox3.Font = FrmOpenTest.theme.fontIntroTextfield
+        'Nostalgia
+        Label2.Font = FrmOpenTest.theme.fontIntroText
+        TextBox2.Font = FrmOpenTest.theme.fontIntroTextfield
+        Button1.Font = FrmOpenTest.theme.fontIntroText
+
+        'If FrmOpenTest.rLucidaConsole.Checked Then
+        '    'Default
+        '    Label1.Font = New Font("Lucida Console", 14, FontStyle.Regular)
+        '    TextBox1.Font = New Font("Lucida Console", 18, FontStyle.Regular)
+        '    'US
+        '    Label5.Font = New Font("Lucida Console", 36, FontStyle.Regular)
+        '    TextBox3.Font = New Font("Lucida Console", 36, FontStyle.Regular)
+        '    'Nostalgia
+        '    Label2.Font = New Font("Lucida Console", 12, FontStyle.Regular)
+        '    TextBox2.Font = New Font("Lucida Console", 12, FontStyle.Regular)
+        '    Button1.Font = New Font("Lucida Console", 11.25, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rOCRAEXT.Checked Then
+        '    'Default
+        '    Label1.Font = GetInstance(14, FontStyle.Regular)
+        '    TextBox1.Font = GetInstance(18, FontStyle.Regular)
+        '    'US
+        '    Label5.Font = GetInstance(36, FontStyle.Regular)
+        '    TextBox3.Font = GetInstance(36, FontStyle.Regular)
+        '    'Nostalgia
+        '    Label2.Font = GetInstance(12, FontStyle.Regular)
+        '    TextBox2.Font = GetInstance(12, FontStyle.Regular)
+        '    Button1.Font = GetInstance(11.25, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rComicSansMS.Checked Then
+        '    'Default
+        '    Label1.Font = New Font("Comic Sans MS", 14, FontStyle.Regular)
+        '    TextBox1.Font = New Font("Comic Sans MS", 18, FontStyle.Regular)
+        '    'US
+        '    Label5.Font = New Font("Comic Sans MS", 36, FontStyle.Regular)
+        '    TextBox3.Font = New Font("Comic Sans MS", 36, FontStyle.Regular)
+        '    'Nostalgia
+        '    Label2.Font = New Font("Comic Sans MS", 12, FontStyle.Regular)
+        '    TextBox2.Font = New Font("Comic Sans MS", 12, FontStyle.Regular)
+        '    Button1.Font = New Font("Comic Sans MS", 11.25, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rMicrosoftSansSerif.Checked Then
+        '    'Default
+        '    Label1.Font = New Font("Microsoft Sans Serif", 14, FontStyle.Regular)
+        '    TextBox1.Font = New Font("Microsoft Sans Serif", 18, FontStyle.Regular)
+        '    'US
+        '    Label5.Font = New Font("Microsoft Sans Serif", 36, FontStyle.Regular)
+        '    TextBox3.Font = New Font("Microsoft Sans Serif", 36, FontStyle.Regular)
+        '    'Nostalgia
+        '    Label2.Font = New Font("Microsoft Sans Serif", 12, FontStyle.Regular)
+        '    TextBox2.Font = New Font("Microsoft Sans Serif", 12, FontStyle.Regular)
+        '    Button1.Font = New Font("Microsoft Sans Serif", 11.25, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rUbuntuCondensed.Checked Then
+        '    'Default
+        '    Label1.Font = New Font("Ubuntu Condensed", 14)
+        '    TextBox1.Font = New Font("Ubuntu Condensed", 18)
+        '    'US
+        '    Label5.Font = New Font("Ubuntu Condensed", 36)
+        '    TextBox3.Font = New Font("Ubuntu Condensed", 36)
+        '    'Nostalgia
+        '    Label2.Font = New Font("Ubuntu Condensed", 12, FontStyle.Regular)
+        '    TextBox2.Font = New Font("Ubuntu Condensed", 12, FontStyle.Regular)
+        '    Button1.Font = New Font("Ubuntu Condensed", 11.25, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rMicroFLF.Checked Then
+        '    'Default
+        '    Label1.Font = New Font("MicroFLF", 14, FontStyle.Italic)
+        '    TextBox1.Font = New Font("MicroFLF", 18, FontStyle.Bold Or FontStyle.Italic)
+        '    'US
+        '    Label5.Font = New Font("MicroFLF", 36, FontStyle.Italic)
+        '    TextBox3.Font = New Font("MicroFLF", 36, FontStyle.Bold Or FontStyle.Italic)
+        '    'Nostalgia
+        '    Label2.Font = New Font("MicroFLF", 12, FontStyle.Regular)
+        '    TextBox2.Font = New Font("MicroFLF", 12, FontStyle.Regular)
+        '    Button1.Font = New Font("MicroFLF", 11.25, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rCustomFont.Checked Then
+        '    'Default
+        '    Label1.Font = New Font(My.Settings.customFont.OriginalFontName, 14, FontStyle.Regular)
+        '    TextBox1.Font = New Font(My.Settings.customFont.OriginalFontName, 18, FontStyle.Regular)
+        '    'US
+        '    Label5.Font = New Font(My.Settings.customFont.OriginalFontName, 36, FontStyle.Regular)
+        '    TextBox3.Font = New Font(My.Settings.customFont.OriginalFontName, 36, FontStyle.Regular)
+        '    'Nostalgia
+        '    Label2.Font = New Font(My.Settings.customFont.OriginalFontName, 12, FontStyle.Regular)
+        '    TextBox2.Font = New Font(My.Settings.customFont.OriginalFontName, 12, FontStyle.Regular)
+        '    Button1.Font = New Font(My.Settings.customFont.OriginalFontName, 11.25, FontStyle.Regular)
+        'End If
         'If FrmOpenTest.rOCRAEXT.Checked Then
         '    Label1.Font = loadFont.GetInstance(14, FontStyle.Regular)
         '    TextBox1.Font = loadFont.GetInstance(11, FontStyle.Regular)
         'End If
-        Me.WindowState = FormWindowState.Maximized
-        If FrmOpenTest.rOudeMuziek.Checked Then
-            WMP1.URL = CurDir() & "\Geluid\test_old.mp3"
-            WMP1.settings.setMode("loop", True)
-            WMP1.Ctlcontrols.play()
-        Else
-            WMP1.URL = CurDir() & "\Geluid\test.mp3"
+
+        If FrmOpenTest.theme.musicTestEnabled Then
+            WMP1.URL = CurDir() & "\Geluid\" & FrmOpenTest.theme.musicTest
             WMP1.settings.setMode("loop", True)
             WMP1.Ctlcontrols.play()
         End If
-        If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUK.Checked Then
-            My.Computer.Audio.Stop()
-
-            If FrmOpenTest.rNostalgia.Checked Then
-                PictureBox1.Image = My.Resources.WIDM_logo_2004
-                WMP1.URL = CurDir() & "\Geluid\test_old.mp3"
-            Else
-                PictureBox1.Image = My.Resources.UK_Logo
-                WMP1.URL = CurDir() & "\Geluid\test_UK.mp3"
-            End If
-
-            WMP1.settings.setMode("loop", True)
-            WMP1.Ctlcontrols.play()
-            Label1.Font = New Font("Comic Sans MS", 14.25, FontStyle.Regular)
+        If FrmOpenTest.theme.logoIntroEnabled Then
+            PictureBox1.Image = FrmOpenTest.theme.logoIntro
+        Else
+            PictureBox1.Visible = False
+        End If
+        If FrmOpenTest.theme.backgroundIntroEnabled Then
+            BackgroundImage = FrmOpenTest.theme.backgroundIntro
+        Else
+            BackgroundImage = Nothing
+        End If
+        BackColor = FrmOpenTest.theme.backgroundColorIntro
+        If FrmOpenTest.theme.introStyle = Theme.Style.Old Then
             Panel1.Visible = False
             Panel2.Visible = True
-            Button1.FlatStyle = FlatStyle.System
-            SetWindowTheme(Button1.Handle, "BUTTON", "")
-            SetWindowTheme(TextBox2.Handle, "TEXTBOX", "")
-        ElseIf FrmOpenTest.rUS.Checked Then
-            My.Computer.Audio.Stop()
-            WMP1.URL = CurDir() & "\Geluid\test_US.mp3"
-            WMP1.settings.setMode("loop", True)
-            WMP1.Ctlcontrols.play()
-            PictureBox1.Image = My.Resources.US_Logo
+            Panel3.Visible = False
+        ElseIf FrmOpenTest.theme.introStyle = Theme.Style.US Then
             Panel1.Visible = False
             Panel2.Visible = False
             Panel3.Visible = True
-            BackgroundImage = My.Resources.US_Background
-            PictureBox1.Hide()
-        ElseIf FrmOpenTest.rFrankrijk.Checked Then
-            PictureBox1.Show()
-            My.Computer.Audio.Stop()
-            WMP1.URL = CurDir() & "\Geluid\test_FR.mp3"
-            WMP1.settings.setMode("loop", True)
-            WMP1.Ctlcontrols.play()
-            PictureBox1.Image = My.Resources.Fr_Logo
-            Panel1.Visible = True
-            Panel2.Visible = False
-            Panel3.Visible = False
-            BackgroundImage = Nothing
         Else
-            PictureBox1.Show()
-            PictureBox1.Image = My.Resources.SmallLogoDark
-            BackgroundImage = Nothing
-
             Panel1.Visible = True
             Panel2.Visible = False
             Panel3.Visible = False
         End If
-        If My.Settings.logo <> "" Then
-            PictureBox1.ImageLocation = My.Settings.logo
-        End If
-        If My.Settings.background <> "" Then
-            Me.BackgroundImage = Image.FromFile(My.Settings.background)
-            Me.BackColor = My.Settings.backgroundColor
-        End If
+        Button1.FlatStyle = FlatStyle.System
+        SetWindowTheme(Button1.Handle, "BUTTON", "")
+        SetWindowTheme(TextBox2.Handle, "TEXTBOX", "")
+
+        'If FrmOpenTest.rOudeMuziek.Checked Then
+        '    WMP1.URL = CurDir() & "\Geluid\test_old.mp3"
+        '    WMP1.settings.setMode("loop", True)
+        '    WMP1.Ctlcontrols.play()
+        'Else
+        '    WMP1.URL = CurDir() & "\Geluid\test.mp3"
+        '    WMP1.settings.setMode("loop", True)
+        '    WMP1.Ctlcontrols.play()
+        'End If
+        'If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUK.Checked Then
+        '    My.Computer.Audio.Stop()
+
+        '    If FrmOpenTest.rNostalgia.Checked Then
+        '        PictureBox1.Image = My.Resources.WIDM_logo_2004
+        '        WMP1.URL = CurDir() & "\Geluid\test_old.mp3"
+        '    Else
+        '        PictureBox1.Image = My.Resources.UK_Logo
+        '        WMP1.URL = CurDir() & "\Geluid\test_UK.mp3"
+        '    End If
+
+        '    WMP1.settings.setMode("loop", True)
+        '    WMP1.Ctlcontrols.play()
+        '    Label1.Font = New Font("Comic Sans MS", 14.25, FontStyle.Regular)
+        '    Panel1.Visible = False
+        '    Panel2.Visible = True
+        '    Button1.FlatStyle = FlatStyle.System
+        '    SetWindowTheme(Button1.Handle, "BUTTON", "")
+        '    SetWindowTheme(TextBox2.Handle, "TEXTBOX", "")
+        'ElseIf FrmOpenTest.rUS.Checked Then
+        '    My.Computer.Audio.Stop()
+        '    WMP1.URL = CurDir() & "\Geluid\test_US.mp3"
+        '    WMP1.settings.setMode("loop", True)
+        '    WMP1.Ctlcontrols.play()
+        '    PictureBox1.Image = My.Resources.US_Logo
+        '    Panel1.Visible = False
+        '    Panel2.Visible = False
+        '    Panel3.Visible = True
+        '    BackgroundImage = My.Resources.US_Background
+        '    PictureBox1.Hide()
+        'ElseIf FrmOpenTest.rFrankrijk.Checked Then
+        '    PictureBox1.Show()
+        '    My.Computer.Audio.Stop()
+        '    WMP1.URL = CurDir() & "\Geluid\test_FR.mp3"
+        '    WMP1.settings.setMode("loop", True)
+        '    WMP1.Ctlcontrols.play()
+        '    PictureBox1.Image = My.Resources.Fr_Logo
+        '    Panel1.Visible = True
+        '    Panel2.Visible = False
+        '    Panel3.Visible = False
+        '    BackgroundImage = Nothing
+        'Else
+        '    PictureBox1.Show()
+        '    PictureBox1.Image = My.Resources.SmallLogoDark
+        '    BackgroundImage = Nothing
+
+        '    Panel1.Visible = True
+        '    Panel2.Visible = False
+        '    Panel3.Visible = False
+        'End If
+        'If My.Settings.logo <> "" Then
+        '    PictureBox1.ImageLocation = My.Settings.logo
+        'End If
+        'If My.Settings.background <> "" Then
+        '    Me.BackgroundImage = Image.FromFile(My.Settings.background)
+        '    Me.BackColor = My.Settings.backgroundColor
+        'End If
         checkTested.Items.Clear()
         If FrmOpenTest.rGroep.Checked Then
             If FrmOpenTest.rCombobox.Checked Then

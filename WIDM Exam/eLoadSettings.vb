@@ -35,15 +35,15 @@ Module eLoadSettings
         End If
         checkFontAvailable()
         'FrmOpenTest.header = My.Resources.header_2014_2
-        If My.Settings.theme = 0 Then
+        If My.Settings.theme_old = 0 Then
             FrmOpenTest.rNewTheme.Checked = True
-        ElseIf My.Settings.theme = 1 Then
+        ElseIf My.Settings.theme_old = 1 Then
             FrmOpenTest.rNostalgia.Checked = True
-        ElseIf My.Settings.theme = 2 Then
+        ElseIf My.Settings.theme_old = 2 Then
             FrmOpenTest.rUS.Checked = True
-        ElseIf My.Settings.theme = 3 Then
+        ElseIf My.Settings.theme_old = 3 Then
             FrmOpenTest.rUK.Checked = True
-        ElseIf My.Settings.theme = 4 Then
+        ElseIf My.Settings.theme_old = 4 Then
             FrmOpenTest.rFrankrijk.Checked = True
         End If
         If My.Settings.rWedstrijd = True Then

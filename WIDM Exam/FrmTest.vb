@@ -62,116 +62,157 @@ Public Class FrmTest
         smallLogo.Image = My.Resources.SmallLogoDark
 
         txtQuestion.Size = New Size(Me.Width - 200 * (FrmOpenTest.dpiPercent.Text / 96), txtQuestion.Size.Height)
-        'txtQuestion.Size = New Size(txtQuestion.Size.Width * (Me.Width / 1024), txtQuestion.Size.Height)
-        If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUK.Checked Then
-            'Fonts are now in the dedicated fonts section
-            txtTekst1.ForeColor = Color.Red
-            txtTekst2.ForeColor = Color.Red
-            txtQuestion.ForeColor = Color.Red
-            t1.ForeColor = Color.Gold
-            t3.ForeColor = Color.Gold
 
-            t2.Image = My.Resources.button_2004
+        txtTekst1.Font = New Font(FrmOpenTest.theme.fontQuestion.OriginalFontName, 36, FontStyle.Regular)
+        txtTekst2.Font = New Font(FrmOpenTest.theme.fontQuestion.OriginalFontName, 36, FontStyle.Regular)
+        txtQuestion.Font = FrmOpenTest.theme.fontQuestion
+        t1.Font = FrmOpenTest.theme.fontAnswers
+        t3.Font = FrmOpenTest.theme.fontAnswers
 
-            If FrmOpenTest.rNostalgia.Checked Then
-                smallLogo.Image = My.Resources.WIDM_logo_2004
-            Else
-                smallLogo.Image = My.Resources.UK_Logo
-            End If
+        txtTekst1.ForeColor = FrmOpenTest.theme.colorQuestion
+        txtTekst2.ForeColor = FrmOpenTest.theme.colorQuestion
+        txtQuestion.ForeColor = FrmOpenTest.theme.colorQuestion
+        Try
+            txtQuestion.TextAlign = FrmOpenTest.theme.questionAlignment
+        Catch ex As Exception
 
-
-            BackgroundImage = Nothing
-        ElseIf FrmOpenTest.rUS.Checked Then
-            'Fonts are now in the dedicated fonts section
-            txtTekst1.ForeColor = Color.White
-            txtTekst1.BackgroundImage = My.Resources.Background_question_US
-            txtTekst1.BackgroundImageLayout = ImageLayout.Stretch
-
-
-            txtTekst2.ForeColor = Color.White
-            txtTekst2.BackgroundImage = My.Resources.Background_question_US
-            txtTekst2.BackgroundImageLayout = ImageLayout.Stretch
-
-
-            txtQuestion.ForeColor = Color.White
-            txtQuestion.TextAlign = ContentAlignment.TopCenter
-            txtQuestion.BackgroundImage = My.Resources.Background_question_US
+        End Try
+        If FrmOpenTest.theme.questionBackgroundEnabled Then
+            txtQuestion.BackgroundImage = FrmOpenTest.theme.questionBackground
             txtQuestion.BackgroundImageLayout = ImageLayout.Stretch
-            t1.ForeColor = Color.White
-            t3.ForeColor = Color.White
-
-            t2.Image = My.Resources.button_2004
-
-
-            smallLogo.Image = Nothing
-
-            BackgroundImage = My.Resources.US_Background
-        ElseIf FrmOpenTest.rFrankrijk.Checked Then
-            txtTekst1.ForeColor = Color.White
-
-            txtTekst2.ForeColor = Color.White
-
-            txtQuestion.ForeColor = Color.White
-            t1.ForeColor = Color.White
-            t3.ForeColor = Color.White
-
-            t2.Image = My.Resources.Fr_unpressed
-
-
-            smallLogo.Image = Nothing
-            smallLogo.BackColor = Color.Transparent
-
-            BackgroundImage = My.Resources.Fr_Background
-        End If
-        If My.Settings.logo <> "" Then
-            smallLogo.ImageLocation = My.Settings.logo
         End If
 
-        If My.Settings.background <> "" Then
-            Me.BackgroundImage = Image.FromFile(My.Settings.background)
-            Me.BackColor = My.Settings.backgroundColor
+        t1.ForeColor = FrmOpenTest.theme.colorAnswers
+        t3.ForeColor = FrmOpenTest.theme.colorAnswers
+
+        t2.Image = FrmOpenTest.theme.button
+
+        If FrmOpenTest.theme.logoTestEnabled Then
+            smallLogo.Image = FrmOpenTest.theme.logoTest
+        Else
+            smallLogo.Hide()
         End If
+        If FrmOpenTest.theme.backgroundTestEnabled Then
+            BackgroundImage = FrmOpenTest.theme.backgroundTest
+        Else
+            BackgroundImage = Nothing
+        End If
+
+        BackColor = FrmOpenTest.theme.backgroundColorTest
+
+
+        'txtQuestion.Size = New Size(txtQuestion.Size.Width * (Me.Width / 1024), txtQuestion.Size.Height)
+        'If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUK.Checked Then
+        '    'Fonts are now in the dedicated fonts section
+        '    txtTekst1.ForeColor = Color.Red
+        '    txtTekst2.ForeColor = Color.Red
+        '    txtQuestion.ForeColor = Color.Red
+        '    t1.ForeColor = Color.Gold
+        '    t3.ForeColor = Color.Gold
+
+        '    t2.Image = My.Resources.button_2004
+
+        '    If FrmOpenTest.rNostalgia.Checked Then
+        '        smallLogo.Image = My.Resources.WIDM_logo_2004
+        '    Else
+        '        smallLogo.Image = My.Resources.UK_Logo
+        '    End If
+
+
+        '    BackgroundImage = Nothing
+        'ElseIf FrmOpenTest.rUS.Checked Then
+        '    'Fonts are now in the dedicated fonts section
+        '    txtTekst1.ForeColor = Color.White
+        '    txtTekst1.BackgroundImage = My.Resources.Background_question_US
+        '    txtTekst1.BackgroundImageLayout = ImageLayout.Stretch
+
+
+        '    txtTekst2.ForeColor = Color.White
+        '    txtTekst2.BackgroundImage = My.Resources.Background_question_US
+        '    txtTekst2.BackgroundImageLayout = ImageLayout.Stretch
+
+
+        '    txtQuestion.ForeColor = Color.White
+        '    txtQuestion.TextAlign = ContentAlignment.TopCenter
+        '    txtQuestion.BackgroundImage = My.Resources.Background_question_US
+        '    txtQuestion.BackgroundImageLayout = ImageLayout.Stretch
+        '    t1.ForeColor = Color.White
+        '    t3.ForeColor = Color.White
+
+        '    t2.Image = My.Resources.button_2004
+
+
+        '    smallLogo.Image = Nothing
+
+        '    BackgroundImage = My.Resources.US_Background
+        'ElseIf FrmOpenTest.rFrankrijk.Checked Then
+        '    txtTekst1.ForeColor = Color.White
+
+        '    txtTekst2.ForeColor = Color.White
+
+        '    txtQuestion.ForeColor = Color.White
+        '    t1.ForeColor = Color.White
+        '    t3.ForeColor = Color.White
+
+        '    t2.Image = My.Resources.Fr_unpressed
+
+
+        '    smallLogo.Image = Nothing
+        '    smallLogo.BackColor = Color.Transparent
+
+        '    BackgroundImage = My.Resources.Fr_Background
+        'End If
+        'If My.Settings.logo <> "" Then
+        '    smallLogo.ImageLocation = My.Settings.logo
+        'End If
+
+        'If My.Settings.background <> "" Then
+        '    Me.BackgroundImage = Image.FromFile(My.Settings.background)
+        '    Me.BackColor = My.Settings.backgroundColor
+        'End If
 
         'Dedicated font section
-        If FrmOpenTest.rLucidaConsole.Checked Then
-            'Is Lucida Console by default, no need to set it. 
-        ElseIf FrmOpenTest.rOCRAEXT.Checked Then
-            txtTekst1.Font = GetInstance(36, FontStyle.Regular)
-            txtTekst2.Font = GetInstance(36, FontStyle.Regular)
-            txtQuestion.Font = GetInstance(20.25, FontStyle.Regular)
-            t1.Font = GetInstance(16, FontStyle.Regular)
-            t3.Font = GetInstance(16, FontStyle.Regular)
-        ElseIf FrmOpenTest.rComicSansMS.Checked Then
-            txtTekst1.Font = New Font("Comic Sans MS", 36, FontStyle.Regular)
-            txtTekst2.Font = New Font("Comic Sans MS", 36, FontStyle.Regular)
-            txtQuestion.Font = New Font("Comic Sans MS", 20, FontStyle.Regular)
-            t1.Font = New Font("Comic Sans MS", 16, FontStyle.Regular)
-            t3.Font = New Font("Comic Sans MS", 16, FontStyle.Regular)
-        ElseIf FrmOpenTest.rMicrosoftSansSerif.Checked Then
-            txtTekst1.Font = New Font("Microsoft Sans Serif", 36, FontStyle.Regular)
-            txtTekst2.Font = New Font("Microsoft Sans Serif", 36, FontStyle.Regular)
-            txtQuestion.Font = New Font("Microsoft Sans Serif", 20, FontStyle.Bold)
-            t1.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Regular)
-            t3.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Regular)
-        ElseIf FrmOpenTest.rUbuntuCondensed.Checked Then
-            txtTekst1.Font = New Font("Ubuntu Condensed", 36)
-            txtTekst2.Font = New Font("Ubuntu Condensed", 36)
-            txtQuestion.Font = New Font("Ubuntu Condensed", 20.25)
-            t1.Font = New Font("Ubuntu Condensed", 16)
-            t3.Font = New Font("Ubuntu Condensed", 16)
-        ElseIf FrmOpenTest.rMicroFLF.Checked Then
-            txtTekst1.Font = New Font("MicroFLF", 36, FontStyle.Italic)
-            txtTekst2.Font = New Font("MicroFLF", 36, FontStyle.Italic)
-            txtQuestion.Font = New Font("MicroFLF", 24, FontStyle.Italic)
-            t1.Font = New Font("MicroFLF", 16, FontStyle.Bold Or FontStyle.Italic)
-            t3.Font = New Font("MicroFLF", 16, FontStyle.Bold Or FontStyle.Italic)
-        ElseIf FrmOpenTest.rCustomFont.Checked Then
-            txtTekst1.Font = New Font(My.Settings.customFont.OriginalFontName, 36)
-            txtTekst2.Font = New Font(My.Settings.customFont.OriginalFontName, 36)
-            txtQuestion.Font = New Font(My.Settings.customFont.OriginalFontName, 20)
-            t1.Font = New Font(My.Settings.customFont.OriginalFontName, 16)
-            t3.Font = New Font(My.Settings.customFont.OriginalFontName, 16)
-        End If
+
+
+        'If FrmOpenTest.rLucidaConsole.Checked Then
+        '    'Is Lucida Console by default, no need to set it. 
+        'ElseIf FrmOpenTest.rOCRAEXT.Checked Then
+        '    txtTekst1.Font = GetInstance(36, FontStyle.Regular)
+        '    txtTekst2.Font = GetInstance(36, FontStyle.Regular)
+        '    txtQuestion.Font = GetInstance(20.25, FontStyle.Regular)
+        '    t1.Font = GetInstance(16, FontStyle.Regular)
+        '    t3.Font = GetInstance(16, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rComicSansMS.Checked Then
+        '    txtTekst1.Font = New Font("Comic Sans MS", 36, FontStyle.Regular)
+        '    txtTekst2.Font = New Font("Comic Sans MS", 36, FontStyle.Regular)
+        '    txtQuestion.Font = New Font("Comic Sans MS", 20, FontStyle.Regular)
+        '    t1.Font = New Font("Comic Sans MS", 16, FontStyle.Regular)
+        '    t3.Font = New Font("Comic Sans MS", 16, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rMicrosoftSansSerif.Checked Then
+        '    txtTekst1.Font = New Font("Microsoft Sans Serif", 36, FontStyle.Regular)
+        '    txtTekst2.Font = New Font("Microsoft Sans Serif", 36, FontStyle.Regular)
+        '    txtQuestion.Font = New Font("Microsoft Sans Serif", 20, FontStyle.Bold)
+        '    t1.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Regular)
+        '    t3.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rUbuntuCondensed.Checked Then
+        '    txtTekst1.Font = New Font("Ubuntu Condensed", 36)
+        '    txtTekst2.Font = New Font("Ubuntu Condensed", 36)
+        '    txtQuestion.Font = New Font("Ubuntu Condensed", 20.25)
+        '    t1.Font = New Font("Ubuntu Condensed", 16)
+        '    t3.Font = New Font("Ubuntu Condensed", 16)
+        'ElseIf FrmOpenTest.rMicroFLF.Checked Then
+        '    txtTekst1.Font = New Font("MicroFLF", 36, FontStyle.Italic)
+        '    txtTekst2.Font = New Font("MicroFLF", 36, FontStyle.Italic)
+        '    txtQuestion.Font = New Font("MicroFLF", 24, FontStyle.Italic)
+        '    t1.Font = New Font("MicroFLF", 16, FontStyle.Bold Or FontStyle.Italic)
+        '    t3.Font = New Font("MicroFLF", 16, FontStyle.Bold Or FontStyle.Italic)
+        'ElseIf FrmOpenTest.rCustomFont.Checked Then
+        '    txtTekst1.Font = New Font(My.Settings.customFont.OriginalFontName, 36)
+        '    txtTekst2.Font = New Font(My.Settings.customFont.OriginalFontName, 36)
+        '    txtQuestion.Font = New Font(My.Settings.customFont.OriginalFontName, 20)
+        '    t1.Font = New Font(My.Settings.customFont.OriginalFontName, 16)
+        '    t3.Font = New Font(My.Settings.customFont.OriginalFontName, 16)
+        'End If
 
         'For some reason, it tends to load this first before resizing the form to fill the screen. Resetting that here.
 
@@ -225,13 +266,15 @@ Public Class FrmTest
         b.Name = "b" & value
         b.Tag = locationValue
         b.BackColor = Color.Transparent
-        If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUS.Checked Or FrmOpenTest.rUK.Checked Then
-            b.Image = My.Resources.button_2004
-        ElseIf FrmOpenTest.rFrankrijk.Checked Then
-            b.Image = My.Resources.Fr_unpressed
-        Else
-            b.Image = My.Resources.Button
-        End If
+
+        b.Image = FrmOpenTest.theme.button
+        'If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUS.Checked Or FrmOpenTest.rUK.Checked Then
+        '    b.Image = My.Resources.button_2004
+        'ElseIf FrmOpenTest.rFrankrijk.Checked Then
+        '    b.Image = My.Resources.Fr_unpressed
+        'Else
+        '    b.Image = My.Resources.Button
+        'End If
 
 
         b.Visible = True
@@ -290,28 +333,30 @@ Public Class FrmTest
             Console.Write(ex.Message)
         End Try
         l.BackColor = Color.Transparent
-        If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUK.Checked Then
-            l.ForeColor = Color.Gold
-        ElseIf FrmOpenTest.rUS.Checked Then
-            l.ForeColor = Color.White
-        Else
-            l.ForeColor = Color.White
-        End If
-        If FrmOpenTest.rLucidaConsole.Checked Then
-            l.Font = New Font("Lucida Console", 16, FontStyle.Regular)
-        ElseIf FrmOpenTest.rOCRAEXT.Checked Then
-            l.Font = GetInstance(16, FontStyle.Regular)
-        ElseIf FrmOpenTest.rComicSansMS.Checked Then
-            l.Font = New Font("Comic Sans MS", 17, FontStyle.Regular)
-        ElseIf FrmOpenTest.rMicrosoftSansSerif.Checked Then
-            l.Font = New Font("Microsoft Sans Serif", 17, FontStyle.Regular)
-        ElseIf FrmOpenTest.rUbuntuCondensed.Checked Then
-            l.Font = New Font("Ubuntu Condensed", 16)
-        ElseIf FrmOpenTest.rMicroFLF.Checked Then
-            l.Font = New Font("MicroFLF", 16, FontStyle.Bold Or FontStyle.Italic)
-        ElseIf FrmOpenTest.rCustomFont.Checked Then
-            l.Font = New Font(My.Settings.customFont.OriginalFontName, 17, FontStyle.Regular)
-        End If
+        l.ForeColor = FrmOpenTest.theme.colorAnswers
+        l.Font = FrmOpenTest.theme.fontAnswers
+        'If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUK.Checked Then
+        '    l.ForeColor = Color.Gold
+        'ElseIf FrmOpenTest.rUS.Checked Then
+        '    l.ForeColor = Color.White
+        'Else
+        '    l.ForeColor = Color.White
+        'End If
+        'If FrmOpenTest.rLucidaConsole.Checked Then
+        '    l.Font = New Font("Lucida Console", 16, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rOCRAEXT.Checked Then
+        '    l.Font = GetInstance(16, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rComicSansMS.Checked Then
+        '    l.Font = New Font("Comic Sans MS", 17, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rMicrosoftSansSerif.Checked Then
+        '    l.Font = New Font("Microsoft Sans Serif", 17, FontStyle.Regular)
+        'ElseIf FrmOpenTest.rUbuntuCondensed.Checked Then
+        '    l.Font = New Font("Ubuntu Condensed", 16)
+        'ElseIf FrmOpenTest.rMicroFLF.Checked Then
+        '    l.Font = New Font("MicroFLF", 16, FontStyle.Bold Or FontStyle.Italic)
+        'ElseIf FrmOpenTest.rCustomFont.Checked Then
+        '    l.Font = New Font(My.Settings.customFont.OriginalFontName, 17, FontStyle.Regular)
+        'End If
         l.Size = New Size(420 + (spacebetweenanswershorizontal - 500), 50 + (spacebetweenanswers - 25))
         If FrmOpenTest.rThreeRows.Checked = True Then
             If ((locationValue Mod 3) = 0) Then
@@ -363,12 +408,17 @@ Public Class FrmTest
             '    Console.Write(ex.Message)
             'End Try
             saveLastQuestion()
-            If FrmOpenTest.rNewTheme.Checked Then
-                s.Image = My.Resources.aButton
-            ElseIf FrmOpenTest.rFrankrijk.Checked Then
-                s.Image = My.Resources.Fr_Cross
-                Me.Controls(s.Name.Replace("b", "l")).ForeColor = Color.Turquoise
+
+            s.Image = FrmOpenTest.theme.buttonClick
+            If FrmOpenTest.theme.colorClickEnabled Then
+                Me.Controls(s.Name.Replace("b", "l")).ForeColor = FrmOpenTest.theme.colorClick
             End If
+            'If FrmOpenTest.rNewTheme.Checked Then
+            '    s.Image = My.Resources.aButton
+            'ElseIf FrmOpenTest.rFrankrijk.Checked Then
+            '    s.Image = My.Resources.Fr_Cross
+            '    Me.Controls(s.Name.Replace("b", "l")).ForeColor = Color.Turquoise
+            'End If
 
             tmButton.Start()
         End If
@@ -376,11 +426,13 @@ Public Class FrmTest
 
     Sub buttonhover(sender As Object, e As EventArgs)
         Try
-            If FrmOpenTest.rFrankrijk.Checked Then
-                sender.image = My.Resources.Fr_pressed
-                Dim correspondingLabel As String
-                correspondingLabel = sender.name.replace("b", "l")
-                Me.Controls(correspondingLabel).ForeColor = Color.Turquoise
+            If FrmOpenTest.theme.buttonHoverEnabled Then
+                sender.image = FrmOpenTest.theme.buttonHover
+                If FrmOpenTest.theme.colorClickEnabled Then
+                    Dim correspondingLabel As String
+                    correspondingLabel = sender.name.replace("b", "l")
+                    Me.Controls(correspondingLabel).ForeColor = FrmOpenTest.theme.colorClick
+                End If
             End If
         Catch ex As Exception
 
@@ -389,10 +441,13 @@ Public Class FrmTest
 
     Sub buttonleave(sender As Object, e As EventArgs)
         Try
-            If FrmOpenTest.rFrankrijk.Checked Then
-                sender.image = My.Resources.Fr_unpressed
-                Dim correspondingLabel As String = sender.name.replace("b", "l")
-                Me.Controls(correspondingLabel).ForeColor = Color.White
+            If FrmOpenTest.theme.buttonHoverEnabled Then
+                sender.image = FrmOpenTest.theme.button
+                If FrmOpenTest.theme.colorClickEnabled Then
+                    Dim correspondingLabel As String
+                    correspondingLabel = sender.name.replace("b", "l")
+                    Me.Controls(correspondingLabel).ForeColor = FrmOpenTest.theme.colorAnswers
+                End If
             End If
         Catch ex As Exception
 
@@ -401,25 +456,25 @@ Public Class FrmTest
 
     Sub buttonpaint(sender As Object, e As PaintEventArgs)
         Dim canvas As Graphics = e.Graphics
-        Dim mainFont As Font
+        Dim mainFont As Font = New Font(FrmOpenTest.theme.fontAnswers.OriginalFontName, 18, FontStyle.Regular)
         Dim PlateTextEntry As New TextBox
         PlateTextEntry.Text = sender.Tag.ToString()
         Dim textStyle As New FontStyle
-        If FrmOpenTest.rLucidaConsole.Checked Then
-            mainFont = New Font("Courier New", 18, FontStyle.Bold)
-        ElseIf FrmOpenTest.rOCRAEXT.Checked Then
-            mainFont = New Font("OCR A Extended", 19, textStyle)
-        ElseIf FrmOpenTest.rComicSansMS.Checked Then
-            mainFont = New Font("Comic Sans MS", 19, textStyle)
-        ElseIf FrmOpenTest.rMicrosoftSansSerif.Checked Then
-            mainFont = New Font("Microsoft Sans Serif", 19, textStyle)
-        ElseIf FrmOpenTest.rUbuntuCondensed.Checked Then
-            mainFont = New Font("Ubuntu Condensed", 19, textStyle)
-        ElseIf FrmOpenTest.rCustomFont.Checked Then
-            mainFont = New Font(My.Settings.customFont.OriginalFontName, 18, FontStyle.Regular)
-        Else
-            mainFont = New Font("Courier New", 18, FontStyle.Bold)
-        End If
+        'If FrmOpenTest.rLucidaConsole.Checked Then
+        '    mainFont = New Font("Courier New", 18, FontStyle.Bold)
+        'ElseIf FrmOpenTest.rOCRAEXT.Checked Then
+        '    mainFont = New Font("OCR A Extended", 19, textStyle)
+        'ElseIf FrmOpenTest.rComicSansMS.Checked Then
+        '    mainFont = New Font("Comic Sans MS", 19, textStyle)
+        'ElseIf FrmOpenTest.rMicrosoftSansSerif.Checked Then
+        '    mainFont = New Font("Microsoft Sans Serif", 19, textStyle)
+        'ElseIf FrmOpenTest.rUbuntuCondensed.Checked Then
+        '    mainFont = New Font("Ubuntu Condensed", 19, textStyle)
+        'ElseIf FrmOpenTest.rCustomFont.Checked Then
+        '    mainFont = New Font(My.Settings.customFont.OriginalFontName, 18, FontStyle.Regular)
+        'Else
+        '    mainFont = New Font("Courier New", 18, FontStyle.Bold)
+        'End If
         'If FrmOpenTest.rUS.Checked Then
         '    mainFont = New Font("Microsoft Sans Serif", 19, textStyle)
         'ElseIf FrmOpenTest.rUK.Checked Or FrmOpenTest.rNostalgia.Checked Then
@@ -435,17 +490,19 @@ Public Class FrmTest
         'added this line
         textFormat.Alignment = StringAlignment.Center
 
-        If FrmOpenTest.rUS.Checked Then
-            e.Graphics.DrawRectangle(Pens.Transparent, textArea)
-            e.Graphics.DrawString(PlateTextEntry.Text, mainFont, Brushes.Black, textArea, textFormat)
-        ElseIf FrmOpenTest.rUK.Checked Or FrmOpenTest.rNostalgia.Checked Then
-            e.Graphics.DrawRectangle(Pens.Transparent, textArea)
-            e.Graphics.DrawString(PlateTextEntry.Text, mainFont, Brushes.Gold, textArea, textFormat)
-        Else
-            e.Graphics.DrawRectangle(Pens.Transparent, textArea)
-            e.Graphics.DrawString(PlateTextEntry.Text, mainFont, Brushes.White, textArea, textFormat)
-        End If
+        'If FrmOpenTest.rUS.Checked Then
+        '    e.Graphics.DrawRectangle(Pens.Transparent, textArea)
+        '    e.Graphics.DrawString(PlateTextEntry.Text, mainFont, Brushes.Black, textArea, textFormat)
+        'ElseIf FrmOpenTest.rUK.Checked Or FrmOpenTest.rNostalgia.Checked Then
+        '    e.Graphics.DrawRectangle(Pens.Transparent, textArea)
+        '    e.Graphics.DrawString(PlateTextEntry.Text, mainFont, Brushes.Gold, textArea, textFormat)
+        'Else
 
+        'End If
+        Dim br As New SolidBrush(FrmOpenTest.theme.colorAnswers)
+
+        e.Graphics.DrawRectangle(Pens.Transparent, textArea)
+        e.Graphics.DrawString(PlateTextEntry.Text, mainFont, br, textArea, textFormat)
         canvas = Nothing
     End Sub
 
@@ -613,7 +670,9 @@ Public Class FrmTest
         t2.Visible = False
         t3.Visible = False
         txtQuestion.Visible = True
-        smallLogo.Visible = True
+        If FrmOpenTest.theme.logoTestEnabled Then
+            smallLogo.Visible = True
+        End If
         question = question + 1
         questionDisplay = questionDisplay + 1
         value = 0
@@ -834,14 +893,14 @@ Public Class FrmTest
 
     Private Sub tmButton_Tick(sender As Object, e As EventArgs) Handles tmButton.Tick
 
-        If FrmOpenTest.rNewTheme.Checked Then
+        'If FrmOpenTest.rNewTheme.Checked Then
             Try
-                s.Image = My.Resources.Button
+                s.Image = FrmOpenTest.theme.button
             Catch ex As Exception
 
             End Try
-            t2.Image = My.Resources.Button
-        End If
+            t2.Image = FrmOpenTest.theme.button
+        'End If
 
 
         tmButton.Stop()
@@ -888,7 +947,7 @@ Public Class FrmTest
         'End Try
         saveLastQuestion()
         If FrmOpenTest.rNewTheme.Checked Then
-            t2.Image = My.Resources.aButton
+            t2.Image = FrmOpenTest.theme.buttonClick
         End If
 
         tmButton.Start()

@@ -209,6 +209,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Kies een bestand uit de map &quot;Geluid&quot;.
+        '''</summary>
+        Friend Shared ReadOnly Property WrongFolder() As String
+            Get
+                Return ResourceManager.GetString("WrongFolder", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Verkeerde wachtwoord, start de applicatie opnieuw..
         '''</summary>
         Friend Shared ReadOnly Property WrongPass() As String

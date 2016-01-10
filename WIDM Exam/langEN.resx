@@ -168,4 +168,7 @@
   <data name="MonitorChanged" xml:space="preserve">
     <value>The monitor used for the quiz and execution has been changed to monitor {0}</value>
   </data>
+  <data name="WrongFolder" xml:space="preserve">
+    <value>Choose a file from the folder "Geluid"</value>
+  </data>
 </root>

@@ -168,4 +168,7 @@
   <data name="MonitorChanged" xml:space="preserve">
     <value>De monitor voor de test en executie is aangepast naar monitor {0}</value>
   </data>
+  <data name="WrongFolder" xml:space="preserve">
+    <value>Kies een bestand uit de map "Geluid"</value>
+  </data>
 </root>
