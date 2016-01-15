@@ -6,7 +6,7 @@
     Private Sub FrmResult_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         expandToMonitor(Me)
         If FrmOpenTest.theme.backgroundTestEnabled Then
-            BackgroundImage = FrmOpenTest.theme.backgroundTest
+            BackgroundImage = FrmOpenTest.theme.imgbackgroundTest
             Else 
             BackgroundImage = Nothing
 

@@ -168,7 +168,19 @@
   <data name="MonitorChanged" xml:space="preserve">
     <value>The monitor used for the quiz and execution has been changed to monitor {0}</value>
   </data>
-  <data name="WrongFolder" xml:space="preserve">
+  <data name="WrongFolderGeluid" xml:space="preserve">
     <value>Choose a file from the folder "Geluid"</value>
+  </data>
+  <data name="WrongFolderAfbeelding" xml:space="preserve">
+    <value>Choose a file from the folder "Afbeeldingen"</value>
+  </data>
+  <data name="FontNotInstalled" xml:space="preserve">
+    <value>The font {0} was not found. Please install this font for this theme.</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Do you want to save the changes before exiting?</value>
+  </data>
+  <data name="SavedSuccess" xml:space="preserve">
+    <value>Successfully saved</value>
   </data>
 </root>

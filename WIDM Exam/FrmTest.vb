@@ -78,22 +78,22 @@ Public Class FrmTest
 
         End Try
         If FrmOpenTest.theme.questionBackgroundEnabled Then
-            txtQuestion.BackgroundImage = FrmOpenTest.theme.questionBackground
+            txtQuestion.BackgroundImage = FrmOpenTest.theme.imgquestionBackground
             txtQuestion.BackgroundImageLayout = ImageLayout.Stretch
         End If
 
         t1.ForeColor = FrmOpenTest.theme.colorAnswers
         t3.ForeColor = FrmOpenTest.theme.colorAnswers
 
-        t2.Image = FrmOpenTest.theme.button
+        t2.Image = FrmOpenTest.theme.imgbutton
 
         If FrmOpenTest.theme.logoTestEnabled Then
-            smallLogo.Image = FrmOpenTest.theme.logoTest
+            smallLogo.Image = FrmOpenTest.theme.imglogoTest
         Else
             smallLogo.Hide()
         End If
         If FrmOpenTest.theme.backgroundTestEnabled Then
-            BackgroundImage = FrmOpenTest.theme.backgroundTest
+            BackgroundImage = FrmOpenTest.theme.imgbackgroundTest
         Else
             BackgroundImage = Nothing
         End If
@@ -267,7 +267,7 @@ Public Class FrmTest
         b.Tag = locationValue
         b.BackColor = Color.Transparent
 
-        b.Image = FrmOpenTest.theme.button
+        b.Image = FrmOpenTest.theme.imgbutton
         'If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUS.Checked Or FrmOpenTest.rUK.Checked Then
         '    b.Image = My.Resources.button_2004
         'ElseIf FrmOpenTest.rFrankrijk.Checked Then
@@ -409,7 +409,7 @@ Public Class FrmTest
             'End Try
             saveLastQuestion()
 
-            s.Image = FrmOpenTest.theme.buttonClick
+            s.Image = FrmOpenTest.theme.imgbuttonClick
             If FrmOpenTest.theme.colorClickEnabled Then
                 Me.Controls(s.Name.Replace("b", "l")).ForeColor = FrmOpenTest.theme.colorClick
             End If
@@ -895,11 +895,11 @@ Public Class FrmTest
 
         'If FrmOpenTest.rNewTheme.Checked Then
             Try
-                s.Image = FrmOpenTest.theme.button
+                s.Image = FrmOpenTest.theme.imgbutton
             Catch ex As Exception
 
             End Try
-            t2.Image = FrmOpenTest.theme.button
+            t2.Image = FrmOpenTest.theme.imgbutton
         'End If
 
 
@@ -947,7 +947,7 @@ Public Class FrmTest
         'End Try
         saveLastQuestion()
         If FrmOpenTest.rNewTheme.Checked Then
-            t2.Image = FrmOpenTest.theme.buttonClick
+            t2.Image = FrmOpenTest.theme.imgbuttonClick
         End If
 
         tmButton.Start()

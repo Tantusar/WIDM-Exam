@@ -128,6 +128,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Het lettertype {0} is niet geïnstalleerd. Installeer deze voor dit thema..
+        '''</summary>
+        Friend Shared ReadOnly Property FontNotInstalled() As String
+            Get
+                Return ResourceManager.GetString("FontNotInstalled", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to (geen).
         '''</summary>
         Friend Shared ReadOnly Property geen() As String
@@ -200,6 +209,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Wilt u de wijzigingen opslaan alvorens af te sluiten?.
+        '''</summary>
+        Friend Shared ReadOnly Property SaveChanges() As String
+            Get
+                Return ResourceManager.GetString("SaveChanges", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Succesvol opgeslagen.
+        '''</summary>
+        Friend Shared ReadOnly Property SavedSuccess() As String
+            Get
+                Return ResourceManager.GetString("SavedSuccess", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Wilt u de huidige gegevens opslaan alvorens een nieuwe aflevering te openen? Anders gaan de gegevens van deze aflevering verloren!.
         '''</summary>
         Friend Shared ReadOnly Property SaveFirst() As String
@@ -209,11 +236,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Kies een bestand uit de map &quot;Afbeeldingen&quot;.
+        '''</summary>
+        Friend Shared ReadOnly Property WrongFolderAfbeelding() As String
+            Get
+                Return ResourceManager.GetString("WrongFolderAfbeelding", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Kies een bestand uit de map &quot;Geluid&quot;.
         '''</summary>
-        Friend Shared ReadOnly Property WrongFolder() As String
+        Friend Shared ReadOnly Property WrongFolderGeluid() As String
             Get
-                Return ResourceManager.GetString("WrongFolder", resourceCulture)
+                Return ResourceManager.GetString("WrongFolderGeluid", resourceCulture)
             End Get
         End Property
         

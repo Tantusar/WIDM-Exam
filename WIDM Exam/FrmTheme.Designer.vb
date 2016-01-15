@@ -55,11 +55,11 @@ Partial Class FrmTheme
         Me.btnFontQuestion = New System.Windows.Forms.Button()
         Me.lFont = New System.Windows.Forms.Label()
         Me.grpExample = New System.Windows.Forms.GroupBox()
+        Me.btnReload = New System.Windows.Forms.Button()
         Me.tabExample = New System.Windows.Forms.TabControl()
         Me.tabTest = New System.Windows.Forms.TabPage()
         Me.pnlExampleTest = New System.Windows.Forms.Panel()
         Me.lAnswer = New System.Windows.Forms.Label()
-        Me.btnReload = New System.Windows.Forms.Button()
         Me.picAnswer = New System.Windows.Forms.PictureBox()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.lQuestion = New System.Windows.Forms.Label()
@@ -115,6 +115,8 @@ Partial Class FrmTheme
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSave = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripOpen = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripExport = New System.Windows.Forms.ToolStripButton()
         Me.OpenTheme = New System.Windows.Forms.OpenFileDialog()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.rMusicTest = New System.Windows.Forms.CheckBox()
@@ -132,6 +134,7 @@ Partial Class FrmTheme
         Me.OpenQuestionBackground = New System.Windows.Forms.OpenFileDialog()
         Me.OpenMusicTest = New System.Windows.Forms.OpenFileDialog()
         Me.OpenMusicExecution = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveExport = New System.Windows.Forms.SaveFileDialog()
         Me.grpGeneral.SuspendLayout
         Me.grpQuestion.SuspendLayout
         Me.grpExample.SuspendLayout
@@ -466,13 +469,24 @@ Partial Class FrmTheme
             Or System.Windows.Forms.AnchorStyles.Left)  _
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.grpExample.BackColor = System.Drawing.SystemColors.Control
+        Me.grpExample.Controls.Add(Me.btnReload)
         Me.grpExample.Controls.Add(Me.tabExample)
-        Me.grpExample.Location = New System.Drawing.Point(395, 122)
+        Me.grpExample.Location = New System.Drawing.Point(392, 122)
         Me.grpExample.Name = "grpExample"
-        Me.grpExample.Size = New System.Drawing.Size(330, 516)
+        Me.grpExample.Size = New System.Drawing.Size(482, 446)
         Me.grpExample.TabIndex = 2
         Me.grpExample.TabStop = false
         Me.grpExample.Text = "Voorbeeld"
+        '
+        'btnReload
+        '
+        Me.btnReload.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.btnReload.Location = New System.Drawing.Point(404, 0)
+        Me.btnReload.Name = "btnReload"
+        Me.btnReload.Size = New System.Drawing.Size(78, 23)
+        Me.btnReload.TabIndex = 26
+        Me.btnReload.Text = "Herladen"
+        Me.btnReload.UseVisualStyleBackColor = true
         '
         'tabExample
         '
@@ -484,7 +498,7 @@ Partial Class FrmTheme
         Me.tabExample.Location = New System.Drawing.Point(3, 16)
         Me.tabExample.Name = "tabExample"
         Me.tabExample.SelectedIndex = 0
-        Me.tabExample.Size = New System.Drawing.Size(324, 497)
+        Me.tabExample.Size = New System.Drawing.Size(476, 427)
         Me.tabExample.TabIndex = 4
         '
         'tabTest
@@ -493,7 +507,7 @@ Partial Class FrmTheme
         Me.tabTest.Location = New System.Drawing.Point(4, 22)
         Me.tabTest.Name = "tabTest"
         Me.tabTest.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabTest.Size = New System.Drawing.Size(316, 471)
+        Me.tabTest.Size = New System.Drawing.Size(468, 401)
         Me.tabTest.TabIndex = 0
         Me.tabTest.Text = "Test"
         Me.tabTest.UseVisualStyleBackColor = true
@@ -503,14 +517,13 @@ Partial Class FrmTheme
         Me.pnlExampleTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pnlExampleTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlExampleTest.Controls.Add(Me.lAnswer)
-        Me.pnlExampleTest.Controls.Add(Me.btnReload)
         Me.pnlExampleTest.Controls.Add(Me.picAnswer)
         Me.pnlExampleTest.Controls.Add(Me.picLogo)
         Me.pnlExampleTest.Controls.Add(Me.lQuestion)
         Me.pnlExampleTest.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlExampleTest.Location = New System.Drawing.Point(3, 3)
         Me.pnlExampleTest.Name = "pnlExampleTest"
-        Me.pnlExampleTest.Size = New System.Drawing.Size(310, 465)
+        Me.pnlExampleTest.Size = New System.Drawing.Size(462, 395)
         Me.pnlExampleTest.TabIndex = 3
         '
         'lAnswer
@@ -523,16 +536,6 @@ Partial Class FrmTheme
         Me.lAnswer.TabIndex = 3
         Me.lAnswer.Text = "Answer"
         Me.lAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'btnReload
-        '
-        Me.btnReload.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btnReload.Location = New System.Drawing.Point(227, 437)
-        Me.btnReload.Name = "btnReload"
-        Me.btnReload.Size = New System.Drawing.Size(78, 23)
-        Me.btnReload.TabIndex = 26
-        Me.btnReload.Text = "Herladen"
-        Me.btnReload.UseVisualStyleBackColor = true
         '
         'picAnswer
         '
@@ -562,7 +565,7 @@ Partial Class FrmTheme
         Me.lQuestion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lQuestion.Location = New System.Drawing.Point(146, 41)
         Me.lQuestion.Name = "lQuestion"
-        Me.lQuestion.Size = New System.Drawing.Size(159, 48)
+        Me.lQuestion.Size = New System.Drawing.Size(311, 48)
         Me.lQuestion.TabIndex = 0
         Me.lQuestion.Text = "Question"
         Me.lQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -573,7 +576,7 @@ Partial Class FrmTheme
         Me.tabIntro.Location = New System.Drawing.Point(4, 22)
         Me.tabIntro.Name = "tabIntro"
         Me.tabIntro.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabIntro.Size = New System.Drawing.Size(333, 440)
+        Me.tabIntro.Size = New System.Drawing.Size(468, 370)
         Me.tabIntro.TabIndex = 1
         Me.tabIntro.Text = "Naam invoeren"
         Me.tabIntro.UseVisualStyleBackColor = true
@@ -589,7 +592,7 @@ Partial Class FrmTheme
         Me.pnlExampleIntro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlExampleIntro.Location = New System.Drawing.Point(3, 3)
         Me.pnlExampleIntro.Name = "pnlExampleIntro"
-        Me.pnlExampleIntro.Size = New System.Drawing.Size(327, 434)
+        Me.pnlExampleIntro.Size = New System.Drawing.Size(462, 364)
         Me.pnlExampleIntro.TabIndex = 29
         '
         'pnlOld
@@ -601,7 +604,7 @@ Partial Class FrmTheme
         Me.pnlOld.Controls.Add(Me.lOldname)
         Me.pnlOld.Controls.Add(Me.lOldtext)
         Me.pnlOld.Controls.Add(Me.lOldbutton)
-        Me.pnlOld.Location = New System.Drawing.Point(10, 294)
+        Me.pnlOld.Location = New System.Drawing.Point(78, 259)
         Me.pnlOld.Name = "pnlOld"
         Me.pnlOld.Size = New System.Drawing.Size(260, 128)
         Me.pnlOld.TabIndex = 30
@@ -658,7 +661,7 @@ Partial Class FrmTheme
         Me.pnlUS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlUS.Controls.Add(Me.lUStext)
         Me.pnlUS.Controls.Add(Me.lUSname)
-        Me.pnlUS.Location = New System.Drawing.Point(157, 165)
+        Me.pnlUS.Location = New System.Drawing.Point(225, 130)
         Me.pnlUS.Name = "pnlUS"
         Me.pnlUS.Size = New System.Drawing.Size(432, 159)
         Me.pnlUS.TabIndex = 31
@@ -692,7 +695,7 @@ Partial Class FrmTheme
         Me.pnlNew.Controls.Add(Me.Label11)
         Me.pnlNew.Controls.Add(Me.lNewtext)
         Me.pnlNew.Controls.Add(Me.lNewname)
-        Me.pnlNew.Location = New System.Drawing.Point(67, 236)
+        Me.pnlNew.Location = New System.Drawing.Point(135, 201)
         Me.pnlNew.Name = "pnlNew"
         Me.pnlNew.Size = New System.Drawing.Size(359, 82)
         Me.pnlNew.TabIndex = 29
@@ -746,7 +749,7 @@ Partial Class FrmTheme
         Me.green.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.green.Location = New System.Drawing.Point(4, 22)
         Me.green.Name = "green"
-        Me.green.Size = New System.Drawing.Size(333, 440)
+        Me.green.Size = New System.Drawing.Size(468, 370)
         Me.green.TabIndex = 2
         Me.green.Text = "Groen scherm"
         Me.green.UseVisualStyleBackColor = true
@@ -756,7 +759,7 @@ Partial Class FrmTheme
         Me.red.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.red.Location = New System.Drawing.Point(4, 22)
         Me.red.Name = "red"
-        Me.red.Size = New System.Drawing.Size(333, 440)
+        Me.red.Size = New System.Drawing.Size(468, 370)
         Me.red.TabIndex = 3
         Me.red.Text = "Rood scherm"
         Me.red.UseVisualStyleBackColor = true
@@ -1001,10 +1004,10 @@ Partial Class FrmTheme
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSave, Me.ToolStripOpen})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSave, Me.ToolStripOpen, Me.ToolStripSeparator1, Me.ToolStripExport})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(784, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(903, 25)
         Me.ToolStrip1.TabIndex = 28
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -1023,6 +1026,19 @@ Partial Class FrmTheme
         Me.ToolStripOpen.Name = "ToolStripOpen"
         Me.ToolStripOpen.Size = New System.Drawing.Size(69, 22)
         Me.ToolStripOpen.Text = "Openen"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripExport
+        '
+        Me.ToolStripExport.Image = CType(resources.GetObject("ToolStripExport.Image"),System.Drawing.Image)
+        Me.ToolStripExport.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripExport.Name = "ToolStripExport"
+        Me.ToolStripExport.Size = New System.Drawing.Size(83, 22)
+        Me.ToolStripExport.Text = "Exporteren"
         '
         'OpenTheme
         '
@@ -1145,12 +1161,16 @@ Partial Class FrmTheme
         '
         Me.OpenMusicExecution.Filter = "Alle muziek|*.*"
         '
+        'SaveExport
+        '
+        Me.SaveExport.Filter = "(*.zip)|*.zip"
+        '
         'FrmTheme
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = true
-        Me.ClientSize = New System.Drawing.Size(801, 561)
+        Me.ClientSize = New System.Drawing.Size(920, 561)
         Me.Controls.Add(Me.grpMusic)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.grpScreens)
@@ -1158,8 +1178,9 @@ Partial Class FrmTheme
         Me.Controls.Add(Me.grpExample)
         Me.Controls.Add(Me.grpQuestion)
         Me.Controls.Add(Me.grpGeneral)
+        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.Name = "FrmTheme"
-        Me.Text = "FrmTheme"
+        Me.Text = "WIDM Exam"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.grpGeneral.ResumeLayout(false)
         Me.grpGeneral.PerformLayout
@@ -1300,4 +1321,7 @@ End Sub
     Friend WithEvents btnMusicTest As Button
     Friend WithEvents OpenMusicTest As OpenFileDialog
     Friend WithEvents OpenMusicExecution As OpenFileDialog
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripExport As ToolStripButton
+    Friend WithEvents SaveExport As SaveFileDialog
 End Class

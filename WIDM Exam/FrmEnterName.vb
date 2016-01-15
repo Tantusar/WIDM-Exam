@@ -249,12 +249,12 @@ Public Class FrmEnterName
             WMP1.Ctlcontrols.play()
         End If
         If FrmOpenTest.theme.logoIntroEnabled Then
-            PictureBox1.Image = FrmOpenTest.theme.logoIntro
+            PictureBox1.Image = FrmOpenTest.theme.imglogoIntro
         Else
             PictureBox1.Visible = False
         End If
         If FrmOpenTest.theme.backgroundIntroEnabled Then
-            BackgroundImage = FrmOpenTest.theme.backgroundIntro
+            BackgroundImage = FrmOpenTest.theme.imgbackgroundIntro
         Else
             BackgroundImage = Nothing
         End If

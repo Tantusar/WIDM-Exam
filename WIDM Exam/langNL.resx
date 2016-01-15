@@ -168,7 +168,19 @@
   <data name="MonitorChanged" xml:space="preserve">
     <value>De monitor voor de test en executie is aangepast naar monitor {0}</value>
   </data>
-  <data name="WrongFolder" xml:space="preserve">
+  <data name="WrongFolderGeluid" xml:space="preserve">
     <value>Kies een bestand uit de map "Geluid"</value>
+  </data>
+  <data name="WrongFolderAfbeelding" xml:space="preserve">
+    <value>Kies een bestand uit de map "Afbeeldingen"</value>
+  </data>
+  <data name="FontNotInstalled" xml:space="preserve">
+    <value>Het lettertype {0} is niet geïnstalleerd. Installeer deze voor dit thema.</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Wilt u de wijzigingen opslaan alvorens af te sluiten?</value>
+  </data>
+  <data name="SavedSuccess" xml:space="preserve">
+    <value>Succesvol opgeslagen</value>
   </data>
 </root>
