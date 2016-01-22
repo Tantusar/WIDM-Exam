@@ -1,11 +1,11 @@
 ﻿Imports System.Resources
 Imports WIDM_Exam.My.Resources
 
-Module langChooser
-    Public rm As ResourceManager
+Module LangChooser
+    Public Rm As ResourceManager
 
     'Function
-    Public Function getLang(strValue As String)
+    Public Function GetLang(strValue As String)
         Dim strLanguage As String
 
         If IsNothing(rm) Then

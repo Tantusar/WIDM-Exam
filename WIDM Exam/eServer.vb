@@ -3,33 +3,33 @@ Imports System.Net
 Imports System.Net.Sockets
 Imports System.Text
 
-Module eServer
-    Private Listener As TcpListener
+Module EServer
+    Private _listener As TcpListener
     Private ReadOnly Connections As New List(Of ConnectionInfo)
-    Private ConnectionMontior As Task
+    Private _connectionMontior As Task
 
     Public Sub StartServer()
-        Listener = New TcpListener(IPAddress.Any, FrmOpenTest.numPort.Value)
-        Listener.Start()
-        Dim monitor As New MonitorInfo(Listener, Connections)
+        _listener = New TcpListener(IPAddress.Any, FrmOpenTest.numPort.Value)
+        _listener.Start()
+        Dim monitor As New MonitorInfo(_listener, Connections)
         ListenForClient(monitor)
-        ConnectionMontior = Task.Factory.StartNew(AddressOf DoMonitorConnections, monitor,
+        _connectionMontior = Task.Factory.StartNew(AddressOf DoMonitorConnections, monitor,
                                                   TaskCreationOptions.LongRunning)
     End Sub
 
     Public Sub StopServer()
-        CType(ConnectionMontior.AsyncState, MonitorInfo).Cancel = True
-        Listener.Stop()
-        Listener = Nothing
+        CType(_connectionMontior.AsyncState, MonitorInfo).Cancel = True
+        _listener.Stop()
+        _listener = Nothing
     End Sub
 
     Private Sub ListenForClient(monitor As MonitorInfo)
         Dim info As New ConnectionInfo(monitor)
-        Listener.BeginAcceptTcpClient(AddressOf DoAcceptClient, info)
+        _listener.BeginAcceptTcpClient(AddressOf DoAcceptClient, info)
     End Sub
 
     Private Sub DoAcceptClient(result As IAsyncResult)
-        Dim monitorInfo = CType(ConnectionMontior.AsyncState, MonitorInfo)
+        Dim monitorInfo = CType(_connectionMontior.AsyncState, MonitorInfo)
         If monitorInfo.Listener IsNot Nothing AndAlso Not monitorInfo.Cancel Then
             Dim info = CType(result.AsyncState, ConnectionInfo)
             monitorInfo.Connections.Add(info)
@@ -48,7 +48,7 @@ Module eServer
         Dim doUpdateConnectionCountLabel As New Action(AddressOf UpdateConnectionCountLabel)
 
         'Get MonitorInfo instance from thread-save Task instance
-        Dim monitorInfo = CType(ConnectionMontior.AsyncState, MonitorInfo)
+        Dim monitorInfo = CType(_connectionMontior.AsyncState, MonitorInfo)
 
         'Report progress
         doAppendOutput("Monitor Started.")
@@ -90,7 +90,7 @@ Module eServer
             End If
 
             'Throttle loop to avoid wasting CPU time
-            ConnectionMontior.Wait(1)
+            _connectionMontior.Wait(1)
         Loop While Not monitorInfo.Cancel
 
         'Close all connections before exiting monitor
@@ -121,7 +121,7 @@ End Module
 Public Class MonitorInfo
     Public Property Cancel As Boolean
 
-    Private ReadOnly _Connections As List(Of ConnectionInfo)
+    Private ReadOnly _connections As List(Of ConnectionInfo)
 
     Public ReadOnly Property Connections As List(Of ConnectionInfo)
         Get
@@ -129,7 +129,7 @@ Public Class MonitorInfo
         End Get
     End Property
 
-    Private ReadOnly _Listener As TcpListener
+    Private ReadOnly _listener As TcpListener
 
     Public ReadOnly Property Listener As TcpListener
         Get
@@ -146,7 +146,7 @@ End Class
 'Provides a container object to serve as the state object for async client and stream operations
 Public Class ConnectionInfo
     'hold a reference to entire monitor instead of just the listener
-    Private ReadOnly _Monitor As MonitorInfo
+    Private ReadOnly _monitor As MonitorInfo
 
     Public ReadOnly Property Monitor As MonitorInfo
         Get
@@ -154,7 +154,7 @@ Public Class ConnectionInfo
         End Get
     End Property
 
-    Private _Client As TcpClient
+    Private _client As TcpClient
 
     Public ReadOnly Property Client As TcpClient
         Get
@@ -162,7 +162,7 @@ Public Class ConnectionInfo
         End Get
     End Property
 
-    Private _Stream As NetworkStream
+    Private _stream As NetworkStream
 
     Public ReadOnly Property Stream As NetworkStream
         Get
@@ -170,7 +170,7 @@ Public Class ConnectionInfo
         End Get
     End Property
 
-    Private ReadOnly _DataQueue As ConcurrentQueue(Of Byte)
+    Private ReadOnly _dataQueue As ConcurrentQueue(Of Byte)
 
     Public ReadOnly Property DataQueue As ConcurrentQueue(Of Byte)
         Get
@@ -178,7 +178,7 @@ Public Class ConnectionInfo
         End Get
     End Property
 
-    Private _LastReadLength As Integer
+    Private _lastReadLength As Integer
 
     Public ReadOnly Property LastReadLength As Integer
         Get
@@ -191,7 +191,7 @@ Public Class ConnectionInfo
     'anticipalted number of clients. These are the considerations for designing
     'the communicaition protocol for data transmissions, and the size of the read
     'buffer must be based upon the needs of the protocol.
-    Private ReadOnly _Buffer(63) As Byte
+    Private ReadOnly _buffer(63) As Byte
 
     Public Sub New(monitor As MonitorInfo)
         _Monitor = monitor

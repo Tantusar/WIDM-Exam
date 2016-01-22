@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -75,6 +76,7 @@
     <Reference Include="AutoUpdater.NET">
       <HintPath>..\..\SomToday Scraper1\SomToday Scraper\bin\Debug\AutoUpdater.NET.dll</HintPath>
     </Reference>
+    <Reference Include="BetterListViewExpress, Version=3.15.0.0, Culture=neutral, PublicKeyToken=e6c91a3add447be2, processorArchitecture=MSIL" />
     <Reference Include="Ionic.Zip, Version=1.9.7.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.9.7\lib\net20\Ionic.Zip.dll</HintPath>
       <Private>True</Private>
@@ -86,7 +88,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
@@ -111,6 +115,7 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="classAnswer.vb" />
     <Compile Include="classEnDe.vb" />
+    <Compile Include="classGroupmode.vb" />
     <Compile Include="classQuestion.vb" />
     <Compile Include="classTest.vb" />
     <Compile Include="classTheme.vb" />
@@ -119,6 +124,12 @@
     <Compile Include="eLoadSettings.vb" />
     <Compile Include="eServer.vb" />
     <Compile Include="Extensions.vb" />
+    <Compile Include="FrmExtraInfo.Designer.vb">
+      <DependentUpon>FrmExtraInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExtraInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmIdentify.designer.vb">
       <DependentUpon>FrmIdentify.vb</DependentUpon>
     </Compile>
@@ -198,6 +209,7 @@
     <Compile Include="FrmStartExecutie.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GlobalVariables.vb" />
     <Compile Include="langChooser.vb" />
     <Compile Include="langEN.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -231,6 +243,9 @@
   <ItemGroup>
     <EmbeddedResource Include="classEnDe.resx">
       <DependentUpon>classEnDe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExtraInfo.resx">
+      <DependentUpon>FrmExtraInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIdentify.en.resx">
       <DependentUpon>FrmIdentify.vb</DependentUpon>
@@ -347,6 +362,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Candidate.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -390,7 +406,6 @@
     <None Include="Resources\gb.png" />
     <None Include="Resources\nl.png" />
     <None Include="Resources\2000px-Fingerprint_picture.svg.png" />
-    <None Include="Resources\Background enter name US.png" />
     <None Include="Resources\Logo 2004 groter zonder logo.jpg" />
     <None Include="Resources\US_Background.png" />
     <None Include="Resources\Background question US.png" />
@@ -411,6 +426,7 @@
     <None Include="Resources\Button pressed cross.png" />
     <None Include="Resources\Logo.png" />
     <None Include="Resources\Button pressed.png" />
+    <None Include="Resources\Background enter name US.png" />
     <Content Include="Wie is de Mol Examen_32512.ico" />
   </ItemGroup>
   <ItemGroup>

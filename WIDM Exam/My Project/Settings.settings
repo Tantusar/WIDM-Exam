@@ -122,7 +122,7 @@
     <Setting Name="language" Type="System.String" Scope="User">
       <Value Profile="(Default)">nl</Value>
     </Setting>
-    <Setting Name="theme_old" Type="System.Int32" Scope="User">
+    <Setting Name="CurrentTheme_old" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="rNummers" Type="System.Boolean" Scope="User">
@@ -161,7 +161,7 @@
     <Setting Name="selectedTheme" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="theme" Type="System.String" Scope="User">
+    <Setting Name="CurrentTheme" Type="System.String" Scope="User">
       <Value Profile="(Default)">Standaard.widmthema</Value>
     </Setting>
   </Settings>

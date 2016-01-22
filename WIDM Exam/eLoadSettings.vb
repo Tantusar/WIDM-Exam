@@ -2,7 +2,7 @@
 Imports System.Net
 Imports System.Net.Sockets
 
-Module eLoadSettings
+Module ELoadSettings
     Public Function LoadSettings()
         'Detecting default language chosen by the installer. Cannot use register because I refuse to use it.
         If My.Computer.FileSystem.FileExists(CurDir() & "\language.ini") Then
@@ -35,15 +35,15 @@ Module eLoadSettings
         End If
         checkFontAvailable()
         'FrmOpenTest.header = My.Resources.header_2014_2
-        If My.Settings.theme_old = 0 Then
+        If My.Settings.CurrentTheme_old = 0 Then
             FrmOpenTest.rNewTheme.Checked = True
-        ElseIf My.Settings.theme_old = 1 Then
+        ElseIf My.Settings.CurrentTheme_old = 1 Then
             FrmOpenTest.rNostalgia.Checked = True
-        ElseIf My.Settings.theme_old = 2 Then
+        ElseIf My.Settings.CurrentTheme_old = 2 Then
             FrmOpenTest.rUS.Checked = True
-        ElseIf My.Settings.theme_old = 3 Then
+        ElseIf My.Settings.CurrentTheme_old = 3 Then
             FrmOpenTest.rUK.Checked = True
-        ElseIf My.Settings.theme_old = 4 Then
+        ElseIf My.Settings.CurrentTheme_old = 4 Then
             FrmOpenTest.rFrankrijk.Checked = True
         End If
         If My.Settings.rWedstrijd = True Then
@@ -197,8 +197,8 @@ Module eLoadSettings
         Return 0
     End Function
 
-    Public Function checkFontAvailable()
-        Dim WindowsFolder As String = Environment.GetFolderPath(Environment.SpecialFolder.Windows)
+    Public Function CheckFontAvailable()
+        Dim windowsFolder As String = Environment.GetFolderPath(Environment.SpecialFolder.Windows)
 
         If Not My.Computer.FileSystem.FileExists(WindowsFolder & "\Fonts\Ubuntu-C.ttf") Then
             FrmOpenTest.rUbuntuCondensed.Enabled = False
@@ -218,7 +218,7 @@ Module eLoadSettings
         Return 0
     End Function
 
-    Public Function expandToMonitor(sender As Form)
+    Public Function ExpandToMonitor(sender As Form)
         sender.Location = New Point(Screen.AllScreens(FrmOpenTest.rMonitor.SelectedIndex).Bounds.Location)
         sender.WindowState = FormWindowState.Maximized
         Return True

@@ -5,20 +5,108 @@ Imports System.Net
 Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Xml
+Imports ComponentOwl.BetterListView
+Imports Newtonsoft.Json
 
-Module eIO
-    Public Function SaveXML()
+Module EIo
+    Private Function BooleanToImage(ByVal bool As Boolean) As Image
+        If bool = True Then
+            Return My.Resources.tick
+        Else
+            Return My.Resources.cross
+        End If
+    End Function
+
+    Public Function ReloadDataviews()
+        With FrmOpenTest.listCandidates
+
+            .Columns.Clear()
+            FrmOpenTest.listCandidateActive.Items.Clear()
+
+            Dim columnName As New BetterListViewColumnHeader
+            columnName.Name = "listCandidatesName"
+            columnName.Text = "Naam"
+            'columnName.CellTemplate = New DataGridViewTextBoxCell()
+            .Columns.Add(columnName)
+
+            For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
+                Dim columnEpisode As New BetterListViewColumnHeader
+                columnEpisode.Name = "dataCandidatesName" & ep.Key
+                columnEpisode.Text = "Afl. " & ep.Key
+                columnEpisode.Width = 50
+                .Columns.Add(columnEpisode)
+
+                FrmOpenTest.listCandidateActive.Items.Add("Aflevering " & ep.Key)
+            Next
+
+            For Each candidate In CurrentGroup.Candidates.Values
+                'Dim item As New OLVListItem(candidate.name)
+                'item.SubItems(0).Text = candidate.Value.name
+
+                Dim newItem As New BetterListViewItem(candidate.Name)
+                For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
+                    If candidate.Active.ContainsKey(ep.Key) Then
+                        newItem.SubItems.Add(BooleanToImage(candidate.Active(ep.Key)))
+                    Else
+                        newItem.SubItems.Add(BooleanToImage(False))
+                    End If
+                    'count += 1
+                Next
+
+                'Dim n As Integer = .Rows.Add()
+                '.Rows.Item(n).Cells(0).Value = candidate.name
+                'Dim count As Integer = 1
+                'For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.episodes
+                '    If candidate.active.ContainsKey(ep.Key) Then
+                '        .Rows.Item(n).Cells(count).Value = candidate.active(ep.Key)
+                '    Else
+                '        .Rows.Item(n).Cells(count).Value = False
+                '    End If
+                '    count += 1
+                'Next
+                .Items.Add(newItem)
+            Next
+
+        End With
+    End Function
+
+    Public Function LoadGroupmode()
+        Try
+            Dim objStreamReader As New IO.StreamReader(My.Settings.folder & "\apple.widm")
+            Dim temp As String = objStreamReader.ReadToEnd()
+            'MsgBox(temp)
+            CurrentGroup = JsonConvert.DeserializeObject(Of Groupmode)(temp)
+            'MsgBox(CurrentGroup.episodes(1).number)
+            objStreamReader.Close()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function SaveGroupmode()
+        Try
+            Dim objStreamWriter As New IO.StreamWriter(My.Settings.folder & "\apple.widm")
+            objStreamWriter.Write(JsonConvert.SerializeObject(CurrentGroup, Newtonsoft.Json.Formatting.Indented))
+            objStreamWriter.Close()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function SaveXml()
         If FrmOpenTest.txtFolder.Text <> "" Then
             Try
                 Dim settings As New XmlWriterSettings()
                 settings.Indent = True
                 settings.Encoding = Encoding.Default
 
-                Dim XmlWrt As XmlWriter =
+                Dim xmlWrt As XmlWriter =
                         XmlWriter.Create(FrmOpenTest.txtFolder.Text & "\afl" & FrmOpenTest.numAflevering.Value & ".widm",
                                          settings)
 
-                With XmlWrt
+                With xmlWrt
 
                     ' Write the Xml declaration.
                     .WriteStartDocument()
@@ -72,7 +160,7 @@ Module eIO
 
             Return True
         Else
-            If FrmOpenTest.startedUp = True Then
+            If FrmOpenTest.StartedUp = True Then
                 If My.Settings.language = "en" Then
                     MsgBox("No folder has been chosen yet", MsgBoxStyle.Exclamation)
                 Else
@@ -83,7 +171,7 @@ Module eIO
         End If
     End Function
 
-    Public Function LoadXML()
+    Public Function LoadXml()
         If FrmOpenTest.txtFolder.Text <> "" Then
             Try
                 Dim candidates() As String = {""}
@@ -121,7 +209,7 @@ Module eIO
                 End While
                 ' MsgBox("")
                 document.Close()
-                If Not FrmOpenTest.selectedLoad(0) = False Then
+                If Not FrmOpenTest.SelectedLoad(0) = False Then
                     For Each item As String In candidates.Skip(1)
                         FrmOpenTest.listKandidaten.Items.Add(Replace(item, vbLf, ""))
                     Next
@@ -130,7 +218,7 @@ Module eIO
                     Next
                     FrmOpenTest.txtWieisdemol.SelectedItem = mole
                 End If
-                If Not FrmOpenTest.selectedLoad(1) = False Then
+                If Not FrmOpenTest.SelectedLoad(1) = False Then
                     For Each line As String In answers.Skip(1) '// loop thru array list.
                         Dim lineArray() As String = line.Split("#") '// separate by "#" character.
                         Dim newItem As New ListViewItem(Replace(lineArray(0).ToString.PadLeft(3), vbLf, "")) _
@@ -148,7 +236,7 @@ Module eIO
                         FrmOpenTest.listAntwoorden.Items.Add(newItem) '// add Item to ListView.
                     Next
                 End If
-                If Not FrmOpenTest.selectedLoad(2) = False Then
+                If Not FrmOpenTest.SelectedLoad(2) = False Then
                     For Each line2 As String In execution.Skip(1) '// loop thru array list.
                         Dim lineArray() As String = line2.Split("#") '// separate by "#" character.
                         Dim newItem As New ListViewItem(Replace(lineArray(0).ToString.PadLeft(3), vbLf, "")) _
@@ -175,7 +263,7 @@ Module eIO
                         FrmOpenTest.listviewExecutie.Items.Add(newItem) '// add Item to ListView.
                     Next
                 End If
-                If Not FrmOpenTest.selectedLoad(3) = False Then
+                If Not FrmOpenTest.SelectedLoad(3) = False Then
                     For Each line3 As String In screens.Skip(1) '// loop thru array list.
                         Dim lineArray() As String = line3.Split("#") '// separate by "#" character.
                         Dim _
@@ -194,7 +282,7 @@ Module eIO
                         FrmOpenTest.listviewScherm.Items.Add(newItem) '// add Item to ListView.
                     Next
                 End If
-                FrmOpenTest.calculateCandidates()
+                FrmOpenTest.CalculateCandidates()
                 Return True
             Catch ex As Exception
                 'MsgBox("Er ging iets mis met het inladen!", MsgBoxStyle.Exclamation)
@@ -202,7 +290,7 @@ Module eIO
             End Try
 
         Else
-            If FrmOpenTest.startedUp = True Then
+            If FrmOpenTest.StartedUp = True Then
                 If My.Settings.language = "en" Then
                     MsgBox("No folder has been chosen yet", MsgBoxStyle.Exclamation)
                 Else
@@ -213,7 +301,7 @@ Module eIO
         End If
     End Function
 
-    Public Function BackupXML()
+    Public Function BackupXml()
 
 
         Dim time As DateTime = DateTime.Now
@@ -229,16 +317,16 @@ Module eIO
         Return 0
     End Function
 
-    Public Sub webUpdate()
+    Public Sub WebUpdate()
         FrmOpenTest.Timer1.Stop()
         'Dim Online As String
         FrmOpenTest.ToolStripButton2.Text = "Update"
         FrmOpenTest.ToolStripButton2.Enabled = True
 
-        FrmUpdater.newversionnumber = FrmOpenTest.webclient.DocumentTitle.ToString
+        FrmUpdater.Newversionnumber = FrmOpenTest.Webclient.DocumentTitle.ToString
         If My.Computer.Network.IsAvailable = True Then
-            If IsNumeric(FrmOpenTest.webclient.DocumentTitle.ToString) Then
-                If FrmOpenTest.webclient.DocumentTitle.ToString > My.Application.Info.Version.ToString Then
+            If IsNumeric(FrmOpenTest.Webclient.DocumentTitle.ToString) Then
+                If FrmOpenTest.Webclient.DocumentTitle.ToString > My.Application.Info.Version.ToString Then
                     My.Computer.Audio.PlaySystemSound(SystemSounds.Beep)
                     If My.Settings.language = "en" Then
                         FrmUpdater.Button1.Text = "Download now!"
@@ -249,14 +337,14 @@ Module eIO
 
                     FrmUpdater.Label7.Visible = True
                     FrmUpdater.Label8.Visible = True
-                    FrmUpdater.newversion = True
+                    FrmUpdater.Newversion = True
                     FrmUpdater.txtLatest.BackColor = Color.LightGreen
                     FrmUpdater.txtCurrent.BackColor = Color.LightCoral
 
                     FrmUpdater.ShowDialog()
                 Else
                     'MessageBox.Show("You have the current version")
-                    FrmUpdater.newversion = False
+                    FrmUpdater.Newversion = False
                     If My.Settings.language = "en" Then
                         FrmUpdater.Button1.Text = "No update available"
                     Else
@@ -269,7 +357,7 @@ Module eIO
 
             Else
                 'MessageBox.Show("You have the current version")
-                FrmUpdater.newversion = False
+                FrmUpdater.Newversion = False
                 If My.Settings.language = "en" Then
                     FrmUpdater.Button1.Text = "Can't check for updates"
                 Else
@@ -284,7 +372,7 @@ Module eIO
         End If
     End Sub
 
-    Public Sub exportSettings()
+    Public Sub ExportSettings()
         My.Settings.Save()
         My.Settings.Reload()
         'http://www.vbforums.com/showthread.php?674434-Import-Export-of-My.Settings
@@ -321,7 +409,7 @@ Module eIO
         End If
     End Sub
 
-    Public Sub importSettings()
+    Public Sub ImportSettings()
         Dim oDialog As New OpenFileDialog
         oDialog.Filter = "Application Settings (*.AppSettings)|*AppSettings"
 

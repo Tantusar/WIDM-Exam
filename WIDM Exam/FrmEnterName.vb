@@ -1,15 +1,15 @@
 ﻿Imports WMPLib
 
 Public Class FrmEnterName
-    Public closePass As Boolean = False
-    ReadOnly checkTested As New ListBox
+    Public ClosePass As Boolean = False
+    ReadOnly _checkTested As New ListBox
     Private Declare Function SetWindowTheme Lib "uxtheme" (
                                                           hWnd As IntPtr,
                                                           ByRef pszSubAppName As String,
                                                           ByRef pszSubIdList As String) _
         As Integer
 
-    Private Sub pressedEnter()
+    Private Sub PressedEnter()
         If FrmOpenTest.rGroep.Checked Then
 
             If FrmOpenTest.listKandidaten.Items.Contains(TextBox1.Text) = False Then
@@ -19,7 +19,7 @@ Public Class FrmEnterName
                     MsgBox("Naam niet gevonden, komt deze naam wel voor?", MsgBoxStyle.Exclamation)
                 End If
             Else
-                If checkTested.Items.Contains(TextBox1.Text) Then
+                If _checkTested.Items.Contains(TextBox1.Text) Then
                     If My.Settings.language = "en" Then
                         MsgBox("Quiz was already made by this candidate!", MsgBoxStyle.Exclamation)
                     Else
@@ -27,7 +27,7 @@ Public Class FrmEnterName
                     End If
 
                 Else
-                    checkTested.Items.Add(TextBox1.Text)
+                    _checkTested.Items.Add(TextBox1.Text)
                     Try
                         ComboBox1.Items.Remove(TextBox1.Text)
                     Catch ex As Exception
@@ -147,18 +147,18 @@ Public Class FrmEnterName
         TextBox1.Visible = True
 
         'Default
-        Label1.Font = FrmOpenTest.theme.fontIntroText
-        TextBox1.Font = FrmOpenTest.theme.fontIntroTextfield
+        Label1.Font = CurrentTheme.fontIntroText
+        TextBox1.Font = CurrentTheme.fontIntroTextfield
 
-        Label1.ForeColor = FrmOpenTest.theme.colorIntroText
-        TextBox1.ForeColor = FrmOpenTest.theme.colorIntroTextfield
+        Label1.ForeColor = CurrentTheme.colorIntroText
+        TextBox1.ForeColor = CurrentTheme.colorIntroTextfield
         'US
-        Label5.Font = FrmOpenTest.theme.fontIntroText
-        TextBox3.Font = FrmOpenTest.theme.fontIntroTextfield
+        Label5.Font = CurrentTheme.fontIntroText
+        TextBox3.Font = CurrentTheme.fontIntroTextfield
         'Nostalgia
-        Label2.Font = FrmOpenTest.theme.fontIntroText
-        TextBox2.Font = FrmOpenTest.theme.fontIntroTextfield
-        Button1.Font = FrmOpenTest.theme.fontIntroText
+        Label2.Font = CurrentTheme.fontIntroText
+        TextBox2.Font = CurrentTheme.fontIntroTextfield
+        Button1.Font = CurrentTheme.fontIntroText
 
         'If FrmOpenTest.rLucidaConsole.Checked Then
         '    'Default
@@ -243,27 +243,27 @@ Public Class FrmEnterName
         '    TextBox1.Font = loadFont.GetInstance(11, FontStyle.Regular)
         'End If
 
-        If FrmOpenTest.theme.musicTestEnabled Then
-            WMP1.URL = CurDir() & "\Geluid\" & FrmOpenTest.theme.musicTest
+        If CurrentTheme.musicTestEnabled Then
+            WMP1.URL = CurDir() & "\Geluid\" & CurrentTheme.musicTest
             WMP1.settings.setMode("loop", True)
             WMP1.Ctlcontrols.play()
         End If
-        If FrmOpenTest.theme.logoIntroEnabled Then
-            PictureBox1.Image = FrmOpenTest.theme.imglogoIntro
+        If CurrentTheme.logoIntroEnabled Then
+            PictureBox1.Image = CurrentTheme.imglogoIntro
         Else
             PictureBox1.Visible = False
         End If
-        If FrmOpenTest.theme.backgroundIntroEnabled Then
-            BackgroundImage = FrmOpenTest.theme.imgbackgroundIntro
+        If CurrentTheme.backgroundIntroEnabled Then
+            BackgroundImage = CurrentTheme.imgbackgroundIntro
         Else
             BackgroundImage = Nothing
         End If
-        BackColor = FrmOpenTest.theme.backgroundColorIntro
-        If FrmOpenTest.theme.introStyle = Theme.Style.Old Then
+        BackColor = CurrentTheme.backgroundColorIntro
+        If CurrentTheme.introStyle = Theme.Style.Old Then
             Panel1.Visible = False
             Panel2.Visible = True
             Panel3.Visible = False
-        ElseIf FrmOpenTest.theme.introStyle = Theme.Style.US Then
+        ElseIf CurrentTheme.introStyle = Theme.Style.US Then
             Panel1.Visible = False
             Panel2.Visible = False
             Panel3.Visible = True
@@ -342,7 +342,7 @@ Public Class FrmEnterName
         '    Me.BackgroundImage = Image.FromFile(My.Settings.background)
         '    Me.BackColor = My.Settings.backgroundColor
         'End If
-        checkTested.Items.Clear()
+        _checkTested.Items.Clear()
         If FrmOpenTest.rGroep.Checked Then
             If FrmOpenTest.rCombobox.Checked Then
                 For Each item In FrmOpenTest.listKandidaten.Items
@@ -357,7 +357,7 @@ Public Class FrmEnterName
         End If
     End Sub
 
-    Private Sub start()
+    Private Sub Start()
         Try
             If FrmOpenTest.rVirtualKeyboard.Checked Then
                 FrmOpenTest.killVirtualKeyboard()

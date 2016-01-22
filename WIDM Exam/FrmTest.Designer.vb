@@ -38,18 +38,17 @@ Partial Class FrmTest
         Me.t2 = New System.Windows.Forms.PictureBox()
         Me.t3 = New System.Windows.Forms.Label()
         Me.t1 = New System.Windows.Forms.TextBox()
-        CType(Me.smallLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.WMP2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.WMP1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.t2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        CType(Me.smallLogo,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.WMP2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.WMP1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.t2,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'smallLogo
         '
-        Me.smallLogo.Image = Global.WIDM_Exam.My.Resources.Resources.SmallLogoDark
         resources.ApplyResources(Me.smallLogo, "smallLogo")
         Me.smallLogo.Name = "smallLogo"
-        Me.smallLogo.TabStop = False
+        Me.smallLogo.TabStop = false
         '
         'txtQuestion
         '
@@ -57,14 +56,14 @@ Partial Class FrmTest
         Me.txtQuestion.BackColor = System.Drawing.Color.Transparent
         Me.txtQuestion.ForeColor = System.Drawing.SystemColors.Window
         Me.txtQuestion.Name = "txtQuestion"
-        Me.txtQuestion.UseMnemonic = False
+        Me.txtQuestion.UseMnemonic = false
         '
         'tmTime
         '
         '
         'tmToBack
         '
-        Me.tmToBack.Enabled = True
+        Me.tmToBack.Enabled = true
         '
         'tmButton
         '
@@ -84,7 +83,7 @@ Partial Class FrmTest
         Me.txtTekst2.BackColor = System.Drawing.Color.Transparent
         Me.txtTekst2.ForeColor = System.Drawing.SystemColors.Window
         Me.txtTekst2.Name = "txtTekst2"
-        Me.txtTekst2.UseMnemonic = False
+        Me.txtTekst2.UseMnemonic = false
         '
         'txtTekst1
         '
@@ -92,27 +91,26 @@ Partial Class FrmTest
         Me.txtTekst1.BackColor = System.Drawing.Color.Transparent
         Me.txtTekst1.ForeColor = System.Drawing.SystemColors.Window
         Me.txtTekst1.Name = "txtTekst1"
-        Me.txtTekst1.UseMnemonic = False
+        Me.txtTekst1.UseMnemonic = false
         '
         'WMP2
         '
         resources.ApplyResources(Me.WMP2, "WMP2")
         Me.WMP2.Name = "WMP2"
-        Me.WMP2.OcxState = CType(resources.GetObject("WMP2.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.WMP2.OcxState = CType(resources.GetObject("WMP2.OcxState"),System.Windows.Forms.AxHost.State)
         '
         'WMP1
         '
         resources.ApplyResources(Me.WMP1, "WMP1")
         Me.WMP1.Name = "WMP1"
-        Me.WMP1.OcxState = CType(resources.GetObject("WMP1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.WMP1.OcxState = CType(resources.GetObject("WMP1.OcxState"),System.Windows.Forms.AxHost.State)
         '
         't2
         '
         Me.t2.BackColor = System.Drawing.Color.Transparent
-        Me.t2.Image = Global.WIDM_Exam.My.Resources.Resources.Button
         resources.ApplyResources(Me.t2, "t2")
         Me.t2.Name = "t2"
-        Me.t2.TabStop = False
+        Me.t2.TabStop = false
         '
         't3
         '
@@ -123,7 +121,7 @@ Partial Class FrmTest
         '
         't1
         '
-        Me.t1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.t1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer), CType(CType(64,Byte),Integer))
         Me.t1.BorderStyle = System.Windows.Forms.BorderStyle.None
         resources.ApplyResources(Me.t1, "t1")
         Me.t1.ForeColor = System.Drawing.Color.White
@@ -134,7 +132,6 @@ Partial Class FrmTest
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.BackgroundImage = Global.WIDM_Exam.My.Resources.Resources.Logo_dark
         Me.Controls.Add(Me.t1)
         Me.Controls.Add(Me.t2)
         Me.Controls.Add(Me.t3)
@@ -144,18 +141,18 @@ Partial Class FrmTest
         Me.Controls.Add(Me.WMP1)
         Me.Controls.Add(Me.txtQuestion)
         Me.Controls.Add(Me.smallLogo)
-        Me.DoubleBuffered = True
+        Me.DoubleBuffered = true
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmTest"
-        Me.TopMost = True
-        CType(Me.smallLogo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WMP2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WMP1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.t2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.TopMost = true
+        CType(Me.smallLogo,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.WMP2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.WMP1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.t2,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents smallLogo As System.Windows.Forms.PictureBox
     Friend WithEvents txtQuestion As System.Windows.Forms.Label
     Friend WithEvents tmTime As System.Windows.Forms.Timer

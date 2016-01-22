@@ -2,8 +2,8 @@
 Imports System.Security.Cryptography
 Imports System.Text
 
-Public NotInheritable Class Simple3DES
-    Private ReadOnly TripleDes As New TripleDESCryptoServiceProvider
+Public NotInheritable Class Simple3Des
+    Private ReadOnly _tripleDes As New TripleDESCryptoServiceProvider
 
     Private Function TruncateHash(
                                   key As String,
@@ -17,8 +17,8 @@ Public NotInheritable Class Simple3DES
     End Function
 
     Sub New(key As String)
-        TripleDes.Key = TruncateHash(key, TripleDes.KeySize\8)
-        TripleDes.IV = TruncateHash("", TripleDes.BlockSize\8)
+        _tripleDes.Key = TruncateHash(key, _tripleDes.KeySize\8)
+        _tripleDes.IV = TruncateHash("", _tripleDes.BlockSize\8)
     End Sub
 
     Public Function EncryptData(
@@ -32,7 +32,7 @@ Public NotInheritable Class Simple3DES
         Dim ms As New MemoryStream
         ' Create the encoder to write to the stream.
         Dim encStream As New CryptoStream(ms,
-                                          TripleDes.CreateEncryptor(),
+                                          _tripleDes.CreateEncryptor(),
                                           CryptoStreamMode.Write)
 
         ' Use the crypto stream to write the byte array to the stream.
@@ -53,7 +53,7 @@ Public NotInheritable Class Simple3DES
         Dim ms As New MemoryStream
         ' Create the decoder to write to the stream.
         Dim decStream As New CryptoStream(ms,
-                                          TripleDes.CreateDecryptor(),
+                                          _tripleDes.CreateDecryptor(),
                                           CryptoStreamMode.Write)
 
         ' Use the crypto stream to write the byte array to the stream.

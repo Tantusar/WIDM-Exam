@@ -5,13 +5,13 @@
 
     Private Sub FrmResult_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         expandToMonitor(Me)
-        If FrmOpenTest.theme.backgroundTestEnabled Then
-            BackgroundImage = FrmOpenTest.theme.imgbackgroundTest
+        If CurrentTheme.backgroundTestEnabled Then
+            BackgroundImage = CurrentTheme.imgbackgroundTest
             Else 
             BackgroundImage = Nothing
 
         End If
-        BackColor = FrmOpenTest.theme.backgroundColorTest
+        BackColor = CurrentTheme.backgroundColorTest
 
         'If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUK.Checked Then
 
@@ -62,12 +62,12 @@
         '    txtScore.Font = New Font(My.Settings.customFont.OriginalFontName, 24, FontStyle.Regular)
         'End If
 
-        txtNaam.Font = New Font(FrmOpenTest.theme.fontQuestion.OriginalFontName, 36, FontStyle.Regular)
-        Label2.Font = New Font(FrmOpenTest.theme.fontQuestion.OriginalFontName, 36, FontStyle.Regular)
-        txtScore.Font = New Font(FrmOpenTest.theme.fontQuestion.OriginalFontName, 24, FontStyle.Regular)
-        txtNaam.ForeColor = FrmOpenTest.theme.colorQuestion
-        Label2.ForeColor = FrmOpenTest.theme.colorQuestion
-        txtScore.ForeColor = FrmOpenTest.theme.colorQuestion
+        txtNaam.Font = New Font(CurrentTheme.fontQuestion.OriginalFontName, 36, FontStyle.Regular)
+        Label2.Font = New Font(CurrentTheme.fontQuestion.OriginalFontName, 36, FontStyle.Regular)
+        txtScore.Font = New Font(CurrentTheme.fontQuestion.OriginalFontName, 24, FontStyle.Regular)
+        txtNaam.ForeColor = CurrentTheme.colorQuestion
+        Label2.ForeColor = CurrentTheme.colorQuestion
+        txtScore.ForeColor = CurrentTheme.colorQuestion
 
         txtNaam.Text = FrmEnterName.TextBox1.Text
         My.Computer.Audio.Play(My.Resources.WIDM_Percentagegeluid,

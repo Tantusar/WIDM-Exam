@@ -8,7 +8,7 @@ Module loadFont
     Private _pfc As PrivateFontCollection = Nothing
 
 
-    Public ReadOnly Property GetInstance(Size As Single, style As FontStyle) As Font
+    Public ReadOnly Property GetInstance(size As Single, style As FontStyle) As Font
 
         Get
 

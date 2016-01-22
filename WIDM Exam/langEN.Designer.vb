@@ -128,7 +128,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to The font {0} was not found. Please install this font for this theme..
+        '''  Looks up a localized string similar to The font {0} was not found. Please install this font for this CurrentTheme..
         '''</summary>
         Friend Shared ReadOnly Property FontNotInstalled() As String
             Get

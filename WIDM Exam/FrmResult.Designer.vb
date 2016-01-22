@@ -68,7 +68,6 @@ Partial Class FrmResult
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.BackgroundImage = Global.WIDM_Exam.My.Resources.Resources.Logo_dark
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtNaam)
         Me.Controls.Add(Me.txtScore)

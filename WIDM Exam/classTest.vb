@@ -1,7 +1,7 @@
 ﻿Public Class Test
-    Dim strMoleText As String
-    Dim strAuthor As String
-    Dim strComment As String
+    Dim _strMoleText As String
+    Dim _strAuthor As String
+    Dim _strComment As String
 
     Sub New()
 
@@ -14,32 +14,32 @@
         moleText = _moleText
     End Sub
 
-    Property author As String
+    Property Author As String
         Get
-            Return strAuthor
+            Return _strAuthor
         End Get
         Set(value As String)
-            strAuthor = value
+            _strAuthor = value
         End Set
     End Property
 
-    Property comment As String
+    Property Comment As String
         Get
-            Return strComment
+            Return _strComment
         End Get
         Set(value As String)
-            strComment = value
+            _strComment = value
         End Set
     End Property
 
-    Public questions As Question()
+    Public Questions As Question()
 
-    Property moleText As String
+    Property MoleText As String
         Get
-            Return strMoleText
+            Return _strMoleText
         End Get
         Set(value As String)
-            strMoleText = value
+            _strMoleText = value
         End Set
     End Property
 End Class

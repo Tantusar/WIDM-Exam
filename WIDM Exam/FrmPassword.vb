@@ -1,5 +1,5 @@
 ﻿Public Class FrmPassword
-    Public cancel As Boolean = False
+    Public Cancel As Boolean = False
 
     Private Sub FrmPassword_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
     End Sub

@@ -537,12 +537,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
-        Public Property theme_old() As Integer
+        Public Property CurrentTheme_old() As Integer
             Get
-                Return CType(Me("theme_old"),Integer)
+                Return CType(Me("CurrentTheme_old"),Integer)
             End Get
             Set
-                Me("theme_old") = value
+                Me("CurrentTheme_old") = value
             End Set
         End Property
         
@@ -692,12 +692,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Standaard.widmthema")>  _
-        Public Property theme() As String
+        Public Property CurrentTheme() As String
             Get
-                Return CType(Me("theme"),String)
+                Return CType(Me("CurrentTheme"),String)
             End Get
             Set
-                Me("theme") = value
+                Me("CurrentTheme") = value
             End Set
         End Property
     End Class

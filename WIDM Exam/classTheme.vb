@@ -2,62 +2,62 @@
 
 <JsonObject(MemberSerialization.OptOut)>
  Public Class Theme
-    Dim AfbeeldingenFolder = CurDir() & "\Afbeeldingen"
+    Dim _afbeeldingenFolder = CurDir() & "\Afbeeldingen"
 
     Enum Style
         NewStyle
         Old
-        US
+        Us
     End Enum
 
-    Public name As String
-    Public author As String
+    Public Name As String
+    Public Author As String
 
-    Public fontQuestion As Font
-    Public colorQuestion As Color
+    Public FontQuestion As Font
+    Public ColorQuestion As Color
 
-    Public fontAnswers As Font
-    Public colorAnswers As Color
+    Public FontAnswers As Font
+    Public ColorAnswers As Color
 
-    Public fontIntroText As Font
-    Public colorIntroText As Color
+    Public FontIntroText As Font
+    Public ColorIntroText As Color
 
-    Public fontIntroTextfield As Font
-    Public colorIntroTextfield As Color
+    Public FontIntroTextfield As Font
+    Public ColorIntroTextfield As Color
 
-    Public logoTestEnabled As Boolean
-    Public logoTest As String ' = Image.FromFile(CurDir() & "\" & name & "\logoTest.png")
-    Public logoIntroEnabled As Boolean
-    Public logoIntro As String ' = Image.FromFile(CurDir() & "\" & name & "\logoIntro.png")
+    Public LogoTestEnabled As Boolean
+    Public LogoTest As String ' = Image.FromFile(CurDir() & "\" & name & "\logoTest.png")
+    Public LogoIntroEnabled As Boolean
+    Public LogoIntro As String ' = Image.FromFile(CurDir() & "\" & name & "\logoIntro.png")
 
-    Public backgroundTestEnabled As Boolean
-    Public backgroundTest As String ' = Image.FromFile(CurDir() & "\" & name & "\backgroundTest.png")
-    Public backgroundIntroEnabled As Boolean
-    Public backgroundIntro As String ' = Image.FromFile(CurDir() & "\" & name & "\backgroundIntro.png")
+    Public BackgroundTestEnabled As Boolean
+    Public BackgroundTest As String ' = Image.FromFile(CurDir() & "\" & name & "\backgroundTest.png")
+    Public BackgroundIntroEnabled As Boolean
+    Public BackgroundIntro As String ' = Image.FromFile(CurDir() & "\" & name & "\backgroundIntro.png")
 
-    Public backgroundColorTest As Color
-    Public backgroundColorIntro As Color
+    Public BackgroundColorTest As Color
+    Public BackgroundColorIntro As Color
 
-    Public questionAlignment As ContentAlignment = ContentAlignment.MiddleLeft
-    Public questionBackgroundEnabled As Boolean
-    Public questionBackground As String
+    Public QuestionAlignment As ContentAlignment = ContentAlignment.MiddleLeft
+    Public QuestionBackgroundEnabled As Boolean
+    Public QuestionBackground As String
 
-    Public button As String ' = Image.FromFile(CurDir() & "\" & name & "\button.png")
-    Public buttonClick As String ' = Image.FromFile(CurDir() & "\" & name & "\buttonClick.png")
-    Public colorClickEnabled As Boolean
-    Public colorClick As Color
-    Public buttonHoverEnabled As Boolean
-    Public buttonHover As String ' = Image.FromFile(CurDir() & "\" & name & "\buttonHover.png")
+    Public Button As String ' = Image.FromFile(CurDir() & "\" & name & "\button.png")
+    Public ButtonClick As String ' = Image.FromFile(CurDir() & "\" & name & "\buttonClick.png")
+    Public ColorClickEnabled As Boolean
+    Public ColorClick As Color
+    Public ButtonHoverEnabled As Boolean
+    Public ButtonHover As String ' = Image.FromFile(CurDir() & "\" & name & "\buttonHover.png")
 
-    Public greenScreen As String ' = Image.FromFile(CurDir() & "\" & name & "green.png")
-    Public redScreen As String ' = Image.FromFile(CurDir() & "\" & name & "red.png")
+    Public GreenScreen As String ' = Image.FromFile(CurDir() & "\" & name & "green.png")
+    Public RedScreen As String ' = Image.FromFile(CurDir() & "\" & name & "red.png")
 
-    Public introStyle As Style
+    Public IntroStyle As Style
 
-    Public musicTestEnabled As Boolean
-    Public musicTest As String
-    Public musicExecutionEnabled As Boolean
-    Public musicExecution As String
+    Public MusicTestEnabled As Boolean
+    Public MusicTest As String
+    Public MusicExecutionEnabled As Boolean
+    Public MusicExecution As String
 
     Sub New()
 
@@ -67,10 +67,10 @@
         name = _name
     End Sub
 
-    <JsonIgnore()> ReadOnly Property imgLogoTest As Image
+    <JsonIgnore()> ReadOnly Property ImgLogoTest As Image
         Get
             Try
-                Return Image.FromFile(AfbeeldingenFolder & logoTest)
+                Return Image.FromFile(_afbeeldingenFolder & logoTest)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -78,10 +78,10 @@
         End Get
     End Property
 
-    <JsonIgnore()> ReadOnly Property imgLogoIntro As Image
+    <JsonIgnore()> ReadOnly Property ImgLogoIntro As Image
         Get
             Try
-                Return Image.FromFile(AfbeeldingenFolder & logoIntro)
+                Return Image.FromFile(_afbeeldingenFolder & logoIntro)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -89,10 +89,10 @@
         End Get
     End Property
 
-    <JsonIgnore()> ReadOnly Property imgBackgroundTest As Image
+    <JsonIgnore()> ReadOnly Property ImgBackgroundTest As Image
         Get
             Try
-                Return Image.FromFile(AfbeeldingenFolder & backgroundTest)
+                Return Image.FromFile(_afbeeldingenFolder & backgroundTest)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -100,10 +100,10 @@
         End Get
     End Property
 
-    <JsonIgnore()> ReadOnly Property imgBackgroundIntro As Image
+    <JsonIgnore()> ReadOnly Property ImgBackgroundIntro As Image
         Get
             Try
-                Return Image.FromFile(AfbeeldingenFolder & backgroundIntro)
+                Return Image.FromFile(_afbeeldingenFolder & backgroundIntro)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -111,10 +111,10 @@
         End Get
     End Property
 
-    <JsonIgnore()> ReadOnly Property imgQuestionBackground As Image
+    <JsonIgnore()> ReadOnly Property ImgQuestionBackground As Image
         Get
             Try
-                Return Image.FromFile(AfbeeldingenFolder & questionBackground)
+                Return Image.FromFile(_afbeeldingenFolder & questionBackground)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -122,10 +122,10 @@
         End Get
     End Property
 
-    <JsonIgnore()> ReadOnly Property imgButton As Image
+    <JsonIgnore()> ReadOnly Property ImgButton As Image
         Get
             Try
-                Return Image.FromFile(AfbeeldingenFolder & button)
+                Return Image.FromFile(_afbeeldingenFolder & button)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -133,10 +133,10 @@
         End Get
     End Property
 
-    <JsonIgnore()> ReadOnly Property imgButtonClick As Image
+    <JsonIgnore()> ReadOnly Property ImgButtonClick As Image
         Get
             Try
-                Return Image.FromFile(AfbeeldingenFolder & buttonClick)
+                Return Image.FromFile(_afbeeldingenFolder & buttonClick)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -144,10 +144,10 @@
         End Get
     End Property
 
-    <JsonIgnore()> ReadOnly Property imgButtonHover As Image
+    <JsonIgnore()> ReadOnly Property ImgButtonHover As Image
         Get
             Try
-                Return Image.FromFile(AfbeeldingenFolder & buttonHover)
+                Return Image.FromFile(_afbeeldingenFolder & buttonHover)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -155,10 +155,10 @@
         End Get
     End Property
 
-    <JsonIgnore()> ReadOnly Property imgGreenScreen As Image
+    <JsonIgnore()> ReadOnly Property ImgGreenScreen As Image
         Get
             Try
-                Return Image.FromFile(AfbeeldingenFolder & greenScreen)
+                Return Image.FromFile(_afbeeldingenFolder & greenScreen)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -166,10 +166,10 @@
         End Get
     End Property
 
-    <JsonIgnore()> ReadOnly Property imgRedScreen As Image
+    <JsonIgnore()> ReadOnly Property ImgRedScreen As Image
         Get
             Try
-                Return Image.FromFile(AfbeeldingenFolder & redScreen)
+                Return Image.FromFile(_afbeeldingenFolder & redScreen)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing

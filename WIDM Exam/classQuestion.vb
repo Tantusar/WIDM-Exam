@@ -1,23 +1,23 @@
 ﻿Public Class Question
     'Vraag
-    Dim strQuestion As String
-    Public answers As Answer()
-    Dim strRightAnswer As String
-    Dim intQuestionPoints As Integer = 0
+    Dim _strQuestion As String
+    Public Answers As Answer()
+    Dim _strRightAnswer As String
+    Dim _intQuestionPoints As Integer = 0
 
     'Tekst tussendoor
-    Dim strText1 As String
-    Dim strText2 As String
+    Dim _strText1 As String
+    Dim _strText2 As String
     
     Sub New()
         
     End Sub
 
-    Sub New(_text As String, _answers As Answer(), _rightAnswer As String, ByVal _questionPoints As Integer)
+    Sub New(_text As String, _answers As Answer(), _rightAnswer As String, ByVal questionPoints As Integer)
         text = _text
         answers = _answers
         rightAnswer = _rightAnswer
-        points = _questionPoints
+        points = questionPoints
     End Sub
 
     Sub New(_text1 As String, _text2 As String)
@@ -25,48 +25,48 @@
         text2 = _text2
     End Sub
 
-    Property text As String
+    Property Text As String
         Get
-            Return strQuestion
+            Return _strQuestion
         End Get
         Set
-            strQuestion = value
+            _strQuestion = value
         End Set
     End Property
 
-    Property rightAnswer As String
+    Property RightAnswer As String
         Get
-            Return strRightAnswer
+            Return _strRightAnswer
         End Get
         Set
-            strRightAnswer = value
+            _strRightAnswer = value
         End Set
     End Property
 
-    Property points As Integer
+    Property Points As Integer
         Get
-            Return intQuestionPoints
+            Return _intQuestionPoints
         End Get
         Set(value As Integer)
-            intQuestionPoints = value 
+            _intQuestionPoints = value 
         End Set
     End Property
 
-    Property text1 As String
+    Property Text1 As String
         Get
-            Return strText1
+            Return _strText1
         End Get
         Set
-            strText1 = value
+            _strText1 = value
         End Set
     End Property
 
-    Property text2 As String
+    Property Text2 As String
         Get
-            Return strText2
+            Return _strText2
         End Get
         Set
-            strText2 = value
+            _strText2 = value
         End Set
     End Property
 End Class

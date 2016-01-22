@@ -1,9 +1,9 @@
 ﻿Imports System.Net.Sockets
 Imports System.Text
 
-Module eClient
-    Dim ReadOnly clientSocket As New TcpClient()
-    Dim serverStream As NetworkStream
+Module EClient
+    Dim ReadOnly ClientSocket As New TcpClient()
+    Dim _serverStream As NetworkStream
 
     Public Sub SendMessage()
         Dim serverStream As NetworkStream = clientSocket.GetStream()
@@ -31,7 +31,7 @@ Module eClient
         clientSocket.Close()
     End Sub
 
-    Sub msg(mesg As String)
+    Sub Msg(mesg As String)
         FrmOpenTest.txtLogClient.Text = FrmOpenTest.txtLogClient.Text + Environment.NewLine + " >> " + mesg
     End Sub
 End Module

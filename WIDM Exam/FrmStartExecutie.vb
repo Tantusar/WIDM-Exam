@@ -2,12 +2,12 @@
 Imports WMPLib
 
 Public Class FrmStartExecutie
-    ReadOnly checkTested As New ListBox
-    Dim number As Integer = 0
-    ReadOnly candidatesList As New ListBox
-    ReadOnly nonRed As New ListBox
-    Dim timerInterval As Integer = 1
-    Private Declare Function SetWindowTheme Lib "uxtheme" (
+    ReadOnly _checkTested As New ListBox
+    Dim _number As Integer = 0
+    ReadOnly _candidatesList As New ListBox
+    ReadOnly _nonRed As New ListBox
+    Dim _timerInterval As Integer = 1
+    Private Declare Function SetWindowTheme Lib "uxCurrentTheme" (
                                                           hWnd As IntPtr,
                                                           ByRef pszSubAppName As String,
                                                           ByRef pszSubIdList As String) As Integer
@@ -22,7 +22,7 @@ Public Class FrmStartExecutie
             '    templist.Items.Add(item)
             'Next
             FrmOpenTest.numAflevering.Value = FrmOpenTest.numAflevering.Value + 1
-            For Each item In nonRed.Items
+            For Each item In _nonRed.Items
                 FrmOpenTest.listKandidaten.Items.Add(item)
             Next
             SaveXML()
@@ -31,10 +31,10 @@ Public Class FrmStartExecutie
         End If
     End Sub
 
-    Private Sub pressedEnter()
+    Private Sub PressedEnter()
 
         If FrmOpenTest.rGroep.Checked Then
-            If candidatesList.Items.Contains(TextBox1.Text) = False Then
+            If _candidatesList.Items.Contains(TextBox1.Text) = False Then
                 If My.Settings.language = "en" Then
                     MsgBox("Name wasn't found, does this name exists?", MsgBoxStyle.Exclamation)
                 Else
@@ -43,7 +43,7 @@ Public Class FrmStartExecutie
 
                 TextBox1.ReadOnly = False
             Else
-                If checkTested.Items.Contains(TextBox1.Text) Then
+                If _checkTested.Items.Contains(TextBox1.Text) Then
                     If My.Settings.language = "en" Then
                         MsgBox("Elimination was already executed by this candidate!", MsgBoxStyle.Exclamation)
                     Else
@@ -52,12 +52,12 @@ Public Class FrmStartExecutie
 
                     TextBox1.ReadOnly = False
                 Else
-                    checkTested.Items.Add(TextBox1.Text)
+                    _checkTested.Items.Add(TextBox1.Text)
                     For Each item As ListViewItem In FrmOpenTest.listviewExecutie.Items
                         If item.SubItems(0).Text = TextBox1.Text Then
                             If item.SubItems(3).Text = FrmOpenTest.Rood Then
                             Else
-                                nonRed.Items.Add(TextBox1.Text)
+                                _nonRed.Items.Add(TextBox1.Text)
                             End If
                         End If
                     Next
@@ -75,7 +75,7 @@ Public Class FrmStartExecutie
         End If
     End Sub
 
-    Private Sub start()
+    Private Sub Start()
 
 
         'Dim listviewChecked As String
@@ -88,7 +88,7 @@ Public Class FrmStartExecutie
                 Timer1.Interval = 1500
                 Timer1.Start()
             ElseIf FrmOpenTest.rLangereGeluiden.Checked Then
-                Timer1.Interval = timerInterval
+                Timer1.Interval = _timerInterval
                 Timer1.Start()
             Else
                 start2()
@@ -98,7 +98,7 @@ Public Class FrmStartExecutie
         End If
     End Sub
 
-    Private Sub start2()
+    Private Sub Start2()
         TextBox1.ReadOnly = False
         'listviewChecked.Contains(TextBox1.Text) = False
         Try
@@ -111,7 +111,7 @@ Public Class FrmStartExecutie
             For Each li In FrmOpenTest.listviewExecutie.Items
                 If li.Text = TextBox1.Text Then
                     If li.SubItems(3).Text = FrmOpenTest.Rood Then
-                        FrmExecutie.BackgroundImage = FrmOpenTest.theme.imgRedScreen
+                        FrmExecutie.BackgroundImage = CurrentTheme.imgRedScreen
 
                         If FrmOpenTest.rAfscheidsmuziek.Checked Then
                             My.Computer.Audio.Stop()
@@ -121,7 +121,7 @@ Public Class FrmStartExecutie
                         End If
 
                     ElseIf li.SubItems(3).Text = FrmOpenTest.Groen Then
-                        FrmExecutie.BackgroundImage = FrmOpenTest.theme.imgGreenScreen
+                        FrmExecutie.BackgroundImage = CurrentTheme.imgGreenScreen
                     Else
                         Dim li2 As ListViewItem
                         For Each li2 In FrmOpenTest.listviewScherm.Items
@@ -237,40 +237,40 @@ Public Class FrmStartExecutie
         TextBox1.Visible = True
 
         'Default
-        Label1.Font = FrmOpenTest.theme.fontIntroText
-        TextBox1.Font = FrmOpenTest.theme.fontIntroTextfield
+        Label1.Font = CurrentTheme.fontIntroText
+        TextBox1.Font = CurrentTheme.fontIntroTextfield
 
-        Label1.ForeColor = FrmOpenTest.theme.colorIntroText
-        TextBox1.ForeColor = FrmOpenTest.theme.colorIntroTextfield
+        Label1.ForeColor = CurrentTheme.colorIntroText
+        TextBox1.ForeColor = CurrentTheme.colorIntroTextfield
         'US
-        Label5.Font = FrmOpenTest.theme.fontIntroText
-        TextBox3.Font = FrmOpenTest.theme.fontIntroTextfield
+        Label5.Font = CurrentTheme.fontIntroText
+        TextBox3.Font = CurrentTheme.fontIntroTextfield
         'Nostalgia
-        Label2.Font = FrmOpenTest.theme.fontIntroText
-        TextBox2.Font = FrmOpenTest.theme.fontIntroTextfield
-        Button1.Font = FrmOpenTest.theme.fontIntroText
+        Label2.Font = CurrentTheme.fontIntroText
+        TextBox2.Font = CurrentTheme.fontIntroTextfield
+        Button1.Font = CurrentTheme.fontIntroText
 
-        If FrmOpenTest.theme.musicExecutionEnabled Then
-            WMP2.URL = CurDir() & "\Geluid\" & FrmOpenTest.theme.musicExecution
+        If CurrentTheme.musicExecutionEnabled Then
+            WMP2.URL = CurDir() & "\Geluid\" & CurrentTheme.musicExecution
             WMP2.settings.setMode("loop", True)
             WMP2.Ctlcontrols.play()
         End If
-        If FrmOpenTest.theme.logoIntroEnabled Then
-            PictureBox1.Image = FrmOpenTest.theme.imglogoIntro
+        If CurrentTheme.logoIntroEnabled Then
+            PictureBox1.Image = CurrentTheme.imglogoIntro
         Else
             PictureBox1.Visible = False
         End If
-        If FrmOpenTest.theme.backgroundIntroEnabled Then
-            BackgroundImage = FrmOpenTest.theme.imgbackgroundIntro
+        If CurrentTheme.backgroundIntroEnabled Then
+            BackgroundImage = CurrentTheme.imgbackgroundIntro
         Else
             BackgroundImage = Nothing
         End If
-        BackColor = FrmOpenTest.theme.backgroundColorIntro
-        If FrmOpenTest.theme.introStyle = Theme.Style.Old Then
+        BackColor = CurrentTheme.backgroundColorIntro
+        If CurrentTheme.introStyle = Theme.Style.Old Then
             Panel1.Visible = False
             Panel2.Visible = True
             Panel3.Visible = False
-        ElseIf FrmOpenTest.theme.introStyle = Theme.Style.US Then
+        ElseIf CurrentTheme.introStyle = Theme.Style.US Then
             Panel1.Visible = False
             Panel2.Visible = False
             Panel3.Visible = True
@@ -415,14 +415,14 @@ Public Class FrmStartExecutie
         '    Button1.Font = New Font(My.Settings.customFont.OriginalFontName, 11.25, FontStyle.Regular)
         'End If
 
-        checkTested.Items.Clear()
-        nonRed.Items.Clear()
+        _checkTested.Items.Clear()
+        _nonRed.Items.Clear()
         For Each li As ListViewItem In FrmOpenTest.listviewExecutie.Items
-            candidatesList.Items.Add(li.SubItems(0).Text)
+            _candidatesList.Items.Add(li.SubItems(0).Text)
         Next
         If FrmOpenTest.rGroep.Checked Then
             If FrmOpenTest.rCombobox.Checked Then
-                For Each item In candidatesList.Items
+                For Each item In _candidatesList.Items
                     ComboBox1.Items.Add(item)
                 Next
                 TextBox1.Visible = False
@@ -434,7 +434,7 @@ Public Class FrmStartExecutie
         End If
     End Sub
 
-    Private Sub sound()
+    Private Sub Sound()
         Try
             Dim lines() As String
             If FrmOpenTest.rLangereGeluiden.Checked Then
@@ -444,11 +444,11 @@ Public Class FrmStartExecutie
             End If
             Dim rndnumber = New Random
 
-            number = CInt(Int(((lines.Count - 1) * Rnd()) + 1))
+            _number = CInt(Int(((lines.Count - 1) * Rnd()) + 1))
 
             WMP1.Ctlcontrols.stop()
-            Dim result() As String = lines(number).Split("#")
-            timerInterval = Val(result(1).ToString)
+            Dim result() As String = lines(_number).Split("#")
+            _timerInterval = Val(result(1).ToString)
             WMP1.URL = CurDir() & "\Geluid\" & result(0)
         Catch ex As Exception
 

@@ -40,7 +40,7 @@
     </application>
   </compatibility>
 
-  <!-- Enable themes for Windows common controls and dialogs (Windows XP and later) -->
+  <!-- Enable CurrentThemes for Windows common controls and dialogs (Windows XP and later) -->
   <!-- <dependency>
     <dependentAssembly>
       <assemblyIdentity

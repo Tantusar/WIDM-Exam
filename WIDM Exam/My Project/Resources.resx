@@ -118,38 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="logowidm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logowidm.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Groenscherm_oud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Groenscherm_oud.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="nl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Wie_is_de_Mol_Examen_32512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wie is de Mol Examen_32512.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Groenscherm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Groenscherm.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button_2004" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_2004.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Roodscherm_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roodscherm_2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="OCRAEXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OCRAEXT.TTF;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="UK_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2000px-Fingerprint_picture.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SmallLogoDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SmallLogoDark.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="header2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\header2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -192,26 +168,8 @@ table td {
 &lt;table&gt;
 </value>
   </data>
-  <data name="Groenscherm_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Groenscherm_2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo dark.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="aButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\aButton.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tick.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Roodscherm_oud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roodscherm_oud.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo_oud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo oud.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Roodscherm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roodscherm.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Klikgeluid_louder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Klikgeluid_louder.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -222,14 +180,8 @@ table td {
   <data name="WIDM_Percentagegeluid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WIDM Percentagegeluid.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="WIDM_logo_test" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WIDM logo test.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="WIDM_Tekstjegeluid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WIDM Tekstjegeluid.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="WIDM_logo_2004" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WIDM logo 2004.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -237,61 +189,10 @@ table td {
   <data name="WIDM_Roodschermgeluid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WIDM Roodschermgeluid.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="US_Background_Textfield" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Background enter name US.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Background_question_US" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Background question US.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="US_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\US_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="US_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Groenscherm_oud2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Groen oud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Roodscherm_oud2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rood oud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="backgroundheader_2013_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroundheader_2013_small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Groen_2015" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Groen 2015.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Rood_2015" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rood 2015.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="widmgroenscherm2015metvinger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\widmgroenscherm2015metvinger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="widmroodscherm2015metvinger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\widmroodscherm2015metvinger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fr_Animated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Animated.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fr_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fr_Cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button pressed cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FR_Groen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FR Groen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fr_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FR_Rood" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FR Rood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fr_unpressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button unpressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fr_pressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button pressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Background_enter_name_US" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background enter name US.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1,6 +1,6 @@
 ﻿Public Class Answer
-    Dim intId As Integer
-    Dim strAnswer As String
+    Dim _intId As Integer
+    Dim _strAnswer As String
 
     Sub New()
 
@@ -11,21 +11,21 @@
         text = _text
     End Sub
 
-    Property id As Integer
+    Property Id As Integer
         Get
-            Return intId
+            Return _intId
         End Get
         Set
-            intId = Value
+            _intId = Value
         End Set
     End Property
 
-    Property text As String
+    Property Text As String
         Get
-            Return strAnswer
+            Return _strAnswer
         End Get
         Set
-            strAnswer = Value
+            _strAnswer = Value
         End Set
     End Property
 End Class

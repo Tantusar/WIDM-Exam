@@ -124,7 +124,6 @@ Partial Class FrmEnterName
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.WIDM_Exam.My.Resources.Resources.SmallLogoDark
         resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = false
@@ -139,7 +138,7 @@ Partial Class FrmEnterName
         '
         resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.Panel3.BackgroundImage = Global.WIDM_Exam.My.Resources.Resources.US_Background_Textfield
+        Me.Panel3.BackgroundImage = Global.WIDM_Exam.My.Resources.Resources.Background_enter_name_US
         Me.Panel3.Controls.Add(Me.TextBox3)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Name = "Panel3"

@@ -1,9 +1,9 @@
 ﻿
 
 Public Class FrmUpdater
-    Public newversion As Boolean = False
-    Public newversionnumber As String = ""
-    Dim secondFile As String
+    Public Newversion As Boolean = False
+    Public Newversionnumber As String = ""
+    Dim _secondFile As String
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If FrmOpenTest.rOCRAEXT.Checked Then

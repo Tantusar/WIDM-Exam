@@ -11,16 +11,17 @@ Public Class FrmTestMaken
     Const TekstTussendoor = "Tekst tussendoor"
     Const OpenVraag = "Open vraag"
 
-    Dim document As XmlReader
-    Dim question As String = ""
-    Dim answers As String = ""
-    Dim amount As String = ""
-    Dim correctanswer As String = ""
-    Dim text1 As String = ""
-    Dim text2 As String = ""
-    Dim intCount0 As Integer = 0
-    Dim encryptedTest As Boolean = False
-    Dim usesave As Boolean = False
+    Dim _document As XmlReader
+    Dim _question As String = ""
+    Dim _answers As String = ""
+    Dim _amount As String = ""
+    Dim _correctanswer As String = ""
+    Dim _text1 As String = ""
+    Dim _text2 As String = ""
+    Dim _intCount0 As Integer = 0
+    Dim _encryptedTest As Boolean = False
+    Dim _usesave As Boolean = False
+    Dim _test As New Test
 
     Private Sub FrmTestMaken_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
 
@@ -134,40 +135,7 @@ Public Class FrmTestMaken
         txtTekst2.Clear()
     End Sub
 
-    Private Sub Save()
-        'Create a list
-        Dim questions As Question() = {}
-        For Each row As ListViewItem In listPanel.Items
-            If row.SubItems(0).Text = Vraag Then
-                Dim tempAnswers As Answer() = {}
-                Dim i = 0
-                'Split answers to array
-                For i = 0 To row.SubItems(2).Text.Split(New String() {"##"}, StringSplitOptions.RemoveEmptyEntries).Count - 1
-                    tempAnswers.Add(New Answer(i, row.SubItems(2).Text.Split(New String() {"##"}, StringSplitOptions.RemoveEmptyEntries)(i)))
-                Next
-                'Add to list
-                questions.Add(New Question(row.SubItems(1).Text, tempAnswers, row.SubItems(5).Text, 1))
-            ElseIf row.SubItems(0).Text = TekstTussendoor Then
-                questions.Add(New Question(row.SubItems(1).Text, row.SubItems(2).Text))
-
-            ElseIf row.SubItems(0).Text = OpenVraag Then
-                Dim openQuestion As New Question
-                openQuestion.text = row.SubItems(1).Text
-                questions.Add(openQuestion)
-            End If
-        Next
-
-        Dim test As New Test()
-        test.author = "Koen! :-)"
-        'TODO: Create way to use user input for author and comment.
-        test.questions = questions
-
-
-        Dim objStreamWriter As New IO.StreamWriter(SaveFileDialog1.FileName)
-        'Serialize list
-        objStreamWriter.Write(JsonConvert.SerializeObject(test, Newtonsoft.Json.Formatting.Indented))
-        objStreamWriter.Close()
-    End Sub
+    
 
     Sub Open(ByVal buildDatabase As Boolean)
 
@@ -183,7 +151,7 @@ Public Class FrmTestMaken
             Dim output As String = objStreamReader.ReadToEnd()
             objStreamReader.Close()
 
-            Dim JSONdeserialized = JsonConvert.DeserializeObject(output)
+            Dim jsoNdeserialized = JsonConvert.DeserializeObject(output)
 
             'Loop through questions
             For Each item In JSONdeserialized("questions")
@@ -270,8 +238,38 @@ Public Class FrmTestMaken
             Button4.Enabled = True
         End If
     End Sub
+    Private Sub Save()
+        'Create a list
+        Dim questions As Question() = {}
+        For Each row As ListViewItem In listPanel.Items
+            If row.SubItems(0).Text = Vraag Then
+                Dim tempAnswers As Answer() = {}
+                Dim i = 0
+                'Split answers to array
+                For i = 0 To row.SubItems(2).Text.Split(New String() {"##"}, StringSplitOptions.RemoveEmptyEntries).Count - 1
+                    tempAnswers.Add(New Answer(i, row.SubItems(2).Text.Split(New String() {"##"}, StringSplitOptions.RemoveEmptyEntries)(i)))
+                Next
+                'Add to list
+                questions.Add(New Question(row.SubItems(1).Text, tempAnswers, row.SubItems(5).Text, 1))
+            ElseIf row.SubItems(0).Text = TekstTussendoor Then
+                questions.Add(New Question(row.SubItems(1).Text, row.SubItems(2).Text))
 
-    Sub savebutton()
+            ElseIf row.SubItems(0).Text = OpenVraag Then
+                Dim openQuestion As New Question
+                openQuestion.text = row.SubItems(1).Text
+                questions.Add(openQuestion)
+            End If
+        Next
+
+        _test.questions = questions
+
+
+        Dim objStreamWriter As New IO.StreamWriter(SaveFileDialog1.FileName)
+        'Serialize list
+        objStreamWriter.Write(JsonConvert.SerializeObject(_test, Newtonsoft.Json.Formatting.Indented))
+        objStreamWriter.Close()
+    End Sub
+    Sub Savebutton()
         If rNormalTest.Checked Then
             If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
 
@@ -288,7 +286,7 @@ Public Class FrmTestMaken
         Else
             If FrmOpenTest.rGroep.Checked Then
                 If Not My.Settings.folder = "" Then
-                    If usesave = False Then
+                    If _usesave = False Then
                         SaveFileDialog1.FileName = My.Settings.folder & "\" & "afl" & NumericUpDown1.Value & ".widm3"
                     End If
                     'MsgBox(OpenFileDialog1.FileName)
@@ -318,7 +316,7 @@ Public Class FrmTestMaken
         savebutton()
     End Sub
 
-    Sub btnBewerken()
+    Sub BtnBewerken()
         Try
             Dim lvi As ListViewItem
             For Each lvi In listPanel.SelectedItems
@@ -439,7 +437,7 @@ Public Class FrmTestMaken
         ComboBox1.Items.Clear()
     End Sub
 
-    Sub removeallitems()
+    Sub Removeallitems()
         Dim li As ListViewItem
         For Each li In listPanel.Items
             listPanel.Items.Remove(li)
@@ -464,9 +462,9 @@ Public Class FrmTestMaken
 
             If result = DialogResult.Yes Then
                 SaveFileDialog1.FileName = OpenFileDialog1.FileName
-                usesave = True
+                _usesave = True
                 savebutton()
-                usesave = False
+                _usesave = False
                 loadtest()
             End If
             If result = DialogResult.No Then
@@ -535,12 +533,12 @@ Public Class FrmTestMaken
         End Try
     End Sub
 
-    Sub loadtest()
+    Sub Loadtest()
         BuildDatabase()
         If rNormalTest.Checked Then
             If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
                 removeallitems()
-                intCount0 = 0
+                _intCount0 = 0
                 Open(False)
                 ConvertCorrectAnswerToText()
                 If My.Settings.language = "en" Then
@@ -561,7 +559,7 @@ Public Class FrmTestMaken
                 If Not My.Settings.folder = "" Then
                     OpenFileDialog1.FileName = My.Settings.folder & "\" & "afl" & NumericUpDown1.Value & ".widm3"
                     removeallitems()
-                    intCount0 = 0
+                    _intCount0 = 0
                     'MsgBox(OpenFileDialog1.FileName)
                     Open(False)
                     ConvertCorrectAnswerToText()
@@ -604,9 +602,9 @@ Public Class FrmTestMaken
             End If
             If result = DialogResult.Yes Then
                 SaveFileDialog1.FileName = OpenFileDialog1.FileName
-                usesave = True
+                _usesave = True
                 savebutton()
-                usesave = False
+                _usesave = False
                 loadtest()
             End If
             If result = DialogResult.No Then
@@ -620,7 +618,7 @@ Public Class FrmTestMaken
     Private Sub rNormalTest_CheckedChanged(sender As Object, e As EventArgs) Handles rNormalTest.CheckedChanged
     End Sub
 
-    Sub openOldTest()
+    Sub OpenOldTest()
         Dim lines() As String = File.ReadAllLines(OpenFileDialog2.FileName)
         Dim aantalvragen As Integer = lines(0)
         Dim recogniseQuestion As Integer
@@ -695,7 +693,7 @@ Public Class FrmTestMaken
             Exit Sub
         End If
 
-        Dim SelIndex As Integer = Me.listPanel.SelectedIndices.Item(0)  'ListVisw must only support single seleccion
+        Dim selIndex As Integer = Me.listPanel.SelectedIndices.Item(0)  'ListVisw must only support single seleccion
 
         If SelIndex = 0 Then
             If My.Settings.language = "en" Then
@@ -740,7 +738,7 @@ Public Class FrmTestMaken
             Exit Sub
         End If
 
-        Dim SelIndex As Integer = Me.listPanel.SelectedIndices.Item(0) 'ListView must only support single seleccion
+        Dim selIndex As Integer = Me.listPanel.SelectedIndices.Item(0) 'ListView must only support single seleccion
 
         If SelIndex = Me.listPanel.Items.Count - 1 Then
             If My.Settings.language = "en" Then
@@ -761,7 +759,7 @@ Public Class FrmTestMaken
         listPanel.Select()
     End Sub
 
-    Private Sub testTest()
+    Private Sub TestTest()
     End Sub
 
     Private Sub ToolStripButton7_Click(sender As Object, e As EventArgs) Handles ToolStripButton7.Click
@@ -879,9 +877,9 @@ Public Class FrmTestMaken
                 End If
                 If result = DialogResult.Yes Then
                     SaveFileDialog1.FileName = OpenFileDialog1.FileName
-                    usesave = True
+                    _usesave = True
                     savebutton()
-                    usesave = False
+                    _usesave = False
                     loadtest()
                 End If
                 If result = DialogResult.No Then
@@ -937,6 +935,15 @@ Public Class FrmTestMaken
                 'Console.WriteLine("Na|" & NumericUpDown1.Value & "|" & rNormalTest.Checked.ToString & "|" & rGroepsModusTest.Checked.ToString)
                 rNormalTest.Checked = True
             End If
+        End If
+    End Sub
+
+    Private Sub ToolStripExtraInfo_Click(sender As Object, e As EventArgs) Handles ToolStripExtraInfo.Click
+        Dim form As New FrmExtraInfo(_test.author, _test.comment, _test.moleText)
+        If form.ShowDialog() = DialogResult.OK Then
+            _test.author = form.txtAuthor.Text 
+            _test.comment = form.txtComment.Text
+            _test.moleText = form.txtMoleText.Text
         End If
     End Sub
 End Class

@@ -71,7 +71,7 @@ Partial Class FrmTestMaken
         Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton7 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripExtraInfo = New System.Windows.Forms.ToolStripButton()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label9 = New System.Windows.Forms.Label()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
@@ -319,7 +319,7 @@ Partial Class FrmTestMaken
         '
         'ToolStrip2
         '
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton4, Me.ToolStripSplitButton1, Me.ToolStripSeparator1, Me.ToolStripButton5, Me.ToolStripSeparator3, Me.ToolStripButton6, Me.ToolStripSeparator4, Me.ToolStripButton7, Me.ToolStripButton1})
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton4, Me.ToolStripSplitButton1, Me.ToolStripSeparator1, Me.ToolStripButton5, Me.ToolStripSeparator3, Me.ToolStripButton6, Me.ToolStripSeparator4, Me.ToolStripButton7, Me.ToolStripExtraInfo})
         resources.ApplyResources(Me.ToolStrip2, "ToolStrip2")
         Me.ToolStrip2.Name = "ToolStrip2"
         '
@@ -375,10 +375,10 @@ Partial Class FrmTestMaken
         resources.ApplyResources(Me.ToolStripButton7, "ToolStripButton7")
         Me.ToolStripButton7.Name = "ToolStripButton7"
         '
-        'ToolStripButton1
+        'ToolStripExtraInfo
         '
-        resources.ApplyResources(Me.ToolStripButton1, "ToolStripButton1")
-        Me.ToolStripButton1.Name = "ToolStripButton1"
+        resources.ApplyResources(Me.ToolStripExtraInfo, "ToolStripExtraInfo")
+        Me.ToolStripExtraInfo.Name = "ToolStripExtraInfo"
         '
         'Timer1
         '
@@ -592,7 +592,7 @@ End Sub
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents cmRawRightAnswer As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
-    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripExtraInfo As ToolStripButton
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents SplitContainer2 As SplitContainer
 End Class
