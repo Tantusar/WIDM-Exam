@@ -92,6 +92,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Deze kandidaat is niet actief in deze aflevering.
+        '''</summary>
+        Friend Shared ReadOnly Property CandidateNotActive() As String
+            Get
+                Return ResourceManager.GetString("CandidateNotActive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Weet u zeker dat u de lijst leeg wilt maken? Deze actie kan niet ongedaan worden!.
         '''</summary>
         Friend Shared ReadOnly Property ClearListWarning() As String
@@ -209,6 +218,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Naam niet gevonden, komt deze naam wel voor?.
+        '''</summary>
+        Friend Shared ReadOnly Property NameNotFound() As String
+            Get
+                Return ResourceManager.GetString("NameNotFound", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to OCR A Extended is geïnstalleerd.
         '''</summary>
         Friend Shared ReadOnly Property OCRAExtended() As String
@@ -223,6 +241,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property Primair() As String
             Get
                 Return ResourceManager.GetString("Primair", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Weet je zeker dat je aflevering {0} wilt verwijderen?.
+        '''</summary>
+        Friend Shared ReadOnly Property RemoveEpisodeDialog() As String
+            Get
+                Return ResourceManager.GetString("RemoveEpisodeDialog", resourceCulture)
             End Get
         End Property
         
@@ -268,6 +295,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property SelectItemFirst() As String
             Get
                 Return ResourceManager.GetString("SelectItemFirst", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Test is al uitgevoerd door deze kandidaat!.
+        '''</summary>
+        Friend Shared ReadOnly Property TestAlreadyDone() As String
+            Get
+                Return ResourceManager.GetString("TestAlreadyDone", resourceCulture)
             End Get
         End Property
         

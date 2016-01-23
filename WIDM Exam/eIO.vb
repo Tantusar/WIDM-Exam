@@ -30,6 +30,22 @@ Module eIo
         End If
     End Function
 
+    Public Function ReloadEpisodes()
+        Try
+            With FrmOpenTest.comboEpisode
+            .Items.Clear()
+                For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
+                    .Items.Add(ep.Key)
+                Next
+                .SelectedItem = CurrentGroup.CurrentEpisode
+            End With
+        Catch ex As Exception
+            Log(ex.ToString())
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+            Return False
+        End Try
+    End Function
+
     Public Function ReloadScreens()
         '   ToolStripComboBox1.Items.Clear()
         'txtListviewScherm.Items.Clear()
@@ -74,9 +90,11 @@ Module eIo
                 Next
                 .SelectedItem = FrmOpenTest.Groen
             End With
+            Return True
         Catch ex As Exception
             Log(ex.ToString())
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+            Return False
         End Try
     End Function
 
@@ -97,9 +115,11 @@ Module eIo
                     .Items.Add(newItem)
                 Next
             End With
+            Return True
         Catch ex As Exception
             Log(ex.ToString())
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+            Return False
         End Try
     End Function
 
@@ -120,9 +140,11 @@ Module eIo
                 Next
 
             End With
+            Return True
         Catch ex As Exception
             Log(ex.ToString())
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+            Return False
         End Try
 
     End Function
@@ -191,10 +213,13 @@ Module eIo
                     .Items.Add(item.Name)
                 Next
                 .Items.Add(GetLang("geen"))
+                .SelectedItem = CurrentGroup.Mole.Name
             End With
+            Return True
         Catch ex As Exception
             Log(ex.ToString())
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+            Return False
         End Try
 
     End Function
@@ -204,6 +229,8 @@ Module eIo
         ReloadAnswers()
         ReloadExecution()
         ReloadScreens()
+        ReloadEpisodes()
+        Return True
     End Function
 
     Public Function LoadGroupmode()

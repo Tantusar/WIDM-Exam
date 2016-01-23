@@ -92,6 +92,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to This candidate is not active for this episode.
+        '''</summary>
+        Friend Shared ReadOnly Property CandidateNotActive() As String
+            Get
+                Return ResourceManager.GetString("CandidateNotActive", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Are you sure you want to clear the list? This cannot be undone!.
         '''</summary>
         Friend Shared ReadOnly Property ClearListWarning() As String
@@ -209,6 +218,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Name wasn&apos;t found. Are you sure it exists?.
+        '''</summary>
+        Friend Shared ReadOnly Property NameNotFound() As String
+            Get
+                Return ResourceManager.GetString("NameNotFound", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to OCR A Extended is installed.
         '''</summary>
         Friend Shared ReadOnly Property OCRAExtended() As String
@@ -223,6 +241,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property Primair() As String
             Get
                 Return ResourceManager.GetString("Primair", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Are you sure you want to remove episode {0}?.
+        '''</summary>
+        Friend Shared ReadOnly Property RemoveEpisodeDialog() As String
+            Get
+                Return ResourceManager.GetString("RemoveEpisodeDialog", resourceCulture)
             End Get
         End Property
         
@@ -268,6 +295,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property SelectItemFirst() As String
             Get
                 Return ResourceManager.GetString("SelectItemFirst", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to This candidate already did the quiz!.
+        '''</summary>
+        Friend Shared ReadOnly Property TestAlreadyDone() As String
+            Get
+                Return ResourceManager.GetString("TestAlreadyDone", resourceCulture)
             End Get
         End Property
         

@@ -195,4 +195,16 @@
   <data name="SelectItemFirst" xml:space="preserve">
     <value>Please select an item first before editing</value>
   </data>
+  <data name="CandidateNotActive" xml:space="preserve">
+    <value>This candidate is not active for this episode</value>
+  </data>
+  <data name="NameNotFound" xml:space="preserve">
+    <value>Name wasn't found. Are you sure it exists?</value>
+  </data>
+  <data name="RemoveEpisodeDialog" xml:space="preserve">
+    <value>Are you sure you want to remove episode {0}?</value>
+  </data>
+  <data name="TestAlreadyDone" xml:space="preserve">
+    <value>This candidate already did the quiz!</value>
+  </data>
 </root>

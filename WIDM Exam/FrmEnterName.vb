@@ -11,35 +11,26 @@ Public Class FrmEnterName
 
     Private Sub PressedEnter()
         If FrmOpenTest.rGroep.Checked Then
-
             If CurrentGroup.Candidates.ContainsKey(TextBox1.Text) = False Then
-                If My.Settings.language = "en" Then
-                    MsgBox("Name hasn't been found. Are you sure it exists?", MsgBoxStyle.Exclamation)
-                Else
-                    MsgBox("Naam niet gevonden, komt deze naam wel voor?", MsgBoxStyle.Exclamation)
-                End If
+                MsgBox(GetLang("NameNotFound"), MsgBoxStyle.Exclamation)
             Else
-                If _checkTested.Items.Contains(TextBox1.Text) Then
-                    If My.Settings.language = "en" Then
-                        MsgBox("Quiz was already made by this candidate!", MsgBoxStyle.Exclamation)
+                If CurrentGroup.Candidates(TextBox1.Text).Active(CurrentGroup.CurrentEpisode) = True Then
+                    If _checkTested.Items.Contains(TextBox1.Text) Then
+                        MsgBox(GetLang("TestAlreadyDone"), MsgBoxStyle.Exclamation)
                     Else
-                        MsgBox("Test is al uitgevoerd door deze kandidaat!", MsgBoxStyle.Exclamation)
+                        _checkTested.Items.Add(TextBox1.Text)
+                        Try
+                            ComboBox1.Items.Remove(TextBox1.Text)
+                        Catch ex As Exception
+                        End Try
+                        Start()
                     End If
-
                 Else
-                    _checkTested.Items.Add(TextBox1.Text)
-                    Try
-                        ComboBox1.Items.Remove(TextBox1.Text)
-                    Catch ex As Exception
-
-                    End Try
-                    start()
+                    MsgBox(GetLang("CandidateNotActive"), MsgBoxStyle.Exclamation)
                 End If
-
             End If
         Else
-
-            start()
+            Start()
         End If
     End Sub
 
@@ -52,14 +43,14 @@ Public Class FrmEnterName
         'Catch ex As Exception
 
         'End Try
-        If closePass = True Then
+        If ClosePass = True Then
         Else
             If FrmOpenTest.rGroep.Checked Then
                 If My.Settings.password = "" Then
 
                 Else
                     FrmPassword.ShowDialog()
-                    If FrmPassword.cancel = True Then
+                    If FrmPassword.Cancel = True Then
                         e.Cancel = True
                     ElseIf FrmPassword.TextBox1.Text = My.Settings.password Then
                     Else
@@ -99,7 +90,7 @@ Public Class FrmEnterName
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        expandToMonitor(Me)
+        ExpandToMonitor(Me)
 
         FrmOpenTest.LoadTheme()
 
@@ -141,18 +132,18 @@ Public Class FrmEnterName
         TextBox1.Visible = True
 
         'Default
-        Label1.Font = CurrentTheme.fontIntroText
-        TextBox1.Font = CurrentTheme.fontIntroTextfield
+        Label1.Font = CurrentTheme.FontIntroText
+        TextBox1.Font = CurrentTheme.FontIntroTextfield
 
-        Label1.ForeColor = CurrentTheme.colorIntroText
-        TextBox1.ForeColor = CurrentTheme.colorIntroTextfield
+        Label1.ForeColor = CurrentTheme.ColorIntroText
+        TextBox1.ForeColor = CurrentTheme.ColorIntroTextfield
         'US
-        Label5.Font = CurrentTheme.fontIntroText
-        TextBox3.Font = CurrentTheme.fontIntroTextfield
+        Label5.Font = CurrentTheme.FontIntroText
+        TextBox3.Font = CurrentTheme.FontIntroTextfield
         'Nostalgia
-        Label2.Font = CurrentTheme.fontIntroText
-        TextBox2.Font = CurrentTheme.fontIntroTextfield
-        Button1.Font = CurrentTheme.fontIntroText
+        Label2.Font = CurrentTheme.FontIntroText
+        TextBox2.Font = CurrentTheme.FontIntroTextfield
+        Button1.Font = CurrentTheme.FontIntroText
 
         'If FrmOpenTest.rLucidaConsole.Checked Then
         '    'Default
@@ -237,27 +228,27 @@ Public Class FrmEnterName
         '    TextBox1.Font = loadFont.GetInstance(11, FontStyle.Regular)
         'End If
 
-        If CurrentTheme.musicTestEnabled Then
-            WMP1.URL = CurDir() & "\Geluid\" & CurrentTheme.musicTest
+        If CurrentTheme.MusicTestEnabled Then
+            WMP1.URL = CurDir() & "\Geluid\" & CurrentTheme.MusicTest
             WMP1.settings.setMode("loop", True)
             WMP1.Ctlcontrols.play()
         End If
-        If CurrentTheme.logoIntroEnabled Then
-            PictureBox1.Image = CurrentTheme.imglogoIntro
+        If CurrentTheme.LogoIntroEnabled Then
+            PictureBox1.Image = CurrentTheme.ImgLogoIntro
         Else
             PictureBox1.Visible = False
         End If
-        If CurrentTheme.backgroundIntroEnabled Then
-            BackgroundImage = CurrentTheme.imgbackgroundIntro
+        If CurrentTheme.BackgroundIntroEnabled Then
+            BackgroundImage = CurrentTheme.ImgBackgroundIntro
         Else
             BackgroundImage = Nothing
         End If
-        BackColor = CurrentTheme.backgroundColorIntro
-        If CurrentTheme.introStyle = Theme.Style.Old Then
+        BackColor = CurrentTheme.BackgroundColorIntro
+        If CurrentTheme.IntroStyle = Theme.Style.Old Then
             Panel1.Visible = False
             Panel2.Visible = True
             Panel3.Visible = False
-        ElseIf CurrentTheme.introStyle = Theme.Style.US Then
+        ElseIf CurrentTheme.IntroStyle = Theme.Style.Us Then
             Panel1.Visible = False
             Panel2.Visible = False
             Panel3.Visible = True
@@ -354,7 +345,7 @@ Public Class FrmEnterName
     Private Sub Start()
         Try
             If FrmOpenTest.rVirtualKeyboard.Checked Then
-                FrmOpenTest.killVirtualKeyboard()
+                FrmOpenTest.KillVirtualKeyboard()
             End If
             FrmTest.Show()
             FrmTest.tmTime.Start()
@@ -371,7 +362,7 @@ Public Class FrmEnterName
     Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
-            pressedEnter()
+            PressedEnter()
 
         End If
         If e.KeyCode = Keys.Escape Then
@@ -391,7 +382,7 @@ Public Class FrmEnterName
 
     Private Sub TextBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles TextBox1.MouseClick
         If FrmOpenTest.rVirtualKeyboard.Checked Then
-            FrmOpenTest.callVirtualKeyboard()
+            FrmOpenTest.CallVirtualKeyboard()
         End If
     End Sub
 
@@ -400,12 +391,12 @@ Public Class FrmEnterName
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         TextBox1.Text = ComboBox1.SelectedItem
-        pressedEnter()
+        PressedEnter()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         TextBox1.Text = TextBox2.Text
-        pressedEnter()
+        PressedEnter()
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
@@ -475,13 +466,13 @@ Public Class FrmEnterName
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
             TextBox1.Text = TextBox3.Text
-            pressedEnter()
+            PressedEnter()
         End If
     End Sub
 
     Private Sub TextBox3_MouseClick(sender As Object, e As MouseEventArgs) Handles TextBox3.MouseClick
         If FrmOpenTest.rVirtualKeyboard.Checked Then
-            FrmOpenTest.callVirtualKeyboard()
+            FrmOpenTest.CallVirtualKeyboard()
         End If
     End Sub
 
@@ -492,13 +483,13 @@ Public Class FrmEnterName
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
             TextBox1.Text = TextBox2.Text
-            pressedEnter()
+            PressedEnter()
         End If
     End Sub
 
     Private Sub TextBox2_MouseClick(sender As Object, e As MouseEventArgs) Handles TextBox2.MouseClick
         If FrmOpenTest.rVirtualKeyboard.Checked Then
-            FrmOpenTest.callVirtualKeyboard()
+            FrmOpenTest.CallVirtualKeyboard()
         End If
     End Sub
 

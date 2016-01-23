@@ -195,4 +195,16 @@
   <data name="SelectItemFirst" xml:space="preserve">
     <value>Selecteer eerst een item</value>
   </data>
+  <data name="CandidateNotActive" xml:space="preserve">
+    <value>Deze kandidaat is niet actief in deze aflevering</value>
+  </data>
+  <data name="NameNotFound" xml:space="preserve">
+    <value>Naam niet gevonden, komt deze naam wel voor?</value>
+  </data>
+  <data name="RemoveEpisodeDialog" xml:space="preserve">
+    <value>Weet je zeker dat je aflevering {0} wilt verwijderen?</value>
+  </data>
+  <data name="TestAlreadyDone" xml:space="preserve">
+    <value>Test is al uitgevoerd door deze kandidaat!</value>
+  </data>
 </root>

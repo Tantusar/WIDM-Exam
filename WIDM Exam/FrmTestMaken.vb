@@ -35,7 +35,7 @@ Public Class FrmTestMaken
         End If
 
         If result = DialogResult.Yes Then
-            savebutton()
+            Savebutton()
         ElseIf result = DialogResult.No Then
         ElseIf result = DialogResult.Cancel Then
             e.Cancel = True
@@ -54,7 +54,7 @@ Public Class FrmTestMaken
             rGroepsModusTest.Checked = True
         End If
 
-        NumericUpDown1.Value = FrmOpenTest.numAflevering.Value
+        NumericUpDown1.Value = CurrentGroup.CurrentEpisode
         NumericUpDown1.Minimum = 1
     End Sub
 
@@ -135,7 +135,7 @@ Public Class FrmTestMaken
         txtTekst2.Clear()
     End Sub
 
-    
+
 
     Sub Open(ByVal buildDatabase As Boolean)
 
@@ -151,36 +151,36 @@ Public Class FrmTestMaken
             Dim output As String = objStreamReader.ReadToEnd()
             objStreamReader.Close()
 
-            Dim jsoNdeserialized = JsonConvert.DeserializeObject(output)
+            _test = JsonConvert.DeserializeObject(Of Test)(output)
 
             'Loop through questions
-            For Each item In JSONdeserialized("Questions")
+            For Each item In _test.Questions
                 Dim newItem
                 'Check type
-                If item("Text").ToString() <> "" Then
-                    If item("Answers").ToString() = "" Then
-                        newItem = New ListViewItem(OpenVraag) '// add text Item.
-                        newItem.SubItems.Add(item("Text").ToString())
-                    Else
+                If item.Text <> "" Then
+                    If IsArray(item.Answers) Then
                         newItem = New ListViewItem(Vraag) '// add text Item.
-                        newItem.SubItems.Add(item("Text").ToString())
+                        newItem.SubItems.Add(item.Text)
                         Dim answerString As String = ""
-                        For Each answer In item("Answers")
+                        For Each answer In item.Answers
                             'Add answers to string, split by ##
-                            answerString += answer("Text").ToString() & "##"
+                            answerString += answer.Text & "##"
                         Next
                         'Remove last ##, why would we want that? :-)
                         newItem.SubItems.Add(answerString.TrimEnd("##"))
-                        Dim indexRightAnswer As Integer = Val(Replace(item("RightAnswer").ToString(), "b", ""))
+                        Dim indexRightAnswer As Integer = Val(Replace(item.RightAnswer, "b", ""))
                         'Convert to val, replace bn to n.
-                        newItem.SubItems.Add(item("Answers")(indexRightAnswer).ToString())
-                        newItem.SubItems.Add(item("Answers").Count)
-                        newItem.SubItems.Add(item("RightAnswer").ToString())
+                        newItem.SubItems.Add(item.Answers(indexRightAnswer).ToString())
+                        newItem.SubItems.Add(item.Answers.Count)
+                        newItem.SubItems.Add(item.RightAnswer.ToString())
+                    Else
+                        newItem = New ListViewItem(OpenVraag) '// add text Item.
+                        newItem.SubItems.Add(item.Text)
                     End If
                 Else
                     newItem = New ListViewItem("Tekst tussendoor") '// add text Item.
-                    newItem.SubItems.Add(item("Text1").ToString())
-                    newItem.SubItems.Add(item("Text2").ToString())
+                    newItem.SubItems.Add(item.Text1)
+                    newItem.SubItems.Add(item.Text2)
                 End If
                 'Look whether the database with existing questions is building. Will cause duplicates if not properly handled.
                 If buildDatabase = True Then
@@ -215,7 +215,7 @@ Public Class FrmTestMaken
     End Sub
 
     Private Sub listPanel_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles listPanel.MouseDoubleClick
-        btnBewerken()
+        BtnBewerken()
     End Sub
 
     'Private Sub listPanel_MouseHover(sender As Object, ByVal e As MouseEventArgs) Handles listPanel.MouseHover
@@ -256,12 +256,12 @@ Public Class FrmTestMaken
 
             ElseIf row.SubItems(0).Text = OpenVraag Then
                 Dim openQuestion As New Question
-                openQuestion.text = row.SubItems(1).Text
+                openQuestion.Text = row.SubItems(1).Text
                 questions.Add(openQuestion)
             End If
         Next
 
-        _test.questions = questions
+        _test.Questions = questions
 
 
         Dim objStreamWriter As New IO.StreamWriter(SaveFileDialog1.FileName)
@@ -313,7 +313,7 @@ Public Class FrmTestMaken
 
     Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
         SaveFileDialog1.FileName = OpenFileDialog1.SafeFileName
-        savebutton()
+        Savebutton()
     End Sub
 
     Sub BtnBewerken()
@@ -337,7 +337,7 @@ Public Class FrmTestMaken
     End Sub
 
     Private Sub ToolStripButton2_Click_1(sender As Object, e As EventArgs)
-        btnBewerken()
+        BtnBewerken()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -449,7 +449,7 @@ Public Class FrmTestMaken
         Handles ToolStripSplitButton1.ButtonClick
         If listPanel.Items.Count <= 0 Then
             '  OpenFileDialog1.FileName = My.Settings.folder & "\" & "afl" & NumericUpDown1.Value & ".widm3"
-            loadtest()
+            LoadTest()
         Else
             Dim result
             If My.Settings.language = "en" Then
@@ -463,12 +463,12 @@ Public Class FrmTestMaken
             If result = DialogResult.Yes Then
                 SaveFileDialog1.FileName = OpenFileDialog1.FileName
                 _usesave = True
-                savebutton()
+                Savebutton()
                 _usesave = False
-                loadtest()
+                LoadTest()
             End If
             If result = DialogResult.No Then
-                loadtest()
+                LoadTest()
 
             End If
         End If
@@ -537,7 +537,7 @@ Public Class FrmTestMaken
         BuildDatabase()
         If rNormalTest.Checked Then
             If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
-                Removeallitems()
+                RemoveAllItems()
                 _intCount0 = 0
                 Open(False)
                 ConvertCorrectAnswerToText()
@@ -558,7 +558,7 @@ Public Class FrmTestMaken
             If FrmOpenTest.rGroep.Checked Then
                 If Not My.Settings.folder = "" Then
                     OpenFileDialog1.FileName = My.Settings.folder & "\" & "afl" & NumericUpDown1.Value & ".widm3"
-                    removeallitems()
+                    RemoveAllItems()
                     _intCount0 = 0
                     'MsgBox(OpenFileDialog1.FileName)
                     Open(False)
@@ -590,7 +590,7 @@ Public Class FrmTestMaken
         'Else
         If listPanel.Items.Count <= 0 Then
             '  OpenFileDialog1.FileName = My.Settings.folder & "\" & "afl" & NumericUpDown1.Value & ".widm3"
-            loadtest()
+            LoadTest()
         Else
             Dim result
             If My.Settings.language = "en" Then
@@ -603,12 +603,12 @@ Public Class FrmTestMaken
             If result = DialogResult.Yes Then
                 SaveFileDialog1.FileName = OpenFileDialog1.FileName
                 _usesave = True
-                savebutton()
+                Savebutton()
                 _usesave = False
-                loadtest()
+                LoadTest()
             End If
             If result = DialogResult.No Then
-                loadtest()
+                LoadTest()
 
             End If
         End If
@@ -672,7 +672,7 @@ Public Class FrmTestMaken
 
     Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
         If OpenFileDialog2.ShowDialog = DialogResult.OK Then
-            openOldTest()
+            OpenOldTest()
         End If
     End Sub
 
@@ -695,7 +695,7 @@ Public Class FrmTestMaken
 
         Dim selIndex As Integer = Me.listPanel.SelectedIndices.Item(0)  'ListVisw must only support single seleccion
 
-        If SelIndex = 0 Then
+        If selIndex = 0 Then
             If My.Settings.language = "en" Then
                 MessageBox.Show("Item is already on top!")
             Else
@@ -707,11 +707,11 @@ Public Class FrmTestMaken
 
         'Reorder items in the arraylist
         Dim tItem As ListViewItem
-        tItem = Me.listPanel.Items(SelIndex - 1)
-        Me.listPanel.Items(SelIndex - 1) = Me.listPanel.Items(SelIndex).Clone
-        Me.listPanel.Items(SelIndex) = tItem.Clone
+        tItem = Me.listPanel.Items(selIndex - 1)
+        Me.listPanel.Items(selIndex - 1) = Me.listPanel.Items(selIndex).Clone
+        Me.listPanel.Items(selIndex) = tItem.Clone
 
-        listPanel.Items(SelIndex - 1).Selected = True
+        listPanel.Items(selIndex - 1).Selected = True
 
 
         listPanel.Select()
@@ -740,7 +740,7 @@ Public Class FrmTestMaken
 
         Dim selIndex As Integer = Me.listPanel.SelectedIndices.Item(0) 'ListView must only support single seleccion
 
-        If SelIndex = Me.listPanel.Items.Count - 1 Then
+        If selIndex = Me.listPanel.Items.Count - 1 Then
             If My.Settings.language = "en" Then
                 MessageBox.Show("Item is already on the bottom!")
             Else
@@ -751,11 +751,11 @@ Public Class FrmTestMaken
 
         'Reorder items in the arraylist
         Dim tItem As ListViewItem
-        tItem = Me.listPanel.Items(SelIndex + 1)
-        Me.listPanel.Items(SelIndex + 1) = Me.listPanel.Items(SelIndex).Clone
-        Me.listPanel.Items(SelIndex) = tItem.Clone
+        tItem = Me.listPanel.Items(selIndex + 1)
+        Me.listPanel.Items(selIndex + 1) = Me.listPanel.Items(selIndex).Clone
+        Me.listPanel.Items(selIndex) = tItem.Clone
 
-        listPanel.Items(SelIndex + 1).Selected = True
+        listPanel.Items(selIndex + 1).Selected = True
         listPanel.Select()
     End Sub
 
@@ -766,7 +766,7 @@ Public Class FrmTestMaken
         'If OpenFileDialog1.FileName <> "" Then
 
         Dim oldtest As String
-        oldtest = FrmOpenTest.file
+        oldtest = FrmOpenTest.File
         Dim checkstatus As Boolean
         If FrmOpenTest.rAlleen.Checked = True Then
             checkstatus = True
@@ -777,9 +777,9 @@ Public Class FrmTestMaken
         FrmOpenTest.rGroep.Checked = False
         SaveFileDialog1.FileName = CurDir() & "\testtesten.tmp"
         Save()
-        FrmOpenTest.file = CurDir() & "\testtesten.tmp"
+        FrmOpenTest.File = CurDir() & "\testtesten.tmp"
         FrmEnterName.ShowDialog()
-        FrmOpenTest.file = oldtest
+        FrmOpenTest.File = oldtest
         FrmOpenTest.txtTest.Text = oldtest
         FrmOpenTest.rAlleen.Checked = checkstatus
         FrmOpenTest.rGroep.Checked = Not checkstatus
@@ -795,7 +795,7 @@ Public Class FrmTestMaken
     Private Sub OudeTestOpenenToolStripMenuItem_Click(sender As Object, e As EventArgs) _
         Handles OudeTestOpenenToolStripMenuItem.Click
         If OpenFileDialog2.ShowDialog = DialogResult.OK Then
-            openOldTest()
+            OpenOldTest()
         End If
     End Sub
 
@@ -809,7 +809,7 @@ Public Class FrmTestMaken
             read.Close()
             FrmPassword.ShowDialog()
             Dim password As String = FrmPassword.TextBox1.Text
-            Dim wrapper As New Simple3DES(password)
+            Dim wrapper As New Simple3Des(password)
 
             ' DecryptData throws if the wrong password is used. 
             Try
@@ -826,7 +826,7 @@ Public Class FrmTestMaken
                 SetAttr(OpenFileDialog3.FileName & ".tmp", vbHidden)
                 ' encryptedTest = True
                 OpenFileDialog2.FileName = OpenFileDialog3.FileName & ".tmp"
-                openOldTest()
+                OpenOldTest()
                 ' encryptedTest = False
                 Try
                     My.Computer.FileSystem.DeleteFile(OpenFileDialog3.FileName & ".tmp", UIOption.OnlyErrorDialogs,
@@ -858,14 +858,14 @@ Public Class FrmTestMaken
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) _
         Handles LinkLabel2.LinkClicked
-        savebutton()
+        Savebutton()
     End Sub
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
         If rGroepsModusTest.Checked Then
             If listPanel.Items.Count <= 0 Then
                 '  OpenFileDialog1.FileName = My.Settings.folder & "\" & "afl" & NumericUpDown1.Value & ".widm3"
-                loadtest()
+                LoadTest()
             Else
                 Dim result
                 If My.Settings.language = "en" Then
@@ -878,12 +878,12 @@ Public Class FrmTestMaken
                 If result = DialogResult.Yes Then
                     SaveFileDialog1.FileName = OpenFileDialog1.FileName
                     _usesave = True
-                    savebutton()
+                    Savebutton()
                     _usesave = False
-                    loadtest()
+                    LoadTest()
                 End If
                 If result = DialogResult.No Then
-                    loadtest()
+                    LoadTest()
 
                 End If
             End If
@@ -910,7 +910,7 @@ Public Class FrmTestMaken
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        btnBewerken()
+        BtnBewerken()
     End Sub
 
     Private Sub rGroepsModusTest_CheckedChanged(sender As Object, e As EventArgs) _
@@ -939,11 +939,11 @@ Public Class FrmTestMaken
     End Sub
 
     Private Sub ToolStripExtraInfo_Click(sender As Object, e As EventArgs) Handles ToolStripExtraInfo.Click
-        Dim form As New FrmExtraInfo(_test.author, _test.comment, _test.moleText)
+        Dim form As New FrmExtraInfo(_test.Author, _test.Comment, _test.MoleText)
         If form.ShowDialog() = DialogResult.OK Then
-            _test.author = form.txtAuthor.Text 
-            _test.comment = form.txtComment.Text
-            _test.moleText = form.txtMoleText.Text
+            _test.Author = form.txtAuthor.Text
+            _test.Comment = form.txtComment.Text
+            _test.MoleText = form.txtMoleText.Text
         End If
     End Sub
 End Class

@@ -102,7 +102,7 @@ Module ELoadSettings
         FrmOpenTest.txtRoodscherm.Text = My.Settings.roodscherm
         FrmOpenTest.txtGroenscherm.Text = My.Settings.groenscherm
         FrmOpenTest.txtWedstrijdFile.Text = My.Settings.wedstrijdfile
-        FrmOpenTest.numAflevering.Value = Val(My.Settings.aflevering)
+        'FrmOpenTest.numAflevering.Value = Val(My.Settings.aflevering)
         FrmOpenTest.txtCustomFont.Font = My.Settings.customFont
         FrmOpenTest.txtBackground.Text = My.Settings.background
         FrmOpenTest.pBackgroundColor.BackColor = My.Settings.backgroundColor

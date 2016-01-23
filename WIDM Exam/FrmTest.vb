@@ -23,8 +23,10 @@ Public Class FrmTest
     Dim _amountAnswers As Integer = 0
     Dim _wedstrijdantwoordentemp As String = ""
     Dim _buttonpressed As Boolean = False
+    Dim _moleText As String
     Dim _rand As New Random
 
+    Dim _test As New Test
     Dim _questions As New List(Of Question)
 
     Private Sub Open()
@@ -33,10 +35,11 @@ Public Class FrmTest
             Dim output As String = objStreamReader.ReadToEnd()
             objStreamReader.Close()
 
-            Dim jsoNdeserialized As Test = JsonConvert.DeserializeObject(Of Test)(output)
-
+            Dim _test = JsonConvert.DeserializeObject(Of Test)(output)
+            'For some reason this gets cleared...
+            _moleText = _test.MoleText
             'Loop through questions
-            For Each item In jsoNdeserialized.Questions
+            For Each item In _test.Questions
                 'Add them to the list
                 _questions.Add(item)
             Next
@@ -751,9 +754,15 @@ Public Class FrmTest
             FrmResult.Show()
             FrmResult.Activate()
         ElseIf FrmOpenTest.rGroep.Checked Then
+            If FrmEnterName.TextBox1.Text = CurrentGroup.Mole.Name And _moleText <> "" Then
+                MsgBox(_moleText, MsgBoxStyle.Information)
+            End If
             Dim result = 0
             Try
                 'Try adding the results to the object
+                If CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults.ContainsKey((FrmEnterName.TextBox1.Text)) Then
+                    CurrentGroup.ExecutionRemove(FrmEnterName.TextBox1.Text)
+                End If
                 CurrentGroup.ExecutionAdd(FrmEnterName.TextBox1.Text, _answersRight, _time, FrmOpenTest.Groen, 0)
                 ReloadExecution()
 
@@ -881,8 +890,8 @@ Public Class FrmTest
             'newItem.SubItems.Add(FrmEnterName.TextBox1.Text) '// add SubItem.
             'newItem.SubItems.Add(_answer) '// add SubItem.
             'If _answer <> "" Then
-                CurrentGroup.AnswerAdd(_questionDisplay, _questions(_question - 1).Text, FrmEnterName.TextBox1.Text, _answer)
-                ReloadAnswers()
+            CurrentGroup.AnswerAdd(_questionDisplay, _questions(_question - 1).Text, FrmEnterName.TextBox1.Text, _answer)
+            ReloadAnswers()
             'End If
         ElseIf FrmOpenTest.rWedstrijd.Checked Then
             _wedstrijdantwoordentemp = _wedstrijdantwoordentemp & _question & "#" & txtQuestion.Text & "#" &
