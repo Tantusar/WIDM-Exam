@@ -29,14 +29,14 @@ Public Class FrmTest
 
     Private Sub Open()
         Try
-            Dim objStreamReader As New StreamReader(FrmOpenTest.file)
+            Dim objStreamReader As New StreamReader(FrmOpenTest.File)
             Dim output As String = objStreamReader.ReadToEnd()
             objStreamReader.Close()
 
             Dim jsoNdeserialized As Test = JsonConvert.DeserializeObject(Of Test)(output)
 
             'Loop through questions
-            For Each item In JSONdeserialized.questions
+            For Each item In jsoNdeserialized.Questions
                 'Add them to the list
                 _questions.Add(item)
             Next
@@ -47,7 +47,7 @@ Public Class FrmTest
     End Sub
 
     Private Sub FrmTest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        expandToMonitor(Me)
+        ExpandToMonitor(Me)
 
         'Intialize the Windows Media Player entity, load the right sound for the clicking
         WMP1.URL = CurDir() & "\Geluid\klik.wav"
@@ -58,44 +58,44 @@ Public Class FrmTest
         _questionDisplay = 1
         WMP1.Ctlcontrols.stop()
 
-        txtQuestion.Size = New Size(Me.Width - 200 * (FrmOpenTest.dpiPercent.Text / 96), txtQuestion.Size.Height)
+        txtQuestion.Size = New Size(Me.Width - 200 * (FrmOpenTest.DpiPercent.Text / 96), txtQuestion.Size.Height)
 
-        txtTekst1.Font = New Font(CurrentTheme.fontQuestion.OriginalFontName, 36, FontStyle.Regular)
-        txtTekst2.Font = New Font(CurrentTheme.fontQuestion.OriginalFontName, 36, FontStyle.Regular)
-        txtQuestion.Font = CurrentTheme.fontQuestion
-        t1.Font = CurrentTheme.fontAnswers
-        t3.Font = CurrentTheme.fontAnswers
+        txtTekst1.Font = New Font(CurrentTheme.FontQuestion.OriginalFontName, 36, FontStyle.Regular)
+        txtTekst2.Font = New Font(CurrentTheme.FontQuestion.OriginalFontName, 36, FontStyle.Regular)
+        txtQuestion.Font = CurrentTheme.FontQuestion
+        t1.Font = CurrentTheme.FontAnswers
+        t3.Font = CurrentTheme.FontAnswers
 
-        txtTekst1.ForeColor = CurrentTheme.colorQuestion
-        txtTekst2.ForeColor = CurrentTheme.colorQuestion
-        txtQuestion.ForeColor = CurrentTheme.colorQuestion
+        txtTekst1.ForeColor = CurrentTheme.ColorQuestion
+        txtTekst2.ForeColor = CurrentTheme.ColorQuestion
+        txtQuestion.ForeColor = CurrentTheme.ColorQuestion
         Try
-            txtQuestion.TextAlign = CurrentTheme.questionAlignment
+            txtQuestion.TextAlign = CurrentTheme.QuestionAlignment
         Catch ex As Exception
 
         End Try
-        If CurrentTheme.questionBackgroundEnabled Then
-            txtQuestion.BackgroundImage = CurrentTheme.imgQuestionBackground
+        If CurrentTheme.QuestionBackgroundEnabled Then
+            txtQuestion.BackgroundImage = CurrentTheme.ImgQuestionBackground
             txtQuestion.BackgroundImageLayout = ImageLayout.Stretch
         End If
 
-        t1.ForeColor = CurrentTheme.colorAnswers
-        t3.ForeColor = CurrentTheme.colorAnswers
+        t1.ForeColor = CurrentTheme.ColorAnswers
+        t3.ForeColor = CurrentTheme.ColorAnswers
 
-        t2.Image = CurrentTheme.imgButton
+        t2.Image = CurrentTheme.ImgButton
 
-        If CurrentTheme.logoTestEnabled Then
-            smallLogo.Image = CurrentTheme.imgLogoTest
+        If CurrentTheme.LogoTestEnabled Then
+            smallLogo.Image = CurrentTheme.ImgLogoTest
         Else
             smallLogo.Hide()
         End If
-        If CurrentTheme.backgroundTestEnabled Then
-            BackgroundImage = CurrentTheme.imgBackgroundTest
+        If CurrentTheme.BackgroundTestEnabled Then
+            BackgroundImage = CurrentTheme.ImgBackgroundTest
         Else
             BackgroundImage = Nothing
         End If
 
-        BackColor = CurrentTheme.backgroundColorTest
+        BackColor = CurrentTheme.BackgroundColorTest
 
 
         'txtQuestion.Size = New Size(txtQuestion.Size.Width * (Me.Width / 1024), txtQuestion.Size.Height)
@@ -225,7 +225,7 @@ Public Class FrmTest
         txtTekst2.Left = 0
 
         Open()
-        loadQuestionAnswers()
+        LoadQuestionAnswers()
 
         '
     End Sub
@@ -257,14 +257,14 @@ Public Class FrmTest
         'Else
         '    value = value + 1
         'End If
-        _value = answer.id
+        _value = answer.Id
         _locationValue = _locationValue + 1
         Console.WriteLine("ENDVALUE: " & _value)
         _b.Name = "b" & _value
         _b.Tag = _locationValue
         _b.BackColor = Color.Transparent
 
-        _b.Image = CurrentTheme.imgButton
+        _b.Image = CurrentTheme.ImgButton
         'If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUS.Checked Or FrmOpenTest.rUK.Checked Then
         '    b.Image = My.Resources.button_2004
         'ElseIf FrmOpenTest.rFrankrijk.Checked Then
@@ -278,31 +278,31 @@ Public Class FrmTest
         _b.Size = New Size(50, 50)
         _b.SizeMode = PictureBoxSizeMode.Zoom
 
-        Dim answerStop As Integer = Math.Ceiling(_questions(_question - 1).answers.Count / 2)
+        Dim answerStop As Integer = Math.Ceiling(_questions(_question - 1).Answers.Count / 2)
 
         If FrmOpenTest.rThreeRows.Checked = True Then
             If ((_locationValue Mod 3) = 0) Then
-                _b.Location = New Point(96 + (spacebetweenanswershorizontal * 2),
-                                       spacebetweenanswers * (_locationValue - 3) + 190 + (FrmOpenTest.dpiPercent.Text * 2) -
+                _b.Location = New Point(96 + (Spacebetweenanswershorizontal * 2),
+                                       Spacebetweenanswers * (_locationValue - 3) + 190 + (FrmOpenTest.DpiPercent.Text * 2) -
                                        192)
             ElseIf (((_locationValue + 1) Mod 3) = 0) Then
-                _b.Location = New Point(96 + spacebetweenanswershorizontal,
-                                       spacebetweenanswers * (_locationValue - 2) + 190 + (FrmOpenTest.dpiPercent.Text * 2) -
+                _b.Location = New Point(96 + Spacebetweenanswershorizontal,
+                                       Spacebetweenanswers * (_locationValue - 2) + 190 + (FrmOpenTest.DpiPercent.Text * 2) -
                                        192)
             Else
                 _b.Location = New Point(96,
-                                       spacebetweenanswers * (_locationValue - 1) + 190 + FrmOpenTest.dpiPercent.Text - 96)
+                                       Spacebetweenanswers * (_locationValue - 1) + 190 + FrmOpenTest.DpiPercent.Text - 96)
             End If
         Else
             If _locationValue <= answerStop Then
                 _b.Location = New Point(96,
-                                       (spacebetweenanswers * 2) * (_locationValue - 1) + 192 +
-                                       (FrmOpenTest.dpiPercent.Text * 2) - 192)
+                                       (Spacebetweenanswers * 2) * (_locationValue - 1) + 192 +
+                                       (FrmOpenTest.DpiPercent.Text * 2) - 192)
 
             Else
-                _b.Location = New Point(96 + spacebetweenanswershorizontal,
-                                       (spacebetweenanswers * 2) * (_locationValue - 1 - answerStop) + 192 +
-                                       (FrmOpenTest.dpiPercent.Text * 2) - 192)
+                _b.Location = New Point(96 + Spacebetweenanswershorizontal,
+                                       (Spacebetweenanswers * 2) * (_locationValue - 1 - answerStop) + 192 +
+                                       (FrmOpenTest.DpiPercent.Text * 2) - 192)
 
             End If
 
@@ -313,11 +313,11 @@ Public Class FrmTest
             'End If
         End If
         If FrmOpenTest.rNummers.Checked = True Then
-            AddHandler _b.Paint, AddressOf buttonpaint
+            AddHandler _b.Paint, AddressOf Buttonpaint
         End If
-        AddHandler _b.Click, AddressOf buttonpress
-        AddHandler _b.MouseEnter, AddressOf buttonhover
-        AddHandler _b.MouseLeave, AddressOf buttonleave
+        AddHandler _b.Click, AddressOf Buttonpress
+        AddHandler _b.MouseEnter, AddressOf Buttonhover
+        AddHandler _b.MouseLeave, AddressOf Buttonleave
         _b.BringToFront()
         Me.Controls.Add(_b)
 
@@ -325,13 +325,13 @@ Public Class FrmTest
         l.Name = "l" & _value
 
         Try
-            l.Text = answer.text
+            l.Text = answer.Text
         Catch ex As Exception
             Console.Write(ex.Message)
         End Try
         l.BackColor = Color.Transparent
-        l.ForeColor = CurrentTheme.colorAnswers
-        l.Font = CurrentTheme.fontAnswers
+        l.ForeColor = CurrentTheme.ColorAnswers
+        l.Font = CurrentTheme.FontAnswers
         'If FrmOpenTest.rNostalgia.Checked Or FrmOpenTest.rUK.Checked Then
         '    l.ForeColor = Color.Gold
         'ElseIf FrmOpenTest.rUS.Checked Then
@@ -354,30 +354,30 @@ Public Class FrmTest
         'ElseIf FrmOpenTest.rCustomFont.Checked Then
         '    l.Font = New Font(My.Settings.customFont.OriginalFontName, 17, FontStyle.Regular)
         'End If
-        l.Size = New Size(420 + (spacebetweenanswershorizontal - 500), 50 + (spacebetweenanswers - 25))
+        l.Size = New Size(420 + (Spacebetweenanswershorizontal - 500), 50 + (Spacebetweenanswers - 25))
         If FrmOpenTest.rThreeRows.Checked = True Then
             If ((_locationValue Mod 3) = 0) Then
-                l.Location = New Point(170 + (spacebetweenanswershorizontal * 2),
-                                       spacebetweenanswers * (_locationValue - 3) + 205 + (FrmOpenTest.dpiPercent.Text * 2) -
+                l.Location = New Point(170 + (Spacebetweenanswershorizontal * 2),
+                                       Spacebetweenanswers * (_locationValue - 3) + 205 + (FrmOpenTest.DpiPercent.Text * 2) -
                                        192)
             ElseIf (((_locationValue + 1) Mod 3) = 0) Then
-                l.Location = New Point(170 + spacebetweenanswershorizontal,
-                                       spacebetweenanswers * (_locationValue - 2) + 205 + (FrmOpenTest.dpiPercent.Text * 2) -
+                l.Location = New Point(170 + Spacebetweenanswershorizontal,
+                                       Spacebetweenanswers * (_locationValue - 2) + 205 + (FrmOpenTest.DpiPercent.Text * 2) -
                                        192)
             Else
                 l.Location = New Point(170,
-                                       spacebetweenanswers * (_locationValue - 1) + 205 + (FrmOpenTest.dpiPercent.Text * 2) -
+                                       Spacebetweenanswers * (_locationValue - 1) + 205 + (FrmOpenTest.DpiPercent.Text * 2) -
                                        192)
             End If
         Else
             If _locationValue <= answerStop Then
                 l.Location = New Point(170,
-                                       (spacebetweenanswers * 2) * (_locationValue - 1) + 205 +
-                                       (FrmOpenTest.dpiPercent.Text * 2) - 192)
+                                       (Spacebetweenanswers * 2) * (_locationValue - 1) + 205 +
+                                       (FrmOpenTest.DpiPercent.Text * 2) - 192)
             Else
-                l.Location = New Point(170 + spacebetweenanswershorizontal,
-                                       (spacebetweenanswers * 2) * (_locationValue - 1 - answerStop) + 205 +
-                                       (FrmOpenTest.dpiPercent.Text * 2) - 192)
+                l.Location = New Point(170 + Spacebetweenanswershorizontal,
+                                       (Spacebetweenanswers * 2) * (_locationValue - 1 - answerStop) + 205 +
+                                       (FrmOpenTest.DpiPercent.Text * 2) - 192)
             End If
         End If
         l.Visible = True
@@ -388,27 +388,27 @@ Public Class FrmTest
     Sub Buttonpress(sender As Object, e As EventArgs)
         If _buttonpressed = False Then
             _buttonpressed = True
-            s = sender
+            S = sender
 
             WMP1.Ctlcontrols.stop()
             WMP1.Ctlcontrols.play()
-            If s.Name.ToString = _correctanswertemp Then
-                correctAnswer()
+            If S.Name.ToString = _correctanswertemp Then
+                CorrectAnswer()
             End If
             Dim loadanswer As Integer
             'Try
-            loadanswer = CInt(s.Name.ToString.Replace("b", ""))
-            _answer = _questions(_question - 1).answers(loadanswer).text
+            loadanswer = CInt(S.Name.ToString.Replace("b", ""))
+            _answer = _questions(_question - 1).Answers(loadanswer).Text
             _answer = Replace(_answer, vbTab, "")
             'MsgBox(answer)
             'Catch ex As Exception
             '    Console.Write(ex.Message)
             'End Try
-            saveLastQuestion()
+            SaveLastQuestion()
 
-            s.Image = CurrentTheme.imgButtonClick
-            If CurrentTheme.colorClickEnabled Then
-                Me.Controls(s.Name.Replace("b", "l")).ForeColor = CurrentTheme.colorClick
+            S.Image = CurrentTheme.ImgButtonClick
+            If CurrentTheme.ColorClickEnabled Then
+                Me.Controls(S.Name.Replace("b", "l")).ForeColor = CurrentTheme.ColorClick
             End If
             'If FrmOpenTest.rNewTheme.Checked Then
             '    s.Image = My.Resources.aButton
@@ -423,12 +423,12 @@ Public Class FrmTest
 
     Sub Buttonhover(sender As Object, e As EventArgs)
         Try
-            If CurrentTheme.buttonHoverEnabled Then
-                sender.image = CurrentTheme.buttonHover
-                If CurrentTheme.colorClickEnabled Then
+            If CurrentTheme.ButtonHoverEnabled Then
+                sender.image = CurrentTheme.ButtonHover
+                If CurrentTheme.ColorClickEnabled Then
                     Dim correspondingLabel As String
                     correspondingLabel = sender.name.replace("b", "l")
-                    Me.Controls(correspondingLabel).ForeColor = CurrentTheme.colorClick
+                    Me.Controls(correspondingLabel).ForeColor = CurrentTheme.ColorClick
                 End If
             End If
         Catch ex As Exception
@@ -438,12 +438,12 @@ Public Class FrmTest
 
     Sub Buttonleave(sender As Object, e As EventArgs)
         Try
-            If CurrentTheme.buttonHoverEnabled Then
-                sender.image = CurrentTheme.button
-                If CurrentTheme.colorClickEnabled Then
+            If CurrentTheme.ButtonHoverEnabled Then
+                sender.image = CurrentTheme.Button
+                If CurrentTheme.ColorClickEnabled Then
                     Dim correspondingLabel As String
                     correspondingLabel = sender.name.replace("b", "l")
-                    Me.Controls(correspondingLabel).ForeColor = CurrentTheme.colorAnswers
+                    Me.Controls(correspondingLabel).ForeColor = CurrentTheme.ColorAnswers
                 End If
             End If
         Catch ex As Exception
@@ -453,9 +453,9 @@ Public Class FrmTest
 
     Sub Buttonpaint(sender As Object, e As PaintEventArgs)
         Dim canvas As Graphics = e.Graphics
-        Dim mainFont As Font = New Font(CurrentTheme.fontAnswers.OriginalFontName, 18, FontStyle.Regular)
+        Dim mainFont As Font = New Font(CurrentTheme.FontAnswers.OriginalFontName, 18, FontStyle.Regular)
         Dim plateTextEntry As New TextBox
-        PlateTextEntry.Text = sender.Tag.ToString()
+        plateTextEntry.Text = sender.Tag.ToString()
         Dim textStyle As New FontStyle
         'If FrmOpenTest.rLucidaConsole.Checked Then
         '    mainFont = New Font("Courier New", 18, FontStyle.Bold)
@@ -496,10 +496,10 @@ Public Class FrmTest
         'Else
 
         'End If
-        Dim br As New SolidBrush(CurrentTheme.colorAnswers)
+        Dim br As New SolidBrush(CurrentTheme.ColorAnswers)
 
         e.Graphics.DrawRectangle(Pens.Transparent, textArea)
-        e.Graphics.DrawString(PlateTextEntry.Text, mainFont, br, textArea, textFormat)
+        e.Graphics.DrawString(plateTextEntry.Text, mainFont, br, textArea, textFormat)
         canvas = Nothing
     End Sub
 
@@ -508,17 +508,17 @@ Public Class FrmTest
             _amountQuestions = _questions.Count
 
             If _question > _amountQuestions Then
-                afterLastQuestion()
+                AfterLastQuestion()
             Else
 
                 'Index is one lower.
                 Dim index As Integer = _question - 1
 
-                If _questions(index).text2 <> "" Then
-                    txtTekst2.Text = _questions(index).text2
+                If _questions(index).Text2 <> "" Then
+                    txtTekst2.Text = _questions(index).Text2
                 End If
-                If _questions(index).text1 <> "" Then
-                    txtTekst1.Text = _questions(index).text1
+                If _questions(index).Text1 <> "" Then
+                    txtTekst1.Text = _questions(index).Text1
                     tmTekst2.Interval = 5000
                     txtTekst1.Visible = True
                     txtQuestion.Visible = False
@@ -527,18 +527,18 @@ Public Class FrmTest
                     _questionDisplay = _questionDisplay - 1
                 Else
                     If FrmOpenTest.rNumberBeforeQuestion.Checked Then
-                        txtQuestion.Text = _questionDisplay & ". " & _questions(index).text
+                        txtQuestion.Text = _questionDisplay & ". " & _questions(index).Text
                     Else
-                        txtQuestion.Text = _questions(index).text
+                        txtQuestion.Text = _questions(index).Text
                     End If
                     'Looking for an open question, if not found, it will continue to load the answers
-                    If IsNothing(_questions(index).answers) Then
+                    If IsNothing(_questions(index).Answers) Then
                         t1.Visible = True
                         t2.Visible = True
                         t3.Visible = True
                     Else
                         Dim iList As New List(Of Integer)
-                        For i = 0 To _questions(index).answers.Count - 1
+                        For i = 0 To _questions(index).Answers.Count - 1
                             iList.Add(i)
                         Next
 
@@ -551,7 +551,7 @@ Public Class FrmTest
                             'Next
                         End If
                         For Each item In iList
-                            addbutton(_questions(index).answers(item))
+                            Addbutton(_questions(index).Answers(item))
                         Next
 
                         'qAnswers = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
@@ -571,7 +571,7 @@ Public Class FrmTest
 
 
                         'Write the correct answer to a temporary variable, will be used later on the buttonpressed event
-                        _correctanswertemp = _questions(index).rightAnswer
+                        _correctanswertemp = _questions(index).RightAnswer
                     End If
                 End If
             End If
@@ -667,7 +667,7 @@ Public Class FrmTest
         t2.Visible = False
         t3.Visible = False
         txtQuestion.Visible = True
-        If CurrentTheme.logoTestEnabled Then
+        If CurrentTheme.LogoTestEnabled Then
             smallLogo.Visible = True
         End If
         _question = _question + 1
@@ -693,7 +693,7 @@ Public Class FrmTest
                 Me.Controls.RemoveAt(i)
             End If
         Next
-        loadQuestionAnswers()
+        LoadQuestionAnswers()
     End Sub
 
     Private Sub AfterLastQuestion()
@@ -715,7 +715,7 @@ Public Class FrmTest
 
                     Dim xmlWrt As XmlWriter = XmlWriter.Create(FrmOpenTest.txtWedstrijdFile.Text)
 
-                    With XmlWrt
+                    With xmlWrt
 
                         ' Write the Xml declaration.
                         .WriteStartDocument()
@@ -750,21 +750,20 @@ Public Class FrmTest
 
             FrmResult.Show()
             FrmResult.Activate()
-            'Now, the person will see the score.. Which is presented in FrmResult.
-            'We calculated the score using the following formula:
-            'Time adds every second 1 to the score
-            'Every wrong answer adds 20 to the score
-            '1000 - score = Result... How less "score" you have, how higher your result.
         ElseIf FrmOpenTest.rGroep.Checked Then
             Dim result = 0
             Try
+                'Try adding the results to the object
+                CurrentGroup.ExecutionAdd(FrmEnterName.TextBox1.Text, _answersRight, _time, FrmOpenTest.Groen, 0)
+                ReloadExecution()
+
                 'Try adding the results to the listview
-                Dim newItem As New ListViewItem(FrmEnterName.TextBox1.Text) '// add text Item.
-                newItem.SubItems.Add(_answersRight)
-                newItem.SubItems.Add(_time) '// add SubItem.
-                newItem.SubItems.Add("Groen") '// add SubItem.
-                newItem.SubItems.Add("0")
-                FrmOpenTest.listviewExecutie.Items.Add(newItem) '// add Item to ListView.
+                'Dim newItem As New ListViewItem(FrmEnterName.TextBox1.Text) '// add text Item.
+                'newItem.SubItems.Add(_answersRight)
+                'newItem.SubItems.Add(_time) '// add SubItem.
+                'newItem.SubItems.Add("Groen") '// add SubItem.
+                'newItem.SubItems.Add("0")
+                'FrmOpenTest.listviewExecutie.Items.Add(newItem) '// add Item to ListView.
 
                 FrmEnterName.TextBox1.Text = ""
                 FrmEnterName.TextBox2.Text = ""
@@ -798,10 +797,10 @@ Public Class FrmTest
 
                 Else
                     FrmPassword.ShowDialog()
-                    If FrmPassword.cancel = True Then
+                    If FrmPassword.Cancel = True Then
                         e.Cancel = True
                     ElseIf FrmPassword.TextBox1.Text = My.Settings.password Then
-                        FrmEnterName.closePass = True
+                        FrmEnterName.ClosePass = True
                         FrmEnterName.Close()
                     Else
                         If My.Settings.language = "en" Then
@@ -843,8 +842,8 @@ Public Class FrmTest
 
     Private Sub CorrectAnswer()
 
-        If My.Computer.FileSystem.FileExists(FrmOpenTest.file & "a") Then
-            Dim lines() As String = File.ReadAllLines(FrmOpenTest.file & "a")
+        If My.Computer.FileSystem.FileExists(FrmOpenTest.File & "a") Then
+            Dim lines() As String = File.ReadAllLines(FrmOpenTest.File & "a")
             Try
                 _answersRight = _answersRight + lines(_question - 1)
             Catch ex As Exception
@@ -871,11 +870,20 @@ Public Class FrmTest
             'Write.WriteLine(question & "#" & txtQuestion.Text & "#" & FrmEnterName.TextBox1.Text & "#" & answer)
             'Write.Close()
 
-            Dim newItem As New ListViewItem(_question.ToString.PadLeft(3)) '// add text Item.
-            newItem.SubItems.Add(txtQuestion.Text)
-            newItem.SubItems.Add(FrmEnterName.TextBox1.Text) '// add SubItem.
-            newItem.SubItems.Add(_answer) '// add SubItem.
-            FrmOpenTest.listAntwoorden.Items.Add(newItem)
+            'Dim answer As New GivenAnswer
+            'answer.Number = 
+            'answer.Question = _questions(_question).Text
+            'answer.Candidate = CurrentGroup.Candidates(FrmEnterName.TextBox1.Text)
+            'answer.Answer = _answer
+
+            'Dim newItem As New ListViewItem(_question.ToString.PadLeft(3)) '// add text Item.
+            'newItem.SubItems.Add(txtQuestion.Text)
+            'newItem.SubItems.Add(FrmEnterName.TextBox1.Text) '// add SubItem.
+            'newItem.SubItems.Add(_answer) '// add SubItem.
+            'If _answer <> "" Then
+                CurrentGroup.AnswerAdd(_questionDisplay, _questions(_question - 1).Text, FrmEnterName.TextBox1.Text, _answer)
+                ReloadAnswers()
+            'End If
         ElseIf FrmOpenTest.rWedstrijd.Checked Then
             _wedstrijdantwoordentemp = _wedstrijdantwoordentemp & _question & "#" & txtQuestion.Text & "#" &
                                       FrmEnterName.TextBox1.Text & "#" & _answer & vbCrLf
@@ -892,16 +900,16 @@ Public Class FrmTest
 
         'If FrmOpenTest.rNewTheme.Checked Then
         Try
-            s.Image = CurrentTheme.imgButton
+            S.Image = CurrentTheme.ImgButton
         Catch ex As Exception
 
         End Try
-        t2.Image = CurrentTheme.imgButton
+        t2.Image = CurrentTheme.ImgButton
         'End If
 
 
         tmButton.Stop()
-        nextQuestion()
+        NextQuestion()
     End Sub
 
     Private Sub tmTekst1_Tick(sender As Object, e As EventArgs) Handles tmTekst1.Tick
@@ -923,14 +931,14 @@ Public Class FrmTest
         'question = question + 1
         'lastQuestion = True
         'loadQuestionAnswers()
-        nextQuestion()
+        NextQuestion()
     End Sub
 
     Private Sub t2_Click(sender As Object, e As EventArgs) Handles t2.Click
         WMP1.Ctlcontrols.stop()
         WMP1.Ctlcontrols.play()
         If FrmOpenTest.rVirtualKeyboard.Checked Then
-            FrmOpenTest.killVirtualKeyboard()
+            FrmOpenTest.KillVirtualKeyboard()
         End If
         _answer = t1.Text
         'Try
@@ -939,8 +947,8 @@ Public Class FrmTest
         'Catch ex As Exception
         '    Console.Write(ex.Message)
         'End Try
-        saveLastQuestion()
-        t2.Image = CurrentTheme.imgButtonClick
+        SaveLastQuestion()
+        t2.Image = CurrentTheme.ImgButtonClick
 
 
         tmButton.Start()
@@ -964,7 +972,7 @@ Public Class FrmTest
 
     Private Sub t1_MouseClick(sender As Object, e As MouseEventArgs) Handles t1.MouseClick
         If FrmOpenTest.rVirtualKeyboard.Checked Then
-            FrmOpenTest.callVirtualKeyboard()
+            FrmOpenTest.CallVirtualKeyboard()
         End If
     End Sub
 
@@ -972,14 +980,14 @@ Public Class FrmTest
     End Sub
 
     Private Sub t2_MouseEnter(sender As Object, e As EventArgs) Handles t2.MouseEnter
-        If CurrentTheme.buttonHoverEnabled Then
-            t2.Image = CurrentTheme.imgButtonHover
+        If CurrentTheme.ButtonHoverEnabled Then
+            t2.Image = CurrentTheme.ImgButtonHover
         End If
     End Sub
 
     Private Sub t2_MouseLeave(sender As Object, e As EventArgs) Handles t2.MouseLeave
-        If CurrentTheme.buttonHoverEnabled Then
-            t2.Image = CurrentTheme.imgButton
+        If CurrentTheme.ButtonHoverEnabled Then
+            t2.Image = CurrentTheme.ImgButton
         End If
     End Sub
 End Class

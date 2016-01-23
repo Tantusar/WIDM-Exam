@@ -700,6 +700,18 @@ Namespace My
                 Me("CurrentTheme") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property rShowAnswersInGroups() As Boolean
+            Get
+                Return CType(Me("rShowAnswersInGroups"),Boolean)
+            End Get
+            Set
+                Me("rShowAnswersInGroups") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

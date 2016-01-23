@@ -7,10 +7,11 @@ Public Class FrmStartExecutie
     ReadOnly _candidatesList As New ListBox
     ReadOnly _nonRed As New ListBox
     Dim _timerInterval As Integer = 1
-    Private Declare Function SetWindowTheme Lib "uxCurrentTheme" (
+    Private Declare Function SetWindowTheme Lib "uxtheme" (
                                                           hWnd As IntPtr,
                                                           ByRef pszSubAppName As String,
-                                                          ByRef pszSubIdList As String) As Integer
+                                                          ByRef pszSubIdList As String) _
+        As Integer
 
     Private Sub frmStartExecutie_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         My.Computer.Audio.Stop()
@@ -53,25 +54,20 @@ Public Class FrmStartExecutie
                     TextBox1.ReadOnly = False
                 Else
                     _checkTested.Items.Add(TextBox1.Text)
-                    For Each item As ListViewItem In FrmOpenTest.listviewExecutie.Items
-                        If item.SubItems(0).Text = TextBox1.Text Then
-                            If item.SubItems(3).Text = FrmOpenTest.Rood Then
-                            Else
-                                _nonRed.Items.Add(TextBox1.Text)
-                            End If
-                        End If
-                    Next
+                    If CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults(TextBox1.Text).Screen <> FrmOpenTest.Rood Then
+                        _nonRed.Items.Add(TextBox1.Text)
+                    End If
                     Try
                         ComboBox1.Items.Remove(TextBox1.Text)
                     Catch ex As Exception
 
                     End Try
-                    start()
+                    Start()
                 End If
 
             End If
         Else
-            start()
+            Start()
         End If
     End Sub
 
@@ -83,7 +79,7 @@ Public Class FrmStartExecutie
         '    listviewChecked = listviewChecked & vbCrLf & item.Text
         'Next
         If FrmOpenTest.rSchermGeluid.Checked Then
-            sound()
+            Sound()
             If FrmOpenTest.rNostalgia.Checked Then
                 Timer1.Interval = 1500
                 Timer1.Start()
@@ -91,10 +87,10 @@ Public Class FrmStartExecutie
                 Timer1.Interval = _timerInterval
                 Timer1.Start()
             Else
-                start2()
+                Start2()
             End If
         Else
-            start2()
+            Start2()
         End If
     End Sub
 
@@ -107,11 +103,10 @@ Public Class FrmStartExecutie
             ' If FrmOpenTest.listKandidaten.Items.Contains(TextBox1.Text) Then
             'MessageBox.Show(FrmOpenTest.listviewExecutie.Items(0).SubItems(3).Text)
             'loadMusic()
-            Dim li As ListViewItem
-            For Each li In FrmOpenTest.listviewExecutie.Items
-                If li.Text = TextBox1.Text Then
-                    If li.SubItems(3).Text = FrmOpenTest.Rood Then
-                        FrmExecutie.BackgroundImage = CurrentTheme.imgRedScreen
+           
+                
+                    If CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults(TextBox1.Text).Screen = FrmOpenTest.Rood Then
+                        FrmExecutie.BackgroundImage = CurrentTheme.ImgRedScreen
 
                         If FrmOpenTest.rAfscheidsmuziek.Checked Then
                             My.Computer.Audio.Stop()
@@ -120,19 +115,19 @@ Public Class FrmStartExecutie
                             'End If
                         End If
 
-                    ElseIf li.SubItems(3).Text = FrmOpenTest.Groen Then
-                        FrmExecutie.BackgroundImage = CurrentTheme.imgGreenScreen
+                    ElseIf CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults(TextBox1.Text).Screen = FrmOpenTest.Groen Then
+                        FrmExecutie.BackgroundImage = CurrentTheme.ImgGreenScreen
                     Else
-                        Dim li2 As ListViewItem
-                        For Each li2 In FrmOpenTest.listviewScherm.Items
-                            If li2.Text = li.SubItems(3).Text Then
-                                FrmExecutie.PictureBox1.ImageLocation = li2.SubItems(1).Text
-                            End If
-                        Next
+                        Try
+                            FrmExecutie.BackgroundImage = Image.FromFile(CurrentGroup.Screens(CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults(TextBox1.Text).Screen).Location)
+                        Catch ex As Exception
+                            Log(ex.ToString())
+                            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+                        End Try
+                        
 
                     End If
-                End If
-            Next
+            
             'Dim test As String
             ''FrmOpenTest.listviewExecutie.Items.Item(TextBox1.Text)
             'For Each item In FrmOpenTest.listviewExecutie.Items
@@ -159,7 +154,7 @@ Public Class FrmStartExecutie
 
             End If
             If FrmOpenTest.rVirtualKeyboard.Checked Then
-                FrmOpenTest.killVirtualKeyboard()
+                FrmOpenTest.KillVirtualKeyboard()
             End If
             FrmExecutie.Show()
 
@@ -188,7 +183,7 @@ Public Class FrmStartExecutie
     End Sub
 
     Private Sub frmStartExecutie_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        expandToMonitor(Me)
+        ExpandToMonitor(Me)
 
         FrmOpenTest.LoadTheme()
 
@@ -237,40 +232,40 @@ Public Class FrmStartExecutie
         TextBox1.Visible = True
 
         'Default
-        Label1.Font = CurrentTheme.fontIntroText
-        TextBox1.Font = CurrentTheme.fontIntroTextfield
+        Label1.Font = CurrentTheme.FontIntroText
+        TextBox1.Font = CurrentTheme.FontIntroTextfield
 
-        Label1.ForeColor = CurrentTheme.colorIntroText
-        TextBox1.ForeColor = CurrentTheme.colorIntroTextfield
+        Label1.ForeColor = CurrentTheme.ColorIntroText
+        TextBox1.ForeColor = CurrentTheme.ColorIntroTextfield
         'US
-        Label5.Font = CurrentTheme.fontIntroText
-        TextBox3.Font = CurrentTheme.fontIntroTextfield
+        Label5.Font = CurrentTheme.FontIntroText
+        TextBox3.Font = CurrentTheme.FontIntroTextfield
         'Nostalgia
-        Label2.Font = CurrentTheme.fontIntroText
-        TextBox2.Font = CurrentTheme.fontIntroTextfield
-        Button1.Font = CurrentTheme.fontIntroText
+        Label2.Font = CurrentTheme.FontIntroText
+        TextBox2.Font = CurrentTheme.FontIntroTextfield
+        Button1.Font = CurrentTheme.FontIntroText
 
-        If CurrentTheme.musicExecutionEnabled Then
-            WMP2.URL = CurDir() & "\Geluid\" & CurrentTheme.musicExecution
+        If CurrentTheme.MusicExecutionEnabled Then
+            WMP2.URL = CurDir() & "\Geluid\" & CurrentTheme.MusicExecution
             WMP2.settings.setMode("loop", True)
             WMP2.Ctlcontrols.play()
         End If
-        If CurrentTheme.logoIntroEnabled Then
-            PictureBox1.Image = CurrentTheme.imglogoIntro
+        If CurrentTheme.LogoIntroEnabled Then
+            PictureBox1.Image = CurrentTheme.ImgLogoIntro
         Else
             PictureBox1.Visible = False
         End If
-        If CurrentTheme.backgroundIntroEnabled Then
-            BackgroundImage = CurrentTheme.imgbackgroundIntro
+        If CurrentTheme.BackgroundIntroEnabled Then
+            BackgroundImage = CurrentTheme.ImgBackgroundIntro
         Else
             BackgroundImage = Nothing
         End If
-        BackColor = CurrentTheme.backgroundColorIntro
-        If CurrentTheme.introStyle = Theme.Style.Old Then
+        BackColor = CurrentTheme.BackgroundColorIntro
+        If CurrentTheme.IntroStyle = Theme.Style.Old Then
             Panel1.Visible = False
             Panel2.Visible = True
             Panel3.Visible = False
-        ElseIf CurrentTheme.introStyle = Theme.Style.US Then
+        ElseIf CurrentTheme.IntroStyle = Theme.Style.Us Then
             Panel1.Visible = False
             Panel2.Visible = False
             Panel3.Visible = True
@@ -417,8 +412,8 @@ Public Class FrmStartExecutie
 
         _checkTested.Items.Clear()
         _nonRed.Items.Clear()
-        For Each li As ListViewItem In FrmOpenTest.listviewExecutie.Items
-            _candidatesList.Items.Add(li.SubItems(0).Text)
+        For Each li In CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults.Values
+            _candidatesList.Items.Add(li.Candidate)
         Next
         If FrmOpenTest.rGroep.Checked Then
             If FrmOpenTest.rCombobox.Checked Then
@@ -531,7 +526,7 @@ Public Class FrmStartExecutie
             If e.KeyCode = Keys.Enter Then
                 e.SuppressKeyPress = True
                 TextBox1.ReadOnly = True
-                pressedEnter()
+                PressedEnter()
             End If
         End If
         If e.KeyCode = Keys.Escape Then
@@ -550,7 +545,7 @@ Public Class FrmStartExecutie
     End Sub
 
     Private Sub TextBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles TextBox1.MouseClick
-        FrmOpenTest.callVirtualKeyboard()
+        FrmOpenTest.CallVirtualKeyboard()
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
@@ -558,12 +553,12 @@ Public Class FrmStartExecutie
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         TextBox1.Text = ComboBox1.SelectedItem
-        pressedEnter()
+        PressedEnter()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Stop()
-        start2()
+        Start2()
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
@@ -578,7 +573,7 @@ Public Class FrmStartExecutie
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         TextBox1.Text = TextBox2.Text
-        pressedEnter()
+        PressedEnter()
     End Sub
 
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
@@ -626,12 +621,12 @@ Public Class FrmStartExecutie
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
             TextBox1.Text = TextBox3.Text
-            pressedEnter()
+            PressedEnter()
         End If
     End Sub
 
     Private Sub TextBox3_MouseClick(sender As Object, e As MouseEventArgs) Handles TextBox3.MouseClick
-        FrmOpenTest.callVirtualKeyboard()
+        FrmOpenTest.CallVirtualKeyboard()
     End Sub
 
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
@@ -641,12 +636,12 @@ Public Class FrmStartExecutie
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
             TextBox1.Text = TextBox2.Text
-            pressedEnter()
+            PressedEnter()
         End If
     End Sub
 
     Private Sub TextBox2_MouseClick(sender As Object, e As MouseEventArgs) Handles TextBox2.MouseClick
-        FrmOpenTest.callVirtualKeyboard()
+        FrmOpenTest.CallVirtualKeyboard()
     End Sub
 
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged

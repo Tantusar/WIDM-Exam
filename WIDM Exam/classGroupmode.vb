@@ -1,11 +1,12 @@
 ﻿Public Class Groupmode
     Public Author As String
+    Public Version As String = Application.ProductVersion.ToString()
     Public Mole As New Candidate
-    Public Property Candidates As New SortedDictionary(Of String, Candidate)
-    Public Screens As New SortedDictionary(Of String, ScreenExecution)
-    Public Episodes As New SortedDictionary(Of Integer, Episode)
     Public CurrentEpisode As Integer = 1
     Public Password As String
+    Public Candidates As New SortedDictionary(Of String, Candidate)
+    Public Episodes As New SortedDictionary(Of Integer, Episode)
+    Public Screens As New SortedDictionary(Of String, ScreenExecution)
 
     Public Function EpisodeExists(ByVal episode As Integer) As Boolean
         If Episodes.ContainsKey(episode) Then
@@ -64,7 +65,7 @@
         Return CandidateEdit(name, newName, active, CurrentEpisode)
     End Function
 
-    Public Function AnswerAdd(ByVal number As Integer, ByVal question As String, ByVal candidate As Candidate, ByVal answer As String, ByVal episode As Integer)
+    Public Function AnswerAdd(ByVal number As Integer, ByVal question As String, ByVal candidate As String, ByVal answer As String, ByVal episode As Integer)
         EpisodeExists(episode)
         Dim givenAnswer As New GivenAnswer
         givenAnswer.Number = number
@@ -75,7 +76,7 @@
         Return True
     End Function
 
-    Public Function AnswerAdd(ByVal number As Integer, ByVal question As String, ByVal candidate As Candidate, ByVal answer As String)
+    Public Function AnswerAdd(ByVal number As Integer, ByVal question As String, ByVal candidate As String, ByVal answer As String)
         Return AnswerAdd(number, question, candidate, answer, CurrentEpisode)
     End Function
 
@@ -93,7 +94,7 @@
         Return AnswerRemove(index, CurrentEpisode)
     End Function
 
-    Public Function ExecutionAdd(ByVal candidate As Candidate, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer, ByVal episode As Integer)
+    Public Function ExecutionAdd(ByVal candidate As String, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer, ByVal episode As Integer)
         EpisodeExists(episode)
         Dim executionResult As New ExecutionResult
         executionResult.Candidate = candidate
@@ -101,29 +102,29 @@
         executionResult.Time = time
         executionResult.Screen = screen
         executionResult.Jokers = jokers
-        Episodes(episode).ExecutionResults.Add(candidate.Name, executionResult)
+        Episodes(episode).ExecutionResults.Add(candidate, executionResult)
         Return True
     End Function
 
-    Public Function ExecutionAdd(ByVal candidate As Candidate, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer)
+    Public Function ExecutionAdd(ByVal candidate As String, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer)
         Return ExecutionAdd(candidate, answersRight, time, screen, jokers, CurrentEpisode)
     End Function
 
-    Public Function ExecutionRemove(ByVal candidate As Candidate, ByVal episode As Integer)
+    Public Function ExecutionRemove(ByVal candidate As String, ByVal episode As Integer)
         EpisodeExists(episode)
-        If Episodes(episode).ExecutionResults.ContainsKey(candidate.Name) Then
-            Episodes(episode).ExecutionResults.Remove(candidate.Name)
+        If Episodes(episode).ExecutionResults.ContainsKey(candidate) Then
+            Episodes(episode).ExecutionResults.Remove(candidate)
             Return True
         Else
             Return False
         End If
     End Function
 
-    Public Function ExecutionRemove(ByVal candidate As Candidate)
+    Public Function ExecutionRemove(ByVal candidate As String)
         Return ExecutionRemove(candidate, CurrentEpisode)
     End Function
 
-    Public Function ExecutionEdit(ByVal candidate As Candidate, ByVal newCandidate As Candidate, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer, ByVal episode As Integer)
+    Public Function ExecutionEdit(ByVal candidate As String, ByVal newCandidate As String, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer, ByVal episode As Integer)
         EpisodeExists(episode)
         If ExecutionRemove(candidate, episode) Then
             Return ExecutionAdd(newCandidate, answersRight, time, screen, jokers, episode)
@@ -132,7 +133,7 @@
         End If
     End Function
 
-    Public Function ExecutionEdit(ByVal candidate As Candidate, ByVal newCandidate As Candidate, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer)
+    Public Function ExecutionEdit(ByVal candidate As String, ByVal newCandidate As String, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer)
         Return ExecutionEdit(candidate, newCandidate, answersRight, time, screen, jokers, CurrentEpisode)
     End Function
 
@@ -176,12 +177,12 @@ End Class
 Public Class GivenAnswer
     Public Number As Integer
     Public Question As String
-    Public Candidate As New Candidate
+    Public Candidate As String
     Public Answer As String
 End Class
 
 Public Class ExecutionResult
-    Public Candidate As New Candidate
+    Public Candidate As String
     Public AnswersRight As Integer
     Public Time As Integer
     Public Screen As String

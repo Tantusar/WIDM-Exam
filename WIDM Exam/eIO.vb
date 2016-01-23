@@ -9,6 +9,19 @@ Imports ComponentOwl.BetterListView
 Imports Newtonsoft.Json
 
 Module eIo
+    Public Sub Log(ByVal errorText As String)
+        Dim location = CurDir() & "\log.txt"
+        Dim temp As String = ""
+        If My.Computer.FileSystem.FileExists(location) Then
+            Dim objStreamReader As New IO.StreamReader(location)
+            temp = objStreamReader.ReadToEnd
+            objStreamReader.Close()
+        End If
+        Dim objStreamWriter As New IO.StreamWriter(location)
+        objStreamWriter.Write(TimeOfDay & ":" & vbCrLf & " - " & errorText & vbCrLf & vbCrLf & temp)
+        objStreamWriter.Close()
+    End Sub
+
     Private Function BooleanToImage(ByVal bool As Boolean) As Image
         If bool = True Then
             Return My.Resources.tick
@@ -17,70 +30,180 @@ Module eIo
         End If
     End Function
 
-    Public Function ReloadCandidates()
-        With FrmOpenTest.listCandidates
-            .Items.Clear()
-            .Columns.Clear()
-            FrmOpenTest.listCandidateActive.Items.Clear()
+    Public Function ReloadScreens()
+        '   ToolStripComboBox1.Items.Clear()
+        'txtListviewScherm.Items.Clear()
+        'ToolStripComboBox1.Items.Add("Groen")
+        'ToolStripComboBox1.Items.Add("Rood")
+        'txtListviewScherm.Items.Add("Groen")
+        'txtListviewScherm.Items.Add("Rood")
+        'Dim li As ListViewItem
+        'For Each li In Me.listviewScherm.Items
+        '    ToolStripComboBox1.Items.Add(li.Text)
+        '    txtListviewScherm.Items.Add(li.Text)
+        'Next
+        'ToolStripComboBox1.SelectedItem = "Rood"
+        'txtListviewScherm.SelectedItem = "Groen"
+        Try
+            'Populate list
+            With FrmOpenTest.listScreens
+                .Items.Clear()
+                For Each screen In CurrentGroup.Screens.Values
+                    Dim newItem As New BetterListViewItem(screen.Name)
+                    newItem.SubItems.Add(screen.Location)
+                    .Items.Add(newItem)
+                Next
+            End With
 
-            Dim columnName As New BetterListViewColumnHeader
-            columnName.Name = "listCandidatesName"
-            columnName.Text = GetLang("Name")
-            'columnName.CellTemplate = New DataGridViewTextBoxCell()
-            .Columns.Add(columnName)
+            'Populate comboboxes
+            With FrmOpenTest.ToolStripExecutionScreen
+                .Items.Clear()
+                .Items.Add(FrmOpenTest.Groen)
+                .Items.Add(FrmOpenTest.Rood)
+                For Each screen In CurrentGroup.Screens.Values
+                    .Items.Add(screen.Name)
+                Next
+                .SelectedItem = FrmOpenTest.Rood
+            End With
+            With FrmOpenTest.txtListviewScherm
+                .Items.Clear()
+                .Items.Add(FrmOpenTest.Groen)
+                .Items.Add(FrmOpenTest.Rood)
+                For Each screen In CurrentGroup.Screens.Values
+                    .Items.Add(screen.Name)
+                Next
+                .SelectedItem = FrmOpenTest.Groen
+            End With
+        Catch ex As Exception
+            Log(ex.ToString())
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+    End Function
 
-            For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
-                Dim columnEpisode As New BetterListViewColumnHeader
-                columnEpisode.Name = "dataCandidatesName" & ep.Key
-                columnEpisode.Text = GetLang("Afl") & ep.Key
-                columnEpisode.Width = 50
-                .Columns.Add(columnEpisode)
-
-                FrmOpenTest.listCandidateActive.Items.Add(GetLang("Aflevering") & ep.Key)
-            Next
-
-            For Each candidate In CurrentGroup.Candidates.Values
-                'Dim item As New OLVListItem(candidate.name)
-                'item.SubItems(0).Text = candidate.Value.name
-
-                Dim newItem As New BetterListViewItem(candidate.Name)
-                For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
-                    If candidate.Active.ContainsKey(ep.Key) Then
-                        newItem.SubItems.Add(BooleanToImage(candidate.Active(ep.Key)))
+    Public Function ReloadExecution()
+        Try
+            With FrmOpenTest.listExecution
+                .Items.Clear()
+                For Each result In CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults.Values
+                    Dim newItem As New BetterListViewItem(result.Candidate)
+                    newItem.SubItems.Add(result.AnswersRight)
+                    newItem.SubItems.Add(result.Time)
+                    newItem.SubItems.Add(result.Screen)
+                    If result.Jokers = "214748364" Then
+                        newItem.SubItems.Add(FrmOpenTest.Vrijstelling)
                     Else
-                        newItem.SubItems.Add(BooleanToImage(False))
+                        newItem.SubItems.Add(result.Jokers)
                     End If
-                    'count += 1
+                    .Items.Add(newItem)
+                Next
+            End With
+        Catch ex As Exception
+            Log(ex.ToString())
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+    End Function
+
+    Public Function ReloadAnswers()
+        Try
+            With FrmOpenTest.listAnswers
+                .Items.Clear()
+                For Each answer In CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).Answers
+                    If Not .Groups.ContainsKey(answer.Candidate) Then
+                        .Groups.Add(New BetterListViewGroup(answer.Candidate, answer.Candidate))
+                    End If
+                    Dim newItem As New BetterListViewItem(answer.Number)
+                    newItem.SubItems.Add(answer.Question)
+                    newItem.SubItems.Add(answer.Candidate)
+                    newItem.SubItems.Add(answer.Answer)
+                    newItem.Group = .Groups(answer.Candidate)
+                    .Items.Add(newItem)
                 Next
 
-                'Dim n As Integer = .Rows.Add()
-                '.Rows.Item(n).Cells(0).Value = candidate.name
-                'Dim count As Integer = 1
-                'For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.episodes
-                '    If candidate.active.ContainsKey(ep.Key) Then
-                '        .Rows.Item(n).Cells(count).Value = candidate.active(ep.Key)
-                '    Else
-                '        .Rows.Item(n).Cells(count).Value = False
-                '    End If
-                '    count += 1
-                'Next
-                .Items.Add(newItem)
-            Next
+            End With
+        Catch ex As Exception
+            Log(ex.ToString())
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
 
-            .ItemComparer = New BetterListViewItemComparer()
-            .Items.Sort()
-        End With
+    End Function
 
-        With FrmOpenTest.txtWieisdemol
-            For Each item In CurrentGroup.Candidates.Values
-                .Items.Add(item.Name)
-            Next
+    Public Function ReloadCandidates()
+        Try
+            With FrmOpenTest.listCandidates
+                .Items.Clear()
+                .Columns.Clear()
+                FrmOpenTest.listCandidateActive.Items.Clear()
+
+                Dim columnName As New BetterListViewColumnHeader
+                columnName.Name = "listCandidatesName"
+                columnName.Text = GetLang("Name")
+                'columnName.CellTemplate = New DataGridViewTextBoxCell()
+                columnName.Style = BetterListViewColumnHeaderStyle.Sortable
+                columnName.SortMethod = BetterListViewSortMethod.Auto
+                .Columns.Add(columnName)
+
+                For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
+                    Dim columnEpisode As New BetterListViewColumnHeader
+                    columnEpisode.Name = "dataCandidatesName" & ep.Key
+                    columnEpisode.Text = GetLang("Afl") & ep.Key
+                    columnEpisode.Width = 50
+                    'columnEpisode.Style = BetterListViewColumnHeaderStyle.Sortable
+                    'columnEpisode.SortMethod = BetterListViewSortMethod.Auto
+                    .Columns.Add(columnEpisode)
+
+                    FrmOpenTest.listCandidateActive.Items.Add(GetLang("Aflevering") & ep.Key)
+                Next
+
+                For Each candidate In CurrentGroup.Candidates.Values
+                    'Dim item As New OLVListItem(candidate.name)
+                    'item.SubItems(0).Text = candidate.Value.name
+
+                    Dim newItem As New BetterListViewItem(candidate.Name)
+                    For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
+                        If candidate.Active.ContainsKey(ep.Key) Then
+                            newItem.SubItems.Add(BooleanToImage(candidate.Active(ep.Key)))
+                        Else
+                            newItem.SubItems.Add(BooleanToImage(False))
+                        End If
+                        'count += 1
+                    Next
+
+                    'Dim n As Integer = .Rows.Add()
+                    '.Rows.Item(n).Cells(0).Value = candidate.name
+                    'Dim count As Integer = 1
+                    'For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.episodes
+                    '    If candidate.active.ContainsKey(ep.Key) Then
+                    '        .Rows.Item(n).Cells(count).Value = candidate.active(ep.Key)
+                    '    Else
+                    '        .Rows.Item(n).Cells(count).Value = False
+                    '    End If
+                    '    count += 1
+                    'Next
+                    .Items.Add(newItem)
+                Next
+
+                .ItemComparer = New BetterListViewItemComparer()
+                .Items.Sort()
+            End With
+
+            With FrmOpenTest.txtWieisdemol
+                For Each item In CurrentGroup.Candidates.Values
+                    .Items.Add(item.Name)
+                Next
                 .Items.Add(GetLang("geen"))
-        End With
+            End With
+        Catch ex As Exception
+            Log(ex.ToString())
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+
     End Function
 
     Public Function ReloadDataviews()
         ReloadCandidates()
+        ReloadAnswers()
+        ReloadExecution()
+        ReloadScreens()
     End Function
 
     Public Function LoadGroupmode()
@@ -93,6 +216,7 @@ Module eIo
             objStreamReader.Close()
             Return True
         Catch ex As Exception
+            Log(ex.ToString())
             Return False
         End Try
     End Function
@@ -104,6 +228,7 @@ Module eIo
             objStreamWriter.Close()
             Return True
         Catch ex As Exception
+            Log(ex.ToString())
             Return False
         End Try
     End Function
