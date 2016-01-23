@@ -439,12 +439,14 @@ Partial Class FrmTestMaken
         '
         resources.ApplyResources(Me.Button6, "Button6")
         Me.Button6.Name = "Button6"
+        Me.ToolTip1.SetToolTip(Me.Button6, resources.GetString("Button6.ToolTip"))
         Me.Button6.UseVisualStyleBackColor = true
         '
         'Button5
         '
         resources.ApplyResources(Me.Button5, "Button5")
         Me.Button5.Name = "Button5"
+        Me.ToolTip1.SetToolTip(Me.Button5, resources.GetString("Button5.ToolTip"))
         Me.Button5.UseVisualStyleBackColor = true
         '
         'OpenFileDialog3
@@ -459,12 +461,14 @@ Partial Class FrmTestMaken
         '
         resources.ApplyResources(Me.Button7, "Button7")
         Me.Button7.Name = "Button7"
+        Me.ToolTip1.SetToolTip(Me.Button7, resources.GetString("Button7.ToolTip"))
         Me.Button7.UseVisualStyleBackColor = true
         '
         'Button8
         '
         resources.ApplyResources(Me.Button8, "Button8")
         Me.Button8.Name = "Button8"
+        Me.ToolTip1.SetToolTip(Me.Button8, resources.GetString("Button8.ToolTip"))
         Me.Button8.UseVisualStyleBackColor = true
         '
         'SplitContainer1

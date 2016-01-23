@@ -8,7 +8,7 @@ Imports System.Xml
 Imports ComponentOwl.BetterListView
 Imports Newtonsoft.Json
 
-Module EIo
+Module eIo
     Private Function BooleanToImage(ByVal bool As Boolean) As Image
         If bool = True Then
             Return My.Resources.tick
@@ -17,26 +17,26 @@ Module EIo
         End If
     End Function
 
-    Public Function ReloadDataviews()
+    Public Function ReloadCandidates()
         With FrmOpenTest.listCandidates
-
+            .Items.Clear()
             .Columns.Clear()
             FrmOpenTest.listCandidateActive.Items.Clear()
 
             Dim columnName As New BetterListViewColumnHeader
             columnName.Name = "listCandidatesName"
-            columnName.Text = "Naam"
+            columnName.Text = GetLang("Name")
             'columnName.CellTemplate = New DataGridViewTextBoxCell()
             .Columns.Add(columnName)
 
             For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
                 Dim columnEpisode As New BetterListViewColumnHeader
                 columnEpisode.Name = "dataCandidatesName" & ep.Key
-                columnEpisode.Text = "Afl. " & ep.Key
+                columnEpisode.Text = GetLang("Afl") & ep.Key
                 columnEpisode.Width = 50
                 .Columns.Add(columnEpisode)
 
-                FrmOpenTest.listCandidateActive.Items.Add("Aflevering " & ep.Key)
+                FrmOpenTest.listCandidateActive.Items.Add(GetLang("Aflevering") & ep.Key)
             Next
 
             For Each candidate In CurrentGroup.Candidates.Values
@@ -67,7 +67,20 @@ Module EIo
                 .Items.Add(newItem)
             Next
 
+            .ItemComparer = New BetterListViewItemComparer()
+            .Items.Sort()
         End With
+
+        With FrmOpenTest.txtWieisdemol
+            For Each item In CurrentGroup.Candidates.Values
+                .Items.Add(item.Name)
+            Next
+                .Items.Add(GetLang("geen"))
+        End With
+    End Function
+
+    Public Function ReloadDataviews()
+        ReloadCandidates()
     End Function
 
     Public Function LoadGroupmode()
@@ -95,211 +108,211 @@ Module EIo
         End Try
     End Function
 
-    Public Function SaveXml()
-        If FrmOpenTest.txtFolder.Text <> "" Then
-            Try
-                Dim settings As New XmlWriterSettings()
-                settings.Indent = True
-                settings.Encoding = Encoding.Default
+    'Public Function SaveXml()
+    '    If FrmOpenTest.txtFolder.Text <> "" Then
+    '        Try
+    '            Dim settings As New XmlWriterSettings()
+    '            settings.Indent = True
+    '            settings.Encoding = Encoding.Default
 
-                Dim xmlWrt As XmlWriter =
-                        XmlWriter.Create(FrmOpenTest.txtFolder.Text & "\afl" & FrmOpenTest.numAflevering.Value & ".widm",
-                                         settings)
+    '            Dim xmlWrt As XmlWriter =
+    '                    XmlWriter.Create(FrmOpenTest.txtFolder.Text & "\afl" & FrmOpenTest.numAflevering.Value & ".widm",
+    '                                     settings)
 
-                With xmlWrt
+    '            With xmlWrt
 
-                    ' Write the Xml declaration.
-                    .WriteStartDocument()
+    '                ' Write the Xml declaration.
+    '                .WriteStartDocument()
 
-                    ' Write a comment.
-                    .WriteComment("WIDM Exam v2 groepsmodus. Gemaakt door Koenvh (Koenvh.nl)")
-                    .WriteStartElement("Data")
-                    .WriteStartElement("candidates")
-                    For Each item In FrmOpenTest.listKandidaten.Items
-                        .WriteString(vbNewLine)
-                        .WriteString(Replace(item, vbLf, ""))
-                    Next
-                    .WriteEndElement()
-                    .WriteStartElement("mole")
-                    .WriteString(FrmOpenTest.txtWieisdemol.Text)
-                    .WriteEndElement()
+    '                ' Write a comment.
+    '                .WriteComment("WIDM Exam v2 groepsmodus. Gemaakt door Koenvh (Koenvh.nl)")
+    '                .WriteStartElement("Data")
+    '                .WriteStartElement("candidates")
+    '                For Each item In FrmOpenTest.listKandidaten.Items
+    '                    .WriteString(vbNewLine)
+    '                    .WriteString(Replace(item, vbLf, ""))
+    '                Next
+    '                .WriteEndElement()
+    '                .WriteStartElement("mole")
+    '                .WriteString(FrmOpenTest.txtWieisdemol.Text)
+    '                .WriteEndElement()
 
-                    .WriteStartElement("answers")
-                    For Each myItem As ListViewItem In FrmOpenTest.listAntwoorden.Items
-                        .WriteString(vbNewLine)
-                        .WriteString(
-                            Replace(
-                                (myItem.Text & "#" & myItem.SubItems(1).Text & "#" & myItem.SubItems(2).Text & "#" &
-                                 myItem.SubItems(3).Text), vbLf, "")) '// write Item and SubItem.
-                    Next
-                    .WriteEndElement()
-                    .WriteStartElement("execution")
-                    For Each myItem2 As ListViewItem In FrmOpenTest.listviewExecutie.Items
-                        .WriteString(vbNewLine)
-                        .WriteString(
-                            Replace(
-                                (myItem2.Text & "#" & myItem2.SubItems(1).Text & "#" & myItem2.SubItems(2).Text & "#" &
-                                 myItem2.SubItems(3).Text & "#" & myItem2.SubItems(4).Text), vbLf, "")) _
-                        '// write Item and SubItem.
-                    Next
-                    .WriteEndElement()
-                    .WriteStartElement("screens")
-                    For Each myItem3 As ListViewItem In FrmOpenTest.listviewScherm.Items
-                        .WriteString(vbNewLine)
-                        .WriteString(Replace((myItem3.Text & "#" & myItem3.SubItems(1).Text), vbLf, "")) _
-                        '// write Item and SubItem.
-                    Next
-                    .WriteEndElement()
-                    .WriteEndDocument()
-                    .Close()
+    '                .WriteStartElement("answers")
+    '                For Each myItem As ListViewItem In FrmOpenTest.listAntwoorden.Items
+    '                    .WriteString(vbNewLine)
+    '                    .WriteString(
+    '                        Replace(
+    '                            (myItem.Text & "#" & myItem.SubItems(1).Text & "#" & myItem.SubItems(2).Text & "#" &
+    '                             myItem.SubItems(3).Text), vbLf, "")) '// write Item and SubItem.
+    '                Next
+    '                .WriteEndElement()
+    '                .WriteStartElement("execution")
+    '                For Each myItem2 As ListViewItem In FrmOpenTest.listviewExecutie.Items
+    '                    .WriteString(vbNewLine)
+    '                    .WriteString(
+    '                        Replace(
+    '                            (myItem2.Text & "#" & myItem2.SubItems(1).Text & "#" & myItem2.SubItems(2).Text & "#" &
+    '                             myItem2.SubItems(3).Text & "#" & myItem2.SubItems(4).Text), vbLf, "")) _
+    '                    '// write Item and SubItem.
+    '                Next
+    '                .WriteEndElement()
+    '                .WriteStartElement("screens")
+    '                For Each myItem3 As ListViewItem In FrmOpenTest.listviewScherm.Items
+    '                    .WriteString(vbNewLine)
+    '                    .WriteString(Replace((myItem3.Text & "#" & myItem3.SubItems(1).Text), vbLf, "")) _
+    '                    '// write Item and SubItem.
+    '                Next
+    '                .WriteEndElement()
+    '                .WriteEndDocument()
+    '                .Close()
 
-                End With
-            Catch ex As Exception
-                'MsgBox("Er ging iets mis met het opslaan!" & vbCrLf & ex.Message, MsgBoxStyle.Exclamation)
-            End Try
+    '            End With
+    '        Catch ex As Exception
+    '            'MsgBox("Er ging iets mis met het opslaan!" & vbCrLf & ex.Message, MsgBoxStyle.Exclamation)
+    '        End Try
 
-            Return True
-        Else
-            If FrmOpenTest.StartedUp = True Then
-                If My.Settings.language = "en" Then
-                    MsgBox("No folder has been chosen yet", MsgBoxStyle.Exclamation)
-                Else
-                    MsgBox("Geen map gekozen", MsgBoxStyle.Exclamation)
-                End If
-            End If
-            Return False
-        End If
-    End Function
+    '        Return True
+    '    Else
+    '        If FrmOpenTest.StartedUp = True Then
+    '            If My.Settings.language = "en" Then
+    '                MsgBox("No folder has been chosen yet", MsgBoxStyle.Exclamation)
+    '            Else
+    '                MsgBox("Geen map gekozen", MsgBoxStyle.Exclamation)
+    '            End If
+    '        End If
+    '        Return False
+    '    End If
+    'End Function
 
-    Public Function LoadXml()
-        If FrmOpenTest.txtFolder.Text <> "" Then
-            Try
-                Dim candidates() As String = {""}
-                Dim mole = ""
-                Dim answers() As String = {""}
-                Dim execution() As String = {""}
-                Dim screens() As String = {""}
+    'Public Function LoadXml()
+    '    If FrmOpenTest.txtFolder.Text <> "" Then
+    '        Try
+    '            Dim candidates() As String = {""}
+    '            Dim mole = ""
+    '            Dim answers() As String = {""}
+    '            Dim execution() As String = {""}
+    '            Dim screens() As String = {""}
 
-                Dim document As XmlReader
-                document =
-                    New XmlTextReader(FrmOpenTest.txtFolder.Text & "\afl" & FrmOpenTest.numAflevering.Value & ".widm")
-                While (document.Read())
+    '            Dim document As XmlReader
+    '            document =
+    '                New XmlTextReader(FrmOpenTest.txtFolder.Text & "\afl" & FrmOpenTest.numAflevering.Value & ".widm")
+    '            While (document.Read())
 
-                    Dim type = document.NodeType
+    '                Dim type = document.NodeType
 
 
-                    If (type = XmlNodeType.Element) Then
-                        If (document.Name = "candidates") Then
-                            candidates = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
-                        End If
-                        If (document.Name = "mole") Then
-                            mole = WebUtility.HtmlDecode(document.ReadInnerXml.ToString)
-                        End If
-                        If (document.Name = "answers") Then
-                            answers = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
-                        End If
-                        If (document.Name = "execution") Then
-                            execution = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
-                        End If
-                        If (document.Name = "screens") Then
-                            screens = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
-                        End If
-                    End If
+    '                If (type = XmlNodeType.Element) Then
+    '                    If (document.Name = "candidates") Then
+    '                        candidates = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
+    '                    End If
+    '                    If (document.Name = "mole") Then
+    '                        mole = WebUtility.HtmlDecode(document.ReadInnerXml.ToString)
+    '                    End If
+    '                    If (document.Name = "answers") Then
+    '                        answers = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
+    '                    End If
+    '                    If (document.Name = "execution") Then
+    '                        execution = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
+    '                    End If
+    '                    If (document.Name = "screens") Then
+    '                        screens = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
+    '                    End If
+    '                End If
 
-                End While
-                ' MsgBox("")
-                document.Close()
-                If Not FrmOpenTest.SelectedLoad(0) = False Then
-                    For Each item As String In candidates.Skip(1)
-                        FrmOpenTest.listKandidaten.Items.Add(Replace(item, vbLf, ""))
-                    Next
-                    For Each item As String In FrmOpenTest.listKandidaten.Items
-                        FrmOpenTest.txtWieisdemol.Items.Add(item)
-                    Next
-                    FrmOpenTest.txtWieisdemol.SelectedItem = mole
-                End If
-                If Not FrmOpenTest.SelectedLoad(1) = False Then
-                    For Each line As String In answers.Skip(1) '// loop thru array list.
-                        Dim lineArray() As String = line.Split("#") '// separate by "#" character.
-                        Dim newItem As New ListViewItem(Replace(lineArray(0).ToString.PadLeft(3), vbLf, "")) _
-                        '// add text Item.
+    '            End While
+    '            ' MsgBox("")
+    '            document.Close()
+    '            If Not FrmOpenTest.SelectedLoad(0) = False Then
+    '                For Each item As String In candidates.Skip(1)
+    '                    FrmOpenTest.listKandidaten.Items.Add(Replace(item, vbLf, ""))
+    '                Next
+    '                For Each item As String In FrmOpenTest.listKandidaten.Items
+    '                    FrmOpenTest.txtWieisdemol.Items.Add(item)
+    '                Next
+    '                FrmOpenTest.txtWieisdemol.SelectedItem = mole
+    '            End If
+    '            If Not FrmOpenTest.SelectedLoad(1) = False Then
+    '                For Each line As String In answers.Skip(1) '// loop thru array list.
+    '                    Dim lineArray() As String = line.Split("#") '// separate by "#" character.
+    '                    Dim newItem As New ListViewItem(Replace(lineArray(0).ToString.PadLeft(3), vbLf, "")) _
+    '                    '// add text Item.
 
-                        Try
-                            newItem.SubItems.Add(lineArray(1))
-                            newItem.SubItems.Add(lineArray(2))
-                            newItem.SubItems.Add(lineArray(3))
-                        Catch ex As Exception
+    '                    Try
+    '                        newItem.SubItems.Add(lineArray(1))
+    '                        newItem.SubItems.Add(lineArray(2))
+    '                        newItem.SubItems.Add(lineArray(3))
+    '                    Catch ex As Exception
 
-                        End Try
+    '                    End Try
 
-                        'End If
-                        FrmOpenTest.listAntwoorden.Items.Add(newItem) '// add Item to ListView.
-                    Next
-                End If
-                If Not FrmOpenTest.SelectedLoad(2) = False Then
-                    For Each line2 As String In execution.Skip(1) '// loop thru array list.
-                        Dim lineArray() As String = line2.Split("#") '// separate by "#" character.
-                        Dim newItem As New ListViewItem(Replace(lineArray(0).ToString.PadLeft(3), vbLf, "")) _
-                        '// add text Item.
+    '                    'End If
+    '                    FrmOpenTest.listAntwoorden.Items.Add(newItem) '// add Item to ListView.
+    '                Next
+    '            End If
+    '            If Not FrmOpenTest.SelectedLoad(2) = False Then
+    '                For Each line2 As String In execution.Skip(1) '// loop thru array list.
+    '                    Dim lineArray() As String = line2.Split("#") '// separate by "#" character.
+    '                    Dim newItem As New ListViewItem(Replace(lineArray(0).ToString.PadLeft(3), vbLf, "")) _
+    '                    '// add text Item.
 
-                        Try
-                            newItem.SubItems.Add(lineArray(1))
-                            newItem.SubItems.Add(lineArray(2))
-                            newItem.SubItems.Add(lineArray(3))
-                            'newItem.SubItems.Add(lineArray(4))
-                            Try
-                                'MsgBox("Y")
-                                newItem.SubItems.Add(lineArray(4))
-                            Catch ex As Exception
-                                'MsgBox("N")
-                                newItem.SubItems.Add("0")
-                            End Try
+    '                    Try
+    '                        newItem.SubItems.Add(lineArray(1))
+    '                        newItem.SubItems.Add(lineArray(2))
+    '                        newItem.SubItems.Add(lineArray(3))
+    '                        'newItem.SubItems.Add(lineArray(4))
+    '                        Try
+    '                            'MsgBox("Y")
+    '                            newItem.SubItems.Add(lineArray(4))
+    '                        Catch ex As Exception
+    '                            'MsgBox("N")
+    '                            newItem.SubItems.Add("0")
+    '                        End Try
 
-                        Catch ex As Exception
-                            MsgBox(ex.Message)
-                        End Try
+    '                    Catch ex As Exception
+    '                        MsgBox(ex.Message)
+    '                    End Try
 
-                        'End If
-                        FrmOpenTest.listviewExecutie.Items.Add(newItem) '// add Item to ListView.
-                    Next
-                End If
-                If Not FrmOpenTest.SelectedLoad(3) = False Then
-                    For Each line3 As String In screens.Skip(1) '// loop thru array list.
-                        Dim lineArray() As String = line3.Split("#") '// separate by "#" character.
-                        Dim _
-                            newItem As _
-                                New ListViewItem(WebUtility.HtmlDecode(Replace(lineArray(0).ToString.PadLeft(3), vbLf,
-                                                                               ""))) '// add text Item.
+    '                    'End If
+    '                    FrmOpenTest.listviewExecutie.Items.Add(newItem) '// add Item to ListView.
+    '                Next
+    '            End If
+    '            If Not FrmOpenTest.SelectedLoad(3) = False Then
+    '                For Each line3 As String In screens.Skip(1) '// loop thru array list.
+    '                    Dim lineArray() As String = line3.Split("#") '// separate by "#" character.
+    '                    Dim _
+    '                        newItem As _
+    '                            New ListViewItem(WebUtility.HtmlDecode(Replace(lineArray(0).ToString.PadLeft(3), vbLf,
+    '                                                                           ""))) '// add text Item.
 
-                        Try
-                            newItem.SubItems.Add(lineArray(1))
-                            newItem.SubItems.Add(lineArray(2))
-                        Catch ex As Exception
+    '                    Try
+    '                        newItem.SubItems.Add(lineArray(1))
+    '                        newItem.SubItems.Add(lineArray(2))
+    '                    Catch ex As Exception
 
-                        End Try
+    '                    End Try
 
-                        'End If
-                        FrmOpenTest.listviewScherm.Items.Add(newItem) '// add Item to ListView.
-                    Next
-                End If
-                FrmOpenTest.CalculateCandidates()
-                Return True
-            Catch ex As Exception
-                'MsgBox("Er ging iets mis met het inladen!", MsgBoxStyle.Exclamation)
-                Return False
-            End Try
+    '                    'End If
+    '                    FrmOpenTest.listviewScherm.Items.Add(newItem) '// add Item to ListView.
+    '                Next
+    '            End If
+    '            FrmOpenTest.CalculateCandidates()
+    '            Return True
+    '        Catch ex As Exception
+    '            'MsgBox("Er ging iets mis met het inladen!", MsgBoxStyle.Exclamation)
+    '            Return False
+    '        End Try
 
-        Else
-            If FrmOpenTest.StartedUp = True Then
-                If My.Settings.language = "en" Then
-                    MsgBox("No folder has been chosen yet", MsgBoxStyle.Exclamation)
-                Else
-                    MsgBox("Geen map gekozen", MsgBoxStyle.Exclamation)
-                End If
-            End If
-            Return False
-        End If
-    End Function
+    '    Else
+    '        If FrmOpenTest.StartedUp = True Then
+    '            If My.Settings.language = "en" Then
+    '                MsgBox("No folder has been chosen yet", MsgBoxStyle.Exclamation)
+    '            Else
+    '                MsgBox("Geen map gekozen", MsgBoxStyle.Exclamation)
+    '            End If
+    '        End If
+    '        Return False
+    '    End If
+    'End Function
 
     Public Function BackupXml()
 

@@ -65,11 +65,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Aflevering: .
+        '''  Looks up a localized string similar to Afl. .
+        '''</summary>
+        Friend Shared ReadOnly Property Afl() As String
+            Get
+                Return ResourceManager.GetString("Afl", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Aflevering .
         '''</summary>
         Friend Shared ReadOnly Property Aflevering() As String
             Get
                 Return ResourceManager.GetString("Aflevering", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Een kandidaat met deze naam bestaat al.
+        '''</summary>
+        Friend Shared ReadOnly Property CandidateAlreadyExists() As String
+            Get
+                Return ResourceManager.GetString("CandidateAlreadyExists", resourceCulture)
             End Get
         End Property
         
@@ -182,6 +200,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Naam.
+        '''</summary>
+        Friend Shared ReadOnly Property Name() As String
+            Get
+                Return ResourceManager.GetString("Name", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to OCR A Extended is geïnstalleerd.
         '''</summary>
         Friend Shared ReadOnly Property OCRAExtended() As String
@@ -232,6 +259,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property SaveFirst() As String
             Get
                 Return ResourceManager.GetString("SaveFirst", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Selecteer eerst een item.
+        '''</summary>
+        Friend Shared ReadOnly Property SelectItemFirst() As String
+            Get
+                Return ResourceManager.GetString("SelectItemFirst", resourceCulture)
             End Get
         End Property
         

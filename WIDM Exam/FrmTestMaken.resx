@@ -127,6 +127,43 @@
   <data name="listPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="cmType.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cmType.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="cmQuestion.Text" xml:space="preserve">
+    <value>Vraag/Regel 1</value>
+  </data>
+  <data name="cmQuestion.Width" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="cmAnswers.Text" xml:space="preserve">
+    <value>Antwoorden/Regel 2</value>
+  </data>
+  <data name="cmAnswers.Width" type="System.Int32, mscorlib">
+    <value>357</value>
+  </data>
+  <data name="cmRightAnswer.Text" xml:space="preserve">
+    <value>Goede antwoord</value>
+  </data>
+  <data name="cmRightAnswer.Width" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="cmAnswersCount.Text" xml:space="preserve">
+    <value>Aantal antwoorden</value>
+  </data>
+  <data name="cmAnswersCount.Width" type="System.Int32, mscorlib">
+    <value>111</value>
+  </data>
+  <data name="cmRawRightAnswer.Text" xml:space="preserve">
+    <value>Raw right answer</value>
+  </data>
+  <data name="cmRawRightAnswer.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="listPanel.Groups" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
@@ -184,7 +221,6 @@
   <data name="listPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>746, 261</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="listPanel.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
@@ -198,201 +234,6 @@
     <value>SplitContainer1.Panel1</value>
   </data>
   <data name="&gt;&gt;listPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cmType.Text" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="cmType.Width" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="cmQuestion.Text" xml:space="preserve">
-    <value>Vraag/Regel 1</value>
-  </data>
-  <data name="cmQuestion.Width" type="System.Int32, mscorlib">
-    <value>98</value>
-  </data>
-  <data name="cmAnswers.Text" xml:space="preserve">
-    <value>Antwoorden/Regel 2</value>
-  </data>
-  <data name="cmAnswers.Width" type="System.Int32, mscorlib">
-    <value>357</value>
-  </data>
-  <data name="cmRightAnswer.Text" xml:space="preserve">
-    <value>Goede antwoord</value>
-  </data>
-  <data name="cmRightAnswer.Width" type="System.Int32, mscorlib">
-    <value>98</value>
-  </data>
-  <data name="cmAnswersCount.Text" xml:space="preserve">
-    <value>Aantal antwoorden</value>
-  </data>
-  <data name="cmAnswersCount.Width" type="System.Int32, mscorlib">
-    <value>111</value>
-  </data>
-  <data name="cmRawRightAnswer.Text" xml:space="preserve">
-    <value>Raw right answer</value>
-  </data>
-  <data name="cmRawRightAnswer.Width" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Label10.Name" xml:space="preserve">
-    <value>Label10</value>
-  </data>
-  <data name="&gt;&gt;Label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label10.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtQuestion.Name" xml:space="preserve">
-    <value>txtQuestion</value>
-  </data>
-  <data name="&gt;&gt;txtQuestion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtQuestion.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;txtQuestion.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Button3.Name" xml:space="preserve">
-    <value>Button3</value>
-  </data>
-  <data name="&gt;&gt;Button3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Button3.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;Button3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Button1.Name" xml:space="preserve">
-    <value>Button1</value>
-  </data>
-  <data name="&gt;&gt;Button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Button1.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;Button1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
-    <value>Label5</value>
-  </data>
-  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtAnswers.Name" xml:space="preserve">
-    <value>txtAnswers</value>
-  </data>
-  <data name="&gt;&gt;txtAnswers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtAnswers.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;txtAnswers.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
-    <value>Label1</value>
-  </data>
-  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;ComboBox1.Name" xml:space="preserve">
-    <value>ComboBox1</value>
-  </data>
-  <data name="&gt;&gt;ComboBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ComboBox1.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;ComboBox1.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
-    <value>Label2</value>
-  </data>
-  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
-    <value>Label3</value>
-  </data>
-  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="GroupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>446, 239</value>
-  </data>
-  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="GroupBox2.Text" xml:space="preserve">
-    <value>Vraag maken/aanpassen</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
-    <value>SplitContainer2.Panel1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
@@ -594,6 +435,24 @@
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="Label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 16</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 45</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="Label4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
   <data name="&gt;&gt;Label4.Name" xml:space="preserve">
     <value>Label4</value>
   </data>
@@ -632,36 +491,6 @@
   </data>
   <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="Label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 16</value>
-  </data>
-  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 45</value>
-  </data>
-  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>Label4</value>
-  </data>
-  <data name="Label4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
-    <value>Label4</value>
-  </data>
-  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="ComboBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -744,116 +573,62 @@
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;listDB.Name" xml:space="preserve">
-    <value>listDB</value>
-  </data>
-  <data name="&gt;&gt;listDB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listDB.Parent" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;listDB.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Button4.Name" xml:space="preserve">
-    <value>Button4</value>
-  </data>
-  <data name="&gt;&gt;Button4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Button4.Parent" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;Button4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Button2.Name" xml:space="preserve">
-    <value>Button2</value>
-  </data>
-  <data name="&gt;&gt;Button2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Button2.Parent" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;Button2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Label8.Name" xml:space="preserve">
-    <value>Label8</value>
-  </data>
-  <data name="&gt;&gt;Label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label8.Parent" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
-    <value>Label6</value>
-  </data>
-  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtTekst2.Name" xml:space="preserve">
-    <value>txtTekst2</value>
-  </data>
-  <data name="&gt;&gt;txtTekst2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtTekst2.Parent" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;txtTekst2.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;txtTekst1.Name" xml:space="preserve">
-    <value>txtTekst1</value>
-  </data>
-  <data name="&gt;&gt;txtTekst1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtTekst1.Parent" xml:space="preserve">
-    <value>GroupBox3</value>
-  </data>
-  <data name="&gt;&gt;txtTekst1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="GroupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="GroupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>343, 239</value>
+  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>446, 239</value>
   </data>
-  <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
-  <data name="GroupBox3.Text" xml:space="preserve">
-    <value>Tekst tussendoor maken/aanpassen</value>
+  <data name="GroupBox2.Text" xml:space="preserve">
+    <value>Vraag maken/aanpassen</value>
   </data>
-  <data name="&gt;&gt;GroupBox3.Name" xml:space="preserve">
-    <value>GroupBox3</value>
+  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
+    <value>GroupBox2</value>
   </data>
-  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
-    <value>SplitContainer2.Panel2</value>
+  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
+    <value>SplitContainer2.Panel1</value>
   </data>
-  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ColumnHeader1.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ColumnHeader1.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="ColumnHeader2.Text" xml:space="preserve">
+    <value>Vraag/Regel 1</value>
+  </data>
+  <data name="ColumnHeader2.Width" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="ColumnHeader3.Text" xml:space="preserve">
+    <value>Antwoorden/Regel 2</value>
+  </data>
+  <data name="ColumnHeader3.Width" type="System.Int32, mscorlib">
+    <value>357</value>
+  </data>
+  <data name="ColumnHeader4.Text" xml:space="preserve">
+    <value>Goede antwoord</value>
+  </data>
+  <data name="ColumnHeader4.Width" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="ColumnHeader5.Text" xml:space="preserve">
+    <value>Aantal antwoorden</value>
+  </data>
+  <data name="ColumnHeader5.Width" type="System.Int32, mscorlib">
+    <value>111</value>
   </data>
   <data name="listDB.Groups" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -928,36 +703,6 @@
   </data>
   <data name="&gt;&gt;listDB.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="ColumnHeader1.Text" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="ColumnHeader1.Width" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="ColumnHeader2.Text" xml:space="preserve">
-    <value>Vraag/Regel 1</value>
-  </data>
-  <data name="ColumnHeader2.Width" type="System.Int32, mscorlib">
-    <value>98</value>
-  </data>
-  <data name="ColumnHeader3.Text" xml:space="preserve">
-    <value>Antwoorden/Regel 2</value>
-  </data>
-  <data name="ColumnHeader3.Width" type="System.Int32, mscorlib">
-    <value>357</value>
-  </data>
-  <data name="ColumnHeader4.Text" xml:space="preserve">
-    <value>Goede antwoord</value>
-  </data>
-  <data name="ColumnHeader4.Width" type="System.Int32, mscorlib">
-    <value>98</value>
-  </data>
-  <data name="ColumnHeader5.Text" xml:space="preserve">
-    <value>Aantal antwoorden</value>
-  </data>
-  <data name="ColumnHeader5.Width" type="System.Int32, mscorlib">
-    <value>111</value>
   </data>
   <data name="Button4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -1118,6 +863,33 @@
   <data name="&gt;&gt;txtTekst1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="GroupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 239</value>
+  </data>
+  <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="GroupBox3.Text" xml:space="preserve">
+    <value>Tekst tussendoor maken/aanpassen</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Name" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
+    <value>SplitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>261, 17</value>
   </metadata>
@@ -1127,46 +899,22 @@
   <metadata name="ToolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>403, 17</value>
   </metadata>
-  <data name="ToolStrip2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ToolStrip2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>793, 25</value>
-  </data>
-  <data name="ToolStrip2.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="ToolStrip2.Text" xml:space="preserve">
-    <value>ToolStrip2</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip2.Name" xml:space="preserve">
-    <value>ToolStrip2</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="ToolStripButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVDhPjZJZTxNRHMX7hXygy+ASv4WPxrAVugABRGRz
-        IYFEjSDRSGSRaiGsoshuB9BUEQoVCwZTltIFoRToCnRKt+N/bpUnQpjk5GZm7vmdcxcJp+GLFRq+Ua7l
-        zSQfpx2Kctq6JKflQf+YruRP4lrhFK4W8EjPG/dfL+QXZJqxGxLx4dR865IjjCWHgEgsCYEUPkkgcBzH
-        XiAKbyjG3oVoAvvBGHqHjUmdxR679dh4wKlHsiWc1mBdsofxsM+DcJTMNDHn6Rx8hzHskSEUjjNwkEbX
-        wQnW3REYLD5MWQ7AFfERAkwGLAS437PLJokSAZ5gFL6jGEsWG+xSG9tuBOs7Aio7nPi64odCXZMkwFDU
-        bDsmgJtNEpVbb4KHxsNIAhFq5T+Kw+4R0wWsbgso1zvQa3RDoRoDAeqSpo0j3Ot2w0kVRW15Tyg9ztIP
-        hQS2vdFTs3U7jLtvNtE5/QfyvBERwGN2lQBdO6y6ktLzGkzIf76AApK6cR5K+i7++6/StjXoDE7Ic4cJ
-        QMc0Yw2hqnOL1kaisarThaoOUU5U6J2UaEeZbhOl7TaUtK2j9PUGWkZtkCs/pgDGlVDKTEoZSQQRzeVv
-        HazynXYCkPF26xppFS8H1yDL+ZACTC8HyOz6J+dpOjNTcpnOxswlZCxutqKo+Tca+lcgyx4QAQbwFj8q
-        9S523hdRQdMvPOlehjSrH5LLtIkTi35WV6Aje/Ql61yJd0Lz4idqOxYhzewjQD6PMbOPGqQAxo3P50oE
-        qBp/oKbdTIAeSNK1tcnheS8BHBduoKyfR3WrCWkZD5ISqcqwOfB9HwMze2eu9yxVt8yh4tUs0m7qvRKF
-        +tMzhXpiVJ454VOoxul6jrIbJs8dgkw5SEf1HtLsd7RhfVS5l1J7WPKljK5gWmbXt78JDw+aC/GZ1gAA
-        AABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKsSURBVDhPjZJZTxNRHMX7hXygy+ASv4WPxrAVugABRGRT
+        MfKgRpBoNLJItRAoIIpltQOoVYRCxYLBsJUuCKVAV6BTuh3/c6s8EcMkJzczc8/vnLtIOA1fqtDwTXIt
+        byX5Oa0xxmnrU5yWB/1julA4jkvFE7hYxCOzYDRwuZifk2lGrkjEh1PzrQvOCBacAqLxFARS5DiJ4FEC
+        u8EYfOE4exdiSeyF4jAYP6d0Nkf82gPzPqceypVwWtPygiOCul4vIjEy08S8RzPwH8SxS4ZwJMHAIRrd
+        +8dY80RhsvkxYdsHV8JHCTAetBHgtmGHTRIlAryhGPyHcZYsNtihNvadKNa2BVR3uPBlKQCFui5FAGPM
+        aj8igIdNEpXfYIGXxoNoElFqFThMwOEV0wWsbAmo1DvRY/ZAoRoBAepTlvVD3Or2wEUVRW36jik9wdIP
+        hCS2fLET8/JWBDdfbaBz8jfkBUMigMf0CgG6tll1JaUXNFpQ+GQORSR10yyU9F3890/lbavQmVyQ5w8S
+        gI5pajmMms5NWhuJxppON2o6RLlQpXdRogMVug2Ut9tR1raG8pfraBm2Q658nwaYl8JpMyltJBFENFe+
+        drLKN9oJQMbrraukFTwbWIUs710aMLkYJLP7r1wn6cxMyRU6OzOXkbG0eRklzb/Q2LcEWW6/CDCBtwVQ
+        rXez8z6Lip7/xMPuRUhz+iA5T5s4Nh9gdQU6svufcv4r8U5onv5Afcc8pNm9BCjkMWL1U4M0wLz+8b8S
+        Aaqm77jbbiWAAZJM7b3U4KyPAM4zN1A2zKK21YKMrDspiVRl2uj/tof+qd1T13uaaltmUPViGhlX9T6J
+        Qv3hsUI9NizPHvMrVKN0PYfZDZPnGyFTDtBRvYU09w1tWC9V7qFUA0s+l9UVysju+voH85oPk3QpAnYA
+        AAAASUVORK5CYII=
 </value>
   </data>
   <data name="ToolStripButton4.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1177,30 +925,6 @@
   </data>
   <data name="ToolStripButton4.Text" xml:space="preserve">
     <value>Opslaan</value>
-  </data>
-  <data name="ToolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIQSURBVDhP3Y/LaxNBHMfn4L03/wQP1tRHbFQ8eBFEELyI
-        HtSTCFoCSoSCImgPaSNCpDR6EKmIpYKtFR8I4iF4sbG13W2zNtskrU1bQzfY7Pv9+DrbrtJ48Co4zIeZ
-        OXy+39+Q/2TNvY2ztdcnnOU/qLw7uFB90bF94Xm8rYUP8bZ8/si2SCek8DRhBYEPIKA7ZPPumg2s5rvs
-        lfGz1i/qU1fM2niqxr/adzrSCeFedkqBZ8JazUJf7Ie+9BhGbRSBK9IsDYGnUuTNt9uEIAg2P5bgIp2Q
-        8vBexXdkKuegVQegfO3B+kQXGpNJiMU0xNnbENkbaDLdlBSdTEB5bL8a6TRgpNNxjTWIXA7N6QyEj9dg
-        CJ9pqxK1h6f0e4Lwe8zIbjPSwwkOOBv/9y2KAXj6hugZPKx6DuZKGsa3buiVS9D4c/C0EpihrQG5hB14
-        BjylAFd8D+fHKOy1R1S8C2PpJoxqEvr8eWhzJ6EWj8JTWTD3tgQUHiYs31HgrL+BLQzR1vswl2nrYth6
-        EVrpDFTuOJSZw5Cn98BVvrQGhI/AEan8BNb3fpi1HiqnoJcvUPkUbT0GhT0EeaoD0uQOGjDRGjB/J1Y3
-        JE5i8898rTIItfwAKp+FWuqFwt2CUrwOeTYFmU1CZi6D+zQYcNm4FOmE8L3tV/nMrmGub2eDycTMv9IX
-        M2cyMZlPtw9E+j9dhPwEaannIvCO8DYAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ToolStripSplitButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripSplitButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 22</value>
-  </data>
-  <data name="ToolStripSplitButton1.Text" xml:space="preserve">
-    <value>Openen</value>
   </data>
   <data name="OudeTestOpenenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
@@ -1213,6 +937,30 @@
   </data>
   <data name="VersleuteldeTestOpenenToolStripMenuItem.Text" xml:space="preserve">
     <value>Versleutelde test openen</value>
+  </data>
+  <data name="ToolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIQSURBVDhP3Y/LaxNBHMfn4L03/wQP1tRHbFQ8eBFEELyI
+        HtSTCFoCSoSCImgPaSNCpDR6EB+IpYKtFR8I4iF4kMbWdrfN2myTtDZtDd1gs+/34+tsu0rjwavgMB9m
+        5vD5fn9D/pM1+zbO1l4fc5b+oPJu/3z1RcfW+efxthY+xNvy+UNbIp2QwtOEFQQ+gIDukI27azawku+y
+        l8dOW7+oT14ya2OpGv9qz8lIJ4R72SkFnglrJQt9oR/64mMYtREErkizNASeSpE33m4TgiDY/GiCi3RC
+        ykO7Fd+RqZyDVh2A8rUHa+NdaEwkIRbTEGduQmSvocl0U1J0MgHl0b1qpNOA4U7HNVYhcjk0pzIQPl6B
+        IXymrUrUHp7S7wnC7zHDO81IDyfY56z/37coBuDp66Jn8LDqOZjLaRjfuqFXLkDjz8DTSmAGNwfkEnbg
+        GfCUAlzxPZwfI7BXH1DxNozF6zCqSehzZ6HNHodaPAxPZcHc2RRQuJ+wfEeBs/YGtjBIW+/CXKKtC2Hr
+        eWilU1C5o1CmD0Ke2gVX+dIaED4CR6TyE1jf+2HWeqicgl4+R+UTtPUIFPYA5MkOSBPbaMB4a8DcrVjd
+        kDiJyT/ztcojqOV7UPks1FIvFO4GlOJVyDMpyGwSMnMRxU8PAy4blyKdEL63/TKf2THE9W1vMJmY+Vf6
+        YuZ0Jibz6faBSP+ni5CfZkjnHgWkJaAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ToolStripSplitButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ToolStripSplitButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 22</value>
+  </data>
+  <data name="ToolStripSplitButton1.Text" xml:space="preserve">
+    <value>Openen</value>
   </data>
   <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -1293,16 +1041,16 @@
   <data name="ToolStripExtraInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH+SURBVDhPjZPvSxNxHMdXf0VEQQ+iHgg9UXwuQlhGICSI
-        TiWEepDRs8xFD3qwBxqksgR/4BNFkBBFiQKhEbkYywcuvblFrq25S2/hdj92d7v98O3ne8zD5en8wIs7
-        uM/7dZ/P/XCU6wpRS9RX4RpxkThRtZqmibqul4rFIuzI5XLweDwj1GsrqWfhbDYLVVUtJElCJpOBIAim
-        JBmaR2S2Db+W3AhO3UZwtKaLhS8wAWsgCQzDMI8MRVEgiiJSqRSU5CJ2vX0QNz4ACo/MxjxWB5v2KgQs
-        fAQT0FqQZRl7P+eQ3noNY2cZu1/eQNtcQDHuw/rkI71CUCgUrJ3ZOdtb3FlBmnuFkuaDFu3F/venCM/0
-        YH3cKfqG7t+sEPyPzH9GerMfJd0PdbsbeqID8pYLiekW9N697ixn7QU8Rzuv9ZXDXdD/tEPiXiI60QyV
-        58Aypwr40DLCK89p7K/QYz3IJToh0iTbY3cgC7/NnlMF4dVZhD668OPTMJKBVqixDuwHXyA61QL1X8x8
-        LmcK3g80AnIckYkH8Lou4xvd1f+2CcrfiBmuKnA/vgXD/w5GYAQBdwMWntxAOsEhn89bnClob7yEgYc1
-        8A7ew9rcM0hC3Hylx7EV0GgHR5JqUG+pLLCqjr59lV2wCxyH9VCrQhn291p1lagjmPU8sDBlHI5D6rV1
-        3ZuEayMAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH/SURBVDhPjZPvSxNxHMdXf0WEgQ+iHgg+UXwuQlhKIBSE
+        TkWEepDSs8yFD3qwBxpUsoIa+CQRRERJokBohC7G8oFLb26ia2vu0lu43Y/d3W4/evv5HvNwebo+8OIO
+        7vN+fT/fu/s6KlVHNBEtNagnLhKnqknTNJEol0ol2JHP5+HxeCap11bSwsK5XA6qqlpIkoRsNgtBEExJ
+        KjyP6Mw97HxwIzR1A6E3DX0sfIEJWIOu6zAMw7wyFEWBKIpIp9NQUovY941A3PgIKDyyG/NYmWg/qBKw
+        8DFMQFNBlmUcbM8is/UMxt4S9r8+h7a5gFLCj3Xvfb1KUCwWrT2ze7ZvcW8ZGW4MZc0PLTaEw+/DiEwP
+        Yv2dU/S/vH29SvAvMv8Fmc1RlPUA1N1+6MkeyFsuJN93YejWVWclay/gOdrz2kgl3Af9Vzck7ili3g6o
+        PAeWOVPAh5cQWX5MY69Ajw8in+yFSJPsvr0JWfhp9pwpiKzOIPzJhR+fXyEVvAs13oPD0BPEprqg/omb
+        7+Vcwdx4GyAnEPXegc91Gd9o1cCLdii/o2a4psD9oBFG4DWM4CSC7lYsPLyGTJJDoVCwOFfQ3XYJ4wMN
+        8E10Ym32ESQhYX7Sk9gK6Mf5eyypBfWWKwKrmukcqOyBXeAkrId6Fcqw02vVFaKZYNb/gYUp43AcAcae
+        dcOgnUJtAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ToolStripExtraInfo.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1313,6 +1061,30 @@
   </data>
   <data name="ToolStripExtraInfo.Text" xml:space="preserve">
     <value>Extra informatie bewerken</value>
+  </data>
+  <data name="ToolStrip2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ToolStrip2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>793, 25</value>
+  </data>
+  <data name="ToolStrip2.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="ToolStrip2.Text" xml:space="preserve">
+    <value>ToolStrip2</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip2.Name" xml:space="preserve">
+    <value>ToolStrip2</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip2.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>510, 17</value>
@@ -1531,6 +1303,9 @@
   <data name="Button6.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
   </data>
+  <data name="Button6.ToolTip" xml:space="preserve">
+    <value>Omlaag verplaatsen</value>
+  </data>
   <data name="&gt;&gt;Button6.Name" xml:space="preserve">
     <value>Button6</value>
   </data>
@@ -1567,6 +1342,9 @@
   </data>
   <data name="Button5.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
+  </data>
+  <data name="Button5.ToolTip" xml:space="preserve">
+    <value>Omhoog verplaatsen</value>
   </data>
   <data name="&gt;&gt;Button5.Name" xml:space="preserve">
     <value>Button5</value>
@@ -1622,6 +1400,9 @@
   <data name="Button7.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
+  <data name="Button7.ToolTip" xml:space="preserve">
+    <value>Rij verwijderen</value>
+  </data>
   <data name="&gt;&gt;Button7.Name" xml:space="preserve">
     <value>Button7</value>
   </data>
@@ -1667,6 +1448,9 @@
   </data>
   <data name="Button8.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
+  </data>
+  <data name="Button8.ToolTip" xml:space="preserve">
+    <value>Bewerken</value>
   </data>
   <data name="&gt;&gt;Button8.Name" xml:space="preserve">
     <value>Button8</value>

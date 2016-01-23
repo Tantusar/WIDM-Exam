@@ -130,7 +130,7 @@
     <value>We hebben gedetecteerd dat uw scherm op {0} dpi staat. Helaas ondersteunt WIDM Exam dat op het moment nog niet volledig! Hoewel het meeste goed zou moeten werken, kunnen er enkele problemen zijn. Mocht u fouten/problemen tegenkomen, stuur dan een e-mail via "Contact" op de website. Bij voorbaat dank.</value>
   </data>
   <data name="Aflevering" xml:space="preserve">
-    <value>Aflevering: </value>
+    <value>Aflevering </value>
   </data>
   <data name="ClearListWarning" xml:space="preserve">
     <value>Weet u zeker dat u de lijst leeg wilt maken? Deze actie kan niet ongedaan worden!</value>
@@ -182,5 +182,17 @@
   </data>
   <data name="SavedSuccess" xml:space="preserve">
     <value>Succesvol opgeslagen</value>
+  </data>
+  <data name="Afl" xml:space="preserve">
+    <value>Afl. </value>
+  </data>
+  <data name="CandidateAlreadyExists" xml:space="preserve">
+    <value>Een kandidaat met deze naam bestaat al</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="SelectItemFirst" xml:space="preserve">
+    <value>Selecteer eerst een item</value>
   </data>
 </root>

@@ -14,21 +14,21 @@ Public Class FrmStartExecutie
 
     Private Sub frmStartExecutie_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         My.Computer.Audio.Stop()
-        If FrmOpenTest.rVerwijderNaam.Checked Then
+        'If FrmOpenTest.rVerwijderNaam.Checked Then
 
-            SaveXML()
-            'Dim templist As New ListBox
-            'For Each item In FrmOpenTest.listKandidaten.Items
-            '    templist.Items.Add(item)
-            'Next
-            FrmOpenTest.numAflevering.Value = FrmOpenTest.numAflevering.Value + 1
-            For Each item In _nonRed.Items
-                FrmOpenTest.listKandidaten.Items.Add(item)
-            Next
-            SaveXML()
+        '    SaveXML()
+        '    'Dim templist As New ListBox
+        '    'For Each item In FrmOpenTest.listKandidaten.Items
+        '    '    templist.Items.Add(item)
+        '    'Next
+        '    FrmOpenTest.numAflevering.Value = FrmOpenTest.numAflevering.Value + 1
+        '    For Each item In _nonRed.Items
+        '        FrmOpenTest.listKandidaten.Items.Add(item)
+        '    Next
+        '    SaveXML()
 
-            FrmOpenTest.numAflevering.Value = FrmOpenTest.numAflevering.Value - 1
-        End If
+        '    FrmOpenTest.numAflevering.Value = FrmOpenTest.numAflevering.Value - 1
+        'End If
     End Sub
 
     Private Sub PressedEnter()

@@ -12,7 +12,7 @@ Public Class FrmEnterName
     Private Sub PressedEnter()
         If FrmOpenTest.rGroep.Checked Then
 
-            If FrmOpenTest.listKandidaten.Items.Contains(TextBox1.Text) = False Then
+            If CurrentGroup.Candidates.ContainsKey(TextBox1.Text) = False Then
                 If My.Settings.language = "en" Then
                     MsgBox("Name hasn't been found. Are you sure it exists?", MsgBoxStyle.Exclamation)
                 Else
@@ -37,12 +37,6 @@ Public Class FrmEnterName
                 End If
 
             End If
-        ElseIf TextBox1.Text = "nyan" Then
-            My.Computer.Audio.Stop()
-            WMP1.URL = "http://www.nyan.cat/music/zombie.mp3"
-            WMP1.settings.setMode("loop", True)
-            WMP1.Ctlcontrols.play()
-            start()
         Else
 
             start()
@@ -345,8 +339,8 @@ Public Class FrmEnterName
         _checkTested.Items.Clear()
         If FrmOpenTest.rGroep.Checked Then
             If FrmOpenTest.rCombobox.Checked Then
-                For Each item In FrmOpenTest.listKandidaten.Items
-                    ComboBox1.Items.Add(item)
+                For Each item In CurrentGroup.Candidates.Values
+                    ComboBox1.Items.Add(item.Name)
                 Next
                 TextBox1.Visible = False
             Else

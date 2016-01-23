@@ -154,33 +154,33 @@ Public Class FrmTestMaken
             Dim jsoNdeserialized = JsonConvert.DeserializeObject(output)
 
             'Loop through questions
-            For Each item In JSONdeserialized("questions")
+            For Each item In JSONdeserialized("Questions")
                 Dim newItem
                 'Check type
-                If item("text").ToString() <> "" Then
-                    If item("answers").ToString() = "" Then
+                If item("Text").ToString() <> "" Then
+                    If item("Answers").ToString() = "" Then
                         newItem = New ListViewItem(OpenVraag) '// add text Item.
-                        newItem.SubItems.Add(item("text").ToString())
+                        newItem.SubItems.Add(item("Text").ToString())
                     Else
                         newItem = New ListViewItem(Vraag) '// add text Item.
-                        newItem.SubItems.Add(item("text").ToString())
+                        newItem.SubItems.Add(item("Text").ToString())
                         Dim answerString As String = ""
-                        For Each answer In item("answers")
+                        For Each answer In item("Answers")
                             'Add answers to string, split by ##
-                            answerString += answer("text").ToString() & "##"
+                            answerString += answer("Text").ToString() & "##"
                         Next
                         'Remove last ##, why would we want that? :-)
                         newItem.SubItems.Add(answerString.TrimEnd("##"))
-                        Dim indexRightAnswer As Integer = Val(Replace(item("rightAnswer").ToString(), "b", ""))
+                        Dim indexRightAnswer As Integer = Val(Replace(item("RightAnswer").ToString(), "b", ""))
                         'Convert to val, replace bn to n.
-                        newItem.SubItems.Add(item("answers")(indexRightAnswer).ToString())
-                        newItem.SubItems.Add(item("answers").Count)
-                        newItem.SubItems.Add(item("rightAnswer").ToString())
+                        newItem.SubItems.Add(item("Answers")(indexRightAnswer).ToString())
+                        newItem.SubItems.Add(item("Answers").Count)
+                        newItem.SubItems.Add(item("RightAnswer").ToString())
                     End If
                 Else
                     newItem = New ListViewItem("Tekst tussendoor") '// add text Item.
-                    newItem.SubItems.Add(item("text1").ToString())
-                    newItem.SubItems.Add(item("text2").ToString())
+                    newItem.SubItems.Add(item("Text1").ToString())
+                    newItem.SubItems.Add(item("Text2").ToString())
                 End If
                 'Look whether the database with existing questions is building. Will cause duplicates if not properly handled.
                 If buildDatabase = True Then
@@ -437,7 +437,7 @@ Public Class FrmTestMaken
         ComboBox1.Items.Clear()
     End Sub
 
-    Sub Removeallitems()
+    Sub RemoveAllItems()
         Dim li As ListViewItem
         For Each li In listPanel.Items
             listPanel.Items.Remove(li)
@@ -533,11 +533,11 @@ Public Class FrmTestMaken
         End Try
     End Sub
 
-    Sub Loadtest()
+    Sub LoadTest()
         BuildDatabase()
         If rNormalTest.Checked Then
             If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
-                removeallitems()
+                Removeallitems()
                 _intCount0 = 0
                 Open(False)
                 ConvertCorrectAnswerToText()

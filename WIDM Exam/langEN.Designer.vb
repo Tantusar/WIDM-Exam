@@ -65,11 +65,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Episode: .
+        '''  Looks up a localized string similar to Ep. .
+        '''</summary>
+        Friend Shared ReadOnly Property Afl() As String
+            Get
+                Return ResourceManager.GetString("Afl", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Episode .
         '''</summary>
         Friend Shared ReadOnly Property Aflevering() As String
             Get
                 Return ResourceManager.GetString("Aflevering", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to A candidate with this name already exists.
+        '''</summary>
+        Friend Shared ReadOnly Property CandidateAlreadyExists() As String
+            Get
+                Return ResourceManager.GetString("CandidateAlreadyExists", resourceCulture)
             End Get
         End Property
         
@@ -182,6 +200,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Name.
+        '''</summary>
+        Friend Shared ReadOnly Property Name() As String
+            Get
+                Return ResourceManager.GetString("Name", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to OCR A Extended is installed.
         '''</summary>
         Friend Shared ReadOnly Property OCRAExtended() As String
@@ -232,6 +259,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property SaveFirst() As String
             Get
                 Return ResourceManager.GetString("SaveFirst", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Please select an item first before editing.
+        '''</summary>
+        Friend Shared ReadOnly Property SelectItemFirst() As String
+            Get
+                Return ResourceManager.GetString("SelectItemFirst", resourceCulture)
             End Get
         End Property
         

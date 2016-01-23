@@ -771,7 +771,7 @@ Public Class FrmTest
                 FrmEnterName.TextBox3.Text = ""
 
                 If FrmOpenTest.rSaveAtClose.Checked = True Then
-                    SaveXML()
+                    'SaveXML()
                 End If
                 _closePass = True
 

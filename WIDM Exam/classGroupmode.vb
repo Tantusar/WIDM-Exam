@@ -1,28 +1,37 @@
 ﻿Public Class Groupmode
     Public Author As String
     Public Mole As New Candidate
-    Public Property Candidates As New Dictionary(Of String, Candidate)
-    Public Screens As New Dictionary(Of String, ScreenExecution)
-    Public Episodes As New Dictionary(Of Integer, Episode)
+    Public Property Candidates As New SortedDictionary(Of String, Candidate)
+    Public Screens As New SortedDictionary(Of String, ScreenExecution)
+    Public Episodes As New SortedDictionary(Of Integer, Episode)
     Public CurrentEpisode As Integer = 1
-    Public Password As String 
+    Public Password As String
 
     Public Function EpisodeExists(ByVal episode As Integer) As Boolean
-        If episodes.ContainsKey(episode) Then
+        If Episodes.ContainsKey(episode) Then
             Return True
         Else
-            episodes.Add(episode, New Episode With {.number = episode})
+            Episodes.Add(episode, New Episode With {.Number = episode})
             Return False
         End If
     End Function
 
+    Public Function CandidateAdd(ByVal candidate As Candidate)
+        Try
+            Candidates.Add(candidate.Name, candidate)
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
     Public Function CandidateAdd(ByVal name As String, ByVal active As Boolean, ByVal episode As Integer)
         EpisodeExists(episode)
-        If Not candidates.ContainsKey(name) Then
+        If Not Candidates.ContainsKey(name) Then
             Dim candidate As New Candidate
-            candidate.name = name
-            candidate.active(episode) = active
-            candidates.Add(candidate.name, candidate)
+            candidate.Name = name
+            candidate.Active(episode) = active
+            Candidates.Add(candidate.Name, candidate)
             Return True
         Else
             Return False
@@ -30,12 +39,12 @@
     End Function
 
     Public Function CandidateAdd(ByVal name As String, ByVal active As Boolean)
-        Return CandidateAdd(name, active, currentEpisode)
+        Return CandidateAdd(name, active, CurrentEpisode)
     End Function
 
     Public Function CandidateRemove(ByVal name As String)
-        If candidates.ContainsKey(name) Then
-            candidates.Remove(name)
+        If Candidates.ContainsKey(name) Then
+            Candidates.Remove(name)
             Return True
         Else
             Return False
@@ -52,28 +61,28 @@
     End Function
 
     Public Function CandidateEdit(ByVal name As String, ByVal newName As String, ByVal active As Boolean)
-        Return CandidateEdit(name, newName, active, currentEpisode)
+        Return CandidateEdit(name, newName, active, CurrentEpisode)
     End Function
 
     Public Function AnswerAdd(ByVal number As Integer, ByVal question As String, ByVal candidate As Candidate, ByVal answer As String, ByVal episode As Integer)
         EpisodeExists(episode)
         Dim givenAnswer As New GivenAnswer
-        givenAnswer.number = number
-        givenAnswer.question = question
-        givenAnswer.candidate = candidate
-        givenAnswer.answer = answer
-        episodes(episode).answers.Add(givenAnswer)
+        givenAnswer.Number = number
+        givenAnswer.Question = question
+        givenAnswer.Candidate = candidate
+        givenAnswer.Answer = answer
+        Episodes(episode).Answers.Add(givenAnswer)
         Return True
     End Function
 
     Public Function AnswerAdd(ByVal number As Integer, ByVal question As String, ByVal candidate As Candidate, ByVal answer As String)
-        Return AnswerAdd(number, question, candidate, answer, currentEpisode)
+        Return AnswerAdd(number, question, candidate, answer, CurrentEpisode)
     End Function
 
     Public Function AnswerRemove(ByVal index As Integer, ByVal episode As Integer)
         EpisodeExists(episode)
-        If Not episodes(episode).answers.Count > index Then
-            episodes(episode).answers.RemoveAt(index)
+        If Not Episodes(episode).Answers.Count > index Then
+            Episodes(episode).Answers.RemoveAt(index)
             Return True
         Else
             Return False
@@ -81,29 +90,29 @@
     End Function
 
     Public Function AnswerRemove(ByVal index As Integer)
-        Return AnswerRemove(index, currentEpisode)
+        Return AnswerRemove(index, CurrentEpisode)
     End Function
 
     Public Function ExecutionAdd(ByVal candidate As Candidate, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer, ByVal episode As Integer)
         EpisodeExists(episode)
         Dim executionResult As New ExecutionResult
-        executionResult.candidate = candidate
-        executionResult.answersRight = answersRight
-        executionResult.time = time
-        executionResult.screen = screen
-        executionResult.jokers = jokers
-        episodes(episode).executionResults.Add(candidate.name, executionResult)
+        executionResult.Candidate = candidate
+        executionResult.AnswersRight = answersRight
+        executionResult.Time = time
+        executionResult.Screen = screen
+        executionResult.Jokers = jokers
+        Episodes(episode).ExecutionResults.Add(candidate.Name, executionResult)
         Return True
     End Function
 
     Public Function ExecutionAdd(ByVal candidate As Candidate, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer)
-        Return ExecutionAdd(candidate, answersRight, time, screen, jokers, currentEpisode)
+        Return ExecutionAdd(candidate, answersRight, time, screen, jokers, CurrentEpisode)
     End Function
 
     Public Function ExecutionRemove(ByVal candidate As Candidate, ByVal episode As Integer)
         EpisodeExists(episode)
-        If episodes(episode).executionResults.ContainsKey(candidate.name) Then
-            episodes(episode).executionResults.Remove(candidate.name)
+        If Episodes(episode).ExecutionResults.ContainsKey(candidate.Name) Then
+            Episodes(episode).ExecutionResults.Remove(candidate.Name)
             Return True
         Else
             Return False
@@ -111,7 +120,7 @@
     End Function
 
     Public Function ExecutionRemove(ByVal candidate As Candidate)
-        Return ExecutionRemove(candidate, currentEpisode)
+        Return ExecutionRemove(candidate, CurrentEpisode)
     End Function
 
     Public Function ExecutionEdit(ByVal candidate As Candidate, ByVal newCandidate As Candidate, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer, ByVal episode As Integer)
@@ -124,20 +133,20 @@
     End Function
 
     Public Function ExecutionEdit(ByVal candidate As Candidate, ByVal newCandidate As Candidate, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer)
-        Return ExecutionEdit(candidate, newCandidate, answersRight, time, screen, jokers, currentEpisode)
+        Return ExecutionEdit(candidate, newCandidate, answersRight, time, screen, jokers, CurrentEpisode)
     End Function
 
     Public Function ScreenAdd(ByVal name As String, ByVal location As String)
         Dim screen As New ScreenExecution
-        screen.name = name
-        screen.location = location
-        screens.Add(name, screen)
+        screen.Name = name
+        screen.Location = location
+        Screens.Add(name, screen)
         Return True
     End Function
 
     Public Function ScreenRemove(ByVal name As String)
-        If screens.ContainsKey(name) Then
-            screens.Remove(name)
+        If Screens.ContainsKey(name) Then
+            Screens.Remove(name)
             Return True
         Else
             Return False
@@ -155,13 +164,13 @@ End Class
 
 Public Class Episode
     Public Number As Integer
-    Public ExecutionResults As New Dictionary(Of String, ExecutionResult)
+    Public ExecutionResults As New SortedDictionary(Of String, ExecutionResult)
     Public Answers As New List(Of GivenAnswer)
 End Class
 
 Public Class Candidate
     Public Property Name As String
-    Public Property Active As New Dictionary(Of Integer, Boolean)
+    Public Property Active As New SortedDictionary(Of Integer, Boolean)
 End Class
 
 Public Class GivenAnswer
