@@ -8,6 +8,14 @@
     Public Episodes As New SortedDictionary(Of Integer, Episode)
     Public Screens As New SortedDictionary(Of String, ScreenExecution)
 
+    Sub New()
+        Mole = New Candidate()
+        Candidates = New SortedDictionary(Of String,Candidate)
+        Episodes = New SortedDictionary(Of Integer,Episode)
+        Screens = New SortedDictionary(Of String,ScreenExecution)
+        Episodes.Add(1, New Episode())
+    End Sub
+
     Public Function EpisodeExists(ByVal episode As Integer) As Boolean
         If Episodes.ContainsKey(episode) Then
             Return True
@@ -165,7 +173,7 @@ End Class
 
 Public Class Episode
     Public Number As Integer
-    Public ExecutionResults As New SortedDictionary(Of String, ExecutionResult)
+    Public ExecutionResults As New Dictionary(Of String, ExecutionResult)
     Public Answers As New List(Of GivenAnswer)
 End Class
 

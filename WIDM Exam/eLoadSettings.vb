@@ -33,7 +33,6 @@ Module ELoadSettings
         If My.Settings.oudemuziek = True Then
             FrmOpenTest.rOudeMuziek.Checked = True
         End If
-        checkFontAvailable()
         'FrmOpenTest.header = My.Resources.header_2014_2
         If My.Settings.CurrentTheme_old = 0 Then
             FrmOpenTest.rNewTheme.Checked = True
@@ -194,27 +193,6 @@ Module ELoadSettings
 
         'FrmOpenTest.Label44.Text = My.Application.Info.Version.ToString
 
-        Return 0
-    End Function
-
-    Public Function CheckFontAvailable()
-        Dim windowsFolder As String = Environment.GetFolderPath(Environment.SpecialFolder.Windows)
-
-        If Not My.Computer.FileSystem.FileExists(WindowsFolder & "\Fonts\Ubuntu-C.ttf") Then
-            FrmOpenTest.rUbuntuCondensed.Enabled = False
-        Else
-            FrmOpenTest.rUbuntuCondensed.Font = New Font("Ubuntu Condensed", 8)
-        End If
-        If Not My.Computer.FileSystem.FileExists(WindowsFolder & "\Fonts\OCRAEXT.ttf") Then
-            FrmOpenTest.rOCRAEXT.Enabled = False
-        Else
-            FrmOpenTest.rOCRAEXT.Font = GetInstance(8.25, FontStyle.Regular)
-        End If
-        If Not My.Computer.FileSystem.FileExists(WindowsFolder & "\Fonts\MicroFLF.ttf") Then
-            FrmOpenTest.rMicroFLF.Enabled = False
-        Else
-            FrmOpenTest.rMicroFLF.Font = New Font("MicroFLF", 8)
-        End If
         Return 0
     End Function
 

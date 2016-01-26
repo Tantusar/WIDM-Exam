@@ -101,6 +101,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Kandidaat {0} krijgt nu een rood scherm.
+        '''</summary>
+        Friend Shared ReadOnly Property CandidateRedScreen() As String
+            Get
+                Return ResourceManager.GetString("CandidateRedScreen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Hoe veel kandidaten moeten een rood scherm krijgen? (Normaliter 1).
+        '''</summary>
+        Friend Shared ReadOnly Property CandidateRedScreenPopup() As String
+            Get
+                Return ResourceManager.GetString("CandidateRedScreenPopup", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Weet u zeker dat u de lijst leeg wilt maken? Deze actie kan niet ongedaan worden!.
         '''</summary>
         Friend Shared ReadOnly Property ClearListWarning() As String
@@ -124,6 +142,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property dpiMessage() As String
             Get
                 Return ResourceManager.GetString("dpiMessage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Het opgegeven bestand kan niet worden gevonden.
+        '''</summary>
+        Friend Shared ReadOnly Property FileNotFound() As String
+            Get
+                Return ResourceManager.GetString("FileNotFound", resourceCulture)
             End Get
         End Property
         
@@ -223,6 +250,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property NameNotFound() As String
             Get
                 Return ResourceManager.GetString("NameNotFound", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Dit is geen getal, voer enkel getallen in (0 - 9).
+        '''</summary>
+        Friend Shared ReadOnly Property NotANumber() As String
+            Get
+                Return ResourceManager.GetString("NotANumber", resourceCulture)
             End Get
         End Property
         

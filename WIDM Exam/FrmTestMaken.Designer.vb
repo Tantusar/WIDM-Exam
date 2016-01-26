@@ -63,15 +63,13 @@ Partial Class FrmTestMaken
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSplitButton1 = New System.Windows.Forms.ToolStripSplitButton()
-        Me.OudeTestOpenenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VersleuteldeTestOpenenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton7 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripExtraInfo = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label9 = New System.Windows.Forms.Label()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
@@ -84,10 +82,10 @@ Partial Class FrmTestMaken
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
-        Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
+        Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
+        Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.GroupBox2.SuspendLayout
@@ -319,7 +317,7 @@ Partial Class FrmTestMaken
         '
         'ToolStrip2
         '
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton4, Me.ToolStripSplitButton1, Me.ToolStripSeparator1, Me.ToolStripButton5, Me.ToolStripSeparator3, Me.ToolStripButton6, Me.ToolStripSeparator4, Me.ToolStripButton7, Me.ToolStripExtraInfo})
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton4, Me.ToolStripSplitButton1, Me.ToolStripSeparator1, Me.ToolStripButton5, Me.ToolStripButton7, Me.ToolStripSeparator4, Me.ToolStripExtraInfo, Me.ToolStripSeparator3, Me.ToolStripButton1})
         resources.ApplyResources(Me.ToolStrip2, "ToolStrip2")
         Me.ToolStrip2.Name = "ToolStrip2"
         '
@@ -330,19 +328,8 @@ Partial Class FrmTestMaken
         '
         'ToolStripSplitButton1
         '
-        Me.ToolStripSplitButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OudeTestOpenenToolStripMenuItem, Me.VersleuteldeTestOpenenToolStripMenuItem})
         resources.ApplyResources(Me.ToolStripSplitButton1, "ToolStripSplitButton1")
         Me.ToolStripSplitButton1.Name = "ToolStripSplitButton1"
-        '
-        'OudeTestOpenenToolStripMenuItem
-        '
-        Me.OudeTestOpenenToolStripMenuItem.Name = "OudeTestOpenenToolStripMenuItem"
-        resources.ApplyResources(Me.OudeTestOpenenToolStripMenuItem, "OudeTestOpenenToolStripMenuItem")
-        '
-        'VersleuteldeTestOpenenToolStripMenuItem
-        '
-        Me.VersleuteldeTestOpenenToolStripMenuItem.Name = "VersleuteldeTestOpenenToolStripMenuItem"
-        resources.ApplyResources(Me.VersleuteldeTestOpenenToolStripMenuItem, "VersleuteldeTestOpenenToolStripMenuItem")
         '
         'ToolStripSeparator1
         '
@@ -354,31 +341,31 @@ Partial Class FrmTestMaken
         resources.ApplyResources(Me.ToolStripButton5, "ToolStripButton5")
         Me.ToolStripButton5.Name = "ToolStripButton5"
         '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        resources.ApplyResources(Me.ToolStripSeparator3, "ToolStripSeparator3")
-        '
-        'ToolStripButton6
-        '
-        resources.ApplyResources(Me.ToolStripButton6, "ToolStripButton6")
-        Me.ToolStripButton6.Name = "ToolStripButton6"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        resources.ApplyResources(Me.ToolStripSeparator4, "ToolStripSeparator4")
-        '
         'ToolStripButton7
         '
         Me.ToolStripButton7.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         resources.ApplyResources(Me.ToolStripButton7, "ToolStripButton7")
         Me.ToolStripButton7.Name = "ToolStripButton7"
         '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        resources.ApplyResources(Me.ToolStripSeparator4, "ToolStripSeparator4")
+        '
         'ToolStripExtraInfo
         '
         resources.ApplyResources(Me.ToolStripExtraInfo, "ToolStripExtraInfo")
         Me.ToolStripExtraInfo.Name = "ToolStripExtraInfo"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        resources.ApplyResources(Me.ToolStripSeparator3, "ToolStripSeparator3")
+        '
+        'ToolStripButton1
+        '
+        resources.ApplyResources(Me.ToolStripButton1, "ToolStripButton1")
+        Me.ToolStripButton1.Name = "ToolStripButton1"
         '
         'Timer1
         '
@@ -449,14 +436,6 @@ Partial Class FrmTestMaken
         Me.ToolTip1.SetToolTip(Me.Button5, resources.GetString("Button5.ToolTip"))
         Me.Button5.UseVisualStyleBackColor = true
         '
-        'OpenFileDialog3
-        '
-        resources.ApplyResources(Me.OpenFileDialog3, "OpenFileDialog3")
-        '
-        'OpenFileDialog4
-        '
-        resources.ApplyResources(Me.OpenFileDialog4, "OpenFileDialog4")
-        '
         'Button7
         '
         resources.ApplyResources(Me.Button7, "Button7")
@@ -470,6 +449,14 @@ Partial Class FrmTestMaken
         Me.Button8.Name = "Button8"
         Me.ToolTip1.SetToolTip(Me.Button8, resources.GetString("Button8.ToolTip"))
         Me.Button8.UseVisualStyleBackColor = true
+        '
+        'OpenFileDialog3
+        '
+        resources.ApplyResources(Me.OpenFileDialog3, "OpenFileDialog3")
+        '
+        'OpenFileDialog4
+        '
+        resources.ApplyResources(Me.OpenFileDialog4, "OpenFileDialog4")
         '
         'SplitContainer1
         '
@@ -571,7 +558,6 @@ End Sub
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripButton6 As System.Windows.Forms.ToolStripButton
     Friend WithEvents OpenFileDialog2 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
@@ -579,8 +565,6 @@ End Sub
     Friend WithEvents ToolStripButton7 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents ToolStripSplitButton1 As System.Windows.Forms.ToolStripSplitButton
-    Friend WithEvents OudeTestOpenenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents VersleuteldeTestOpenenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OpenFileDialog3 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents txtQuestion As System.Windows.Forms.ComboBox
     Friend WithEvents listDB As System.Windows.Forms.ListView
@@ -599,4 +583,5 @@ End Sub
     Friend WithEvents ToolStripExtraInfo As ToolStripButton
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents SplitContainer2 As SplitContainer
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class

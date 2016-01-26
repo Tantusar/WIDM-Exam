@@ -115,15 +115,21 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="classAnswer.vb" />
     <Compile Include="classEnDe.vb" />
+    <Compile Include="classExecutionItemComparer.vb" />
     <Compile Include="classGroupmode.vb" />
     <Compile Include="classQuestion.vb" />
     <Compile Include="classTest.vb" />
     <Compile Include="classTheme.vb" />
-    <Compile Include="eClient.vb" />
     <Compile Include="eIO.vb" />
     <Compile Include="eLoadSettings.vb" />
-    <Compile Include="eServer.vb" />
+    <Compile Include="eOldImport.vb" />
     <Compile Include="Extensions.vb" />
+    <Compile Include="FrmConvert.Designer.vb">
+      <DependentUpon>FrmConvert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConvert.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmExtraInfo.Designer.vb">
       <DependentUpon>FrmExtraInfo.vb</DependentUpon>
     </Compile>
@@ -140,6 +146,12 @@
       <DependentUpon>FrmOpenTest.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmOpenTest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSplash.Designer.vb">
+      <DependentUpon>FrmSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSplash.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTestMaken.Designer.vb">
@@ -164,12 +176,6 @@
       <DependentUpon>FrmTheme.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmTheme.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmUpdater.designer.vb">
-      <DependentUpon>FrmUpdater.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmUpdater.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPercentage.Designer.vb">
@@ -221,9 +227,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>langNL.resx</DependentUpon>
     </Compile>
-    <Compile Include="ListViewItemComparer.vb" />
-    <Compile Include="ListViewItemComparerInteger.vb" />
-    <Compile Include="loadFont.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -243,6 +246,9 @@
   <ItemGroup>
     <EmbeddedResource Include="classEnDe.resx">
       <DependentUpon>classEnDe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConvert.resx">
+      <DependentUpon>FrmConvert.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmExtraInfo.resx">
       <DependentUpon>FrmExtraInfo.vb</DependentUpon>
@@ -291,6 +297,9 @@
     <EmbeddedResource Include="FrmResult.en.resx">
       <DependentUpon>FrmResult.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSplash.resx">
+      <DependentUpon>FrmSplash.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmStartExecutie.af.resx">
       <DependentUpon>FrmStartExecutie.vb</DependentUpon>
     </EmbeddedResource>
@@ -314,12 +323,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTheme.resx">
       <DependentUpon>FrmTheme.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmUpdater.en.resx">
-      <DependentUpon>FrmUpdater.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmUpdater.resx">
-      <DependentUpon>FrmUpdater.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPercentage.resx">
       <DependentUpon>FrmPercentage.vb</DependentUpon>
@@ -427,6 +430,10 @@
     <None Include="Resources\Logo.png" />
     <None Include="Resources\Button pressed.png" />
     <None Include="Resources\Background enter name US.png" />
+    <None Include="Resources\WIDM Exam.png" />
+    <None Include="Resources\splash.png" />
+    <None Include="Resources\loading.png" />
+    <None Include="Resources\Koenvh inverted text.png" />
     <Content Include="Wie is de Mol Examen_32512.ico" />
   </ItemGroup>
   <ItemGroup>

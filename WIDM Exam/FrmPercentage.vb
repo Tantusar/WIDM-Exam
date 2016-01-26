@@ -15,8 +15,6 @@
         expandToMonitor(Me)
         If FrmOpenTest.rNostalgia.Checked Then
             Label1.Font = New Font("Comic Sans MS", 128, FontStyle.Regular)
-        ElseIf FrmOpenTest.rOCRAEXT.Checked Then
-            Label1.Font = GetInstance(128, FontStyle.Regular)
         End If
         Label1.Text = FrmOpenTest.percentage & "%"
     End Sub

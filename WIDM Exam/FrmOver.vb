@@ -1,9 +1,5 @@
 ﻿Public Class FrmOver
     Private Sub FrmOver_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If FrmOpenTest.rOCRAEXT.Checked Then
-            Label1.Font = GetInstance(16, FontStyle.Regular)
-            Label3.Font = GetInstance(10, FontStyle.Regular)
-        End If
         Label3.Text = "v" & My.Application.Info.Version.ToString
     End Sub
 

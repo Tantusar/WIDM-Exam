@@ -10,9 +10,6 @@
             LinkLabel1.Visible = False
         End If
         cancel = False
-        If FrmOpenTest.rOCRAEXT.Checked Then
-            Label1.Font = GetInstance(14, FontStyle.Regular)
-        End If
         TextBox1.Clear()
     End Sub
 

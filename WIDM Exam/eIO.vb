@@ -114,6 +114,8 @@ Module eIo
                     End If
                     .Items.Add(newItem)
                 Next
+                .ItemComparer = New ExecutionItemComparer()
+                .ResumeSort(True)
             End With
             Return True
         Catch ex As Exception
@@ -212,7 +214,7 @@ Module eIo
                 For Each item In CurrentGroup.Candidates.Values
                     .Items.Add(item.Name)
                 Next
-                .Items.Add(GetLang("geen"))
+                '.Items.Add(GetLang("geen"))
                 .SelectedItem = CurrentGroup.Mole.Name
             End With
             Return True
@@ -481,61 +483,6 @@ Module eIo
         Next
         Return 0
     End Function
-
-    Public Sub WebUpdate()
-        FrmOpenTest.Timer1.Stop()
-        'Dim Online As String
-        FrmOpenTest.ToolStripButton2.Text = "Update"
-        FrmOpenTest.ToolStripButton2.Enabled = True
-
-        FrmUpdater.Newversionnumber = FrmOpenTest.Webclient.DocumentTitle.ToString
-        If My.Computer.Network.IsAvailable = True Then
-            If IsNumeric(FrmOpenTest.Webclient.DocumentTitle.ToString) Then
-                If FrmOpenTest.Webclient.DocumentTitle.ToString > My.Application.Info.Version.ToString Then
-                    My.Computer.Audio.PlaySystemSound(SystemSounds.Beep)
-                    If My.Settings.language = "en" Then
-                        FrmUpdater.Button1.Text = "Download now!"
-                    Else
-                        FrmUpdater.Button1.Text = "Download nu!"
-                    End If
-                    FrmUpdater.Button1.Enabled = True
-
-                    FrmUpdater.Label7.Visible = True
-                    FrmUpdater.Label8.Visible = True
-                    FrmUpdater.Newversion = True
-                    FrmUpdater.txtLatest.BackColor = Color.LightGreen
-                    FrmUpdater.txtCurrent.BackColor = Color.LightCoral
-
-                    FrmUpdater.ShowDialog()
-                Else
-                    'MessageBox.Show("You have the current version")
-                    FrmUpdater.Newversion = False
-                    If My.Settings.language = "en" Then
-                        FrmUpdater.Button1.Text = "No update available"
-                    Else
-                        FrmUpdater.Button1.Text = "Geen update beschikbaar"
-                    End If
-
-                    FrmUpdater.Button1.Enabled = False
-                    'MsgBox("Uw versie is up-to-date", MsgBoxStyle.Information)
-                End If
-
-            Else
-                'MessageBox.Show("You have the current version")
-                FrmUpdater.Newversion = False
-                If My.Settings.language = "en" Then
-                    FrmUpdater.Button1.Text = "Can't check for updates"
-                Else
-                    FrmUpdater.Button1.Text = "Kan niet op updates controleren"
-                End If
-                FrmUpdater.Button1.Enabled = False
-                'MsgBox("Uw versie is up-to-date", MsgBoxStyle.Information)
-            End If
-        Else
-            FrmOpenTest.ToolStripButton2.Text = "Update offline"
-            FrmOpenTest.ToolStripButton2.Enabled = False
-        End If
-    End Sub
 
     Public Sub ExportSettings()
         My.Settings.Save()

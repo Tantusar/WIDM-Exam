@@ -117,34 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="txtLatestLabel.Text" xml:space="preserve">
-    <value>The latest version is:</value>
-  </data>
-  <data name="txtCurrentLabel.Text" xml:space="preserve">
-    <value>The current version is:</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>451, 13</value>
-  </data>
-  <data name="Label8.Text" xml:space="preserve">
-    <value>In order to update, press the big grey button underneath and press "Download voor Windows"</value>
-  </data>
-  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 62</value>
-  </data>
-  <data name="Label7.Text" xml:space="preserve">
-    <value>An update is available! The newest version always includes improvements, so please keep up-to-date. The changelog can be found on the site. </value>
-  </data>
-  <data name="Label6.Text" xml:space="preserve">
-    <value>or</value>
-  </data>
-  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 13</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>In case this doesn't work, go to</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAMDAAAAEAIACoJQAANgAAACAgAAABACAAqBAAAN4lAAAQEAAAAQAgAGgEAACGNgAAKAAAADAA

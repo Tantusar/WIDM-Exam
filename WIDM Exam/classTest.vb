@@ -1,10 +1,12 @@
 ﻿Public Class Test
-    Dim _strMoleText As String
-    Dim _strAuthor As String
-    Dim _strComment As String
+    Dim _strMoleText As String = ""
+    Dim _strAuthor As String = ""
+    Dim _strComment As String = ""
 
     Sub New()
-
+        Author = ""
+        Comment = ""
+        MoleText = ""
     End Sub
 
     Sub New(_author As String, _comment As String, _questions As Question(), ByVal _moleText As String)
@@ -32,7 +34,7 @@
         End Set
     End Property
 
-    Public Questions As Question()
+    Public Questions(-1) As Question
 
     Property MoleText As String
         Get

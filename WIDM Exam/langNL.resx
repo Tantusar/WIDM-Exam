@@ -207,4 +207,16 @@
   <data name="TestAlreadyDone" xml:space="preserve">
     <value>Test is al uitgevoerd door deze kandidaat!</value>
   </data>
+  <data name="CandidateRedScreen" xml:space="preserve">
+    <value>Kandidaat {0} krijgt nu een rood scherm</value>
+  </data>
+  <data name="CandidateRedScreenPopup" xml:space="preserve">
+    <value>Hoe veel kandidaten moeten een rood scherm krijgen? (Normaliter 1)</value>
+  </data>
+  <data name="NotANumber" xml:space="preserve">
+    <value>Dit is geen getal, voer enkel getallen in (0 - 9)</value>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>Het opgegeven bestand kan niet worden gevonden</value>
+  </data>
 </root>

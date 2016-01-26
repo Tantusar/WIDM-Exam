@@ -207,4 +207,16 @@
   <data name="TestAlreadyDone" xml:space="preserve">
     <value>This candidate already did the quiz!</value>
   </data>
+  <data name="CandidateRedScreen" xml:space="preserve">
+    <value>Candidate {0} will be given a red screen</value>
+  </data>
+  <data name="CandidateRedScreenPopup" xml:space="preserve">
+    <value>How many candidates should be given a red screen? (Normally 1)</value>
+  </data>
+  <data name="NotANumber" xml:space="preserve">
+    <value>Not a number, please enter numbers only (0 - 9)</value>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>The specified file cannot be found</value>
+  </data>
 </root>

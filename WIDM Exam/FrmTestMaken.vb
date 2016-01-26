@@ -56,6 +56,12 @@ Public Class FrmTestMaken
 
         NumericUpDown1.Value = CurrentGroup.CurrentEpisode
         NumericUpDown1.Minimum = 1
+
+        _test = New Test()
+        _test.Author = ""
+        _test.Comment = ""
+        _test.MoleText = ""
+        _test.Questions = {}
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
@@ -142,59 +148,63 @@ Public Class FrmTestMaken
         Try
             'Check whether file exists, if not > create.
             If Dir(OpenFileDialog1.FileName) <> "" Then
+
+                'Read and deserialize content
+                Dim objStreamReader As New StreamReader(OpenFileDialog1.FileName)
+                Dim output As String = objStreamReader.ReadToEnd()
+                objStreamReader.Close()
+
+                _test = JsonConvert.DeserializeObject(Of Test)(output, New JsonSerializerSettings() With {.NullValueHandling = NullValueHandling.Ignore})
+
+                'Loop through questions
+                If _test.Questions IsNot Nothing Then
+                    For Each item In _test.Questions
+                        Dim newItem
+                        'Check type
+                        If item.Text <> "" Then
+                            If IsArray(item.Answers) Then
+                                newItem = New ListViewItem(Vraag) '// add text Item.
+                                newItem.SubItems.Add(item.Text)
+                                Dim answerString As String = ""
+                                For Each answer In item.Answers
+                                    'Add answers to string, split by ##
+                                    answerString += answer.Text & "##"
+                                Next
+                                'Remove last ##, why would we want that? :-)
+                                newItem.SubItems.Add(answerString.TrimEnd("##"))
+                                Dim indexRightAnswer As Integer = Val(Replace(item.RightAnswer, "b", ""))
+                                'Convert to val, replace bn to n.
+                                newItem.SubItems.Add(item.Answers(indexRightAnswer).ToString())
+                                newItem.SubItems.Add(item.Answers.Count)
+                                newItem.SubItems.Add(item.RightAnswer.ToString())
+                            Else
+                                newItem = New ListViewItem(OpenVraag) '// add text Item.
+                                newItem.SubItems.Add(item.Text)
+                            End If
+                        Else
+                            newItem = New ListViewItem(TekstTussendoor) '// add text Item.
+                            newItem.SubItems.Add(item.Text1)
+                            newItem.SubItems.Add(item.Text2)
+                        End If
+                        'Look whether the database with existing questions is building. Will cause duplicates if not properly handled.
+                        If buildDatabase = True Then
+                            listDB.Items.Add(newItem)
+                        Else
+                            listPanel.Items.Add(newItem)
+                        End If
+
+                    Next
+                End If
             Else
                 File.Create(OpenFileDialog1.FileName).Dispose()
             End If
-
-            'Read and deserialize content
-            Dim objStreamReader As New StreamReader(OpenFileDialog1.FileName)
-            Dim output As String = objStreamReader.ReadToEnd()
-            objStreamReader.Close()
-
-            _test = JsonConvert.DeserializeObject(Of Test)(output)
-
-            'Loop through questions
-            For Each item In _test.Questions
-                Dim newItem
-                'Check type
-                If item.Text <> "" Then
-                    If IsArray(item.Answers) Then
-                        newItem = New ListViewItem(Vraag) '// add text Item.
-                        newItem.SubItems.Add(item.Text)
-                        Dim answerString As String = ""
-                        For Each answer In item.Answers
-                            'Add answers to string, split by ##
-                            answerString += answer.Text & "##"
-                        Next
-                        'Remove last ##, why would we want that? :-)
-                        newItem.SubItems.Add(answerString.TrimEnd("##"))
-                        Dim indexRightAnswer As Integer = Val(Replace(item.RightAnswer, "b", ""))
-                        'Convert to val, replace bn to n.
-                        newItem.SubItems.Add(item.Answers(indexRightAnswer).ToString())
-                        newItem.SubItems.Add(item.Answers.Count)
-                        newItem.SubItems.Add(item.RightAnswer.ToString())
-                    Else
-                        newItem = New ListViewItem(OpenVraag) '// add text Item.
-                        newItem.SubItems.Add(item.Text)
-                    End If
-                Else
-                    newItem = New ListViewItem("Tekst tussendoor") '// add text Item.
-                    newItem.SubItems.Add(item.Text1)
-                    newItem.SubItems.Add(item.Text2)
-                End If
-                'Look whether the database with existing questions is building. Will cause duplicates if not properly handled.
-                If buildDatabase = True Then
-                    listDB.Items.Add(newItem)
-                Else
-                    listPanel.Items.Add(newItem)
-                End If
-
-            Next
-
-
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+            'Log(ex.ToString())
+            'MsgBox(ex.Message, MsgBoxStyle.Exclamation)
         End Try
+        If _test Is Nothing Then
+            _test = New Test()
+        End If
     End Sub
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs)
@@ -670,12 +680,6 @@ Public Class FrmTestMaken
         ConvertCorrectAnswerToText()
     End Sub
 
-    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
-        If OpenFileDialog2.ShowDialog = DialogResult.OK Then
-            OpenOldTest()
-        End If
-    End Sub
-
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         'Code from:
         'http://www.xtremedotnettalk.com/showthread.php?t=85072
@@ -792,59 +796,6 @@ Public Class FrmTestMaken
         'End If
     End Sub
 
-    Private Sub OudeTestOpenenToolStripMenuItem_Click(sender As Object, e As EventArgs) _
-        Handles OudeTestOpenenToolStripMenuItem.Click
-        If OpenFileDialog2.ShowDialog = DialogResult.OK Then
-            OpenOldTest()
-        End If
-    End Sub
-
-    Private Sub VersleuteldeTestOpenenToolStripMenuItem_Click(sender As Object, e As EventArgs) _
-        Handles VersleuteldeTestOpenenToolStripMenuItem.Click
-        If OpenFileDialog3.ShowDialog() = DialogResult.OK Then
-            Dim read As New StreamReader(OpenFileDialog3.FileName)
-
-            Dim cipherText As String = read.ReadToEnd
-
-            read.Close()
-            FrmPassword.ShowDialog()
-            Dim password As String = FrmPassword.TextBox1.Text
-            Dim wrapper As New Simple3Des(password)
-
-            ' DecryptData throws if the wrong password is used. 
-            Try
-                Dim plainText As String = wrapper.DecryptData(cipherText)
-                Try
-                    My.Computer.FileSystem.DeleteFile(OpenFileDialog3.FileName & ".tmp", UIOption.OnlyErrorDialogs,
-                                                      RecycleOption.DeletePermanently)
-                Catch ex As Exception
-
-                End Try
-                Dim Write As New StreamWriter(OpenFileDialog3.FileName & ".tmp")
-                Write.Write(plainText)
-                Write.Close()
-                SetAttr(OpenFileDialog3.FileName & ".tmp", vbHidden)
-                ' encryptedTest = True
-                OpenFileDialog2.FileName = OpenFileDialog3.FileName & ".tmp"
-                OpenOldTest()
-                ' encryptedTest = False
-                Try
-                    My.Computer.FileSystem.DeleteFile(OpenFileDialog3.FileName & ".tmp", UIOption.OnlyErrorDialogs,
-                                                      RecycleOption.DeletePermanently)
-                Catch ex As Exception
-
-                End Try
-            Catch ex As CryptographicException
-                If My.Settings.language = "en" Then
-                    MsgBox("Wrong password", MsgBoxStyle.Critical)
-                Else
-                    MsgBox("Verkeerd wachtwoord", MsgBoxStyle.Critical)
-                End If
-
-            End Try
-        End If
-    End Sub
-
     Private Sub txtQuestion_SelectedIndexChanged(sender As Object, e As EventArgs) _
         Handles txtQuestion.SelectedIndexChanged
         For Each item As ListViewItem In listDB.Items
@@ -939,11 +890,25 @@ Public Class FrmTestMaken
     End Sub
 
     Private Sub ToolStripExtraInfo_Click(sender As Object, e As EventArgs) Handles ToolStripExtraInfo.Click
-        Dim form As New FrmExtraInfo(_test.Author, _test.Comment, _test.MoleText)
-        If form.ShowDialog() = DialogResult.OK Then
-            _test.Author = form.txtAuthor.Text
-            _test.Comment = form.txtComment.Text
-            _test.MoleText = form.txtMoleText.Text
-        End If
+        Try
+            Dim form As New FrmExtraInfo(_test.Author, _test.Comment, _test.MoleText)
+            If form.ShowDialog() = DialogResult.OK Then
+                _test.Author = form.txtAuthor.Text
+                _test.Comment = form.txtComment.Text
+                _test.MoleText = form.txtMoleText.Text
+            End If
+        Catch ex As Exception
+            Log(ex.ToString())
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+
+    End Sub
+
+    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) 
+
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        FrmConvert.Show()
     End Sub
 End Class

@@ -101,6 +101,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Candidate {0} will be given a red screen.
+        '''</summary>
+        Friend Shared ReadOnly Property CandidateRedScreen() As String
+            Get
+                Return ResourceManager.GetString("CandidateRedScreen", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to How many candidates should be given a red screen? (Normally 1).
+        '''</summary>
+        Friend Shared ReadOnly Property CandidateRedScreenPopup() As String
+            Get
+                Return ResourceManager.GetString("CandidateRedScreenPopup", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Are you sure you want to clear the list? This cannot be undone!.
         '''</summary>
         Friend Shared ReadOnly Property ClearListWarning() As String
@@ -124,6 +142,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property dpiMessage() As String
             Get
                 Return ResourceManager.GetString("dpiMessage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The specified file cannot be found.
+        '''</summary>
+        Friend Shared ReadOnly Property FileNotFound() As String
+            Get
+                Return ResourceManager.GetString("FileNotFound", resourceCulture)
             End Get
         End Property
         
@@ -223,6 +250,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property NameNotFound() As String
             Get
                 Return ResourceManager.GetString("NameNotFound", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Not a number, please enter numbers only (0 - 9).
+        '''</summary>
+        Friend Shared ReadOnly Property NotANumber() As String
+            Get
+                Return ResourceManager.GetString("NotANumber", resourceCulture)
             End Get
         End Property
         
