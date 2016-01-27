@@ -115,7 +115,7 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="classAnswer.vb" />
     <Compile Include="classEnDe.vb" />
-    <Compile Include="classExecutionItemComparer.vb" />
+    <Compile Include="classItemComparer.vb" />
     <Compile Include="classGroupmode.vb" />
     <Compile Include="classQuestion.vb" />
     <Compile Include="classTest.vb" />
@@ -267,6 +267,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOpenTest.ar.resx">
       <DependentUpon>FrmOpenTest.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOpenTest.en.resx">
       <DependentUpon>FrmOpenTest.vb</DependentUpon>
@@ -375,65 +376,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\OCRAEXT.TTF" />
-    <None Include="Resources\SmallLogoDark.png" />
-    <None Include="Resources\WIDM Tekstjegeluid.wav" />
-    <None Include="Resources\WIDM Percentagegeluid.wav" />
-    <None Include="Resources\logowidm.png" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\cross.png" />
-    <None Include="Resources\WIDM logo test.png" />
     <Content Include="LeftOuts.txt" />
-    <None Include="Resources\header.png" />
     <None Include="Resources\header2.png" />
-    <None Include="Resources\headerstretch.png" />
     <None Include="Resources\Klikgeluid_louder.wav" />
-    <None Include="Resources\WIDM Roodschermgeluid.wav" />
-    <None Include="Resources\Logo dark.png" />
-    <None Include="Resources\Button.png" />
-    <None Include="Resources\Groenscherm.png" />
-    <None Include="Resources\Roodscherm.png" />
-    <None Include="Resources\backgroundheader_1920x800_afl1_header.jpg" />
-    <None Include="Resources\aButton.gif" />
-    <None Include="Resources\button_2004.PNG" />
-    <None Include="Resources\WIDM logo 2004.jpg" />
-    <None Include="Resources\backgroundheader_1920x800_afl3_header.jpg" />
-    <None Include="Resources\Roodscherm_oud.png" />
-    <None Include="Resources\Groenscherm_2.bmp" />
-    <None Include="Resources\Groenscherm_oud.png" />
-    <None Include="Resources\Roodscherm_2.bmp" />
     <None Include="Resources\Wie is de Mol Examen_32512.png" />
-    <None Include="Resources\header 2014.png" />
-    <None Include="Resources\header 2014_2.png" />
-    <None Include="Resources\Logo oud.jpg" />
     <None Include="Resources\gb.png" />
     <None Include="Resources\nl.png" />
-    <None Include="Resources\2000px-Fingerprint_picture.svg.png" />
-    <None Include="Resources\Logo 2004 groter zonder logo.jpg" />
-    <None Include="Resources\US_Background.png" />
-    <None Include="Resources\Background question US.png" />
-    <None Include="Resources\US_Logo.png" />
-    <None Include="Resources\background2.png" />
-    <None Include="Resources\Groen oud.png" />
-    <None Include="Resources\Rood oud.png" />
     <None Include="Resources\backgroundheader_2013_small.jpg" />
-    <None Include="Resources\backgroundheader_2013.jpg" />
-    <None Include="Resources\Groen 2015.png" />
-    <None Include="Resources\Rood 2015.png" />
-    <None Include="Resources\widmroodscherm2015metvinger.png" />
-    <None Include="Resources\widmgroenscherm2015metvinger.png" />
-    <None Include="Resources\Logo.jpg" />
-    <None Include="Resources\Background.png" />
-    <None Include="Resources\Button unpressed.png" />
-    <None Include="Resources\Animated.gif" />
-    <None Include="Resources\Button pressed cross.png" />
-    <None Include="Resources\Logo.png" />
-    <None Include="Resources\Button pressed.png" />
     <None Include="Resources\Background enter name US.png" />
     <None Include="Resources\WIDM Exam.png" />
     <None Include="Resources\splash.png" />
-    <None Include="Resources\loading.png" />
     <None Include="Resources\Koenvh inverted text.png" />
+    <None Include="Resources\Loading.gif" />
     <Content Include="Wie is de Mol Examen_32512.ico" />
   </ItemGroup>
   <ItemGroup>

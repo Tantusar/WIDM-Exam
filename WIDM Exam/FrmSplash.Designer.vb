@@ -57,7 +57,7 @@ Partial Class FrmSplash
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.BackgroundImage = Global.WIDM_Exam.My.Resources.Resources.splash
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(512, 288)
         Me.Controls.Add(Me.picKoenvh)
         Me.Controls.Add(Me.picLogo)

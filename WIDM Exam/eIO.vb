@@ -10,7 +10,7 @@ Imports Newtonsoft.Json
 
 Module eIo
     Public Sub Log(ByVal errorText As String)
-        Dim location = CurDir() & "\log.txt"
+        Dim location = CurDir() & "\WIDM Exam log.txt"
         Dim temp As String = ""
         If My.Computer.FileSystem.FileExists(location) Then
             Dim objStreamReader As New IO.StreamReader(location)
@@ -164,8 +164,8 @@ Module eIo
                 columnName.Name = "listCandidatesName"
                 columnName.Text = GetLang("Name")
                 'columnName.CellTemplate = New DataGridViewTextBoxCell()
-                columnName.Style = BetterListViewColumnHeaderStyle.Sortable
-                columnName.SortMethod = BetterListViewSortMethod.Auto
+                'columnName.Style = BetterListViewColumnHeaderStyle.Sortable
+                'columnName.SortMethod = BetterListViewSortMethod.Auto
                 .Columns.Add(columnName)
 
                 For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
@@ -179,6 +179,7 @@ Module eIo
 
                     FrmOpenTest.listCandidateActive.Items.Add(GetLang("Aflevering") & ep.Key)
                 Next
+                FrmOpenTest.listCandidateActive.SetItemChecked(0, True)
 
                 For Each candidate In CurrentGroup.Candidates.Values
                     'Dim item As New OLVListItem(candidate.name)
@@ -187,9 +188,15 @@ Module eIo
                     Dim newItem As New BetterListViewItem(candidate.Name)
                     For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
                         If candidate.Active.ContainsKey(ep.Key) Then
-                            newItem.SubItems.Add(BooleanToImage(candidate.Active(ep.Key)))
+                            Dim subItem As New BetterListViewSubItem
+                            subItem.Image = BooleanToImage(candidate.Active(ep.Key))
+                            subItem.Tag = candidate.Active(ep.Key)
+                            newItem.SubItems.Add(subItem)
                         Else
-                            newItem.SubItems.Add(BooleanToImage(False))
+                            Dim subItem As New BetterListViewSubItem
+                            subItem.Image = BooleanToImage(False)
+                            subItem.Tag = False
+                            newItem.SubItems.Add(subItem)
                         End If
                         'count += 1
                     Next
@@ -208,11 +215,12 @@ Module eIo
                     .Items.Add(newItem)
                 Next
 
-                .ItemComparer = New BetterListViewItemComparer()
-                .Items.Sort()
+                .ItemComparer = New CandidateItemComparer()
+                .ResumeSort(True)
             End With
 
             With FrmOpenTest.txtWieisdemol
+                .Items.Clear()
                 For Each item In CurrentGroup.Candidates.Values
                     .Items.Add(item.Name)
                 Next
@@ -228,6 +236,21 @@ Module eIo
 
     End Function
 
+    Public Sub ReloadThemes()
+        Try
+            FrmOpenTest.comboThemes.Items.Clear()
+            For Each foundFile As String In My.Computer.FileSystem.GetFiles(CurDir() & "\Thema's\")
+                If foundFile.EndsWith(".widmthema") Then
+                    'FrmOpenTest.comboThemes.Items.Add(foundFile.Replace(CurDir() & "\Thema's\", ""))
+                    FrmOpenTest.comboThemes.Items.Add(Path.GetFileName(foundFile))
+                End If
+            Next
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
     Public Function ReloadDataviews()
         ReloadCandidates()
         ReloadAnswers()
@@ -239,13 +262,19 @@ Module eIo
 
     Public Function LoadGroupmode()
         Try
-            Dim objStreamReader As New IO.StreamReader(My.Settings.folder & "\apple.widm")
-            Dim temp As String = objStreamReader.ReadToEnd()
-            'MsgBox(temp)
-            CurrentGroup = JsonConvert.DeserializeObject(Of Groupmode)(temp)
-            'MsgBox(CurrentGroup.episodes(1).number)
-            objStreamReader.Close()
-            Return True
+            If Not My.Computer.FileSystem.FileExists(My.Settings.folder & "\group.widm") Then
+                File.Create(My.Settings.folder & "\group.widm").Dispose()
+                CurrentGroup = New Groupmode()
+                Return True
+            Else
+                Dim objStreamReader As New IO.StreamReader(My.Settings.folder & "\group.widm")
+                Dim temp As String = objStreamReader.ReadToEnd()
+                'MsgBox(temp)
+                CurrentGroup = JsonConvert.DeserializeObject(Of Groupmode)(temp)
+                'MsgBox(CurrentGroup.episodes(1).number)
+                objStreamReader.Close()
+                Return True
+            End If
         Catch ex As Exception
             Log(ex.ToString())
             Return False
@@ -254,7 +283,7 @@ Module eIo
 
     Public Function SaveGroupmode()
         Try
-            Dim objStreamWriter As New IO.StreamWriter(My.Settings.folder & "\apple.widm")
+            Dim objStreamWriter As New IO.StreamWriter(My.Settings.folder & "\group.widm")
             objStreamWriter.Write(JsonConvert.SerializeObject(CurrentGroup, Newtonsoft.Json.Formatting.Indented))
             objStreamWriter.Close()
             Return True
@@ -563,24 +592,4 @@ Module eIo
 
         End If
     End Sub
-
-    Function GetMd5Hash(md5Hash As MD5, input As String) As String
-
-        ' Convert the input string to a byte array and compute the hash. 
-        Dim data As Byte() = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input))
-
-        ' Create a new Stringbuilder to collect the bytes 
-        ' and create a string. 
-        Dim sBuilder As New StringBuilder()
-
-        ' Loop through each byte of the hashed data  
-        ' and format each one as a hexadecimal string. 
-        Dim i As Integer
-        For i = 0 To data.Length - 1
-            sBuilder.Append(data(i).ToString("x2"))
-        Next i
-
-        ' Return the hexadecimal string. 
-        Return sBuilder.ToString()
-    End Function 'GetMd5Hash
 End Module

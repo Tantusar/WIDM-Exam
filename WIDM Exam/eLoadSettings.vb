@@ -34,11 +34,6 @@ Module ELoadSettings
             FrmOpenTest.rOudeMuziek.Checked = True
         End If
         'FrmOpenTest.header = My.Resources.header_2014_2
-        If My.Settings.rWedstrijd = True Then
-            FrmOpenTest.rWedstrijd.Checked = True
-        End If
-
-
         If My.Settings.rComboBox = True Then
             FrmOpenTest.rCombobox.Checked = True
         End If
@@ -59,9 +54,6 @@ Module ELoadSettings
         End If
         If My.Settings.rSchermGeluid = True Then
             FrmOpenTest.rSchermGeluid.Checked = True
-        End If
-        If My.Settings.rVerwijderNaam = True Then
-            FrmOpenTest.rVerwijderNaam.Checked = True
         End If
         If My.Settings.rMuziekDoorspelen = True Then
             FrmOpenTest.rMuziekDoorspelen.Checked = True
@@ -86,7 +78,6 @@ Module ELoadSettings
         End If
         FrmOpenTest.txtTest.Text = My.Settings.file
         FrmOpenTest.txtFolder.Text = My.Settings.folder
-        FrmOpenTest.txtWedstrijdFile.Text = My.Settings.wedstrijdfile
         'FrmOpenTest.numAflevering.Value = Val(My.Settings.aflevering)
 
         Dim strHostName As String = Dns.GetHostName()
@@ -110,7 +101,8 @@ Module ELoadSettings
         'Add schermen to general combobox source
         If My.Settings.standaardinladen = True Then
             FrmOpenTest.rStandaardInladen.Checked = True
-            FrmOpenTest.allesinladen()
+            LoadGroupmode()
+            ReloadDataviews()
         End If
 
         'FrmOpenTest.Label44.Text = My.Application.Info.Version.ToString

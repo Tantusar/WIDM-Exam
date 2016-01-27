@@ -706,46 +706,6 @@ Public Class FrmTest
 
         tmTime.Stop()
         If FrmOpenTest.rAlleen.Checked Then
-            If FrmOpenTest.rWedstrijd.Checked = True Then
-                Dim source As String = FrmEnterName.TextBox1.Text & "#" & _answersRight & "#" & _time & "#" & "Groen"
-                Using md5Hash As MD5 = MD5.Create()
-                    Dim hash As String = GetMd5Hash(md5Hash, source)
-                    Dim settings As New XmlWriterSettings()
-
-                    'lets tell to our xmlwritersettings that it must use indention for our xml
-                    settings.Indent = True
-
-                    'lets create the MyXML.xml document, the first parameter was the Path/filename of xml file
-                    ' the second parameter was our xml settings
-
-                    Dim xmlWrt As XmlWriter = XmlWriter.Create(FrmOpenTest.txtWedstrijdFile.Text)
-
-                    With xmlWrt
-
-                        ' Write the Xml declaration.
-                        .WriteStartDocument()
-
-                        ' Write a comment.
-                        .WriteComment("WIDM Exam v2 wedstrijdresultaten. Gemaakt door Koenvh (Koenvh.nl)")
-                        .WriteStartElement("Data")
-                        .WriteStartElement("hash")
-                        .WriteString(hash)
-                        .WriteEndElement()
-                        .WriteStartElement("result")
-                        .WriteString(FrmEnterName.TextBox1.Text & "#" & _answersRight & "#" & _time & "#" & "Groen")
-                        .WriteEndElement()
-                        .WriteStartElement("answers")
-                        .WriteString(_wedstrijdantwoordentemp)
-                        .WriteEndElement()
-                        ' Write the root element.
-                        ' Close the XmlTextWriter.
-                        .WriteEndDocument()
-                        .Close()
-
-                    End With
-                    _wedstrijdantwoordentemp = ""
-                End Using
-            End If
             If My.Settings.language = "en" Then
                 FrmResult.txtScore.Text = _answersRight & " answers right in " & Val(_time) / 10 & " seconds."
             Else
@@ -859,36 +819,8 @@ Public Class FrmTest
 
     Private Sub SaveLastQuestion()
         If FrmOpenTest.rGroep.Checked Then
-            'Dim temp As String = ""
-            'Try
-            '    Dim Read As New System.IO.StreamReader(FrmOpenTest.file & "l")
-            '    temp = Read.ReadToEnd
-            '    Read.Close()
-            'Catch ex As Exception
-
-            'End Try
-            'Dim Write As New System.IO.StreamWriter(FrmOpenTest.file & "l")
-            'Write.Write(temp)
-            'Write.WriteLine(question & "#" & txtQuestion.Text & "#" & FrmEnterName.TextBox1.Text & "#" & answer)
-            'Write.Close()
-
-            'Dim answer As New GivenAnswer
-            'answer.Number = 
-            'answer.Question = _questions(_question).Text
-            'answer.Candidate = CurrentGroup.Candidates(FrmEnterName.TextBox1.Text)
-            'answer.Answer = _answer
-
-            'Dim newItem As New ListViewItem(_question.ToString.PadLeft(3)) '// add text Item.
-            'newItem.SubItems.Add(txtQuestion.Text)
-            'newItem.SubItems.Add(FrmEnterName.TextBox1.Text) '// add SubItem.
-            'newItem.SubItems.Add(_answer) '// add SubItem.
-            'If _answer <> "" Then
             CurrentGroup.AnswerAdd(_questionDisplay, _questions(_question - 1).Text, FrmEnterName.TextBox1.Text, _answer)
             ReloadAnswers()
-            'End If
-        ElseIf FrmOpenTest.rWedstrijd.Checked Then
-            _wedstrijdantwoordentemp = _wedstrijdantwoordentemp & _question & "#" & txtQuestion.Text & "#" &
-                                      FrmEnterName.TextBox1.Text & "#" & _answer & vbCrLf
         End If
     End Sub
 

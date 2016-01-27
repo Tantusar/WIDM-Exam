@@ -157,7 +157,7 @@ Public Class FrmTestMaken
                 _test = JsonConvert.DeserializeObject(Of Test)(output, New JsonSerializerSettings() With {.NullValueHandling = NullValueHandling.Ignore})
 
                 'Loop through questions
-                If _test.Questions IsNot Nothing Then
+                If _test IsNot Nothing AndAlso _test.Questions IsNot Nothing Then
                     For Each item In _test.Questions
                         Dim newItem
                         'Check type

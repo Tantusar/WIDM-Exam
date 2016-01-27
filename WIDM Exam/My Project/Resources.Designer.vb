@@ -168,9 +168,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property loading() As System.Drawing.Bitmap
+        Friend ReadOnly Property Loading1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("loading", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Loading1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -182,16 +182,6 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("nl", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property OCRAEXT() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("OCRAEXT", resourceCulture)
-                Return CType(obj,Byte())
             End Get
         End Property
         
@@ -231,15 +221,6 @@ Namespace My.Resources
         Friend ReadOnly Property WIDM_Percentagegeluid() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("WIDM_Percentagegeluid", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        '''</summary>
-        Friend ReadOnly Property WIDM_Roodschermgeluid() As System.IO.UnmanagedMemoryStream
-            Get
-                Return ResourceManager.GetStream("WIDM_Roodschermgeluid", resourceCulture)
             End Get
         End Property
         
