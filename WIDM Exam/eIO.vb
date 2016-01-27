@@ -33,12 +33,14 @@ Module eIo
     Public Function ReloadEpisodes()
         Try
             With FrmOpenTest.comboEpisode
-            .Items.Clear()
+                .Items.Clear()
                 For Each ep As KeyValuePair(Of Integer, Episode) In CurrentGroup.Episodes
                     .Items.Add(ep.Key)
                 Next
                 .SelectedItem = CurrentGroup.CurrentEpisode
             End With
+
+            Return True
         Catch ex As Exception
             Log(ex.ToString())
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)

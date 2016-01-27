@@ -1,6 +1,6 @@
 ﻿Public Class FrmConvert
     Private Sub comboVersion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboVersion.SelectedIndexChanged
-     
+
     End Sub
 
     Private Sub FrmConvert_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -22,7 +22,15 @@
     Private Sub btnConvert_Click(sender As Object, e As EventArgs) Handles btnConvert.Click
         Dim convert As New OldImport
         If convert.Convert(txtOld.Text, comboVersion.SelectedItem, txtNew.Text) = True Then
-            MsgBox("Success")
+            MsgBox(GetLang("SavedSuccess"), MsgBoxStyle.Information)
+        End If
+    End Sub
+
+    Private Sub txtOld_TextChanged(sender As Object, e As EventArgs) Handles txtOld.TextChanged
+        If txtOld.Text.EndsWith(".widm") Then
+            comboVersion.SelectedItem = OldImport.FileVersion.v1
+        ElseIf txtOld.Text.EndsWith(".widm2") Then
+            comboVersion.SelectedItem = OldImport.FileVersion.v2
         End If
     End Sub
 End Class

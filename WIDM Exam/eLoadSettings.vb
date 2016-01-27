@@ -34,17 +34,6 @@ Module ELoadSettings
             FrmOpenTest.rOudeMuziek.Checked = True
         End If
         'FrmOpenTest.header = My.Resources.header_2014_2
-        If My.Settings.CurrentTheme_old = 0 Then
-            FrmOpenTest.rNewTheme.Checked = True
-        ElseIf My.Settings.CurrentTheme_old = 1 Then
-            FrmOpenTest.rNostalgia.Checked = True
-        ElseIf My.Settings.CurrentTheme_old = 2 Then
-            FrmOpenTest.rUS.Checked = True
-        ElseIf My.Settings.CurrentTheme_old = 3 Then
-            FrmOpenTest.rUK.Checked = True
-        ElseIf My.Settings.CurrentTheme_old = 4 Then
-            FrmOpenTest.rFrankrijk.Checked = True
-        End If
         If My.Settings.rWedstrijd = True Then
             FrmOpenTest.rWedstrijd.Checked = True
         End If
@@ -96,15 +85,9 @@ Module ELoadSettings
             FrmOpenTest.rRandom.Checked = True
         End If
         FrmOpenTest.txtTest.Text = My.Settings.file
-        FrmOpenTest.txtLogo.Text = My.Settings.logo
         FrmOpenTest.txtFolder.Text = My.Settings.folder
-        FrmOpenTest.txtRoodscherm.Text = My.Settings.roodscherm
-        FrmOpenTest.txtGroenscherm.Text = My.Settings.groenscherm
         FrmOpenTest.txtWedstrijdFile.Text = My.Settings.wedstrijdfile
         'FrmOpenTest.numAflevering.Value = Val(My.Settings.aflevering)
-        FrmOpenTest.txtCustomFont.Font = My.Settings.customFont
-        FrmOpenTest.txtBackground.Text = My.Settings.background
-        FrmOpenTest.pBackgroundColor.BackColor = My.Settings.backgroundColor
 
         Dim strHostName As String = Dns.GetHostName()
         Dim iphe As IPHostEntry = Dns.GetHostEntry(strHostName)
@@ -122,67 +105,6 @@ Module ELoadSettings
             FrmOpenTest.txtTest.Enabled = False
         Else
             FrmOpenTest.rAlleen.Checked = True
-        End If
-
-        Select Case My.Settings.schermstyle
-            Case 0
-                FrmOpenTest.rModern1.Checked = True
-            Case 1
-                FrmOpenTest.rModern2.Checked = True
-            Case 2
-                FrmOpenTest.rOud.Checked = True
-            Case 3
-                FrmOpenTest.rAangepast.Checked = True
-            Case 4
-                FrmOpenTest.rOud2.Checked = True
-            Case 5
-                FrmOpenTest.rwidm3015_1.Checked = True
-            Case 6
-                FrmOpenTest.rwidm3015_2.Checked = True
-            Case 7
-                FrmOpenTest.rFrankrijkSchermen.Checked = True
-        End Select
-
-        Select Case My.Settings.font
-            Case 0
-                FrmOpenTest.rLucidaConsole.Checked = True
-            Case 1
-                If FrmOpenTest.rOCRAEXT.Enabled = True Then
-                    FrmOpenTest.rOCRAEXT.Checked = True
-                Else
-                    FrmOpenTest.rLucidaConsole.Checked = True
-                End If
-            Case 2
-                FrmOpenTest.rComicSansMS.Checked = True
-            Case 3
-                FrmOpenTest.rMicrosoftSansSerif.Checked = True
-            Case 4
-                If FrmOpenTest.rUbuntuCondensed.Enabled = True Then
-                    FrmOpenTest.rUbuntuCondensed.Checked = True
-                Else
-                    FrmOpenTest.rLucidaConsole.Checked = True
-                End If
-            Case 5
-                FrmOpenTest.rCustomFont.Checked = True
-            Case 6
-                FrmOpenTest.rMicroFLF.Checked = True
-            Case 999
-                If FrmOpenTest.rUbuntuCondensed.Enabled = True Then
-                    FrmOpenTest.rUbuntuCondensed.Checked = True
-                Else
-                    FrmOpenTest.rLucidaConsole.Checked = True
-                End If
-        End Select
-        If FrmOpenTest.rAangepast.Checked Then
-            FrmOpenTest.txtGroenscherm.Enabled = True
-            FrmOpenTest.txtRoodscherm.Enabled = True
-            FrmOpenTest.Button16.Enabled = True
-            FrmOpenTest.Button17.Enabled = True
-        Else
-            FrmOpenTest.txtGroenscherm.Enabled = False
-            FrmOpenTest.txtRoodscherm.Enabled = False
-            FrmOpenTest.Button16.Enabled = False
-            FrmOpenTest.Button17.Enabled = False
         End If
 
         'Add schermen to general combobox source

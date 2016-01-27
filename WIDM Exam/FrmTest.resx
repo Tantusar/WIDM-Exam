@@ -154,7 +154,7 @@
     <value>186, 34</value>
   </data>
   <data name="txtQuestion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>826, 94</value>
+    <value>826, 105</value>
   </data>
   <data name="txtQuestion.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>

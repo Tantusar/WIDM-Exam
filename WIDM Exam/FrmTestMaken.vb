@@ -174,7 +174,12 @@ Public Class FrmTestMaken
                                 newItem.SubItems.Add(answerString.TrimEnd("##"))
                                 Dim indexRightAnswer As Integer = Val(Replace(item.RightAnswer, "b", ""))
                                 'Convert to val, replace bn to n.
-                                newItem.SubItems.Add(item.Answers(indexRightAnswer).ToString())
+                                If item.Answers.Count <= indexRightAnswer Then
+                                    newItem.SubItems.Add(GetLang("geen"))
+                                Else
+                                    newItem.SubItems.Add(item.Answers(indexRightAnswer).ToString())
+                                End If
+
                                 newItem.SubItems.Add(item.Answers.Count)
                                 newItem.SubItems.Add(item.RightAnswer.ToString())
                             Else
@@ -199,8 +204,8 @@ Public Class FrmTestMaken
                 File.Create(OpenFileDialog1.FileName).Dispose()
             End If
         Catch ex As Exception
-            'Log(ex.ToString())
-            'MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+            Log(ex.ToString())
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
         End Try
         If _test Is Nothing Then
             _test = New Test()
@@ -904,7 +909,7 @@ Public Class FrmTestMaken
 
     End Sub
 
-    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) 
+    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs)
 
     End Sub
 

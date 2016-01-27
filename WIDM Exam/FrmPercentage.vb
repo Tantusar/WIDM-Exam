@@ -13,9 +13,6 @@
 
     Private Sub FrmExecutie_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         expandToMonitor(Me)
-        If FrmOpenTest.rNostalgia.Checked Then
-            Label1.Font = New Font("Comic Sans MS", 128, FontStyle.Regular)
-        End If
         Label1.Text = FrmOpenTest.percentage & "%"
     End Sub
 

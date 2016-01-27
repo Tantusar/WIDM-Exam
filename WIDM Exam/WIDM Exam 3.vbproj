@@ -122,7 +122,7 @@
     <Compile Include="classTheme.vb" />
     <Compile Include="eIO.vb" />
     <Compile Include="eLoadSettings.vb" />
-    <Compile Include="eOldImport.vb" />
+    <Compile Include="classOldImport.vb" />
     <Compile Include="Extensions.vb" />
     <Compile Include="FrmConvert.Designer.vb">
       <DependentUpon>FrmConvert.vb</DependentUpon>

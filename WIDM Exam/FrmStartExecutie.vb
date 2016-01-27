@@ -80,10 +80,7 @@ Public Class FrmStartExecutie
         'Next
         If FrmOpenTest.rSchermGeluid.Checked Then
             Sound()
-            If FrmOpenTest.rNostalgia.Checked Then
-                Timer1.Interval = 1500
-                Timer1.Start()
-            ElseIf FrmOpenTest.rLangereGeluiden.Checked Then
+            If FrmOpenTest.rLangereGeluiden.Checked Then
                 Timer1.Interval = _timerInterval
                 Timer1.Start()
             Else
@@ -449,74 +446,6 @@ Public Class FrmStartExecutie
 
         End Try
 
-
-        'If FrmOpenTest.rLangereGeluiden.Checked Then
-        '    Select Case number
-        '        Case 1
-        '            WMP1.URL = CurDir() & "\Geluid\long_001.wav"
-
-        '        Case 2
-        '            WMP1.URL = CurDir() & "\Geluid\long_002.wav"
-
-        '        Case 3
-        '            WMP1.URL = CurDir() & "\Geluid\long_005.wav"
-
-        '        Case 4
-        '            WMP1.URL = CurDir() & "\Geluid\long_006.wav"
-
-        '        Case 5
-        '            WMP1.URL = CurDir() & "\Geluid\long_007.wav"
-        '        Case 6
-        '            WMP1.URL = CurDir() & "\Geluid\long_008.wav"
-        '        Case 7
-        '            WMP1.URL = CurDir() & "\Geluid\long_009.wav"
-        '        Case Else
-        '    End Select
-        'Else
-        '    Select Case number
-        '        Case 1
-        '            WMP1.URL = CurDir() & "\Geluid\001.wav"
-
-        '        Case 2
-        '            WMP1.URL = CurDir() & "\Geluid\002.wav"
-
-        '        Case 3
-        '            WMP1.URL = CurDir() & "\Geluid\003.wav"
-
-        '        Case 4
-        '            WMP1.URL = CurDir() & "\Geluid\004.wav"
-
-        '        Case 5
-        '            WMP1.URL = CurDir() & "\Geluid\long_003.wav"
-
-        '        Case 6
-        '            WMP1.URL = CurDir() & "\Geluid\long_004.wav"
-
-        '        Case 7
-        '            WMP1.URL = CurDir() & "\Geluid\005.wav"
-        '        Case Else
-        '    End Select
-        'End If
-
-        If FrmOpenTest.rNostalgia.Checked Then
-            'If FrmOpenTest.listExecutie.Items.Contains(TextBox1.Text) Then
-            '    If FrmOpenTest.rRood.Checked Then
-            '        WMP1.URL = CurDir() & "\Geluid\rood_old.wav"
-            '    ElseIf FrmOpenTest.rGroen.Checked Then
-            '        WMP1.URL = CurDir() & "\Geluid\groen_old.wav"
-            '    End If
-            'Else
-            '    If FrmOpenTest.rRood.Checked Then
-            '        WMP1.URL = CurDir() & "\Geluid\groen_old.wav"
-            '    ElseIf FrmOpenTest.rGroen.Checked Then
-            '        WMP1.URL = CurDir() & "\Geluid\rood_old.wav"
-            '    End If
-
-            'End If
-            WMP1.URL = CurDir() & "\Geluid\groen_old.wav"
-        End If
-
-        'WMP1.URL = "C:\Users\Koen\Music\AircraftAlarm.wav"
         WMP1.Ctlcontrols.play()
     End Sub
 

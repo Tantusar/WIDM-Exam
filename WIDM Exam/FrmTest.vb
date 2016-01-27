@@ -233,7 +233,7 @@ Public Class FrmTest
         '
     End Sub
 
-    Sub Addbutton(ByVal answer As Answer)
+    Sub AddButton(ByVal answer As Answer)
         _amountAnswers = _amountAnswers + 1
         _b = New PictureBox()
         'If FrmOpenTest.rRandom.Checked Then
@@ -260,7 +260,7 @@ Public Class FrmTest
         'Else
         '    value = value + 1
         'End If
-        _value = answer.Id
+        _value = answer.Id + 1
         _locationValue = _locationValue + 1
         Console.WriteLine("ENDVALUE: " & _value)
         _b.Name = "b" & _value
@@ -400,7 +400,7 @@ Public Class FrmTest
             End If
             Dim loadanswer As Integer
             'Try
-            loadanswer = CInt(S.Name.ToString.Replace("b", ""))
+            loadanswer = CInt(S.Name.ToString.Replace("b", "")) - 1
             _answer = _questions(_question - 1).Answers(loadanswer).Text
             _answer = Replace(_answer, vbTab, "")
             'MsgBox(answer)
@@ -517,8 +517,10 @@ Public Class FrmTest
                 'Index is one lower.
                 Dim index As Integer = _question - 1
 
-                If _questions(index).Text2 <> "" Then
+                If _questions(index).Text2 IsNot Nothing Then
                     txtTekst2.Text = _questions(index).Text2
+                Else
+                    tmTekst2.Interval = 1
                 End If
                 If _questions(index).Text1 <> "" Then
                     txtTekst1.Text = _questions(index).Text1
@@ -554,7 +556,7 @@ Public Class FrmTest
                             'Next
                         End If
                         For Each item In iList
-                            Addbutton(_questions(index).Answers(item))
+                            AddButton(_questions(index).Answers(item))
                         Next
 
                         'qAnswers = WebUtility.HtmlDecode(document.ReadInnerXml.ToString())
@@ -850,18 +852,9 @@ Public Class FrmTest
     End Sub
 
     Private Sub CorrectAnswer()
+       ' MsgBox(_answersRight & " + " & _questions(_question - 1).Points)
+            _answersRight = _answersRight + _questions(_question - 1).Points
 
-        If My.Computer.FileSystem.FileExists(FrmOpenTest.File & "a") Then
-            Dim lines() As String = File.ReadAllLines(FrmOpenTest.File & "a")
-            Try
-                _answersRight = _answersRight + lines(_question - 1)
-            Catch ex As Exception
-                MsgBox(ex.Message, MsgBoxStyle.Critical)
-                _answersRight = _answersRight + 1
-            End Try
-        Else
-            _answersRight = _answersRight + 1
-        End If
     End Sub
 
     Private Sub SaveLastQuestion()
