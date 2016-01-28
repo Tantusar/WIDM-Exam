@@ -158,6 +158,7 @@ Public Class FrmStartExecutie
         Catch ex As Exception
             MsgBox(ex.Message & vbCrLf & "Controleer of u namen heeft geselecteerd voor de executie.",
                    MsgBoxStyle.Critical)
+                   Log(ex.ToString())
             Close()
         End Try
     End Sub
@@ -443,7 +444,7 @@ Public Class FrmStartExecutie
             _timerInterval = Val(result(1).ToString)
             WMP1.URL = CurDir() & "\Geluid\" & result(0)
         Catch ex As Exception
-
+            Log(ex.ToString())
         End Try
 
         WMP1.Ctlcontrols.play()

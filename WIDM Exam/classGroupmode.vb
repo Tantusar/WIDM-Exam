@@ -30,6 +30,7 @@
             Candidates.Add(candidate.Name, candidate)
             Return True
         Catch ex As Exception
+            Log(ex.ToString())
             Return False
         End Try
     End Function

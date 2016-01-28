@@ -355,7 +355,7 @@ Public Class FrmEnterName
             End If
 
         Catch ex As Exception
-
+        Log(ex.ToString())
         End Try
     End Sub
 

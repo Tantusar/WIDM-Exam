@@ -10,7 +10,7 @@ Imports Newtonsoft.Json
 
 Module eIo
     Public Sub Log(ByVal errorText As String)
-        Dim location = CurDir() & "\WIDM Exam log.txt"
+        Dim location = CurDir() & "\WIDM Exam.log.txt"
         Dim temp As String = ""
         If My.Computer.FileSystem.FileExists(location) Then
             Dim objStreamReader As New IO.StreamReader(location)
@@ -246,7 +246,7 @@ Module eIo
                 End If
             Next
         Catch ex As Exception
-
+            Log(ex.ToString())
         End Try
 
     End Sub
@@ -271,6 +271,11 @@ Module eIo
                 Dim temp As String = objStreamReader.ReadToEnd()
                 'MsgBox(temp)
                 CurrentGroup = JsonConvert.DeserializeObject(Of Groupmode)(temp)
+
+                'Check validity of object. To prevent an empty file causing issues. (when disabling autosave)
+                If CurrentGroup Is Nothing Then
+                    CurrentGroup = New Groupmode()
+                End If
                 'MsgBox(CurrentGroup.episodes(1).number)
                 objStreamReader.Close()
                 Return True

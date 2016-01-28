@@ -44,6 +44,7 @@ Public Class FrmTest
                 _questions.Add(item)
             Next
         Catch ex As Exception
+            Log(ex.ToString())
             MsgBox(ex.Message, MsgBoxStyle.Information)
         End Try
 
@@ -75,7 +76,7 @@ Public Class FrmTest
         Try
             txtQuestion.TextAlign = CurrentTheme.QuestionAlignment
         Catch ex As Exception
-
+        Log(ex.ToString())
         End Try
         If CurrentTheme.QuestionBackgroundEnabled Then
             txtQuestion.BackgroundImage = CurrentTheme.ImgQuestionBackground
@@ -330,7 +331,7 @@ Public Class FrmTest
         Try
             l.Text = answer.Text
         Catch ex As Exception
-            Console.Write(ex.Message)
+            Log(ex.ToString())
         End Try
         l.BackColor = Color.Transparent
         l.ForeColor = CurrentTheme.ColorAnswers
@@ -435,7 +436,7 @@ Public Class FrmTest
                 End If
             End If
         Catch ex As Exception
-
+            Log(ex.ToString())
         End Try
     End Sub
 
@@ -450,7 +451,7 @@ Public Class FrmTest
                 End If
             End If
         Catch ex As Exception
-
+            Log(ex.ToString())
         End Try
     End Sub
 
@@ -658,7 +659,7 @@ Public Class FrmTest
             Else
                 MsgBox("Er ging iets mis met het inladen van de test!" & vbCrLf & ex.Message, MsgBoxStyle.Critical)
             End If
-
+            Log(ex.ToString())
             Close()
         End Try
         'Fixing overlap by the question and image
@@ -749,6 +750,7 @@ Public Class FrmTest
                 Me.Close()
 
             Catch ex As Exception
+            Log(ex.ToString())
                 MsgBox(ex.Message)
             End Try
         Else
@@ -836,7 +838,7 @@ Public Class FrmTest
         Try
             S.Image = CurrentTheme.ImgButton
         Catch ex As Exception
-
+        Log(ex.ToString())
         End Try
         t2.Image = CurrentTheme.ImgButton
         'End If
