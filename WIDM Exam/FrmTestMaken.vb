@@ -27,11 +27,11 @@ Public Class FrmTestMaken
 
         Dim result
         If My.Settings.language = "en" Then
-            result = MessageBox.Show("Do you want to save the quiz before closing?", "Save?",
-                                     MessageBoxButtons.YesNoCancel)
+            result = MsgBox("Do you want to save the quiz before closing?",
+                                     MsgBoxStyle.YesNoCancel Or MsgBoxStyle.Question)
         Else
-            result = MessageBox.Show("Wilt u de test opslaan alvorens het venster te sluiten?", "Opslaan?",
-                                     MessageBoxButtons.YesNoCancel)
+            result = MsgBox("Wilt u de test opslaan alvorens het venster te sluiten?", "Opslaan?",
+                                     MsgBoxStyle.YesNoCancel Or MsgBoxStyle.Question)
         End If
 
         If result = DialogResult.Yes Then

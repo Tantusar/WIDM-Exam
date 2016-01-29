@@ -123,6 +123,7 @@
     <Compile Include="eIO.vb" />
     <Compile Include="eLoadSettings.vb" />
     <Compile Include="classOldImport.vb" />
+    <Compile Include="classServer.vb" />
     <Compile Include="Extensions.vb" />
     <Compile Include="FrmConvert.Designer.vb">
       <DependentUpon>FrmConvert.vb</DependentUpon>
@@ -390,6 +391,7 @@
     <None Include="Resources\splash.png" />
     <None Include="Resources\Koenvh inverted text.png" />
     <None Include="Resources\Loading.gif" />
+    <None Include="Resources\Logo WIDM Exam.png" />
     <Content Include="Wie is de Mol Examen_32512.ico" />
   </ItemGroup>
   <ItemGroup>

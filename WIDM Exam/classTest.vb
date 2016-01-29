@@ -3,6 +3,12 @@
     Dim _strAuthor As String = ""
     Dim _strComment As String = ""
 
+    Public Enum Type
+        Vraag
+        TekstTussendoor
+        OpenVraag
+    End Enum
+
     Sub New()
         Author = ""
         Comment = ""

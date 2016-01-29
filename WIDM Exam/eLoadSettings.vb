@@ -23,11 +23,11 @@ Module ELoadSettings
         'Detecting highDPI.
         FrmOpenTest.dpiPercent.Text = FrmOpenTest.CreateGraphics.DpiX.ToString
         FrmOpenTest.dpiPercent.Select(0, 0)
-        If FrmOpenTest.dpiPercent.Text > 96 Then
-            FrmOpenTest.pnl120dpi.Visible = True
-            FrmOpenTest.Label38.Text = String.Format(getLang("dpiMessage"), FrmOpenTest.dpiPercent.Text)
+        'If FrmOpenTest.dpiPercent.Text > 96 Then
+        '    FrmOpenTest.pnl120dpi.Visible = True
+        '    FrmOpenTest.Label38.Text = String.Format(getLang("dpiMessage"), FrmOpenTest.dpiPercent.Text)
 
-        End If
+        'End If
 
         'Loading settings, mainly checkboxes
         If My.Settings.oudemuziek = True Then

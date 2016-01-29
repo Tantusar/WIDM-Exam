@@ -10,9 +10,9 @@
 
     Sub New()
         Mole = New Candidate()
-        Candidates = New SortedDictionary(Of String,Candidate)
-        Episodes = New SortedDictionary(Of Integer,Episode)
-        Screens = New SortedDictionary(Of String,ScreenExecution)
+        Candidates = New SortedDictionary(Of String, Candidate)
+        Episodes = New SortedDictionary(Of Integer, Episode)
+        Screens = New SortedDictionary(Of String, ScreenExecution)
         Episodes.Add(1, New Episode())
     End Sub
 
@@ -105,6 +105,9 @@
 
     Public Function ExecutionAdd(ByVal candidate As String, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer, ByVal episode As Integer)
         EpisodeExists(episode)
+        If Episodes(CurrentEpisode).ExecutionResults.ContainsKey(candidate) Then
+            ExecutionRemove(candidate)
+        End If
         Dim executionResult As New ExecutionResult
         executionResult.Candidate = candidate
         executionResult.AnswersRight = answersRight

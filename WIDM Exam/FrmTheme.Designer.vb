@@ -471,9 +471,9 @@ Partial Class FrmTheme
         Me.grpExample.BackColor = System.Drawing.SystemColors.Control
         Me.grpExample.Controls.Add(Me.btnReload)
         Me.grpExample.Controls.Add(Me.tabExample)
-        Me.grpExample.Location = New System.Drawing.Point(392, 122)
+        Me.grpExample.Location = New System.Drawing.Point(395, 122)
         Me.grpExample.Name = "grpExample"
-        Me.grpExample.Size = New System.Drawing.Size(346, 725)
+        Me.grpExample.Size = New System.Drawing.Size(530, 427)
         Me.grpExample.TabIndex = 2
         Me.grpExample.TabStop = false
         Me.grpExample.Text = "Voorbeeld"
@@ -481,7 +481,7 @@ Partial Class FrmTheme
         'btnReload
         '
         Me.btnReload.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btnReload.Location = New System.Drawing.Point(268, 0)
+        Me.btnReload.Location = New System.Drawing.Point(452, 0)
         Me.btnReload.Name = "btnReload"
         Me.btnReload.Size = New System.Drawing.Size(78, 23)
         Me.btnReload.TabIndex = 26
@@ -498,7 +498,7 @@ Partial Class FrmTheme
         Me.tabExample.Location = New System.Drawing.Point(3, 16)
         Me.tabExample.Name = "tabExample"
         Me.tabExample.SelectedIndex = 0
-        Me.tabExample.Size = New System.Drawing.Size(340, 706)
+        Me.tabExample.Size = New System.Drawing.Size(524, 408)
         Me.tabExample.TabIndex = 4
         '
         'tabTest
@@ -507,7 +507,7 @@ Partial Class FrmTheme
         Me.tabTest.Location = New System.Drawing.Point(4, 22)
         Me.tabTest.Name = "tabTest"
         Me.tabTest.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabTest.Size = New System.Drawing.Size(332, 680)
+        Me.tabTest.Size = New System.Drawing.Size(516, 382)
         Me.tabTest.TabIndex = 0
         Me.tabTest.Text = "Test"
         Me.tabTest.UseVisualStyleBackColor = true
@@ -523,7 +523,7 @@ Partial Class FrmTheme
         Me.pnlExampleTest.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlExampleTest.Location = New System.Drawing.Point(3, 3)
         Me.pnlExampleTest.Name = "pnlExampleTest"
-        Me.pnlExampleTest.Size = New System.Drawing.Size(326, 674)
+        Me.pnlExampleTest.Size = New System.Drawing.Size(510, 376)
         Me.pnlExampleTest.TabIndex = 3
         '
         'lAnswer
@@ -565,7 +565,7 @@ Partial Class FrmTheme
         Me.lQuestion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lQuestion.Location = New System.Drawing.Point(146, 41)
         Me.lQuestion.Name = "lQuestion"
-        Me.lQuestion.Size = New System.Drawing.Size(175, 48)
+        Me.lQuestion.Size = New System.Drawing.Size(359, 48)
         Me.lQuestion.TabIndex = 0
         Me.lQuestion.Text = "Question"
         Me.lQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -576,7 +576,7 @@ Partial Class FrmTheme
         Me.tabIntro.Location = New System.Drawing.Point(4, 22)
         Me.tabIntro.Name = "tabIntro"
         Me.tabIntro.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabIntro.Size = New System.Drawing.Size(349, 649)
+        Me.tabIntro.Size = New System.Drawing.Size(332, 680)
         Me.tabIntro.TabIndex = 1
         Me.tabIntro.Text = "Naam invoeren"
         Me.tabIntro.UseVisualStyleBackColor = true
@@ -592,7 +592,7 @@ Partial Class FrmTheme
         Me.pnlExampleIntro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlExampleIntro.Location = New System.Drawing.Point(3, 3)
         Me.pnlExampleIntro.Name = "pnlExampleIntro"
-        Me.pnlExampleIntro.Size = New System.Drawing.Size(343, 643)
+        Me.pnlExampleIntro.Size = New System.Drawing.Size(326, 674)
         Me.pnlExampleIntro.TabIndex = 29
         '
         'pnlOld
@@ -604,7 +604,7 @@ Partial Class FrmTheme
         Me.pnlOld.Controls.Add(Me.lOldname)
         Me.pnlOld.Controls.Add(Me.lOldtext)
         Me.pnlOld.Controls.Add(Me.lOldbutton)
-        Me.pnlOld.Location = New System.Drawing.Point(18, 398)
+        Me.pnlOld.Location = New System.Drawing.Point(10, 414)
         Me.pnlOld.Name = "pnlOld"
         Me.pnlOld.Size = New System.Drawing.Size(260, 128)
         Me.pnlOld.TabIndex = 30
@@ -660,7 +660,7 @@ Partial Class FrmTheme
         Me.pnlUS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlUS.Controls.Add(Me.lUStext)
         Me.pnlUS.Controls.Add(Me.lUSname)
-        Me.pnlUS.Location = New System.Drawing.Point(165, 269)
+        Me.pnlUS.Location = New System.Drawing.Point(157, 285)
         Me.pnlUS.Name = "pnlUS"
         Me.pnlUS.Size = New System.Drawing.Size(432, 159)
         Me.pnlUS.TabIndex = 31
@@ -694,7 +694,7 @@ Partial Class FrmTheme
         Me.pnlNew.Controls.Add(Me.Label11)
         Me.pnlNew.Controls.Add(Me.lNewtext)
         Me.pnlNew.Controls.Add(Me.lNewname)
-        Me.pnlNew.Location = New System.Drawing.Point(75, 340)
+        Me.pnlNew.Location = New System.Drawing.Point(67, 356)
         Me.pnlNew.Name = "pnlNew"
         Me.pnlNew.Size = New System.Drawing.Size(359, 82)
         Me.pnlNew.TabIndex = 29
@@ -748,7 +748,7 @@ Partial Class FrmTheme
         Me.green.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.green.Location = New System.Drawing.Point(4, 22)
         Me.green.Name = "green"
-        Me.green.Size = New System.Drawing.Size(349, 649)
+        Me.green.Size = New System.Drawing.Size(332, 680)
         Me.green.TabIndex = 2
         Me.green.Text = "Groen scherm"
         Me.green.UseVisualStyleBackColor = true
@@ -758,7 +758,7 @@ Partial Class FrmTheme
         Me.red.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.red.Location = New System.Drawing.Point(4, 22)
         Me.red.Name = "red"
-        Me.red.Size = New System.Drawing.Size(349, 649)
+        Me.red.Size = New System.Drawing.Size(332, 680)
         Me.red.TabIndex = 3
         Me.red.Text = "Rood scherm"
         Me.red.UseVisualStyleBackColor = true
@@ -1006,7 +1006,7 @@ Partial Class FrmTheme
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSave, Me.ToolStripOpen, Me.ToolStripSeparator1, Me.ToolStripExport})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(920, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(937, 25)
         Me.ToolStrip1.TabIndex = 28
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -1168,7 +1168,6 @@ Partial Class FrmTheme
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoScroll = true
         Me.ClientSize = New System.Drawing.Size(937, 561)
         Me.Controls.Add(Me.grpMusic)
         Me.Controls.Add(Me.ToolStrip1)

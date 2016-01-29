@@ -18,7 +18,7 @@ Module eIo
             objStreamReader.Close()
         End If
         Dim objStreamWriter As New IO.StreamWriter(location)
-        objStreamWriter.Write(TimeOfDay & ":" & vbCrLf & " - " & errorText & vbCrLf & vbCrLf & temp)
+        objStreamWriter.Write(DateTime.Now.ToString() & ":" & vbCrLf & " - " & errorText & vbCrLf & vbCrLf & temp)
         objStreamWriter.Close()
     End Sub
 

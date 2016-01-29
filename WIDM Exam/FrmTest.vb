@@ -723,10 +723,19 @@ Public Class FrmTest
             Dim result = 0
             Try
                 'Try adding the results to the object
-                If CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults.ContainsKey((FrmEnterName.TextBox1.Text)) Then
-                    CurrentGroup.ExecutionRemove(FrmEnterName.TextBox1.Text)
-                End If
                 CurrentGroup.ExecutionAdd(FrmEnterName.TextBox1.Text, _answersRight, _time, FrmOpenTest.Groen, 0)
+
+                'Client connect and send to server:
+
+                'Dim executionResult As New ExecutionResult
+                'executionResult.Candidate = FrmEnterName.TextBox1.Text
+                'executionResult.AnswersRight = _answersRight
+                'executionResult.Time = _time
+                'executionResult.Screen = FrmOpenTest.Groen
+                'executionResult.Jokers = 0
+                'Dim obj = New With {.Type = "ExecutionResult", .Data = executionResult}
+                'Dim client As New Client("127.0.0.1", 9255, JsonConvert.SerializeObject(obj))
+
                 ReloadExecution()
 
                 'Try adding the results to the listview
