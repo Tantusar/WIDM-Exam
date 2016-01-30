@@ -248,8 +248,14 @@
     <EmbeddedResource Include="classEnDe.resx">
       <DependentUpon>classEnDe.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConvert.en.resx">
+      <DependentUpon>FrmConvert.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConvert.resx">
       <DependentUpon>FrmConvert.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExtraInfo.en.resx">
+      <DependentUpon>FrmExtraInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmExtraInfo.resx">
       <DependentUpon>FrmExtraInfo.vb</DependentUpon>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOver.resx">
       <DependentUpon>FrmOver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTheme.en.resx">
+      <DependentUpon>FrmTheme.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTheme.resx">
       <DependentUpon>FrmTheme.vb</DependentUpon>

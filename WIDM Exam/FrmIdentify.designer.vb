@@ -27,8 +27,8 @@ Partial Class FrmIdentify
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'Panel1
         '
@@ -47,7 +47,7 @@ Partial Class FrmIdentify
         resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Image = Global.WIDM_Exam.My.Resources.Resources.Wie_is_de_Mol_Examen_32512
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.TabStop = false
         '
         'Label2
         '
@@ -63,14 +63,14 @@ Partial Class FrmIdentify
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel1)
-        Me.MaximizeBox = False
+        Me.MaximizeBox = false
         Me.Name = "FrmIdentify"
         Me.TransparencyKey = System.Drawing.Color.Red
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox

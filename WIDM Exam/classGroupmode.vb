@@ -103,6 +103,20 @@
         Return AnswerRemove(index, CurrentEpisode)
     End Function
 
+    Public Function ExecutionAdd(ByVal result As ExecutionResult, ByVal episode As Integer)
+        Try
+            Episodes(episode).ExecutionResults.Add(result.Candidate, result)
+            Return True
+        Catch ex As Exception
+            Log(ex.ToString())
+            Return False
+        End Try
+    End Function
+
+    Public Function ExecutionAdd(ByVal result As ExecutionResult)
+        Return ExecutionAdd(result, CurrentEpisode)
+    End Function
+
     Public Function ExecutionAdd(ByVal candidate As String, ByVal answersRight As Integer, ByVal time As Integer, ByVal screen As String, ByVal jokers As Integer, ByVal episode As Integer)
         EpisodeExists(episode)
         If Episodes(CurrentEpisode).ExecutionResults.ContainsKey(candidate) Then

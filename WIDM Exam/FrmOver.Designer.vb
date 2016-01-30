@@ -24,20 +24,21 @@ Partial Class FrmOver
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmOver))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout
+        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'Panel1
         '
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Label1)
@@ -46,18 +47,22 @@ Partial Class FrmOver
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label3)
-        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
-        '
-        'Label3
-        '
-        resources.ApplyResources(Me.Label3, "Label3")
-        Me.Label3.Name = "Label3"
         '
         'Label1
         '
         resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
+        '
+        'PictureBox3
+        '
+        resources.ApplyResources(Me.PictureBox3, "PictureBox3")
+        Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(113,Byte),Integer), CType(CType(222,Byte),Integer), CType(CType(75,Byte),Integer))
+        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox3.Image = Global.WIDM_Exam.My.Resources.Resources.Koenvh_inverted_text
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.TabStop = false
         '
         'PictureBox2
         '
@@ -73,19 +78,15 @@ Partial Class FrmOver
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.WIDM_Exam.My.Resources.Resources.Wie_is_de_Mol_Examen_32512
         resources.ApplyResources(Me.PictureBox1, "PictureBox1")
+        Me.PictureBox1.Image = Global.WIDM_Exam.My.Resources.Resources.Wie_is_de_Mol_Examen_32512
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = false
         '
-        'PictureBox3
+        'Label3
         '
-        resources.ApplyResources(Me.PictureBox3, "PictureBox3")
-        Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(113,Byte),Integer), CType(CType(222,Byte),Integer), CType(CType(75,Byte),Integer))
-        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.TabStop = false
+        resources.ApplyResources(Me.Label3, "Label3")
+        Me.Label3.Name = "Label3"
         '
         'FrmOver
         '
@@ -97,9 +98,9 @@ Partial Class FrmOver
         Me.MinimizeBox = false
         Me.Name = "FrmOver"
         Me.Panel1.ResumeLayout(false)
+        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.PictureBox3,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub

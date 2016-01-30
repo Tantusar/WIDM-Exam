@@ -34,77 +34,44 @@ Partial Class FrmExtraInfo
         '
         'lAuthor
         '
-        Me.lAuthor.Location = New System.Drawing.Point(12, 9)
+        resources.ApplyResources(Me.lAuthor, "lAuthor")
         Me.lAuthor.Name = "lAuthor"
-        Me.lAuthor.Size = New System.Drawing.Size(100, 23)
-        Me.lAuthor.TabIndex = 0
-        Me.lAuthor.Text = "Auteur:"
-        Me.lAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lComment
         '
-        Me.lComment.Location = New System.Drawing.Point(12, 37)
+        resources.ApplyResources(Me.lComment, "lComment")
         Me.lComment.Name = "lComment"
-        Me.lComment.Size = New System.Drawing.Size(100, 23)
-        Me.lComment.TabIndex = 1
-        Me.lComment.Text = "Commentaar:"
-        Me.lComment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lMoleText
         '
-        Me.lMoleText.Location = New System.Drawing.Point(12, 117)
+        resources.ApplyResources(Me.lMoleText, "lMoleText")
         Me.lMoleText.Name = "lMoleText"
-        Me.lMoleText.Size = New System.Drawing.Size(100, 23)
-        Me.lMoleText.TabIndex = 2
-        Me.lMoleText.Text = "Tekst voor de mol:"
-        Me.lMoleText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtAuthor
         '
-        Me.txtAuthor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.txtAuthor.Location = New System.Drawing.Point(118, 11)
+        resources.ApplyResources(Me.txtAuthor, "txtAuthor")
         Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(426, 20)
-        Me.txtAuthor.TabIndex = 3
         '
         'txtComment
         '
-        Me.txtComment.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.txtComment.Location = New System.Drawing.Point(118, 37)
-        Me.txtComment.Multiline = true
+        resources.ApplyResources(Me.txtComment, "txtComment")
         Me.txtComment.Name = "txtComment"
-        Me.txtComment.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.txtComment.Size = New System.Drawing.Size(426, 74)
-        Me.txtComment.TabIndex = 4
         '
         'txtMoleText
         '
-        Me.txtMoleText.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.txtMoleText.Location = New System.Drawing.Point(118, 117)
-        Me.txtMoleText.Multiline = true
+        resources.ApplyResources(Me.txtMoleText, "txtMoleText")
         Me.txtMoleText.Name = "txtMoleText"
-        Me.txtMoleText.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtMoleText.Size = New System.Drawing.Size(426, 74)
-        Me.txtMoleText.TabIndex = 5
         '
         'btnSave
         '
-        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btnSave.Location = New System.Drawing.Point(469, 202)
+        resources.ApplyResources(Me.btnSave, "btnSave")
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
-        Me.btnSave.TabIndex = 6
-        Me.btnSave.Text = "Opslaan"
         Me.btnSave.UseVisualStyleBackColor = true
         '
         'FrmExtraInfo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(556, 237)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.txtMoleText)
         Me.Controls.Add(Me.txtComment)
@@ -113,11 +80,9 @@ Partial Class FrmExtraInfo
         Me.Controls.Add(Me.lComment)
         Me.Controls.Add(Me.lAuthor)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.MaximizeBox = false
         Me.MinimizeBox = false
         Me.Name = "FrmExtraInfo"
-        Me.Text = "WIDM Exam"
         Me.ResumeLayout(false)
         Me.PerformLayout
 

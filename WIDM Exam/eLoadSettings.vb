@@ -30,9 +30,6 @@ Module ELoadSettings
         'End If
 
         'Loading settings, mainly checkboxes
-        If My.Settings.oudemuziek = True Then
-            FrmOpenTest.rOudeMuziek.Checked = True
-        End If
         'FrmOpenTest.header = My.Resources.header_2014_2
         If My.Settings.rComboBox = True Then
             FrmOpenTest.rCombobox.Checked = True

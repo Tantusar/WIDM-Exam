@@ -121,8 +121,6 @@ Partial Class FrmTheme
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.rMusicTest = New System.Windows.Forms.CheckBox()
         Me.rMusicExecution = New System.Windows.Forms.CheckBox()
-        Me.FontIntroText = New System.Windows.Forms.FontDialog()
-        Me.FontIntroTextfield = New System.Windows.Forms.FontDialog()
         Me.grpMusic = New System.Windows.Forms.GroupBox()
         Me.btnMusicExecution = New System.Windows.Forms.Button()
         Me.btnMusicTest = New System.Windows.Forms.Button()
@@ -130,6 +128,8 @@ Partial Class FrmTheme
         Me.txtMusicTest = New System.Windows.Forms.TextBox()
         Me.lMusicExecution = New System.Windows.Forms.Label()
         Me.lMusicTest = New System.Windows.Forms.Label()
+        Me.FontIntroText = New System.Windows.Forms.FontDialog()
+        Me.FontIntroTextfield = New System.Windows.Forms.FontDialog()
         Me.ColorClick = New System.Windows.Forms.ColorDialog()
         Me.OpenQuestionBackground = New System.Windows.Forms.OpenFileDialog()
         Me.OpenMusicTest = New System.Windows.Forms.OpenFileDialog()
@@ -161,48 +161,29 @@ Partial Class FrmTheme
         Me.grpGeneral.Controls.Add(Me.Label1)
         Me.grpGeneral.Controls.Add(Me.txtName)
         Me.grpGeneral.Controls.Add(Me.lName)
-        Me.grpGeneral.Location = New System.Drawing.Point(6, 28)
+        resources.ApplyResources(Me.grpGeneral, "grpGeneral")
         Me.grpGeneral.Name = "grpGeneral"
-        Me.grpGeneral.Size = New System.Drawing.Size(380, 78)
-        Me.grpGeneral.TabIndex = 0
         Me.grpGeneral.TabStop = false
-        Me.grpGeneral.Text = "Thema-instellingen"
         '
         'txtAuthor
         '
-        Me.txtAuthor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.txtAuthor.Location = New System.Drawing.Point(126, 42)
+        resources.ApplyResources(Me.txtAuthor, "txtAuthor")
         Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(248, 20)
-        Me.txtAuthor.TabIndex = 3
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(6, 42)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 20)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Auteur:"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtName
         '
-        Me.txtName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.txtName.Location = New System.Drawing.Point(126, 16)
+        resources.ApplyResources(Me.txtName, "txtName")
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(248, 20)
-        Me.txtName.TabIndex = 1
         '
         'lName
         '
-        Me.lName.Location = New System.Drawing.Point(6, 16)
+        resources.ApplyResources(Me.lName, "lName")
         Me.lName.Name = "lName"
-        Me.lName.Size = New System.Drawing.Size(114, 20)
-        Me.lName.TabIndex = 0
-        Me.lName.Text = "Naam van het thema:"
-        Me.lName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'grpQuestion
         '
@@ -230,262 +211,165 @@ Partial Class FrmTheme
         Me.grpQuestion.Controls.Add(Me.lLogo)
         Me.grpQuestion.Controls.Add(Me.btnFontQuestion)
         Me.grpQuestion.Controls.Add(Me.lFont)
-        Me.grpQuestion.Location = New System.Drawing.Point(6, 112)
+        resources.ApplyResources(Me.grpQuestion, "grpQuestion")
         Me.grpQuestion.Name = "grpQuestion"
-        Me.grpQuestion.Size = New System.Drawing.Size(380, 253)
-        Me.grpQuestion.TabIndex = 1
         Me.grpQuestion.TabStop = false
-        Me.grpQuestion.Text = "Vraag"
         '
         'rQuestionBackground
         '
-        Me.rQuestionBackground.AutoSize = true
-        Me.rQuestionBackground.Location = New System.Drawing.Point(280, 76)
+        resources.ApplyResources(Me.rQuestionBackground, "rQuestionBackground")
         Me.rQuestionBackground.Name = "rQuestionBackground"
-        Me.rQuestionBackground.Size = New System.Drawing.Size(15, 14)
-        Me.rQuestionBackground.TabIndex = 35
-        Me.ToolTip.SetToolTip(Me.rQuestionBackground, "Laat een logo linksboven zien voor de vraag")
+        Me.ToolTip.SetToolTip(Me.rQuestionBackground, resources.GetString("rQuestionBackground.ToolTip"))
         Me.rQuestionBackground.UseVisualStyleBackColor = true
         '
         'btnQuestionBackground
         '
-        Me.btnQuestionBackground.Enabled = false
-        Me.btnQuestionBackground.Location = New System.Drawing.Point(299, 71)
+        resources.ApplyResources(Me.btnQuestionBackground, "btnQuestionBackground")
         Me.btnQuestionBackground.Name = "btnQuestionBackground"
-        Me.btnQuestionBackground.Size = New System.Drawing.Size(75, 23)
-        Me.btnQuestionBackground.TabIndex = 34
-        Me.btnQuestionBackground.Text = "Afbeelding"
         Me.btnQuestionBackground.UseVisualStyleBackColor = true
         '
         'lQuestionBackground
         '
-        Me.lQuestionBackground.Location = New System.Drawing.Point(6, 72)
+        resources.ApplyResources(Me.lQuestionBackground, "lQuestionBackground")
         Me.lQuestionBackground.Name = "lQuestionBackground"
-        Me.lQuestionBackground.Size = New System.Drawing.Size(105, 20)
-        Me.lQuestionBackground.TabIndex = 33
-        Me.lQuestionBackground.Text = "Vraag achtergrond"
-        Me.lQuestionBackground.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'comboAlignment
         '
         Me.comboAlignment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboAlignment.FormattingEnabled = true
-        Me.comboAlignment.Location = New System.Drawing.Point(152, 44)
+        resources.ApplyResources(Me.comboAlignment, "comboAlignment")
         Me.comboAlignment.Name = "comboAlignment"
-        Me.comboAlignment.Size = New System.Drawing.Size(222, 21)
-        Me.comboAlignment.TabIndex = 28
         '
         'lAlignment
         '
-        Me.lAlignment.Location = New System.Drawing.Point(6, 45)
+        resources.ApplyResources(Me.lAlignment, "lAlignment")
         Me.lAlignment.Name = "lAlignment"
-        Me.lAlignment.Size = New System.Drawing.Size(105, 20)
-        Me.lAlignment.TabIndex = 32
-        Me.lAlignment.Text = "Vraag uitlijning"
-        Me.lAlignment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'rColorClick
         '
-        Me.rColorClick.AutoSize = true
-        Me.rColorClick.Location = New System.Drawing.Point(280, 221)
+        resources.ApplyResources(Me.rColorClick, "rColorClick")
         Me.rColorClick.Name = "rColorClick"
-        Me.rColorClick.Size = New System.Drawing.Size(15, 14)
-        Me.rColorClick.TabIndex = 31
-        Me.ToolTip.SetToolTip(Me.rColorClick, "Verander de tekstkleur bij een klik")
+        Me.ToolTip.SetToolTip(Me.rColorClick, resources.GetString("rColorClick.ToolTip"))
         Me.rColorClick.UseVisualStyleBackColor = true
         '
         'btnColorClick
         '
-        Me.btnColorClick.Enabled = false
-        Me.btnColorClick.Location = New System.Drawing.Point(299, 216)
+        resources.ApplyResources(Me.btnColorClick, "btnColorClick")
         Me.btnColorClick.Name = "btnColorClick"
-        Me.btnColorClick.Size = New System.Drawing.Size(75, 23)
-        Me.btnColorClick.TabIndex = 30
-        Me.btnColorClick.Text = "Kleur"
         Me.btnColorClick.UseVisualStyleBackColor = true
         '
         'lColorClick
         '
-        Me.lColorClick.Location = New System.Drawing.Point(6, 217)
+        resources.ApplyResources(Me.lColorClick, "lColorClick")
         Me.lColorClick.Name = "lColorClick"
-        Me.lColorClick.Size = New System.Drawing.Size(124, 20)
-        Me.lColorClick.TabIndex = 29
-        Me.lColorClick.Text = "Kleur bij klik en hover:"
-        Me.lColorClick.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'rLogoQuestion
         '
-        Me.rLogoQuestion.AutoSize = true
-        Me.rLogoQuestion.Location = New System.Drawing.Point(280, 105)
+        resources.ApplyResources(Me.rLogoQuestion, "rLogoQuestion")
         Me.rLogoQuestion.Name = "rLogoQuestion"
-        Me.rLogoQuestion.Size = New System.Drawing.Size(15, 14)
-        Me.rLogoQuestion.TabIndex = 28
-        Me.ToolTip.SetToolTip(Me.rLogoQuestion, "Laat een logo linksboven zien voor de vraag")
+        Me.ToolTip.SetToolTip(Me.rLogoQuestion, resources.GetString("rLogoQuestion.ToolTip"))
         Me.rLogoQuestion.UseVisualStyleBackColor = true
         '
         'rBackgroundTest
         '
-        Me.rBackgroundTest.AutoSize = true
-        Me.rBackgroundTest.Location = New System.Drawing.Point(280, 134)
+        resources.ApplyResources(Me.rBackgroundTest, "rBackgroundTest")
         Me.rBackgroundTest.Name = "rBackgroundTest"
-        Me.rBackgroundTest.Size = New System.Drawing.Size(15, 14)
-        Me.rBackgroundTest.TabIndex = 19
-        Me.ToolTip.SetToolTip(Me.rBackgroundTest, "Gebruik achtergrondafbeelding tijdens de test")
+        Me.ToolTip.SetToolTip(Me.rBackgroundTest, resources.GetString("rBackgroundTest.ToolTip"))
         Me.rBackgroundTest.UseVisualStyleBackColor = true
         '
         'rHover
         '
-        Me.rHover.AutoSize = true
-        Me.rHover.Location = New System.Drawing.Point(280, 192)
+        resources.ApplyResources(Me.rHover, "rHover")
         Me.rHover.Name = "rHover"
-        Me.rHover.Size = New System.Drawing.Size(15, 14)
-        Me.rHover.TabIndex = 18
-        Me.ToolTip.SetToolTip(Me.rHover, "Zet hover effect aan of uit")
+        Me.ToolTip.SetToolTip(Me.rHover, resources.GetString("rHover.ToolTip"))
         Me.rHover.UseVisualStyleBackColor = true
         '
         'btnButtonNormal
         '
-        Me.btnButtonNormal.Location = New System.Drawing.Point(118, 187)
+        resources.ApplyResources(Me.btnButtonNormal, "btnButtonNormal")
         Me.btnButtonNormal.Name = "btnButtonNormal"
-        Me.btnButtonNormal.Size = New System.Drawing.Size(75, 23)
-        Me.btnButtonNormal.TabIndex = 17
-        Me.btnButtonNormal.Text = "Normaal"
         Me.btnButtonNormal.UseVisualStyleBackColor = true
         '
         'btnButtonHover
         '
-        Me.btnButtonHover.Enabled = false
-        Me.btnButtonHover.Location = New System.Drawing.Point(299, 187)
+        resources.ApplyResources(Me.btnButtonHover, "btnButtonHover")
         Me.btnButtonHover.Name = "btnButtonHover"
-        Me.btnButtonHover.Size = New System.Drawing.Size(75, 23)
-        Me.btnButtonHover.TabIndex = 16
-        Me.btnButtonHover.Text = "Hover"
         Me.btnButtonHover.UseVisualStyleBackColor = true
         '
         'btnButtonClick
         '
-        Me.btnButtonClick.Location = New System.Drawing.Point(199, 187)
+        resources.ApplyResources(Me.btnButtonClick, "btnButtonClick")
         Me.btnButtonClick.Name = "btnButtonClick"
-        Me.btnButtonClick.Size = New System.Drawing.Size(75, 23)
-        Me.btnButtonClick.TabIndex = 15
-        Me.btnButtonClick.Text = "Klik"
         Me.btnButtonClick.UseVisualStyleBackColor = true
         '
         'lButtonAnswers
         '
-        Me.lButtonAnswers.Location = New System.Drawing.Point(6, 188)
+        resources.ApplyResources(Me.lButtonAnswers, "lButtonAnswers")
         Me.lButtonAnswers.Name = "lButtonAnswers"
-        Me.lButtonAnswers.Size = New System.Drawing.Size(106, 20)
-        Me.lButtonAnswers.TabIndex = 14
-        Me.lButtonAnswers.Text = "Knop antwoorden:"
-        Me.lButtonAnswers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'btnBackgroundImage
         '
-        Me.btnBackgroundImage.Enabled = false
-        Me.btnBackgroundImage.Location = New System.Drawing.Point(299, 129)
+        resources.ApplyResources(Me.btnBackgroundImage, "btnBackgroundImage")
         Me.btnBackgroundImage.Name = "btnBackgroundImage"
-        Me.btnBackgroundImage.Size = New System.Drawing.Size(75, 23)
-        Me.btnBackgroundImage.TabIndex = 13
-        Me.btnBackgroundImage.Text = "Afbeelding"
         Me.btnBackgroundImage.UseVisualStyleBackColor = true
         '
         'btnFontAnswers
         '
-        Me.btnFontAnswers.Location = New System.Drawing.Point(299, 158)
+        resources.ApplyResources(Me.btnFontAnswers, "btnFontAnswers")
         Me.btnFontAnswers.Name = "btnFontAnswers"
-        Me.btnFontAnswers.Size = New System.Drawing.Size(75, 23)
-        Me.btnFontAnswers.TabIndex = 11
-        Me.btnFontAnswers.Text = "Lettertype"
         Me.btnFontAnswers.UseVisualStyleBackColor = true
         '
         'lFontAnswers
         '
-        Me.lFontAnswers.Location = New System.Drawing.Point(6, 159)
+        resources.ApplyResources(Me.lFontAnswers, "lFontAnswers")
         Me.lFontAnswers.Name = "lFontAnswers"
-        Me.lFontAnswers.Size = New System.Drawing.Size(138, 20)
-        Me.lFontAnswers.TabIndex = 10
-        Me.lFontAnswers.Text = "Lettertype antwoorden:"
-        Me.lFontAnswers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'btnBackgroundColor
         '
-        Me.btnBackgroundColor.Location = New System.Drawing.Point(199, 129)
+        resources.ApplyResources(Me.btnBackgroundColor, "btnBackgroundColor")
         Me.btnBackgroundColor.Name = "btnBackgroundColor"
-        Me.btnBackgroundColor.Size = New System.Drawing.Size(75, 23)
-        Me.btnBackgroundColor.TabIndex = 9
-        Me.btnBackgroundColor.Text = "Kleur"
         Me.btnBackgroundColor.UseVisualStyleBackColor = true
         '
         'lBackgroundColor
         '
-        Me.lBackgroundColor.Location = New System.Drawing.Point(6, 130)
+        resources.ApplyResources(Me.lBackgroundColor, "lBackgroundColor")
         Me.lBackgroundColor.Name = "lBackgroundColor"
-        Me.lBackgroundColor.Size = New System.Drawing.Size(105, 20)
-        Me.lBackgroundColor.TabIndex = 8
-        Me.lBackgroundColor.Text = "Achtergrond:"
-        Me.lBackgroundColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'btnLogoQuestion
         '
-        Me.btnLogoQuestion.Enabled = false
-        Me.btnLogoQuestion.Location = New System.Drawing.Point(299, 100)
+        resources.ApplyResources(Me.btnLogoQuestion, "btnLogoQuestion")
         Me.btnLogoQuestion.Name = "btnLogoQuestion"
-        Me.btnLogoQuestion.Size = New System.Drawing.Size(75, 23)
-        Me.btnLogoQuestion.TabIndex = 7
-        Me.btnLogoQuestion.Text = "Afbeelding"
         Me.btnLogoQuestion.UseVisualStyleBackColor = true
         '
         'lLogo
         '
-        Me.lLogo.Location = New System.Drawing.Point(6, 101)
+        resources.ApplyResources(Me.lLogo, "lLogo")
         Me.lLogo.Name = "lLogo"
-        Me.lLogo.Size = New System.Drawing.Size(105, 20)
-        Me.lLogo.TabIndex = 6
-        Me.lLogo.Text = "Logo voor vraag:"
-        Me.lLogo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'btnFontQuestion
         '
-        Me.btnFontQuestion.Location = New System.Drawing.Point(299, 15)
+        resources.ApplyResources(Me.btnFontQuestion, "btnFontQuestion")
         Me.btnFontQuestion.Name = "btnFontQuestion"
-        Me.btnFontQuestion.Size = New System.Drawing.Size(75, 23)
-        Me.btnFontQuestion.TabIndex = 3
-        Me.btnFontQuestion.Text = "Lettertype"
         Me.btnFontQuestion.UseVisualStyleBackColor = true
         '
         'lFont
         '
-        Me.lFont.Location = New System.Drawing.Point(6, 16)
+        resources.ApplyResources(Me.lFont, "lFont")
         Me.lFont.Name = "lFont"
-        Me.lFont.Size = New System.Drawing.Size(105, 20)
-        Me.lFont.TabIndex = 2
-        Me.lFont.Text = "Lettertype vraag:"
-        Me.lFont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'grpExample
         '
-        Me.grpExample.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.grpExample, "grpExample")
         Me.grpExample.BackColor = System.Drawing.SystemColors.Control
         Me.grpExample.Controls.Add(Me.btnReload)
         Me.grpExample.Controls.Add(Me.tabExample)
-        Me.grpExample.Location = New System.Drawing.Point(395, 122)
         Me.grpExample.Name = "grpExample"
-        Me.grpExample.Size = New System.Drawing.Size(530, 427)
-        Me.grpExample.TabIndex = 2
         Me.grpExample.TabStop = false
-        Me.grpExample.Text = "Voorbeeld"
         '
         'btnReload
         '
-        Me.btnReload.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.btnReload.Location = New System.Drawing.Point(452, 0)
+        resources.ApplyResources(Me.btnReload, "btnReload")
         Me.btnReload.Name = "btnReload"
-        Me.btnReload.Size = New System.Drawing.Size(78, 23)
-        Me.btnReload.TabIndex = 26
-        Me.btnReload.Text = "Herladen"
         Me.btnReload.UseVisualStyleBackColor = true
         '
         'tabExample
@@ -494,273 +378,169 @@ Partial Class FrmTheme
         Me.tabExample.Controls.Add(Me.tabIntro)
         Me.tabExample.Controls.Add(Me.green)
         Me.tabExample.Controls.Add(Me.red)
-        Me.tabExample.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tabExample.Location = New System.Drawing.Point(3, 16)
+        resources.ApplyResources(Me.tabExample, "tabExample")
         Me.tabExample.Name = "tabExample"
         Me.tabExample.SelectedIndex = 0
-        Me.tabExample.Size = New System.Drawing.Size(524, 408)
-        Me.tabExample.TabIndex = 4
         '
         'tabTest
         '
         Me.tabTest.Controls.Add(Me.pnlExampleTest)
-        Me.tabTest.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.tabTest, "tabTest")
         Me.tabTest.Name = "tabTest"
-        Me.tabTest.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabTest.Size = New System.Drawing.Size(516, 382)
-        Me.tabTest.TabIndex = 0
-        Me.tabTest.Text = "Test"
         Me.tabTest.UseVisualStyleBackColor = true
         '
         'pnlExampleTest
         '
-        Me.pnlExampleTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        resources.ApplyResources(Me.pnlExampleTest, "pnlExampleTest")
         Me.pnlExampleTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlExampleTest.Controls.Add(Me.lAnswer)
         Me.pnlExampleTest.Controls.Add(Me.picAnswer)
         Me.pnlExampleTest.Controls.Add(Me.picLogo)
         Me.pnlExampleTest.Controls.Add(Me.lQuestion)
-        Me.pnlExampleTest.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlExampleTest.Location = New System.Drawing.Point(3, 3)
         Me.pnlExampleTest.Name = "pnlExampleTest"
-        Me.pnlExampleTest.Size = New System.Drawing.Size(510, 376)
-        Me.pnlExampleTest.TabIndex = 3
         '
         'lAnswer
         '
         Me.lAnswer.BackColor = System.Drawing.Color.Transparent
-        Me.lAnswer.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lAnswer.Location = New System.Drawing.Point(146, 144)
+        resources.ApplyResources(Me.lAnswer, "lAnswer")
         Me.lAnswer.Name = "lAnswer"
-        Me.lAnswer.Size = New System.Drawing.Size(151, 50)
-        Me.lAnswer.TabIndex = 3
-        Me.lAnswer.Text = "Answer"
-        Me.lAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picAnswer
         '
         Me.picAnswer.BackColor = System.Drawing.Color.Transparent
-        Me.picAnswer.Location = New System.Drawing.Point(90, 144)
+        resources.ApplyResources(Me.picAnswer, "picAnswer")
         Me.picAnswer.Name = "picAnswer"
-        Me.picAnswer.Size = New System.Drawing.Size(50, 50)
-        Me.picAnswer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picAnswer.TabIndex = 2
         Me.picAnswer.TabStop = false
         '
         'picLogo
         '
         Me.picLogo.BackColor = System.Drawing.Color.Transparent
-        Me.picLogo.Location = New System.Drawing.Point(-1, -1)
+        resources.ApplyResources(Me.picLogo, "picLogo")
         Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(141, 133)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picLogo.TabIndex = 1
         Me.picLogo.TabStop = false
         '
         'lQuestion
         '
-        Me.lQuestion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.lQuestion, "lQuestion")
         Me.lQuestion.BackColor = System.Drawing.Color.Transparent
-        Me.lQuestion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lQuestion.Location = New System.Drawing.Point(146, 41)
         Me.lQuestion.Name = "lQuestion"
-        Me.lQuestion.Size = New System.Drawing.Size(359, 48)
-        Me.lQuestion.TabIndex = 0
-        Me.lQuestion.Text = "Question"
-        Me.lQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'tabIntro
         '
         Me.tabIntro.Controls.Add(Me.pnlExampleIntro)
-        Me.tabIntro.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.tabIntro, "tabIntro")
         Me.tabIntro.Name = "tabIntro"
-        Me.tabIntro.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabIntro.Size = New System.Drawing.Size(332, 680)
-        Me.tabIntro.TabIndex = 1
-        Me.tabIntro.Text = "Naam invoeren"
         Me.tabIntro.UseVisualStyleBackColor = true
         '
         'pnlExampleIntro
         '
-        Me.pnlExampleIntro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        resources.ApplyResources(Me.pnlExampleIntro, "pnlExampleIntro")
         Me.pnlExampleIntro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlExampleIntro.Controls.Add(Me.pnlOld)
         Me.pnlExampleIntro.Controls.Add(Me.pnlUS)
         Me.pnlExampleIntro.Controls.Add(Me.pnlNew)
         Me.pnlExampleIntro.Controls.Add(Me.picLogoIntro)
-        Me.pnlExampleIntro.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlExampleIntro.Location = New System.Drawing.Point(3, 3)
         Me.pnlExampleIntro.Name = "pnlExampleIntro"
-        Me.pnlExampleIntro.Size = New System.Drawing.Size(326, 674)
-        Me.pnlExampleIntro.TabIndex = 29
         '
         'pnlOld
         '
-        Me.pnlOld.Anchor = System.Windows.Forms.AnchorStyles.None
+        resources.ApplyResources(Me.pnlOld, "pnlOld")
         Me.pnlOld.BackColor = System.Drawing.SystemColors.Control
         Me.pnlOld.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlOld.Controls.Add(Me.Label4)
         Me.pnlOld.Controls.Add(Me.lOldname)
         Me.pnlOld.Controls.Add(Me.lOldtext)
         Me.pnlOld.Controls.Add(Me.lOldbutton)
-        Me.pnlOld.Location = New System.Drawing.Point(10, 414)
         Me.pnlOld.Name = "pnlOld"
-        Me.pnlOld.Size = New System.Drawing.Size(260, 128)
-        Me.pnlOld.TabIndex = 30
-        Me.pnlOld.Visible = false
         '
         'Label4
         '
-        Me.Label4.AutoSize = true
-        Me.Label4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label4.Location = New System.Drawing.Point(242, -1)
+        resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(13, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "×"
         '
         'lOldname
         '
-        Me.lOldname.AutoSize = true
-        Me.lOldname.Font = New System.Drawing.Font("Comic Sans MS", 12!)
+        resources.ApplyResources(Me.lOldname, "lOldname")
         Me.lOldname.ForeColor = System.Drawing.Color.Red
-        Me.lOldname.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lOldname.Location = New System.Drawing.Point(18, 32)
         Me.lOldname.Name = "lOldname"
-        Me.lOldname.Size = New System.Drawing.Size(50, 23)
-        Me.lOldname.TabIndex = 8
-        Me.lOldname.Text = "Naam"
         '
         'lOldtext
         '
-        Me.lOldtext.Font = New System.Drawing.Font("Comic Sans MS", 12!)
+        resources.ApplyResources(Me.lOldtext, "lOldtext")
         Me.lOldtext.ForeColor = System.Drawing.Color.Red
-        Me.lOldtext.Location = New System.Drawing.Point(77, 29)
         Me.lOldtext.Name = "lOldtext"
-        Me.lOldtext.Size = New System.Drawing.Size(167, 30)
-        Me.lOldtext.TabIndex = 6
         '
         'lOldbutton
         '
-        Me.lOldbutton.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
+        resources.ApplyResources(Me.lOldbutton, "lOldbutton")
         Me.lOldbutton.ForeColor = System.Drawing.Color.Red
-        Me.lOldbutton.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lOldbutton.Location = New System.Drawing.Point(36, 81)
         Me.lOldbutton.Name = "lOldbutton"
-        Me.lOldbutton.Size = New System.Drawing.Size(188, 33)
-        Me.lOldbutton.TabIndex = 7
-        Me.lOldbutton.Text = "Naam ingeven"
         Me.lOldbutton.UseVisualStyleBackColor = true
         '
         'pnlUS
         '
-        Me.pnlUS.Anchor = System.Windows.Forms.AnchorStyles.None
+        resources.ApplyResources(Me.pnlUS, "pnlUS")
         Me.pnlUS.BackColor = System.Drawing.Color.Transparent
-        Me.pnlUS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlUS.Controls.Add(Me.lUStext)
         Me.pnlUS.Controls.Add(Me.lUSname)
-        Me.pnlUS.Location = New System.Drawing.Point(157, 285)
         Me.pnlUS.Name = "pnlUS"
-        Me.pnlUS.Size = New System.Drawing.Size(432, 159)
-        Me.pnlUS.TabIndex = 31
-        Me.pnlUS.Visible = false
         '
         'lUStext
         '
-        Me.lUStext.Font = New System.Drawing.Font("Microsoft Sans Serif", 36!)
-        Me.lUStext.Location = New System.Drawing.Point(27, 74)
+        resources.ApplyResources(Me.lUStext, "lUStext")
         Me.lUStext.Name = "lUStext"
-        Me.lUStext.Size = New System.Drawing.Size(378, 62)
-        Me.lUStext.TabIndex = 1
-        Me.lUStext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lUSname
         '
-        Me.lUSname.Font = New System.Drawing.Font("Microsoft Sans Serif", 36!, System.Drawing.FontStyle.Bold)
+        resources.ApplyResources(Me.lUSname, "lUSname")
         Me.lUSname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(128,Byte),Integer))
-        Me.lUSname.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lUSname.Location = New System.Drawing.Point(27, 16)
         Me.lUSname.Name = "lUSname"
-        Me.lUSname.Size = New System.Drawing.Size(378, 55)
-        Me.lUSname.TabIndex = 0
-        Me.lUSname.Text = "PLAYER"
-        Me.lUSname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlNew
         '
-        Me.pnlNew.Anchor = System.Windows.Forms.AnchorStyles.None
+        resources.ApplyResources(Me.pnlNew, "pnlNew")
         Me.pnlNew.BackColor = System.Drawing.Color.Transparent
         Me.pnlNew.Controls.Add(Me.Label11)
         Me.pnlNew.Controls.Add(Me.lNewtext)
         Me.pnlNew.Controls.Add(Me.lNewname)
-        Me.pnlNew.Location = New System.Drawing.Point(67, 356)
         Me.pnlNew.Name = "pnlNew"
-        Me.pnlNew.Size = New System.Drawing.Size(359, 82)
-        Me.pnlNew.TabIndex = 29
         '
         'Label11
         '
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!)
+        resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label11.Location = New System.Drawing.Point(311, 11)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(29, 28)
-        Me.Label11.TabIndex = 17
-        Me.Label11.Text = "×"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lNewtext
         '
         Me.lNewtext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lNewtext.Font = New System.Drawing.Font("Lucida Console", 18!)
-        Me.lNewtext.Location = New System.Drawing.Point(22, 40)
+        resources.ApplyResources(Me.lNewtext, "lNewtext")
         Me.lNewtext.Name = "lNewtext"
-        Me.lNewtext.Size = New System.Drawing.Size(312, 31)
-        Me.lNewtext.TabIndex = 1
         '
         'lNewname
         '
-        Me.lNewname.AutoSize = true
-        Me.lNewname.Font = New System.Drawing.Font("Lucida Console", 14.25!)
+        resources.ApplyResources(Me.lNewname, "lNewname")
         Me.lNewname.ForeColor = System.Drawing.Color.White
-        Me.lNewname.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lNewname.Location = New System.Drawing.Point(18, 18)
         Me.lNewname.Name = "lNewname"
-        Me.lNewname.Size = New System.Drawing.Size(185, 19)
-        Me.lNewname.TabIndex = 0
-        Me.lNewname.Text = "Voer uw naam in:"
         '
         'picLogoIntro
         '
         Me.picLogoIntro.BackColor = System.Drawing.Color.Transparent
-        Me.picLogoIntro.Location = New System.Drawing.Point(-1, -1)
+        resources.ApplyResources(Me.picLogoIntro, "picLogoIntro")
         Me.picLogoIntro.Name = "picLogoIntro"
-        Me.picLogoIntro.Size = New System.Drawing.Size(307, 307)
-        Me.picLogoIntro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picLogoIntro.TabIndex = 1
         Me.picLogoIntro.TabStop = false
         '
         'green
         '
-        Me.green.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.green.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.green, "green")
         Me.green.Name = "green"
-        Me.green.Size = New System.Drawing.Size(332, 680)
-        Me.green.TabIndex = 2
-        Me.green.Text = "Groen scherm"
         Me.green.UseVisualStyleBackColor = true
         '
         'red
         '
-        Me.red.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.red.Location = New System.Drawing.Point(4, 22)
+        resources.ApplyResources(Me.red, "red")
         Me.red.Name = "red"
-        Me.red.Size = New System.Drawing.Size(332, 680)
-        Me.red.TabIndex = 3
-        Me.red.Text = "Rood scherm"
         Me.red.UseVisualStyleBackColor = true
         '
         'grpIntro
@@ -778,171 +558,110 @@ Partial Class FrmTheme
         Me.grpIntro.Controls.Add(Me.btnBackgroundColorIntro)
         Me.grpIntro.Controls.Add(Me.btnLogoIntro)
         Me.grpIntro.Controls.Add(Me.btnBackgroundIntro)
-        Me.grpIntro.Location = New System.Drawing.Point(6, 371)
+        resources.ApplyResources(Me.grpIntro, "grpIntro")
         Me.grpIntro.Name = "grpIntro"
-        Me.grpIntro.Size = New System.Drawing.Size(380, 166)
-        Me.grpIntro.TabIndex = 3
         Me.grpIntro.TabStop = false
-        Me.grpIntro.Text = "Naam invoeren"
         '
         'rLogoIntro
         '
-        Me.rLogoIntro.AutoSize = true
-        Me.rLogoIntro.Location = New System.Drawing.Point(280, 78)
+        resources.ApplyResources(Me.rLogoIntro, "rLogoIntro")
         Me.rLogoIntro.Name = "rLogoIntro"
-        Me.rLogoIntro.Size = New System.Drawing.Size(15, 14)
-        Me.rLogoIntro.TabIndex = 27
-        Me.ToolTip.SetToolTip(Me.rLogoIntro, "Laat een logo linksboven zien bij het invoeren van de naam")
+        Me.ToolTip.SetToolTip(Me.rLogoIntro, resources.GetString("rLogoIntro.ToolTip"))
         Me.rLogoIntro.UseVisualStyleBackColor = true
         '
         'btnIntroTextfield
         '
-        Me.btnIntroTextfield.Location = New System.Drawing.Point(299, 44)
+        resources.ApplyResources(Me.btnIntroTextfield, "btnIntroTextfield")
         Me.btnIntroTextfield.Name = "btnIntroTextfield"
-        Me.btnIntroTextfield.Size = New System.Drawing.Size(75, 23)
-        Me.btnIntroTextfield.TabIndex = 26
-        Me.btnIntroTextfield.Text = "Lettertype"
         Me.btnIntroTextfield.UseVisualStyleBackColor = true
         '
         'lIntroTextfield
         '
-        Me.lIntroTextfield.Location = New System.Drawing.Point(6, 45)
+        resources.ApplyResources(Me.lIntroTextfield, "lIntroTextfield")
         Me.lIntroTextfield.Name = "lIntroTextfield"
-        Me.lIntroTextfield.Size = New System.Drawing.Size(105, 20)
-        Me.lIntroTextfield.TabIndex = 25
-        Me.lIntroTextfield.Text = "Lettertype tekstveld:"
-        Me.lIntroTextfield.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'rBackgroundIntro
         '
-        Me.rBackgroundIntro.AutoSize = true
-        Me.rBackgroundIntro.Location = New System.Drawing.Point(280, 107)
+        resources.ApplyResources(Me.rBackgroundIntro, "rBackgroundIntro")
         Me.rBackgroundIntro.Name = "rBackgroundIntro"
-        Me.rBackgroundIntro.Size = New System.Drawing.Size(15, 14)
-        Me.rBackgroundIntro.TabIndex = 20
-        Me.ToolTip.SetToolTip(Me.rBackgroundIntro, "Gebruik achtergrondafbeelding tijdens het naam invoeren")
+        Me.ToolTip.SetToolTip(Me.rBackgroundIntro, resources.GetString("rBackgroundIntro.ToolTip"))
         Me.rBackgroundIntro.UseVisualStyleBackColor = true
         '
         'btnFontIntroText
         '
-        Me.btnFontIntroText.Location = New System.Drawing.Point(299, 15)
+        resources.ApplyResources(Me.btnFontIntroText, "btnFontIntroText")
         Me.btnFontIntroText.Name = "btnFontIntroText"
-        Me.btnFontIntroText.Size = New System.Drawing.Size(75, 23)
-        Me.btnFontIntroText.TabIndex = 20
-        Me.btnFontIntroText.Text = "Lettertype"
         Me.btnFontIntroText.UseVisualStyleBackColor = true
         '
         'comboStyle
         '
         Me.comboStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboStyle.FormattingEnabled = true
-        Me.comboStyle.Location = New System.Drawing.Point(118, 131)
+        resources.ApplyResources(Me.comboStyle, "comboStyle")
         Me.comboStyle.Name = "comboStyle"
-        Me.comboStyle.Size = New System.Drawing.Size(256, 21)
-        Me.comboStyle.TabIndex = 24
         '
         'lFontIntroText
         '
-        Me.lFontIntroText.Location = New System.Drawing.Point(6, 16)
+        resources.ApplyResources(Me.lFontIntroText, "lFontIntroText")
         Me.lFontIntroText.Name = "lFontIntroText"
-        Me.lFontIntroText.Size = New System.Drawing.Size(105, 20)
-        Me.lFontIntroText.TabIndex = 19
-        Me.lFontIntroText.Text = "Lettertype naam:"
-        Me.lFontIntroText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lStyle
         '
-        Me.lStyle.Location = New System.Drawing.Point(6, 130)
+        resources.ApplyResources(Me.lStyle, "lStyle")
         Me.lStyle.Name = "lStyle"
-        Me.lStyle.Size = New System.Drawing.Size(105, 20)
-        Me.lStyle.TabIndex = 23
-        Me.lStyle.Text = "Stijl:"
-        Me.lStyle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'btnBackgroundImageIntro
         '
-        Me.btnBackgroundImageIntro.Enabled = false
-        Me.btnBackgroundImageIntro.Location = New System.Drawing.Point(299, 102)
+        resources.ApplyResources(Me.btnBackgroundImageIntro, "btnBackgroundImageIntro")
         Me.btnBackgroundImageIntro.Name = "btnBackgroundImageIntro"
-        Me.btnBackgroundImageIntro.Size = New System.Drawing.Size(75, 23)
-        Me.btnBackgroundImageIntro.TabIndex = 22
-        Me.btnBackgroundImageIntro.Text = "Afbeelding"
         Me.btnBackgroundImageIntro.UseVisualStyleBackColor = true
         '
         'lLogoIntro
         '
-        Me.lLogoIntro.Location = New System.Drawing.Point(6, 74)
+        resources.ApplyResources(Me.lLogoIntro, "lLogoIntro")
         Me.lLogoIntro.Name = "lLogoIntro"
-        Me.lLogoIntro.Size = New System.Drawing.Size(105, 20)
-        Me.lLogoIntro.TabIndex = 18
-        Me.lLogoIntro.Text = "Logo linksboven:"
-        Me.lLogoIntro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'btnBackgroundColorIntro
         '
-        Me.btnBackgroundColorIntro.Location = New System.Drawing.Point(199, 102)
+        resources.ApplyResources(Me.btnBackgroundColorIntro, "btnBackgroundColorIntro")
         Me.btnBackgroundColorIntro.Name = "btnBackgroundColorIntro"
-        Me.btnBackgroundColorIntro.Size = New System.Drawing.Size(75, 23)
-        Me.btnBackgroundColorIntro.TabIndex = 21
-        Me.btnBackgroundColorIntro.Text = "Kleur"
         Me.btnBackgroundColorIntro.UseVisualStyleBackColor = true
         '
         'btnLogoIntro
         '
-        Me.btnLogoIntro.Enabled = false
-        Me.btnLogoIntro.Location = New System.Drawing.Point(299, 73)
+        resources.ApplyResources(Me.btnLogoIntro, "btnLogoIntro")
         Me.btnLogoIntro.Name = "btnLogoIntro"
-        Me.btnLogoIntro.Size = New System.Drawing.Size(75, 23)
-        Me.btnLogoIntro.TabIndex = 19
-        Me.btnLogoIntro.Text = "Afbeelding"
         Me.btnLogoIntro.UseVisualStyleBackColor = true
         '
         'btnBackgroundIntro
         '
-        Me.btnBackgroundIntro.Location = New System.Drawing.Point(6, 103)
+        resources.ApplyResources(Me.btnBackgroundIntro, "btnBackgroundIntro")
         Me.btnBackgroundIntro.Name = "btnBackgroundIntro"
-        Me.btnBackgroundIntro.Size = New System.Drawing.Size(105, 20)
-        Me.btnBackgroundIntro.TabIndex = 20
-        Me.btnBackgroundIntro.Text = "Achtergrond:"
-        Me.btnBackgroundIntro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'grpScreens
         '
         Me.grpScreens.Controls.Add(Me.btnRed)
         Me.grpScreens.Controls.Add(Me.lScreens)
         Me.grpScreens.Controls.Add(Me.btnGreen)
-        Me.grpScreens.Location = New System.Drawing.Point(6, 543)
+        resources.ApplyResources(Me.grpScreens, "grpScreens")
         Me.grpScreens.Name = "grpScreens"
-        Me.grpScreens.Size = New System.Drawing.Size(380, 49)
-        Me.grpScreens.TabIndex = 23
         Me.grpScreens.TabStop = false
-        Me.grpScreens.Text = "Schermen"
         '
         'btnRed
         '
-        Me.btnRed.Location = New System.Drawing.Point(299, 15)
+        resources.ApplyResources(Me.btnRed, "btnRed")
         Me.btnRed.Name = "btnRed"
-        Me.btnRed.Size = New System.Drawing.Size(75, 23)
-        Me.btnRed.TabIndex = 25
-        Me.btnRed.Text = "Rood"
         Me.btnRed.UseVisualStyleBackColor = true
         '
         'lScreens
         '
-        Me.lScreens.Location = New System.Drawing.Point(6, 16)
+        resources.ApplyResources(Me.lScreens, "lScreens")
         Me.lScreens.Name = "lScreens"
-        Me.lScreens.Size = New System.Drawing.Size(105, 20)
-        Me.lScreens.TabIndex = 23
-        Me.lScreens.Text = "Schermen:"
-        Me.lScreens.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'btnGreen
         '
-        Me.btnGreen.Location = New System.Drawing.Point(218, 15)
+        resources.ApplyResources(Me.btnGreen, "btnGreen")
         Me.btnGreen.Name = "btnGreen"
-        Me.btnGreen.Size = New System.Drawing.Size(75, 23)
-        Me.btnGreen.TabIndex = 24
-        Me.btnGreen.Text = "Groen"
         Me.btnGreen.UseVisualStyleBackColor = true
         '
         'FontDialogQuestion
@@ -955,39 +674,39 @@ Partial Class FrmTheme
         '
         'OpenLogoQuestion
         '
-        Me.OpenLogoQuestion.Filter = "Alle afbeeldingen|*.*"
+        resources.ApplyResources(Me.OpenLogoQuestion, "OpenLogoQuestion")
         '
         'OpenBackground
         '
-        Me.OpenBackground.Filter = "Alle afbeeldingen|*.*"
+        resources.ApplyResources(Me.OpenBackground, "OpenBackground")
         '
         'OpenNormal
         '
-        Me.OpenNormal.Filter = "Alle afbeeldingen|*.*"
+        resources.ApplyResources(Me.OpenNormal, "OpenNormal")
         '
         'OpenClick
         '
-        Me.OpenClick.Filter = "Alle afbeeldingen|*.*"
+        resources.ApplyResources(Me.OpenClick, "OpenClick")
         '
         'OpenHover
         '
-        Me.OpenHover.Filter = "Alle afbeeldingen|*.*"
+        resources.ApplyResources(Me.OpenHover, "OpenHover")
         '
         'OpenLogoIntro
         '
-        Me.OpenLogoIntro.Filter = "Alle afbeeldingen|*.*"
+        resources.ApplyResources(Me.OpenLogoIntro, "OpenLogoIntro")
         '
         'OpenBackgroundIntro
         '
-        Me.OpenBackgroundIntro.Filter = "Alle afbeeldingen|*.*"
+        resources.ApplyResources(Me.OpenBackgroundIntro, "OpenBackgroundIntro")
         '
         'OpenGreen
         '
-        Me.OpenGreen.Filter = "Alle afbeeldingen|*.*"
+        resources.ApplyResources(Me.OpenGreen, "OpenGreen")
         '
         'OpenRed
         '
-        Me.OpenRed.Filter = "Alle afbeeldingen|*.*"
+        resources.ApplyResources(Me.OpenRed, "OpenRed")
         '
         'ColorBackground
         '
@@ -1004,72 +723,44 @@ Partial Class FrmTheme
         'ToolStrip1
         '
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSave, Me.ToolStripOpen, Me.ToolStripSeparator1, Me.ToolStripExport})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.ToolStrip1, "ToolStrip1")
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(937, 25)
-        Me.ToolStrip1.TabIndex = 28
-        Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripSave
         '
-        Me.ToolStripSave.Image = CType(resources.GetObject("ToolStripSave.Image"),System.Drawing.Image)
-        Me.ToolStripSave.ImageTransparentColor = System.Drawing.Color.Magenta
+        resources.ApplyResources(Me.ToolStripSave, "ToolStripSave")
         Me.ToolStripSave.Name = "ToolStripSave"
-        Me.ToolStripSave.Size = New System.Drawing.Size(70, 22)
-        Me.ToolStripSave.Text = "Opslaan"
         '
         'ToolStripOpen
         '
-        Me.ToolStripOpen.Image = CType(resources.GetObject("ToolStripOpen.Image"),System.Drawing.Image)
-        Me.ToolStripOpen.ImageTransparentColor = System.Drawing.Color.Magenta
+        resources.ApplyResources(Me.ToolStripOpen, "ToolStripOpen")
         Me.ToolStripOpen.Name = "ToolStripOpen"
-        Me.ToolStripOpen.Size = New System.Drawing.Size(69, 22)
-        Me.ToolStripOpen.Text = "Openen"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
         '
         'ToolStripExport
         '
-        Me.ToolStripExport.Image = CType(resources.GetObject("ToolStripExport.Image"),System.Drawing.Image)
-        Me.ToolStripExport.ImageTransparentColor = System.Drawing.Color.Magenta
+        resources.ApplyResources(Me.ToolStripExport, "ToolStripExport")
         Me.ToolStripExport.Name = "ToolStripExport"
-        Me.ToolStripExport.Size = New System.Drawing.Size(83, 22)
-        Me.ToolStripExport.Text = "Exporteren"
         '
         'OpenTheme
         '
-        Me.OpenTheme.Filter = "WIDM thema's (.widmthema)|*.widmthema"
+        resources.ApplyResources(Me.OpenTheme, "OpenTheme")
         '
         'rMusicTest
         '
-        Me.rMusicTest.AutoSize = true
-        Me.rMusicTest.Location = New System.Drawing.Point(136, 19)
+        resources.ApplyResources(Me.rMusicTest, "rMusicTest")
         Me.rMusicTest.Name = "rMusicTest"
-        Me.rMusicTest.Size = New System.Drawing.Size(15, 14)
-        Me.rMusicTest.TabIndex = 30
-        Me.ToolTip.SetToolTip(Me.rMusicTest, "Laat een logo linksboven zien voor de vraag")
         Me.rMusicTest.UseVisualStyleBackColor = true
         '
         'rMusicExecution
         '
-        Me.rMusicExecution.AutoSize = true
-        Me.rMusicExecution.Location = New System.Drawing.Point(136, 51)
+        resources.ApplyResources(Me.rMusicExecution, "rMusicExecution")
         Me.rMusicExecution.Name = "rMusicExecution"
-        Me.rMusicExecution.Size = New System.Drawing.Size(15, 14)
-        Me.rMusicExecution.TabIndex = 29
-        Me.ToolTip.SetToolTip(Me.rMusicExecution, "Gebruik achtergrondafbeelding tijdens de test")
         Me.rMusicExecution.UseVisualStyleBackColor = true
-        '
-        'FontIntroText
-        '
-        Me.FontIntroText.ShowColor = true
-        '
-        'FontIntroTextfield
-        '
-        Me.FontIntroTextfield.ShowColor = true
         '
         'grpMusic
         '
@@ -1081,68 +772,49 @@ Partial Class FrmTheme
         Me.grpMusic.Controls.Add(Me.rMusicExecution)
         Me.grpMusic.Controls.Add(Me.lMusicExecution)
         Me.grpMusic.Controls.Add(Me.lMusicTest)
-        Me.grpMusic.Location = New System.Drawing.Point(395, 28)
+        resources.ApplyResources(Me.grpMusic, "grpMusic")
         Me.grpMusic.Name = "grpMusic"
-        Me.grpMusic.Size = New System.Drawing.Size(364, 88)
-        Me.grpMusic.TabIndex = 29
         Me.grpMusic.TabStop = false
-        Me.grpMusic.Text = "Muziek"
         '
         'btnMusicExecution
         '
-        Me.btnMusicExecution.Location = New System.Drawing.Point(283, 47)
+        resources.ApplyResources(Me.btnMusicExecution, "btnMusicExecution")
         Me.btnMusicExecution.Name = "btnMusicExecution"
-        Me.btnMusicExecution.Size = New System.Drawing.Size(75, 23)
-        Me.btnMusicExecution.TabIndex = 32
-        Me.btnMusicExecution.Text = "Bladeren..."
         Me.btnMusicExecution.UseVisualStyleBackColor = true
         '
         'btnMusicTest
         '
-        Me.btnMusicTest.Location = New System.Drawing.Point(283, 14)
+        resources.ApplyResources(Me.btnMusicTest, "btnMusicTest")
         Me.btnMusicTest.Name = "btnMusicTest"
-        Me.btnMusicTest.Size = New System.Drawing.Size(75, 23)
-        Me.btnMusicTest.TabIndex = 31
-        Me.btnMusicTest.Text = "Bladeren..."
         Me.btnMusicTest.UseVisualStyleBackColor = true
         '
         'txtMusicExecution
         '
-        Me.txtMusicExecution.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.txtMusicExecution.Enabled = false
-        Me.txtMusicExecution.Location = New System.Drawing.Point(165, 48)
+        resources.ApplyResources(Me.txtMusicExecution, "txtMusicExecution")
         Me.txtMusicExecution.Name = "txtMusicExecution"
-        Me.txtMusicExecution.Size = New System.Drawing.Size(106, 20)
-        Me.txtMusicExecution.TabIndex = 5
         '
         'txtMusicTest
         '
-        Me.txtMusicTest.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.txtMusicTest.Enabled = false
-        Me.txtMusicTest.Location = New System.Drawing.Point(165, 16)
+        resources.ApplyResources(Me.txtMusicTest, "txtMusicTest")
         Me.txtMusicTest.Name = "txtMusicTest"
-        Me.txtMusicTest.Size = New System.Drawing.Size(106, 20)
-        Me.txtMusicTest.TabIndex = 4
         '
         'lMusicExecution
         '
-        Me.lMusicExecution.Location = New System.Drawing.Point(7, 49)
+        resources.ApplyResources(Me.lMusicExecution, "lMusicExecution")
         Me.lMusicExecution.Name = "lMusicExecution"
-        Me.lMusicExecution.Size = New System.Drawing.Size(144, 20)
-        Me.lMusicExecution.TabIndex = 5
-        Me.lMusicExecution.Text = "Muziek tijdens executie:"
-        Me.lMusicExecution.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lMusicTest
         '
-        Me.lMusicTest.Location = New System.Drawing.Point(7, 17)
+        resources.ApplyResources(Me.lMusicTest, "lMusicTest")
         Me.lMusicTest.Name = "lMusicTest"
-        Me.lMusicTest.Size = New System.Drawing.Size(114, 20)
-        Me.lMusicTest.TabIndex = 4
-        Me.lMusicTest.Text = "Muziek tijdens test:"
-        Me.lMusicTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'FontIntroText
+        '
+        Me.FontIntroText.ShowColor = true
+        '
+        'FontIntroTextfield
+        '
+        Me.FontIntroTextfield.ShowColor = true
         '
         'ColorClick
         '
@@ -1150,25 +822,24 @@ Partial Class FrmTheme
         '
         'OpenQuestionBackground
         '
-        Me.OpenQuestionBackground.Filter = "Alle afbeeldingen|*.*"
+        resources.ApplyResources(Me.OpenQuestionBackground, "OpenQuestionBackground")
         '
         'OpenMusicTest
         '
-        Me.OpenMusicTest.Filter = "Alle muziek|*.*"
+        resources.ApplyResources(Me.OpenMusicTest, "OpenMusicTest")
         '
         'OpenMusicExecution
         '
-        Me.OpenMusicExecution.Filter = "Alle muziek|*.*"
+        resources.ApplyResources(Me.OpenMusicExecution, "OpenMusicExecution")
         '
         'SaveExport
         '
-        Me.SaveExport.Filter = "(*.zip)|*.zip"
+        resources.ApplyResources(Me.SaveExport, "SaveExport")
         '
         'FrmTheme
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(937, 561)
         Me.Controls.Add(Me.grpMusic)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.grpScreens)
@@ -1176,9 +847,7 @@ Partial Class FrmTheme
         Me.Controls.Add(Me.grpExample)
         Me.Controls.Add(Me.grpQuestion)
         Me.Controls.Add(Me.grpGeneral)
-        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.Name = "FrmTheme"
-        Me.Text = "WIDM Exam"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.grpGeneral.ResumeLayout(false)
         Me.grpGeneral.PerformLayout

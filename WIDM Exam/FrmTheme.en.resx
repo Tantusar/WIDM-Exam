@@ -117,28 +117,290 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Author:</value>
+  </data>
+  <data name="lName.Text" xml:space="preserve">
+    <value>Theme name:</value>
+  </data>
+  <data name="grpGeneral.Text" xml:space="preserve">
+    <value>Theme settings</value>
+  </data>
+  <data name="grpQuestion.Text" xml:space="preserve">
+    <value>Question:</value>
+  </data>
+  <data name="rQuestionBackground.ToolTip" xml:space="preserve">
+    <value>Give the question a background</value>
+  </data>
+  <data name="btnQuestionBackground.Text" xml:space="preserve">
+    <value>Picture</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
+  <data name="lQuestionBackground.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 20</value>
   </data>
-  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="lQuestionBackground.Text" xml:space="preserve">
+    <value>Question background:</value>
   </data>
-  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
-    <value>Panel1</value>
+  <data name="lAlignment.Text" xml:space="preserve">
+    <value>Question alignment</value>
   </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>Hieronder staan de aangesloten monitoren met nummer aangegeven. Dit nummer komt overeen met de instelling voor de monitor.
-De opstelling is dezelfde opstelling die Windows herkent. Klik op een monitor hieronder om die monitor te gebruiken.</value>
+  <data name="rColorClick.ToolTip" xml:space="preserve">
+    <value>Change the text colour when hovering over it or clicking on it.</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FrmIdentify</value>
+  <data name="btnColorClick.Text" xml:space="preserve">
+    <value>Colour</value>
   </data>
-  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 41</value>
+  <data name="lColorClick.Text" xml:space="preserve">
+    <value>Colour by click and hover:</value>
+  </data>
+  <data name="rLogoQuestion.ToolTip" xml:space="preserve">
+    <value>Show a logo in front of the question</value>
+  </data>
+  <data name="rBackgroundTest.ToolTip" xml:space="preserve">
+    <value>Use background image</value>
+  </data>
+  <data name="rHover.ToolTip" xml:space="preserve">
+    <value>Enable or disable hover effect</value>
+  </data>
+  <data name="btnButtonNormal.Text" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="btnButtonClick.Text" xml:space="preserve">
+    <value>Click</value>
+  </data>
+  <data name="lButtonAnswers.Text" xml:space="preserve">
+    <value>Button answers:</value>
+  </data>
+  <data name="btnBackgroundImage.Text" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="btnFontAnswers.Text" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="lFontAnswers.Text" xml:space="preserve">
+    <value>Font answers:</value>
+  </data>
+  <data name="btnBackgroundColor.Text" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="lBackgroundColor.Text" xml:space="preserve">
+    <value>Background:</value>
+  </data>
+  <data name="btnLogoQuestion.Text" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="lLogo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 20</value>
+  </data>
+  <data name="lLogo.Text" xml:space="preserve">
+    <value>Logo in front of question:</value>
+  </data>
+  <data name="btnFontQuestion.Text" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="lFont.Text" xml:space="preserve">
+    <value>Font question:</value>
+  </data>
+  <data name="grpExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>530, 459</value>
+  </data>
+  <data name="grpExample.Text" xml:space="preserve">
+    <value>Example</value>
+  </data>
+  <data name="btnReload.Text" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="tabExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 440</value>
+  </data>
+  <data name="tabTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>516, 414</value>
+  </data>
+  <data name="tabTest.Text" xml:space="preserve">
+    <value>Quiz</value>
+  </data>
+  <data name="pnlExampleTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 408</value>
+  </data>
+  <data name="lQuestion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 48</value>
+  </data>
+  <data name="tabIntro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>516, 414</value>
+  </data>
+  <data name="tabIntro.Text" xml:space="preserve">
+    <value>Enter name</value>
+  </data>
+  <data name="pnlExampleIntro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 408</value>
+  </data>
+  <data name="pnlOld.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 279</value>
+  </data>
+  <data name="pnlUS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>247, 150</value>
+  </data>
+  <data name="pnlNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 221</value>
+  </data>
+  <data name="green.Size" type="System.Drawing.Size, System.Drawing">
+    <value>516, 414</value>
+  </data>
+  <data name="green.Text" xml:space="preserve">
+    <value>Green screen</value>
+  </data>
+  <data name="red.Size" type="System.Drawing.Size, System.Drawing">
+    <value>516, 414</value>
+  </data>
+  <data name="red.Text" xml:space="preserve">
+    <value>Red screen</value>
+  </data>
+  <data name="grpIntro.Text" xml:space="preserve">
+    <value>Enter name:</value>
+  </data>
+  <data name="rLogoIntro.ToolTip" xml:space="preserve">
+    <value>Show logo in the top left corner</value>
+  </data>
+  <data name="btnIntroTextfield.Text" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="lIntroTextfield.Text" xml:space="preserve">
+    <value>Font textfield:</value>
+  </data>
+  <data name="rBackgroundIntro.ToolTip" xml:space="preserve">
+    <value>Use background image</value>
+  </data>
+  <data name="btnFontIntroText.Text" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="lFontIntroText.Text" xml:space="preserve">
+    <value>Font name:</value>
+  </data>
+  <data name="lStyle.Text" xml:space="preserve">
+    <value>Style:</value>
+  </data>
+  <data name="btnBackgroundImageIntro.Text" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="lLogoIntro.Text" xml:space="preserve">
+    <value>Logo upper left:</value>
+  </data>
+  <data name="btnBackgroundColorIntro.Text" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="btnLogoIntro.Text" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="btnBackgroundIntro.Text" xml:space="preserve">
+    <value>Background:</value>
+  </data>
+  <data name="grpScreens.Text" xml:space="preserve">
+    <value>Screens:</value>
+  </data>
+  <data name="btnRed.Text" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="lScreens.Text" xml:space="preserve">
+    <value>Screens:</value>
+  </data>
+  <data name="btnGreen.Text" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="ToolStripSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVDhPjZJZTxNRHMX7hXygy+ASv4WPxrAVugABRGTT
+        aGKMGkGikUBBqoWwiiK7HUBTRShULBi0LKULQinQFeiUbsf/3CpPhDDJyc3M3PM75y4STsOXKjR8g1zL
+        W0h+TjsY47S6FKflQf+YLhVO4ErxJC4X8cgsGAtcLebnZZrRaxLx4dR8y6IzgkWngGg8BYEUOU4ieJTA
+        bjAGXzjO3oVYEnuhOKZmf6f0Vkf8xmPTPqcezpVwWqNt0RHBvV4vIjEy08S8p7PwH8SxS4ZwJMHAIRrd
+        +8dY80RhtPoxad0HV8JHCTARtBLgbvcOmyRKBHhDMfgP4yxZbLBDbew7UaxtC6hud+HLcgAKdWOKAIMx
+        i/2IAB42SVR+nRleGg+iSUSpVeAwAYdXTBewsiWg0uBEj8kDhWoUBNClzOuHuNPlgYsqitr0HVN6gqUf
+        CEls+WInZttWBLdfb6Bj6g/kBcMigMfMCgE6t1l1JaUX1JtR+HweRSR1wxyU9F3891/lravQG12Q5w8R
+        gI5p2hZGTccmrY1EY02HGzXtolyoMrgo0YEK/QbK2+woa11D+at16EbskCs/pAGm5XDaTEobSQQRzZVv
+        nKzyrTYCkPFmyyppBS8HViHLe58GTC0Fyez+J9dJOjNTcoXezsxlZCxttqGk+Rfq+5Yhy+0XAUbw1gCq
+        DW523udRUeNPPOlagjSnD5KLtInjCwFWV6Aje/Q550yJd0Lz4gcetC9Amt1LgEIeoxY/NUgDTOufzpQI
+        UDV8x/02CwG6IcnUNqeG5nwEcJ67gbJuDrUtZmRkPUxJpCrjRv+3PfRP75663tNUq5tFVdMMMq4bfBKF
+        +uMzhXp8RJ497leoxuh6jrAbJs8fhEw5QEf1DtLct7RhvVS5h1K7WfKFrM5QRnbn17/OXhA7P556IgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ToolStripSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 22</value>
+  </data>
+  <data name="ToolStripSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ToolStripOpen.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIQSURBVDhP3Y/LS1RRHMfPor27/oQW2dhjcipatAkiCNpE
+        LapVBCUDxQRCEZSL0YlgQpxaRBSSGKQZPQiixdDKUdN7dW7OdWY0R23wDjn3/X58O1dv4bRoG3Q4H845
+        i8/3+zvkP1nz7+Ns7e0pZ+UPKh8OL1ZfdexcfBlva+FTvC2fP7Yj0gkpPE9YQeADCOgO2bq7ZgNr+S57
+        dfy89Yv69DWzNp6q8W8OnI10QrjXnVLgmbDWstCX+qEvP4NRG0XgijRLQ+CpFHnr7TYhCILNjyW4SCek
+        PLxf8R2Zyjlo1QEoX3uwMdmFxlQSYjENce4uRPYWmkw3JUUnE1AeO6hGOg0Y6XRcYx0il0NzJgPh8w0Y
+        wgRtVaL28JR+TxB+jxnZa0Z6OMEhZ/P/vkUxAE/fFD2Dh1XPwVxNw/jWDb1yBRp/AZ5WAjO0PSCXsAPP
+        gKcU4Iof4fwYhb3+hIr3YSzfhlFNQl+4CG3+NNTicXgqC+bBtoDC44TlOwqcjXewhSHa+hDmCm1dClsv
+        Qyudg8qdhDJ7FPLMPrjKl9aA8BE4IpUHYX3vh1nroXIKevkSlc/Q1hNQ2COQpzsgTe2iAZOtAQv3YnVD
+        4qRi/oWvVZ5CLT+CymehlnqhcHegFG9CnktBZpOQmasoTQwGXDYuRTohfG/7dT6zZ5jr291gMjHzr/TF
+        zNlMTObT7QOR/k8XIT8Bc8znLrmmkUwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ToolStripOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 22</value>
+  </data>
+  <data name="ToolStripOpen.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="ToolStripExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMmSURBVDhPjZNdSJtnFMdzs8F2OyjsAwpVRqljY24wtUjT
+        WTVzTdcy8HYw6KBso6MM2outYZrW1uoU0XrhimNVN7XiZ3S2ixrzNiY2auqMUaMu0SR+xCSvumhi7Pvb
+        U/VOxvaHc/Nwzu98Pqp/k7Ndm+Jqy2sV9oezWfPuwfN/a7b3wpGpTq3e1ZEbWXX+xJL9Fs4H2Zt/NmaV
+        uBrOvHbgdlh2+xcvTBvOXZzqynP7xyrYjQVQthbZmGtl29eBd+AKT3/O9Iz9kvmVpTHtpYOwfc10n89x
+        GbSDHst1tsNPgS1QZBKhJ8y0nGfbdYe4t4mNySrcHZ8zWpNuHal5X7sXPGU4V2ut0yqh6XqiwXFC833M
+        24Sj+TaTv3/DXO8loq5yomM6Yu577Cw2sTasx9lwAVtVaoNq6r42ocS8xIMjhMYrCNr1+Psv427Px1p5
+        kp21UYhOw2ovyl9V4LwKvnoSs3psFUcTqomOj+VnsQXYnGDH18b62E2iDp2wa/jaz+69sdIN3hqUyWtE
+        jWpWDJmsO8sxl52QVRNtH8nPtgTg7xkBcULQyLbzNlHbJVa6zpKYKYXZEuKShrXuNJb7NSw/+gTZUYK5
+        9DmgJVfe3QO4YEOUG7EKyEMS7grWTfnEBzXIxpOsPc5lxZhNwPAhgfZcwsO3MBcfF4CmM/sA0QKyDUJ9
+        ot9OWGpBmf6OyJCGVSmL5b4sEXyKxeYMvL+qBbAQs+5NWTVYfSquJJbE5uZEdpPI3gPLzWJQdSjeuwQt
+        GpFZTaArk4XGNOZrUwl0f0lYKkTSvRJTOe6rH80ar7Ll7xcQN4QFxF8Pi7UCUMmqKUdkzmCh6QP8rfmE
+        LEX4Or9luDwP8w/HTKKFEy+O1WZcHL2X7vYMfM9ueEjMwi6q+A3FU8nSw9NiG9lEhosJmgpwVH+KSZ/k
+        GSxM+tque/XlvWN6Lsfd9CNPqt+7MVSVGvFLBWKoAhKRWB+/gzxajKvuM6SbRzfN+mOlFv0brx+EHZat
+        8p2UobK363t0bynBkTIWei5j/VGN+UbSg4GC5P//K6XilJzHRcf7pKJkyaxP3r/7Q1Kp/gF1tWqw+5e5
+        UwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ToolStripExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 22</value>
+  </data>
+  <data name="ToolStripExport.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="rMusicTest.ToolTip" xml:space="preserve">
+    <value>Play music during test</value>
+  </data>
+  <data name="rMusicExecution.ToolTip" xml:space="preserve">
+    <value>Play music during elimination</value>
+  </data>
+  <data name="grpMusic.Text" xml:space="preserve">
+    <value>Music</value>
+  </data>
+  <data name="btnMusicExecution.Text" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="btnMusicTest.Text" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="lMusicExecution.Text" xml:space="preserve">
+    <value>Music during elimination</value>
+  </data>
+  <data name="lMusicTest.Text" xml:space="preserve">
+    <value>Music during quiz</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>937, 593</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -396,117 +658,4 @@ De opstelling is dezelfde opstelling die Windows herkent. Klik op een monitor hi
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAAA=
 </value>
   </data>
-  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
-    <value>PictureBox1</value>
-  </data>
-  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>614, 26</value>
-  </data>
-  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>759, 323</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 19</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>WIDM Exam</value>
-  </data>
-  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 58</value>
-  </data>
-  <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 12</value>
-  </data>
-  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 21</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>784, 411</value>
-  </data>
-  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
-    <value>Label2</value>
-  </data>
-  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>CenterImage</value>
-  </data>
-  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>Monitoren identificeren</value>
-  </data>
-  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
-    <value>Label1</value>
-  </data>
-  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 76</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="Label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Lucida Console, 15.75pt</value>
-  </data>
-  <data name="PictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

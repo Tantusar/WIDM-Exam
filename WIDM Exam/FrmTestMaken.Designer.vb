@@ -120,6 +120,7 @@ Partial Class FrmTestMaken
         Me.listPanel.Name = "listPanel"
         Me.listPanel.ShowGroups = false
         Me.listPanel.ShowItemToolTips = true
+        Me.ToolTip1.SetToolTip(Me.listPanel, resources.GetString("listPanel.ToolTip"))
         Me.listPanel.UseCompatibleStateImageBehavior = false
         Me.listPanel.View = System.Windows.Forms.View.Details
         '
@@ -149,6 +150,7 @@ Partial Class FrmTestMaken
         '
         'GroupBox2
         '
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.txtQuestion)
         Me.GroupBox2.Controls.Add(Me.Button3)
@@ -160,59 +162,68 @@ Partial Class FrmTestMaken
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.TabStop = false
+        Me.ToolTip1.SetToolTip(Me.GroupBox2, resources.GetString("GroupBox2.ToolTip"))
         '
         'Label10
         '
         resources.ApplyResources(Me.Label10, "Label10")
         Me.Label10.Name = "Label10"
+        Me.ToolTip1.SetToolTip(Me.Label10, resources.GetString("Label10.ToolTip"))
         '
         'txtQuestion
         '
         resources.ApplyResources(Me.txtQuestion, "txtQuestion")
         Me.txtQuestion.FormattingEnabled = true
         Me.txtQuestion.Name = "txtQuestion"
+        Me.ToolTip1.SetToolTip(Me.txtQuestion, resources.GetString("txtQuestion.ToolTip"))
         '
         'Button3
         '
         resources.ApplyResources(Me.Button3, "Button3")
         Me.Button3.Name = "Button3"
+        Me.ToolTip1.SetToolTip(Me.Button3, resources.GetString("Button3.ToolTip"))
         Me.Button3.UseVisualStyleBackColor = true
         '
         'Button1
         '
         resources.ApplyResources(Me.Button1, "Button1")
         Me.Button1.Name = "Button1"
+        Me.ToolTip1.SetToolTip(Me.Button1, resources.GetString("Button1.ToolTip"))
         Me.Button1.UseVisualStyleBackColor = true
         '
         'Label5
         '
         resources.ApplyResources(Me.Label5, "Label5")
         Me.Label5.Name = "Label5"
+        Me.ToolTip1.SetToolTip(Me.Label5, resources.GetString("Label5.ToolTip"))
         '
         'txtAnswers
         '
         resources.ApplyResources(Me.txtAnswers, "txtAnswers")
         Me.txtAnswers.Name = "txtAnswers"
+        Me.ToolTip1.SetToolTip(Me.txtAnswers, resources.GetString("txtAnswers.ToolTip"))
         '
         'Label1
         '
         resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
+        Me.ToolTip1.SetToolTip(Me.Label1, resources.GetString("Label1.ToolTip"))
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label4)
         resources.ApplyResources(Me.GroupBox1, "GroupBox1")
+        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = false
+        Me.ToolTip1.SetToolTip(Me.GroupBox1, resources.GetString("GroupBox1.ToolTip"))
         '
         'Label4
         '
         resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
+        Me.ToolTip1.SetToolTip(Me.Label4, resources.GetString("Label4.ToolTip"))
         '
         'ComboBox1
         '
@@ -220,19 +231,23 @@ Partial Class FrmTestMaken
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = true
         Me.ComboBox1.Name = "ComboBox1"
+        Me.ToolTip1.SetToolTip(Me.ComboBox1, resources.GetString("ComboBox1.ToolTip"))
         '
         'Label2
         '
         resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
+        Me.ToolTip1.SetToolTip(Me.Label2, resources.GetString("Label2.ToolTip"))
         '
         'Label3
         '
         resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
+        Me.ToolTip1.SetToolTip(Me.Label3, resources.GetString("Label3.ToolTip"))
         '
         'GroupBox3
         '
+        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
         Me.GroupBox3.Controls.Add(Me.listDB)
         Me.GroupBox3.Controls.Add(Me.Button4)
         Me.GroupBox3.Controls.Add(Me.Button2)
@@ -240,22 +255,23 @@ Partial Class FrmTestMaken
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.txtTekst2)
         Me.GroupBox3.Controls.Add(Me.txtTekst1)
-        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.TabStop = false
+        Me.ToolTip1.SetToolTip(Me.GroupBox3, resources.GetString("GroupBox3.ToolTip"))
         '
         'listDB
         '
+        resources.ApplyResources(Me.listDB, "listDB")
         Me.listDB.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
         Me.listDB.FullRowSelect = true
         Me.listDB.GridLines = true
         Me.listDB.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {CType(resources.GetObject("listDB.Groups"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups1"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups2"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups3"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups4"),System.Windows.Forms.ListViewGroup)})
         Me.listDB.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        resources.ApplyResources(Me.listDB, "listDB")
         Me.listDB.MultiSelect = false
         Me.listDB.Name = "listDB"
         Me.listDB.ShowGroups = false
         Me.listDB.ShowItemToolTips = true
+        Me.ToolTip1.SetToolTip(Me.listDB, resources.GetString("listDB.ToolTip"))
         Me.listDB.UseCompatibleStateImageBehavior = false
         Me.listDB.View = System.Windows.Forms.View.Details
         '
@@ -279,37 +295,47 @@ Partial Class FrmTestMaken
         '
         resources.ApplyResources(Me.ColumnHeader5, "ColumnHeader5")
         '
+        'ColumnHeader6
+        '
+        resources.ApplyResources(Me.ColumnHeader6, "ColumnHeader6")
+        '
         'Button4
         '
         resources.ApplyResources(Me.Button4, "Button4")
         Me.Button4.Name = "Button4"
+        Me.ToolTip1.SetToolTip(Me.Button4, resources.GetString("Button4.ToolTip"))
         Me.Button4.UseVisualStyleBackColor = true
         '
         'Button2
         '
         resources.ApplyResources(Me.Button2, "Button2")
         Me.Button2.Name = "Button2"
+        Me.ToolTip1.SetToolTip(Me.Button2, resources.GetString("Button2.ToolTip"))
         Me.Button2.UseVisualStyleBackColor = true
         '
         'Label8
         '
         resources.ApplyResources(Me.Label8, "Label8")
         Me.Label8.Name = "Label8"
+        Me.ToolTip1.SetToolTip(Me.Label8, resources.GetString("Label8.ToolTip"))
         '
         'Label6
         '
         resources.ApplyResources(Me.Label6, "Label6")
         Me.Label6.Name = "Label6"
+        Me.ToolTip1.SetToolTip(Me.Label6, resources.GetString("Label6.ToolTip"))
         '
         'txtTekst2
         '
         resources.ApplyResources(Me.txtTekst2, "txtTekst2")
         Me.txtTekst2.Name = "txtTekst2"
+        Me.ToolTip1.SetToolTip(Me.txtTekst2, resources.GetString("txtTekst2.ToolTip"))
         '
         'txtTekst1
         '
         resources.ApplyResources(Me.txtTekst1, "txtTekst1")
         Me.txtTekst1.Name = "txtTekst1"
+        Me.ToolTip1.SetToolTip(Me.txtTekst1, resources.GetString("txtTekst1.ToolTip"))
         '
         'OpenFileDialog1
         '
@@ -317,9 +343,10 @@ Partial Class FrmTestMaken
         '
         'ToolStrip2
         '
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton4, Me.ToolStripSplitButton1, Me.ToolStripSeparator1, Me.ToolStripButton5, Me.ToolStripButton7, Me.ToolStripSeparator4, Me.ToolStripExtraInfo, Me.ToolStripSeparator3, Me.ToolStripButton1})
         resources.ApplyResources(Me.ToolStrip2, "ToolStrip2")
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton4, Me.ToolStripSplitButton1, Me.ToolStripSeparator1, Me.ToolStripButton5, Me.ToolStripButton7, Me.ToolStripSeparator4, Me.ToolStripExtraInfo, Me.ToolStripSeparator3, Me.ToolStripButton1})
         Me.ToolStrip2.Name = "ToolStrip2"
+        Me.ToolTip1.SetToolTip(Me.ToolStrip2, resources.GetString("ToolStrip2.ToolTip"))
         '
         'ToolStripButton4
         '
@@ -333,8 +360,8 @@ Partial Class FrmTestMaken
         '
         'ToolStripSeparator1
         '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         resources.ApplyResources(Me.ToolStripSeparator1, "ToolStripSeparator1")
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         '
         'ToolStripButton5
         '
@@ -343,14 +370,14 @@ Partial Class FrmTestMaken
         '
         'ToolStripButton7
         '
-        Me.ToolStripButton7.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         resources.ApplyResources(Me.ToolStripButton7, "ToolStripButton7")
+        Me.ToolStripButton7.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ToolStripButton7.Name = "ToolStripButton7"
         '
         'ToolStripSeparator4
         '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         resources.ApplyResources(Me.ToolStripSeparator4, "ToolStripSeparator4")
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         '
         'ToolStripExtraInfo
         '
@@ -359,8 +386,8 @@ Partial Class FrmTestMaken
         '
         'ToolStripSeparator3
         '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         resources.ApplyResources(Me.ToolStripSeparator3, "ToolStripSeparator3")
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         '
         'ToolStripButton1
         '
@@ -375,39 +402,45 @@ Partial Class FrmTestMaken
         '
         resources.ApplyResources(Me.Label9, "Label9")
         Me.Label9.Name = "Label9"
+        Me.ToolTip1.SetToolTip(Me.Label9, resources.GetString("Label9.ToolTip"))
         '
         'NumericUpDown1
         '
         resources.ApplyResources(Me.NumericUpDown1, "NumericUpDown1")
         Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown1, resources.GetString("NumericUpDown1.ToolTip"))
         '
         'Panel3
         '
+        resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.LinkLabel2)
         Me.Panel3.Controls.Add(Me.LinkLabel1)
         Me.Panel3.Controls.Add(Me.NumericUpDown1)
         Me.Panel3.Controls.Add(Me.Label9)
-        resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
+        Me.ToolTip1.SetToolTip(Me.Panel3, resources.GetString("Panel3.ToolTip"))
         '
         'LinkLabel2
         '
         resources.ApplyResources(Me.LinkLabel2, "LinkLabel2")
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.TabStop = true
+        Me.ToolTip1.SetToolTip(Me.LinkLabel2, resources.GetString("LinkLabel2.ToolTip"))
         '
         'LinkLabel1
         '
         resources.ApplyResources(Me.LinkLabel1, "LinkLabel1")
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.TabStop = true
+        Me.ToolTip1.SetToolTip(Me.LinkLabel1, resources.GetString("LinkLabel1.ToolTip"))
         '
         'rGroepsModusTest
         '
         resources.ApplyResources(Me.rGroepsModusTest, "rGroepsModusTest")
         Me.rGroepsModusTest.Name = "rGroepsModusTest"
+        Me.ToolTip1.SetToolTip(Me.rGroepsModusTest, resources.GetString("rGroepsModusTest.ToolTip"))
         Me.rGroepsModusTest.UseVisualStyleBackColor = true
         '
         'rNormalTest
@@ -416,6 +449,7 @@ Partial Class FrmTestMaken
         Me.rNormalTest.Checked = true
         Me.rNormalTest.Name = "rNormalTest"
         Me.rNormalTest.TabStop = true
+        Me.ToolTip1.SetToolTip(Me.rNormalTest, resources.GetString("rNormalTest.ToolTip"))
         Me.rNormalTest.UseVisualStyleBackColor = true
         '
         'OpenFileDialog2
@@ -465,15 +499,20 @@ Partial Class FrmTestMaken
         '
         'SplitContainer1.Panel1
         '
+        resources.ApplyResources(Me.SplitContainer1.Panel1, "SplitContainer1.Panel1")
         Me.SplitContainer1.Panel1.Controls.Add(Me.listPanel)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button8)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button7)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button5)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button6)
+        Me.ToolTip1.SetToolTip(Me.SplitContainer1.Panel1, resources.GetString("SplitContainer1.Panel1.ToolTip"))
         '
         'SplitContainer1.Panel2
         '
+        resources.ApplyResources(Me.SplitContainer1.Panel2, "SplitContainer1.Panel2")
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
+        Me.ToolTip1.SetToolTip(Me.SplitContainer1.Panel2, resources.GetString("SplitContainer1.Panel2.ToolTip"))
+        Me.ToolTip1.SetToolTip(Me.SplitContainer1, resources.GetString("SplitContainer1.ToolTip"))
         '
         'SplitContainer2
         '
@@ -482,11 +521,16 @@ Partial Class FrmTestMaken
         '
         'SplitContainer2.Panel1
         '
+        resources.ApplyResources(Me.SplitContainer2.Panel1, "SplitContainer2.Panel1")
         Me.SplitContainer2.Panel1.Controls.Add(Me.GroupBox2)
+        Me.ToolTip1.SetToolTip(Me.SplitContainer2.Panel1, resources.GetString("SplitContainer2.Panel1.ToolTip"))
         '
         'SplitContainer2.Panel2
         '
+        resources.ApplyResources(Me.SplitContainer2.Panel2, "SplitContainer2.Panel2")
         Me.SplitContainer2.Panel2.Controls.Add(Me.GroupBox3)
+        Me.ToolTip1.SetToolTip(Me.SplitContainer2.Panel2, resources.GetString("SplitContainer2.Panel2.ToolTip"))
+        Me.ToolTip1.SetToolTip(Me.SplitContainer2, resources.GetString("SplitContainer2.ToolTip"))
         '
         'FrmTestMaken
         '
@@ -498,6 +542,7 @@ Partial Class FrmTestMaken
         Me.Controls.Add(Me.ToolStrip2)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "FrmTestMaken"
+        Me.ToolTip1.SetToolTip(Me, resources.GetString("$this.ToolTip"))
         Me.GroupBox2.ResumeLayout(false)
         Me.GroupBox2.PerformLayout
         Me.GroupBox1.ResumeLayout(false)

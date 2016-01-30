@@ -8,7 +8,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("WIDM Exam")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyDescription("Wie is de Mol test- en executiesoftware")>
 <Assembly: AssemblyCompany("Koenvh")>
 <Assembly: AssemblyProduct("WIDM Exam")>
 <Assembly: AssemblyCopyright("")>
@@ -30,5 +30,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2.7.0.0")>
-<Assembly: AssemblyFileVersion("2.7.0.0")>
+<Assembly: AssemblyVersion("2.9.9.0")>
+<Assembly: AssemblyFileVersion("2.9.9.0")>

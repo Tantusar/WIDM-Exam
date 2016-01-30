@@ -30,7 +30,7 @@ Public Class FrmTestMaken
             result = MsgBox("Do you want to save the quiz before closing?",
                                      MsgBoxStyle.YesNoCancel Or MsgBoxStyle.Question)
         Else
-            result = MsgBox("Wilt u de test opslaan alvorens het venster te sluiten?", "Opslaan?",
+            result = MsgBox("Wilt u de test opslaan alvorens het venster te sluiten?",
                                      MsgBoxStyle.YesNoCancel Or MsgBoxStyle.Question)
         End If
 
