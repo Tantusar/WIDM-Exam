@@ -76,7 +76,7 @@ Public Class FrmTest
         Try
             txtQuestion.TextAlign = CurrentTheme.QuestionAlignment
         Catch ex As Exception
-        Log(ex.ToString())
+            Log(ex.ToString())
         End Try
         If CurrentTheme.QuestionBackgroundEnabled Then
             txtQuestion.BackgroundImage = CurrentTheme.ImgQuestionBackground
@@ -92,6 +92,7 @@ Public Class FrmTest
             smallLogo.Image = CurrentTheme.ImgLogoTest
         Else
             smallLogo.Hide()
+            txtQuestion.Location = New Point(96, txtQuestion.Location.Y)
         End If
         If CurrentTheme.BackgroundTestEnabled Then
             BackgroundImage = CurrentTheme.ImgBackgroundTest
@@ -749,9 +750,10 @@ Public Class FrmTest
                 FrmEnterName.TextBox1.Text = ""
                 FrmEnterName.TextBox2.Text = ""
                 FrmEnterName.TextBox3.Text = ""
+                FrmEnterName.TextBox4.Text = ""
 
                 If FrmOpenTest.rSaveAtClose.Checked = True Then
-                    'SaveXML()
+                    SaveGroupmode()
                 End If
                 _closePass = True
 
@@ -759,7 +761,7 @@ Public Class FrmTest
                 Me.Close()
 
             Catch ex As Exception
-            Log(ex.ToString())
+                Log(ex.ToString())
                 MsgBox(ex.Message)
             End Try
         Else
@@ -823,8 +825,8 @@ Public Class FrmTest
     End Sub
 
     Private Sub CorrectAnswer()
-       ' MsgBox(_answersRight & " + " & _questions(_question - 1).Points)
-            _answersRight = _answersRight + _questions(_question - 1).Points
+        ' MsgBox(_answersRight & " + " & _questions(_question - 1).Points)
+        _answersRight = _answersRight + _questions(_question - 1).Points
 
     End Sub
 
@@ -837,8 +839,13 @@ Public Class FrmTest
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles tmToBack.Tick
         tmToBack.Stop()
-        txtQuestion.SendToBack()
         smallLogo.SendToBack()
+        txtQuestion.SendToBack()
+        If CurrentTheme.LogoTestPosition = Theme.Position.TopRight Then
+            'smallLogo.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+            smallLogo.Location = New Point(Me.Width - smallLogo.Size.Width - 15, smallLogo.Location.Y)
+            txtQuestion.Location = New Point(96, txtQuestion.Location.Y)
+        End If
     End Sub
 
     Private Sub tmButton_Tick(sender As Object, e As EventArgs) Handles tmButton.Tick
@@ -847,7 +854,7 @@ Public Class FrmTest
         Try
             S.Image = CurrentTheme.ImgButton
         Catch ex As Exception
-        Log(ex.ToString())
+            Log(ex.ToString())
         End Try
         t2.Image = CurrentTheme.ImgButton
         'End If

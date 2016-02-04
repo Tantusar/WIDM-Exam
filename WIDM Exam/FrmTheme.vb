@@ -11,8 +11,8 @@ Public Class FrmTheme
 
     Public Shared Function IsFontInstalled(ByVal fontName As String) As Boolean
         Try
-            Using testFont As Font = New Font(FontName, 10)
-                Return CBool(String.Compare(FontName, TestFont.Name, StringComparison.InvariantCultureIgnoreCase) = 0)
+            Using testFont As Font = New Font(fontName, 10)
+                Return CBool(String.Compare(fontName, testFont.Name, StringComparison.InvariantCultureIgnoreCase) = 0)
             End Using
         Catch ex As Exception
             Console.WriteLine(ex.Message)
@@ -23,81 +23,98 @@ Public Class FrmTheme
     Sub ReloadExamples()
         _saved = False
 
-        txtName.Text = _currentTheme.name
-        txtAuthor.Text = _currentTheme.author
+        txtName.Text = _currentTheme.Name
+        txtAuthor.Text = _currentTheme.Author
 
-        txtMusicTest.Text = _currentTheme.musicTest
-        txtMusicExecution.Text = _currentTheme.musicExecution
+        txtMusicTest.Text = _currentTheme.MusicTest
+        txtMusicExecution.Text = _currentTheme.MusicExecution
 
-        rBackgroundTest.Checked = _currentTheme.backgroundTestEnabled
-        rBackgroundIntro.Checked = _currentTheme.backgroundIntroEnabled
-        rHover.Checked = _currentTheme.buttonHoverEnabled
-        rLogoQuestion.Checked = _currentTheme.logoTestEnabled
-        rLogoIntro.Checked = _currentTheme.logoIntroEnabled
-        rMusicTest.Checked = _currentTheme.musicTestEnabled
-        rMusicExecution.Checked = _currentTheme.musicExecutionEnabled
-        rColorClick.Checked = _currentTheme.colorClickEnabled
-        rQuestionBackground.Checked = _currentTheme.questionBackgroundEnabled
+        rBackgroundTest.Checked = _currentTheme.BackgroundTestEnabled
+        rBackgroundIntro.Checked = _currentTheme.BackgroundIntroEnabled
+        rHover.Checked = _currentTheme.ButtonHoverEnabled
+        rLogoQuestion.Checked = _currentTheme.LogoTestEnabled
+        rLogoIntro.Checked = _currentTheme.LogoIntroEnabled
+        rMusicTest.Checked = _currentTheme.MusicTestEnabled
+        rMusicExecution.Checked = _currentTheme.MusicExecutionEnabled
+        rColorClick.Checked = _currentTheme.ColorClickEnabled
+        rQuestionBackground.Checked = _currentTheme.QuestionBackgroundEnabled
 
-        If _currentTheme.logoTestEnabled Then
-            picLogo.Image = _currentTheme.imgLogoTest
+        If _currentTheme.LogoTestEnabled Then
+            picLogo.Image = _currentTheme.ImgLogoTest
         Else
             picLogo.Image = Nothing
         End If
-        lQuestion.Font = _currentTheme.fontQuestion
+        If _currentTheme.LogoTestPosition = Theme.Position.TopRight Then
+            picLogo.Location = New Point(Me.Width - picLogo.Size.Width - 200, picLogo.Location.Y)
+        End If
 
-        lQuestion.ForeColor = _currentTheme.colorQuestion
+        lQuestion.Font = _currentTheme.FontQuestion
+
+        lQuestion.ForeColor = _currentTheme.ColorQuestion
         Try
-            lQuestion.TextAlign = _currentTheme.questionAlignment
+            lQuestion.TextAlign = _currentTheme.QuestionAlignment
         Catch ex As Exception
 
         End Try
-        If _currentTheme.questionBackgroundEnabled Then
-            lQuestion.BackgroundImage = _currentTheme.imgQuestionBackground
+        If _currentTheme.QuestionBackgroundEnabled Then
+            lQuestion.BackgroundImage = _currentTheme.ImgQuestionBackground
             lQuestion.BackgroundImageLayout = ImageLayout.Stretch
         Else
             lQuestion.BackgroundImage = Nothing
         End If
-        pnlExampleTest.BackColor = _currentTheme.backgroundColorTest
-        If _currentTheme.backgroundTestEnabled Then
-            pnlExampleTest.BackgroundImage = _currentTheme.imgBackgroundTest
+        pnlExampleTest.BackColor = _currentTheme.BackgroundColorTest
+        If _currentTheme.BackgroundTestEnabled Then
+            pnlExampleTest.BackgroundImage = _currentTheme.ImgBackgroundTest
         Else
             pnlExampleTest.BackgroundImage = Nothing
         End If
-        lAnswer.Font = _currentTheme.fontAnswers
+        lAnswer.Font = _currentTheme.FontAnswers
 
-        lAnswer.ForeColor = _currentTheme.colorAnswers
-        picAnswer.Image = _currentTheme.imgButton
+        lAnswer.ForeColor = _currentTheme.ColorAnswers
+        picAnswer.Image = _currentTheme.ImgButton
 
-        comboStyle.SelectedItem = _currentTheme.introStyle
-        comboAlignment.SelectedItem = _currentTheme.questionAlignment
+        comboStyle.SelectedItem = _currentTheme.IntroStyle
+        comboAlignment.SelectedItem = _currentTheme.QuestionAlignment
+        comboLogoPosition.SelectedItem = _currentTheme.LogoTestPosition
+        comboIntroPosition.SelectedItem = _currentTheme.LogoIntroPosition
 
-        If _currentTheme.backgroundIntroEnabled Then
-            pnlExampleIntro.BackgroundImage = _currentTheme.imgBackgroundIntro
+        If _currentTheme.BackgroundIntroEnabled Then
+            pnlExampleIntro.BackgroundImage = _currentTheme.ImgBackgroundIntro
         Else
             pnlExampleIntro.BackgroundImage = Nothing
         End If
-        pnlExampleIntro.BackColor = _currentTheme.backgroundColorIntro
+        pnlExampleIntro.BackColor = _currentTheme.BackgroundColorIntro
 
-        If _currentTheme.logoIntroEnabled Then
-            picLogoIntro.Image = _currentTheme.imgLogoIntro
+        If _currentTheme.LogoIntroEnabled Then
+            picLogoIntro.Image = _currentTheme.ImgLogoIntro
         Else
             picLogoIntro.Image = Nothing
         End If
+        If _currentTheme.LogoIntroPosition = Theme.Position.TopRight Then
+            picLogoIntro.Location = New Point(Me.Width - picLogoIntro.Size.Width - 200, picLogoIntro.Location.Y)
+        End If
 
 
-        If _currentTheme.introStyle = Theme.Style.Old Then
+        If _currentTheme.IntroStyle = Theme.Style.Old Then
             pnlNew.Visible = False
             pnlOld.Visible = True
             pnlUS.Visible = False
-        ElseIf _currentTheme.introStyle = Theme.Style.US Then
+            pnlBelgium.Visible = False
+        ElseIf _currentTheme.IntroStyle = Theme.Style.Us Then
             pnlNew.Visible = False
             pnlOld.Visible = False
             pnlUS.Visible = True
+            pnlBelgium.Visible = False
+        ElseIf _currentTheme.IntroStyle = Theme.Style.Belgium Then
+            pnlNew.Visible = False
+            pnlOld.Visible = False
+            pnlUS.Visible = False
+            pnlBelgium.Visible = True
         Else
             pnlNew.Visible = True
             pnlOld.Visible = False
             pnlUS.Visible = False
+            pnlBelgium.Visible = False
         End If
 
         pnlNew.Top = (pnlExampleIntro.Height / 2) - (pnlNew.Height / 2)
@@ -106,30 +123,40 @@ Public Class FrmTheme
         pnlOld.Left = (pnlExampleIntro.Width / 2) - (pnlOld.Width / 2)
         pnlUS.Top = (pnlExampleIntro.Height / 2) - (pnlUS.Height / 2)
         pnlUS.Left = (pnlExampleIntro.Width / 2) - (pnlUS.Width / 2)
+        pnlBelgium.Left = (pnlExampleIntro.Width / 2) - (pnlBelgium.Width / 2)
+        pnlBelgium.Top = (pnlExampleIntro.Height / 2) - (pnlBelgium.Height / 2)
 
-        lUSname.Font = _currentTheme.fontIntroText
-        lUStext.Font = _currentTheme.fontIntroTextfield
+        lUSname.Font = _currentTheme.FontIntroText
+        lUStext.Font = _currentTheme.FontIntroTextfield
 
-        lNewname.Font = _currentTheme.fontIntroText
-        lNewname.ForeColor = _currentTheme.colorIntroText
-        lNewtext.Font = _currentTheme.fontIntroTextfield
-        lNewtext.ForeColor = _currentTheme.colorIntroTextfield
+        lNewname.Font = _currentTheme.FontIntroText
+        lNewname.ForeColor = _currentTheme.ColorIntroText
+        lNewtext.Font = _currentTheme.FontIntroTextfield
+        lNewtext.ForeColor = _currentTheme.ColorIntroTextfield
 
-        lOldname.Font = _currentTheme.fontIntroText
-        lOldname.ForeColor = _currentTheme.colorIntroText
-        lOldtext.Font = _currentTheme.fontIntroTextfield
-        lOldtext.ForeColor = _currentTheme.colorIntroTextfield
-        lOldbutton.Font = _currentTheme.fontIntroText
-        lOldbutton.ForeColor = _currentTheme.colorIntroText
+        lOldname.Font = _currentTheme.FontIntroText
+        lOldname.ForeColor = _currentTheme.ColorIntroText
+        lOldtext.Font = _currentTheme.FontIntroTextfield
+        lOldtext.ForeColor = _currentTheme.ColorIntroTextfield
+        lOldbutton.Font = _currentTheme.FontIntroText
+        lOldbutton.ForeColor = _currentTheme.ColorIntroText
 
-        tabExample.TabPages("green").BackgroundImage = _currentTheme.imgGreenScreen
-        tabExample.TabPages("red").BackgroundImage = _currentTheme.imgRedScreen
+        'Belgium
+        lNameBelgium.Font = CurrentTheme.FontIntroText
+        TextBox4.Font = CurrentTheme.FontIntroTextfield
+        TextBox4.BackColor = CurrentTheme.BackgroundColorIntro
+        pnlBelgium.BackColor = CurrentTheme.BackgroundColorIntro
+        TextBox4.ForeColor = CurrentTheme.ColorIntroTextfield
+        lNameBelgium.ForeColor = CurrentTheme.ColorIntroText
+
+        tabExample.TabPages("green").BackgroundImage = _currentTheme.ImgGreenScreen
+        tabExample.TabPages("red").BackgroundImage = _currentTheme.ImgRedScreen
 
         Try
-            IsFontInstalled(_currentTheme.fontQuestion.Name)
-            IsFontInstalled(_currentTheme.fontAnswers.Name)
-            IsFontInstalled(_currentTheme.fontIntroText.Name)
-            IsFontInstalled(_currentTheme.fontIntroTextfield.Name)
+            IsFontInstalled(_currentTheme.FontQuestion.Name)
+            IsFontInstalled(_currentTheme.FontAnswers.Name)
+            IsFontInstalled(_currentTheme.FontIntroText.Name)
+            IsFontInstalled(_currentTheme.FontIntroTextfield.Name)
         Catch ex As Exception
 
         End Try
@@ -137,12 +164,12 @@ Public Class FrmTheme
     End Sub
 
     Private Sub btnFontQuestion_Click(sender As Object, e As EventArgs) Handles btnFontQuestion.Click
-        FontDialogQuestion.Font = _currentTheme.fontQuestion
-        FontDialogQuestion.Color = _currentTheme.colorQuestion
+        FontDialogQuestion.Font = _currentTheme.FontQuestion
+        FontDialogQuestion.Color = _currentTheme.ColorQuestion
         Try
             If FontDialogQuestion.ShowDialog() = DialogResult.OK Then
-                _currentTheme.fontQuestion = FontDialogQuestion.Font
-                _currentTheme.colorQuestion = FontDialogQuestion.Color
+                _currentTheme.FontQuestion = FontDialogQuestion.Font
+                _currentTheme.ColorQuestion = FontDialogQuestion.Color
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -152,6 +179,8 @@ Public Class FrmTheme
 
     Private Sub FrmTheme_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         comboStyle.DataSource = [Enum].GetValues(GetType(Theme.Style))
+        comboLogoPosition.DataSource = [Enum].GetValues(GetType(Theme.Position))
+        comboIntroPosition.DataSource = [Enum].GetValues(GetType(Theme.Position))
         comboAlignment.DataSource = [Enum].GetValues(GetType(ContentAlignment))
     End Sub
 
@@ -170,7 +199,7 @@ Public Class FrmTheme
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        Open(CurDir() & "\Thema's\" & CurrentThemeName)
+        Open(CurDir() & "\Thema's\" & currentThemeName)
     End Sub
 
     Private Sub btnLogoQuestion_Click(sender As Object, e As EventArgs) Handles btnLogoQuestion.Click
@@ -179,9 +208,9 @@ Public Class FrmTheme
                 .InitialDirectory = CurDir() & "\" & Afbeeldingen & "\"
                 If .ShowDialog() = DialogResult.OK Then
                     If Path.GetDirectoryName(.FileName).StartsWith(CurDir() & "\" & Afbeeldingen) Then
-                        _currentTheme.logoTest = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
+                        _currentTheme.LogoTest = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
                     Else
-                        MsgBox(getLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
+                        MsgBox(GetLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
                     End If
                 End If
             End With
@@ -198,9 +227,9 @@ Public Class FrmTheme
                 .InitialDirectory = CurDir() & "\" & Afbeeldingen & "\"
                 If .ShowDialog() = DialogResult.OK Then
                     If Path.GetDirectoryName(.FileName).StartsWith(CurDir() & "\" & Afbeeldingen) Then
-                        _currentTheme.backgroundTest = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
+                        _currentTheme.BackgroundTest = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
                     Else
-                        MsgBox(getLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
+                        MsgBox(GetLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
                     End If
                 End If
             End With
@@ -212,10 +241,10 @@ Public Class FrmTheme
     End Sub
 
     Private Sub btnBackgroundColor_Click(sender As Object, e As EventArgs) Handles btnBackgroundColor.Click
-        ColorBackground.Color = _currentTheme.backgroundColorTest
+        ColorBackground.Color = _currentTheme.BackgroundColorTest
         Try
             If ColorBackground.ShowDialog() = DialogResult.OK Then
-                _currentTheme.backgroundColorTest = ColorBackground.Color
+                _currentTheme.BackgroundColorTest = ColorBackground.Color
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -224,12 +253,12 @@ Public Class FrmTheme
     End Sub
 
     Private Sub btnFontAnswers_Click(sender As Object, e As EventArgs) Handles btnFontAnswers.Click
-        FontDialogAnswers.Font = _currentTheme.fontAnswers
-        FontDialogAnswers.Color = _currentTheme.colorAnswers
+        FontDialogAnswers.Font = _currentTheme.FontAnswers
+        FontDialogAnswers.Color = _currentTheme.ColorAnswers
         Try
             If FontDialogAnswers.ShowDialog() = DialogResult.OK Then
-                _currentTheme.fontAnswers = FontDialogAnswers.Font
-                _currentTheme.colorAnswers = FontDialogAnswers.Color
+                _currentTheme.FontAnswers = FontDialogAnswers.Font
+                _currentTheme.ColorAnswers = FontDialogAnswers.Color
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -243,9 +272,9 @@ Public Class FrmTheme
                 .InitialDirectory = CurDir() & "\" & Afbeeldingen & "\"
                 If .ShowDialog() = DialogResult.OK Then
                     If Path.GetDirectoryName(.FileName).StartsWith(CurDir() & "\" & Afbeeldingen) Then
-                        _currentTheme.button = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
+                        _currentTheme.Button = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
                     Else
-                        MsgBox(getLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
+                        MsgBox(GetLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
                     End If
                 End If
             End With
@@ -262,9 +291,9 @@ Public Class FrmTheme
                 .InitialDirectory = CurDir() & "\" & Afbeeldingen & "\"
                 If .ShowDialog() = DialogResult.OK Then
                     If Path.GetDirectoryName(.FileName).StartsWith(CurDir() & "\" & Afbeeldingen) Then
-                        _currentTheme.buttonClick = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
+                        _currentTheme.ButtonClick = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
                     Else
-                        MsgBox(getLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
+                        MsgBox(GetLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
                     End If
                 End If
             End With
@@ -281,9 +310,9 @@ Public Class FrmTheme
                 .InitialDirectory = CurDir() & "\" & Afbeeldingen & "\"
                 If .ShowDialog() = DialogResult.OK Then
                     If Path.GetDirectoryName(.FileName).StartsWith(CurDir() & "\" & Afbeeldingen) Then
-                        _currentTheme.buttonHover = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
+                        _currentTheme.ButtonHover = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
                     Else
-                        MsgBox(getLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
+                        MsgBox(GetLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
                     End If
                 End If
             End With
@@ -295,12 +324,12 @@ Public Class FrmTheme
     End Sub
 
     Private Sub btnFontIntroText_Click(sender As Object, e As EventArgs) Handles btnFontIntroText.Click
-        FontIntroText.Font = _currentTheme.fontIntroText
-        FontIntroText.Color = _currentTheme.colorIntroText
+        FontIntroText.Font = _currentTheme.FontIntroText
+        FontIntroText.Color = _currentTheme.ColorIntroText
         Try
             If FontIntroText.ShowDialog() = DialogResult.OK Then
-                _currentTheme.fontIntroText = FontIntroText.Font
-                _currentTheme.colorIntroText = FontIntroText.Color
+                _currentTheme.FontIntroText = FontIntroText.Font
+                _currentTheme.ColorIntroText = FontIntroText.Color
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -314,9 +343,9 @@ Public Class FrmTheme
                 .InitialDirectory = CurDir() & "\" & Afbeeldingen & "\"
                 If .ShowDialog() = DialogResult.OK Then
                     If Path.GetDirectoryName(.FileName).StartsWith(CurDir() & "\" & Afbeeldingen) Then
-                        _currentTheme.logoIntro = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
+                        _currentTheme.LogoIntro = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
                     Else
-                        MsgBox(getLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
+                        MsgBox(GetLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
                     End If
                 End If
             End With
@@ -333,9 +362,9 @@ Public Class FrmTheme
                 .InitialDirectory = CurDir() & "\" & Afbeeldingen & "\"
                 If .ShowDialog() = DialogResult.OK Then
                     If Path.GetDirectoryName(.FileName).StartsWith(CurDir() & "\" & Afbeeldingen) Then
-                        _currentTheme.backgroundIntro = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
+                        _currentTheme.BackgroundIntro = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
                     Else
-                        MsgBox(getLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
+                        MsgBox(GetLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
                     End If
                 End If
             End With
@@ -347,10 +376,10 @@ Public Class FrmTheme
     End Sub
 
     Private Sub btnBackgroundColorIntro_Click(sender As Object, e As EventArgs) Handles btnBackgroundColorIntro.Click
-        ColorBackgroundIntro.Color = _currentTheme.backgroundColorIntro
+        ColorBackgroundIntro.Color = _currentTheme.BackgroundColorIntro
         Try
             If ColorBackgroundIntro.ShowDialog() = DialogResult.OK Then
-                _currentTheme.backgroundColorIntro = ColorBackgroundIntro.Color
+                _currentTheme.BackgroundColorIntro = ColorBackgroundIntro.Color
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -364,9 +393,9 @@ Public Class FrmTheme
                 .InitialDirectory = CurDir() & "\" & Afbeeldingen & "\"
                 If .ShowDialog() = DialogResult.OK Then
                     If Path.GetDirectoryName(.FileName).StartsWith(CurDir() & "\" & Afbeeldingen) Then
-                        _currentTheme.greenScreen = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
+                        _currentTheme.GreenScreen = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
                     Else
-                        MsgBox(getLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
+                        MsgBox(GetLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
                     End If
                 End If
             End With
@@ -383,9 +412,9 @@ Public Class FrmTheme
                 .InitialDirectory = CurDir() & "\" & Afbeeldingen & "\"
                 If .ShowDialog() = DialogResult.OK Then
                     If Path.GetDirectoryName(.FileName).StartsWith(CurDir() & "\" & Afbeeldingen) Then
-                        _currentTheme.redScreen = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
+                        _currentTheme.RedScreen = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
                     Else
-                        MsgBox(getLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
+                        MsgBox(GetLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
                     End If
                 End If
             End With
@@ -402,29 +431,29 @@ Public Class FrmTheme
     End Sub
 
     Private Sub picAnswer_Click(sender As Object, e As EventArgs) Handles picAnswer.Click
-        picAnswer.Image = _currentTheme.imgButtonClick
-        If _currentTheme.colorClickEnabled Then
-            lAnswer.ForeColor = _currentTheme.colorClick
+        picAnswer.Image = _currentTheme.ImgButtonClick
+        If _currentTheme.ColorClickEnabled Then
+            lAnswer.ForeColor = _currentTheme.ColorClick
         End If
         timerButton.Start()
     End Sub
 
     Private Sub picAnswer_MouseEnter(sender As Object, e As EventArgs) Handles picAnswer.MouseEnter
-        If _currentTheme.buttonHoverEnabled Then
-            picAnswer.Image = _currentTheme.imgButtonHover
+        If _currentTheme.ButtonHoverEnabled Then
+            picAnswer.Image = _currentTheme.ImgButtonHover
         End If
     End Sub
 
     Private Sub picAnswer_MouseLeave(sender As Object, e As EventArgs) Handles picAnswer.MouseLeave
-        If _currentTheme.buttonHoverEnabled Then
-            picAnswer.Image = _currentTheme.imgButton
+        If _currentTheme.ButtonHoverEnabled Then
+            picAnswer.Image = _currentTheme.ImgButton
         End If
     End Sub
 
     Private Sub timerButton_Tick(sender As Object, e As EventArgs) Handles timerButton.Tick
-        picAnswer.Image = _currentTheme.imgButton
-        If _currentTheme.colorClickEnabled Then
-            lAnswer.ForeColor = _currentTheme.colorAnswers
+        picAnswer.Image = _currentTheme.ImgButton
+        If _currentTheme.ColorClickEnabled Then
+            lAnswer.ForeColor = _currentTheme.ColorAnswers
         End If
         timerButton.Stop()
     End Sub
@@ -434,7 +463,7 @@ Public Class FrmTheme
             objStreamWriter.Write(JsonConvert.SerializeObject(_currentTheme, Formatting.Indented))
             objStreamWriter.Close()
             _saved = True
-            If messageBox Then MsgBox(getLang("SavedSuccess"), MsgBoxStyle.Information)
+            If messageBox Then MsgBox(GetLang("SavedSuccess"), MsgBoxStyle.Information)
             ReloadExamples()
         Catch ex As Exception
             MsgBox(ex.ToString(), MsgBoxStyle.Exclamation)
@@ -478,40 +507,40 @@ Public Class FrmTheme
     End Sub
 
     Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
-        _currentTheme.name = txtName.Text
+        _currentTheme.Name = txtName.Text
         Me.Text = txtName.Text & ".widmthema - WIDM Exam"
     End Sub
 
     Private Sub txtAuthor_TextChanged(sender As Object, e As EventArgs) Handles txtAuthor.TextChanged
-        _currentTheme.author = txtAuthor.Text
+        _currentTheme.Author = txtAuthor.Text
     End Sub
 
     Private Sub rHover_CheckedChanged(sender As Object, e As EventArgs) Handles rHover.CheckedChanged
         btnButtonHover.Enabled = rHover.Checked
-        _currentTheme.buttonHoverEnabled = rHover.Checked
+        _currentTheme.ButtonHoverEnabled = rHover.Checked
     End Sub
 
     Private Sub comboStyle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboStyle.SelectedIndexChanged
-        _currentTheme.introStyle = CType(comboStyle.SelectedValue, Theme.Style)
+        _currentTheme.IntroStyle = CType(comboStyle.SelectedValue, Theme.Style)
     End Sub
 
     Private Sub rBackgroundTest_CheckedChanged(sender As Object, e As EventArgs) Handles rBackgroundTest.CheckedChanged
         btnBackgroundImage.Enabled = rBackgroundTest.Checked
-        _currentTheme.backgroundTestEnabled = rBackgroundTest.Checked
+        _currentTheme.BackgroundTestEnabled = rBackgroundTest.Checked
     End Sub
 
     Private Sub rBackgroundIntro_CheckedChanged(sender As Object, e As EventArgs) Handles rBackgroundIntro.CheckedChanged
         btnBackgroundImageIntro.Enabled = rBackgroundIntro.Checked
-        _currentTheme.backgroundIntroEnabled = rBackgroundIntro.Checked
+        _currentTheme.BackgroundIntroEnabled = rBackgroundIntro.Checked
     End Sub
 
     Private Sub btnIntroTextfield_Click(sender As Object, e As EventArgs) Handles btnIntroTextfield.Click
-        FontIntroTextfield.Font = _currentTheme.fontIntroTextfield
-        FontIntroTextfield.Color = _currentTheme.colorIntroTextfield
+        FontIntroTextfield.Font = _currentTheme.FontIntroTextfield
+        FontIntroTextfield.Color = _currentTheme.ColorIntroTextfield
         Try
             If FontIntroTextfield.ShowDialog() = DialogResult.OK Then
-                _currentTheme.fontIntroTextfield = FontIntroTextfield.Font
-                _currentTheme.colorIntroTextfield = FontIntroTextfield.Color
+                _currentTheme.FontIntroTextfield = FontIntroTextfield.Font
+                _currentTheme.ColorIntroTextfield = FontIntroTextfield.Color
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -525,37 +554,37 @@ Public Class FrmTheme
 
     Private Sub rLogoQuestion_CheckedChanged(sender As Object, e As EventArgs) Handles rLogoQuestion.CheckedChanged
         btnLogoQuestion.Enabled = rLogoQuestion.Checked
-        _currentTheme.logoTestEnabled = rLogoQuestion.Checked
+        _currentTheme.LogoTestEnabled = rLogoQuestion.Checked
     End Sub
 
     Private Sub rLogoIntro_CheckedChanged(sender As Object, e As EventArgs) Handles rLogoIntro.CheckedChanged
         btnLogoIntro.Enabled = rLogoIntro.Checked
-        _currentTheme.logoIntroEnabled = rLogoIntro.Checked
+        _currentTheme.LogoIntroEnabled = rLogoIntro.Checked
     End Sub
 
     Private Sub rMusicTest_CheckedChanged(sender As Object, e As EventArgs) Handles rMusicTest.CheckedChanged
         txtMusicTest.Enabled = rMusicTest.Checked
-        _currentTheme.musicTestEnabled = rMusicTest.Checked
+        _currentTheme.MusicTestEnabled = rMusicTest.Checked
     End Sub
 
     Private Sub rMusicExecution_CheckedChanged(sender As Object, e As EventArgs) Handles rMusicExecution.CheckedChanged
         txtMusicExecution.Enabled = rMusicExecution.Checked
-        _currentTheme.musicExecutionEnabled = rMusicExecution.Checked
+        _currentTheme.MusicExecutionEnabled = rMusicExecution.Checked
     End Sub
 
     Private Sub txtMusicTest_TextChanged(sender As Object, e As EventArgs) Handles txtMusicTest.TextChanged
-        _currentTheme.musicTest = txtMusicTest.Text
+        _currentTheme.MusicTest = txtMusicTest.Text
     End Sub
 
     Private Sub txtMusicExecution_TextChanged(sender As Object, e As EventArgs) Handles txtMusicExecution.TextChanged
-        _currentTheme.musicExecution = txtMusicExecution.Text
+        _currentTheme.MusicExecution = txtMusicExecution.Text
     End Sub
 
     Private Sub btnColorClick_Click(sender As Object, e As EventArgs) Handles btnColorClick.Click
-        ColorClick.Color = _currentTheme.colorClick
+        ColorClick.Color = _currentTheme.ColorClick
         Try
             If ColorClick.ShowDialog() = DialogResult.OK Then
-                _currentTheme.colorClick = ColorClick.Color
+                _currentTheme.ColorClick = ColorClick.Color
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -565,12 +594,12 @@ Public Class FrmTheme
 
     Private Sub rColorClick_CheckedChanged(sender As Object, e As EventArgs) Handles rColorClick.CheckedChanged
         btnColorClick.Enabled = rColorClick.Checked
-        _currentTheme.colorClickEnabled = rColorClick.Checked
+        _currentTheme.ColorClickEnabled = rColorClick.Checked
     End Sub
 
     Private Sub rQuestionBackground_CheckedChanged(sender As Object, e As EventArgs) Handles rQuestionBackground.CheckedChanged
         btnQuestionBackground.Enabled = rQuestionBackground.Checked
-        _currentTheme.questionBackgroundEnabled = rQuestionBackground.Checked
+        _currentTheme.QuestionBackgroundEnabled = rQuestionBackground.Checked
     End Sub
 
     Private Sub btnQuestionBackground_Click(sender As Object, e As EventArgs) Handles btnQuestionBackground.Click
@@ -579,9 +608,9 @@ Public Class FrmTheme
                 .InitialDirectory = CurDir() & "\" & Afbeeldingen & "\"
                 If .ShowDialog() = DialogResult.OK Then
                     If Path.GetDirectoryName(.FileName).StartsWith(CurDir() & "\" & Afbeeldingen) Then
-                        _currentTheme.questionBackground = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
+                        _currentTheme.QuestionBackground = .FileName.Replace(Path.GetDirectoryName(CurDir() & "\" & Afbeeldingen & "\"), "")
                     Else
-                        MsgBox(getLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
+                        MsgBox(GetLang("WrongFolderAfbeelding"), MsgBoxStyle.Exclamation)
                     End If
                 End If
             End With
@@ -593,7 +622,7 @@ Public Class FrmTheme
     End Sub
 
     Private Sub comboAlignment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboAlignment.SelectedIndexChanged
-        _currentTheme.questionAlignment = CType(comboAlignment.SelectedValue, ContentAlignment)
+        _currentTheme.QuestionAlignment = CType(comboAlignment.SelectedValue, ContentAlignment)
     End Sub
 
     Private Sub btnMusicTest_Click(sender As Object, e As EventArgs) Handles btnMusicTest.Click
@@ -602,7 +631,7 @@ Public Class FrmTheme
             If Path.GetDirectoryName(OpenMusicTest.FileName) = CurDir() & "\Geluid" Then
                 txtMusicTest.Text = OpenMusicTest.SafeFileName
             Else
-                MsgBox(getLang("WrongFolderGeluid"), MsgBoxStyle.Exclamation)
+                MsgBox(GetLang("WrongFolderGeluid"), MsgBoxStyle.Exclamation)
             End If
         End If
     End Sub
@@ -613,14 +642,14 @@ Public Class FrmTheme
             If Path.GetDirectoryName(OpenMusicExecution.FileName) = CurDir() & "\Geluid" Then
                 txtMusicExecution.Text = OpenMusicExecution.SafeFileName
             Else
-                MsgBox(getLang("WrongFolderGeluid"), MsgBoxStyle.Exclamation)
+                MsgBox(GetLang("WrongFolderGeluid"), MsgBoxStyle.Exclamation)
             End If
         End If
     End Sub
 
     Private Sub FrmTheme_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If _saved = False Then
-            Dim result = MsgBox(getLang("SaveChanges"), vbYesNoCancel Or MsgBoxStyle.Question)
+            Dim result = MsgBox(GetLang("SaveChanges"), vbYesNoCancel Or MsgBoxStyle.Question)
             If result = MsgBoxResult.Yes Then
                 Save(False)
             ElseIf result = MsgBoxResult.Cancel Then
@@ -638,52 +667,52 @@ Public Class FrmTheme
             Dim geluid = "Geluid\"
             Using zip As ZipFile = New ZipFile()
                 'zip.AddDirectoryByName("Thema's")
-                zip.AddFile(CurDir() & "\Thema's\" & _currentTheme.name & ".widmthema", "\Thema's")
+                zip.AddFile(CurDir() & "\Thema's\" & _currentTheme.Name & ".widmthema", "\Thema's")
 
                 'zip.AddDirectoryByName("Afbeeldingen")
-                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.logoTest, "\", "/")) Then
-                    If _currentTheme.logoTestEnabled Then zip.AddFile(rootDir & _currentTheme.logoTest, afbeeldingen & Path.GetDirectoryName(_currentTheme.logoTest))
+                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.LogoTest, "\", "/")) Then
+                    If _currentTheme.LogoTestEnabled Then zip.AddFile(rootDir & _currentTheme.LogoTest, afbeeldingen & Path.GetDirectoryName(_currentTheme.LogoTest))
                 End If
                 'MsgBox(zip.EntryFileNames(1).ToString())
                 'MsgBox(Replace(afbeeldingen & CurrentTheme.logoIntro, "\", "/"))
-                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.logoIntro, "\", "/")) Then
-                    If _currentTheme.logoIntroEnabled Then zip.AddFile(rootDir & _currentTheme.logoIntro, afbeeldingen & Path.GetDirectoryName(_currentTheme.logoIntro))
+                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.LogoIntro, "\", "/")) Then
+                    If _currentTheme.LogoIntroEnabled Then zip.AddFile(rootDir & _currentTheme.LogoIntro, afbeeldingen & Path.GetDirectoryName(_currentTheme.LogoIntro))
                 End If
 
-                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.backgroundTest, "\", "/")) Then
-                    If _currentTheme.backgroundTestEnabled Then zip.AddFile(rootDir & _currentTheme.backgroundTest, afbeeldingen & Path.GetDirectoryName(_currentTheme.backgroundTest))
+                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.BackgroundTest, "\", "/")) Then
+                    If _currentTheme.BackgroundTestEnabled Then zip.AddFile(rootDir & _currentTheme.BackgroundTest, afbeeldingen & Path.GetDirectoryName(_currentTheme.BackgroundTest))
                 End If
-                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.backgroundIntro, "\", "/")) Then
-                    If _currentTheme.backgroundIntroEnabled Then zip.AddFile(rootDir & _currentTheme.backgroundIntro, afbeeldingen & Path.GetDirectoryName(_currentTheme.backgroundIntro))
-                End If
-
-                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.questionBackground, "\", "/")) Then
-                    If _currentTheme.questionBackgroundEnabled Then zip.AddFile(rootDir & _currentTheme.questionBackground, afbeeldingen & Path.GetDirectoryName(_currentTheme.questionBackground))
+                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.BackgroundIntro, "\", "/")) Then
+                    If _currentTheme.BackgroundIntroEnabled Then zip.AddFile(rootDir & _currentTheme.BackgroundIntro, afbeeldingen & Path.GetDirectoryName(_currentTheme.BackgroundIntro))
                 End If
 
-                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.button, "\", "/")) Then
-                    zip.AddFile(rootDir & _currentTheme.button, afbeeldingen & Path.GetDirectoryName(_currentTheme.button))
-                End If
-                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.buttonClick, "\", "/")) Then
-                    zip.AddFile(rootDir & _currentTheme.buttonClick, afbeeldingen & Path.GetDirectoryName(_currentTheme.buttonClick))
-                End If
-                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.buttonHover, "\", "/")) Then
-                    If _currentTheme.buttonHoverEnabled Then zip.AddFile(rootDir & _currentTheme.buttonHover, afbeeldingen & Path.GetDirectoryName(_currentTheme.buttonHover))
+                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.QuestionBackground, "\", "/")) Then
+                    If _currentTheme.QuestionBackgroundEnabled Then zip.AddFile(rootDir & _currentTheme.QuestionBackground, afbeeldingen & Path.GetDirectoryName(_currentTheme.QuestionBackground))
                 End If
 
-                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.greenScreen, "\", "/")) Then
-                    zip.AddFile(rootDir & _currentTheme.greenScreen, afbeeldingen & Path.GetDirectoryName(_currentTheme.greenScreen))
+                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.Button, "\", "/")) Then
+                    zip.AddFile(rootDir & _currentTheme.Button, afbeeldingen & Path.GetDirectoryName(_currentTheme.Button))
                 End If
-                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.redScreen, "\", "/")) Then
-                    zip.AddFile(rootDir & _currentTheme.redScreen, afbeeldingen & Path.GetDirectoryName(_currentTheme.redScreen))
+                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.ButtonClick, "\", "/")) Then
+                    zip.AddFile(rootDir & _currentTheme.ButtonClick, afbeeldingen & Path.GetDirectoryName(_currentTheme.ButtonClick))
+                End If
+                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.ButtonHover, "\", "/")) Then
+                    If _currentTheme.ButtonHoverEnabled Then zip.AddFile(rootDir & _currentTheme.ButtonHover, afbeeldingen & Path.GetDirectoryName(_currentTheme.ButtonHover))
+                End If
+
+                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.GreenScreen, "\", "/")) Then
+                    zip.AddFile(rootDir & _currentTheme.GreenScreen, afbeeldingen & Path.GetDirectoryName(_currentTheme.GreenScreen))
+                End If
+                If Not zip.ContainsEntry(Replace(afbeeldingen & _currentTheme.RedScreen, "\", "/")) Then
+                    zip.AddFile(rootDir & _currentTheme.RedScreen, afbeeldingen & Path.GetDirectoryName(_currentTheme.RedScreen))
                 End If
 
                 'zip.AddDirectoryByName("Geluid")
-                If Not zip.ContainsEntry(Replace(geluid & _currentTheme.musicTest, "\", "/")) Then
-                    If _currentTheme.musicTestEnabled Then zip.AddFile(rootDirGeluid & _currentTheme.musicTest, geluid)
+                If Not zip.ContainsEntry(Replace(geluid & _currentTheme.MusicTest, "\", "/")) Then
+                    If _currentTheme.MusicTestEnabled Then zip.AddFile(rootDirGeluid & _currentTheme.MusicTest, geluid)
                 End If
-                If Not zip.ContainsEntry(Replace(geluid & _currentTheme.musicExecution, "\", "/")) Then
-                    If _currentTheme.musicExecutionEnabled Then zip.AddFile(rootDirGeluid & _currentTheme.musicExecution, geluid)
+                If Not zip.ContainsEntry(Replace(geluid & _currentTheme.MusicExecution, "\", "/")) Then
+                    If _currentTheme.MusicExecutionEnabled Then zip.AddFile(rootDirGeluid & _currentTheme.MusicExecution, geluid)
                 End If
 
                 'Dim temp As String = ""
@@ -699,9 +728,17 @@ Public Class FrmTheme
     End Sub
 
     Private Sub ToolStripExport_Click(sender As Object, e As EventArgs) Handles ToolStripExport.Click
-        SaveExport.FileName = _currentTheme.name 
+        SaveExport.FileName = _currentTheme.Name
         If SaveExport.ShowDialog() = DialogResult.OK Then
             Export(SaveExport.FileName)
         End If
+    End Sub
+
+    Private Sub comboLogoPosition_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboLogoPosition.SelectedIndexChanged
+        _currentTheme.LogoTestPosition = CType(comboLogoPosition.SelectedValue, Theme.Position)
+    End Sub
+
+    Private Sub comboIntroLogo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboIntroPosition.SelectedIndexChanged
+        _currentTheme.LogoIntroPosition = CType(comboIntroPosition.SelectedValue, Theme.Position)
     End Sub
 End Class

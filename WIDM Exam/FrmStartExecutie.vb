@@ -100,31 +100,31 @@ Public Class FrmStartExecutie
             ' If FrmOpenTest.listKandidaten.Items.Contains(TextBox1.Text) Then
             'MessageBox.Show(FrmOpenTest.listviewExecutie.Items(0).SubItems(3).Text)
             'loadMusic()
-           
-                
-                    If CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults(TextBox1.Text).Screen = FrmOpenTest.Rood Then
-                        FrmExecutie.BackgroundImage = CurrentTheme.ImgRedScreen
 
-                        If FrmOpenTest.rAfscheidsmuziek.Checked Then
-                            My.Computer.Audio.Stop()
-                            'If FrmOpenTest.rMusic.Checked And FrmOpenTest.rRood.Checked And FrmOpenTest.listExecutie.Items.Contains(TextBox1.Text) Then
-                            Timer2.Start()
-                            'End If
-                        End If
 
-                    ElseIf CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults(TextBox1.Text).Screen = FrmOpenTest.Groen Then
-                        FrmExecutie.BackgroundImage = CurrentTheme.ImgGreenScreen
-                    Else
-                        Try
-                            FrmExecutie.BackgroundImage = Image.FromFile(CurrentGroup.Screens(CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults(TextBox1.Text).Screen).Location)
-                        Catch ex As Exception
-                            Log(ex.ToString())
-                            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
-                        End Try
-                        
+            If CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults(TextBox1.Text).Screen = FrmOpenTest.Rood Then
+                FrmExecutie.BackgroundImage = CurrentTheme.ImgRedScreen
 
-                    End If
-            
+                If FrmOpenTest.rAfscheidsmuziek.Checked Then
+                    My.Computer.Audio.Stop()
+                    'If FrmOpenTest.rMusic.Checked And FrmOpenTest.rRood.Checked And FrmOpenTest.listExecutie.Items.Contains(TextBox1.Text) Then
+                    Timer2.Start()
+                    'End If
+                End If
+
+            ElseIf CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults(TextBox1.Text).Screen = FrmOpenTest.Groen Then
+                FrmExecutie.BackgroundImage = CurrentTheme.ImgGreenScreen
+            Else
+                Try
+                    FrmExecutie.BackgroundImage = Image.FromFile(CurrentGroup.Screens(CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults(TextBox1.Text).Screen).Location)
+                Catch ex As Exception
+                    Log(ex.ToString())
+                    MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+                End Try
+
+
+            End If
+
             'Dim test As String
             ''FrmOpenTest.listviewExecutie.Items.Item(TextBox1.Text)
             'For Each item In FrmOpenTest.listviewExecutie.Items
@@ -158,7 +158,7 @@ Public Class FrmStartExecutie
         Catch ex As Exception
             MsgBox(ex.Message & vbCrLf & "Controleer of u namen heeft geselecteerd voor de executie.",
                    MsgBoxStyle.Critical)
-                   Log(ex.ToString())
+            Log(ex.ToString())
             Close()
         End Try
     End Sub
@@ -202,6 +202,8 @@ Public Class FrmStartExecutie
         Panel2.Left = (Me.Width / 2) - (Panel2.Width / 2)
         Panel3.Top = (Me.Height / 2) - (Panel3.Height / 2)
         Panel3.Left = (Me.Width / 2) - (Panel3.Width / 2)
+        pnlBelgium.Top = (Me.Height / 2) - (pnlBelgium.Height / 2)
+        pnlBelgium.Left = (Me.Width / 2) - (pnlBelgium.Width / 2)
         If FrmOpenTest.rGroep.Checked Then
             If FrmOpenTest.rCombobox.Checked Then
                 If My.Settings.language = "en" Then
@@ -242,6 +244,9 @@ Public Class FrmStartExecutie
         Label2.Font = CurrentTheme.FontIntroText
         TextBox2.Font = CurrentTheme.FontIntroTextfield
         Button1.Font = CurrentTheme.FontIntroText
+        'Belgium
+        lNameBelgium.Font = CurrentTheme.FontIntroText
+        TextBox4.Font = CurrentTheme.FontIntroTextfield
 
         If CurrentTheme.MusicExecutionEnabled Then
             WMP2.URL = CurDir() & "\Geluid\" & CurrentTheme.MusicExecution
@@ -263,14 +268,22 @@ Public Class FrmStartExecutie
             Panel1.Visible = False
             Panel2.Visible = True
             Panel3.Visible = False
+            pnlBelgium.Visible = False
         ElseIf CurrentTheme.IntroStyle = Theme.Style.Us Then
             Panel1.Visible = False
             Panel2.Visible = False
             Panel3.Visible = True
+            pnlBelgium.Visible = False
+        ElseIf CurrentTheme.IntroStyle = Theme.Style.Belgium Then
+            Panel1.Visible = False
+            Panel2.Visible = False
+            Panel3.Visible = False
+            pnlBelgium.Visible = True
         Else
             Panel1.Visible = True
             Panel2.Visible = False
             Panel3.Visible = False
+            pnlBelgium.Visible = False
         End If
         Button1.FlatStyle = FlatStyle.System
         SetWindowTheme(Button1.Handle, "BUTTON", "")
@@ -575,5 +588,37 @@ Public Class FrmStartExecutie
     End Sub
 
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+    End Sub
+
+    Private Sub tmToBack_Tick(sender As Object, e As EventArgs) Handles tmToBack.Tick
+        tmToBack.Stop()
+        If CurrentTheme.LogoIntroPosition = Theme.Position.TopRight Then
+            PictureBox1.Location = New Point(Me.Width - PictureBox1.Size.Width - 50, PictureBox1.Location.Y)
+        End If
+    End Sub
+
+    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
+
+    End Sub
+
+    Private Sub TextBox4_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox4.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Dim response
+            If My.Settings.language = "en" Then
+                response = MsgBox("Are you sure you want to exit the elimination?",
+                                  MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
+            Else
+                response = MsgBox("Weet u zeker dat u de executie wilt afsluiten?",
+                                  MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
+            End If
+            If response = MsgBoxResult.Yes Then
+                Close()
+            End If
+        End If
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            TextBox1.Text = TextBox4.Text
+            PressedEnter()
+        End If
     End Sub
 End Class
