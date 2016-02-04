@@ -246,6 +246,27 @@
   <data name="&gt;&gt;grpGeneral.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="comboLogoPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 102</value>
+  </data>
+  <data name="comboLogoPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 21</value>
+  </data>
+  <data name="comboLogoPosition.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;comboLogoPosition.Name" xml:space="preserve">
+    <value>comboLogoPosition</value>
+  </data>
+  <data name="&gt;&gt;comboLogoPosition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboLogoPosition.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;comboLogoPosition.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="rQuestionBackground.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -274,7 +295,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;rQuestionBackground.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnQuestionBackground.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -301,7 +322,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnQuestionBackground.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lQuestionBackground.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 72</value>
@@ -328,7 +349,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lQuestionBackground.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="comboAlignment.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 44</value>
@@ -349,7 +370,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;comboAlignment.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lAlignment.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 45</value>
@@ -376,7 +397,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lAlignment.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="rColorClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -403,7 +424,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;rColorClick.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnColorClick.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -430,7 +451,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnColorClick.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lColorClick.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 217</value>
@@ -457,7 +478,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lColorClick.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="rLogoQuestion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -484,7 +505,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;rLogoQuestion.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="rBackgroundTest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -511,7 +532,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;rBackgroundTest.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="rHover.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -538,7 +559,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;rHover.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnButtonNormal.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 187</value>
@@ -562,7 +583,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnButtonNormal.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="btnButtonHover.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -589,7 +610,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnButtonHover.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnButtonClick.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 187</value>
@@ -613,7 +634,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnButtonClick.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="lButtonAnswers.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 188</value>
@@ -640,7 +661,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lButtonAnswers.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="btnBackgroundImage.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -667,7 +688,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnBackgroundImage.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="btnFontAnswers.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 158</value>
@@ -691,7 +712,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnFontAnswers.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="lFontAnswers.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 159</value>
@@ -718,7 +739,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lFontAnswers.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="btnBackgroundColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 129</value>
@@ -742,7 +763,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnBackgroundColor.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="lBackgroundColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 130</value>
@@ -769,7 +790,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lBackgroundColor.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="btnLogoQuestion.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -796,7 +817,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnLogoQuestion.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="lLogo.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 101</value>
@@ -808,7 +829,7 @@
     <value>6</value>
   </data>
   <data name="lLogo.Text" xml:space="preserve">
-    <value>Logo voor vraag:</value>
+    <value>Logo bij vraag:</value>
   </data>
   <data name="lLogo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -823,7 +844,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lLogo.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="btnFontQuestion.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 15</value>
@@ -847,7 +868,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnFontQuestion.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="lFont.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 16</value>
@@ -874,7 +895,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lFont.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="grpQuestion.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 112</value>
@@ -1021,7 +1042,7 @@
     <value>146, 41</value>
   </data>
   <data name="lQuestion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 48</value>
+    <value>355, 48</value>
   </data>
   <data name="lQuestion.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1097,6 +1118,111 @@
   </data>
   <data name="pnlExampleIntro.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
+  </data>
+  <data name="pnlBelgium.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="PictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 68</value>
+  </data>
+  <data name="PictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 2</value>
+  </data>
+  <data name="PictureBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.Name" xml:space="preserve">
+    <value>PictureBox2</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.Parent" xml:space="preserve">
+    <value>pnlBelgium</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TextBox4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 27.75pt</value>
+  </data>
+  <data name="TextBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 27</value>
+  </data>
+  <data name="TextBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 42</value>
+  </data>
+  <data name="TextBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.Name" xml:space="preserve">
+    <value>TextBox4</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.Parent" xml:space="preserve">
+    <value>pnlBelgium</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lNameBelgium.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lNameBelgium.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 27.75pt</value>
+  </data>
+  <data name="lNameBelgium.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lNameBelgium.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="lNameBelgium.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 42</value>
+  </data>
+  <data name="lNameBelgium.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lNameBelgium.Text" xml:space="preserve">
+    <value>Naam: </value>
+  </data>
+  <data name="&gt;&gt;lNameBelgium.Name" xml:space="preserve">
+    <value>lNameBelgium</value>
+  </data>
+  <data name="&gt;&gt;lNameBelgium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lNameBelgium.Parent" xml:space="preserve">
+    <value>pnlBelgium</value>
+  </data>
+  <data name="&gt;&gt;lNameBelgium.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlBelgium.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 49</value>
+  </data>
+  <data name="pnlBelgium.Size" type="System.Drawing.Size, System.Drawing">
+    <value>438, 100</value>
+  </data>
+  <data name="pnlBelgium.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.Name" xml:space="preserve">
+    <value>pnlBelgium</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.Parent" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="pnlOld.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -1219,7 +1345,7 @@
     <value>3</value>
   </data>
   <data name="pnlOld.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 264</value>
+    <value>100, 263</value>
   </data>
   <data name="pnlOld.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 128</value>
@@ -1240,7 +1366,7 @@
     <value>pnlExampleIntro</value>
   </data>
   <data name="&gt;&gt;pnlOld.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pnlUS.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -1309,7 +1435,7 @@
     <value>1</value>
   </data>
   <data name="pnlUS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 135</value>
+    <value>247, 134</value>
   </data>
   <data name="pnlUS.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 159</value>
@@ -1330,7 +1456,7 @@
     <value>pnlExampleIntro</value>
   </data>
   <data name="&gt;&gt;pnlUS.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="pnlNew.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -1426,7 +1552,7 @@
     <value>2</value>
   </data>
   <data name="pnlNew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 206</value>
+    <value>157, 205</value>
   </data>
   <data name="pnlNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>359, 82</value>
@@ -1444,7 +1570,7 @@
     <value>pnlExampleIntro</value>
   </data>
   <data name="&gt;&gt;pnlNew.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="picLogoIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>
@@ -1468,7 +1594,7 @@
     <value>pnlExampleIntro</value>
   </data>
   <data name="&gt;&gt;picLogoIntro.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="pnlExampleIntro.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1623,6 +1749,27 @@
   <data name="&gt;&gt;grpExample.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="comboIntroPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 75</value>
+  </data>
+  <data name="comboIntroPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 21</value>
+  </data>
+  <data name="comboIntroPosition.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;comboIntroPosition.Name" xml:space="preserve">
+    <value>comboIntroPosition</value>
+  </data>
+  <data name="&gt;&gt;comboIntroPosition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboIntroPosition.Parent" xml:space="preserve">
+    <value>grpIntro</value>
+  </data>
+  <data name="&gt;&gt;comboIntroPosition.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="rLogoIntro.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1648,7 +1795,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;rLogoIntro.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnIntroTextfield.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 44</value>
@@ -1672,7 +1819,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnIntroTextfield.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lIntroTextfield.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 45</value>
@@ -1699,7 +1846,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;lIntroTextfield.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="rBackgroundIntro.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1726,7 +1873,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;rBackgroundIntro.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnFontIntroText.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 15</value>
@@ -1750,7 +1897,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnFontIntroText.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="comboStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 131</value>
@@ -1771,7 +1918,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;comboStyle.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lFontIntroText.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 16</value>
@@ -1798,7 +1945,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;lFontIntroText.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 130</value>
@@ -1825,7 +1972,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;lStyle.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnBackgroundImageIntro.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1852,7 +1999,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnBackgroundImageIntro.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lLogoIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 74</value>
@@ -1864,7 +2011,7 @@
     <value>18</value>
   </data>
   <data name="lLogoIntro.Text" xml:space="preserve">
-    <value>Logo linksboven:</value>
+    <value>Logo:</value>
   </data>
   <data name="lLogoIntro.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -1879,7 +2026,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;lLogoIntro.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnBackgroundColorIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 102</value>
@@ -1903,7 +2050,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnBackgroundColorIntro.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnLogoIntro.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1930,7 +2077,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnLogoIntro.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="btnBackgroundIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 103</value>
@@ -1957,7 +2104,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnBackgroundIntro.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="grpIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 371</value>
@@ -2158,17 +2305,17 @@
     <value>
         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
-        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
+        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
         AABJRU5ErkJggg==
 </value>
   </data>
@@ -2184,16 +2331,16 @@
   <data name="ToolStripOpen.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAISSURBVDhP3Y/NaxNBHIbn4L03/wQP1tSP2Kh48CKIIHgR
-        PagnEbQElAgFRdAe0kaESGnsQcRSLRVsrfiBIB6Cp8bUdrfN2myTtHbbGrrBZr8/srvZ19l2lcaDV8Fh
-        Hmbm8Lzvb8h/subfRVnhzSln5Q/K7w8vVl527Fx8EW1r4WO0LZs9tiPUCck9i9m+3wTg0x2wdXetGtay
-        XY3VyfP2L6rT1yxhMiHwrw+cDXVCuFedsu9ZsNfSMJb6YSwPwRTG4bsSzdLhexpF2Xq7dYii2OAnYlyo
-        E1Ia3a82HYXKGeiVAahfe7CR70JtKg6pkIQ0dxcSewt1ppuSoJOJKE0c1EKdBox1Oq65DonLoD6Tgvjp
-        BkzxM21Vw/bglH9PEHyPGdtrhXowwSFn8/9Nm2ICnrEpeiYPu5qBtZqE+a0bRvkKdP4CPL0IZmR7QCbW
-        8D0TnpqDK32A82McjfXHVLwPc/k2zEocxsJF6POnoRWOw9NYMA+2BeQexeymo8LZeIuGOEJbH8Jaoa1L
-        Qetl6MVz0LiTUGePQpnZB1f90hoQPHxHovIw7O/9sIQeKidglC5R+QxtPQGVPQJlugPy1C4akG8NWLgX
-        qZoyJ3PZ5029/ARaaRAan4ZW7IXK3YFauAllLgGFjUNhroLPP/W5dFQOdUL43vbrfGrPKNe3u8akItZf
-        6YtYs6mIwifbB0L9ny5CfgJ3LecySh/iVQAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIQSURBVDhP3Y/LS1RRHMfPor27/oQW2dhjcipatAkiCNpE
+        LapVBCUDxQRCEZSL0YlgQpxaRBSSGKQZPQiixdDKUdN7dW7OdWY0R23wDjn3/X58O1dv4bRoG3Q4H845
+        i8/3+zvkP1nz7+Ns7e0pZ+UPKh8OL1ZfdexcfBlva+FTvC2fP7Yj0gkpPE9YQeADCOgO2bq7ZgNr+S57
+        dfy89Yv69DWzNp6q8W8OnI10QrjXnVLgmbDWstCX+qEvP4NRG0XgijRLQ+CpFHnr7TYhCILNjyW4SCek
+        PLxf8R2Zyjlo1QEoX3uwMdmFxlQSYjENce4uRPYWmkw3JUUnE1AeO6hGOg0Y6XRcYx0il0NzJgPh8w0Y
+        wgRtVaL28JR+TxB+jxnZa0Z6OMEhZ/P/vkUxAE/fFD2Dh1XPwVxNw/jWDb1yBRp/AZ5WAjO0PSCXsAPP
+        gKcU4Iof4fwYhb3+hIr3YSzfhlFNQl+4CG3+NNTicXgqC+bBtoDC44TlOwqcjXewhSHa+hDmCm1dClsv
+        Qyudg8qdhDJ7FPLMPrjKl9aA8BE4IpUHYX3vh1nroXIKevkSlc/Q1hNQ2COQpzsgTe2iAZOtAQv3YnVD
+        4qRi/oWvVZ5CLT+CymehlnqhcHegFG9CnktBZpOQmasoTQwGXDYuRTohfG/7dT6zZ5jr291gMjHzr/TF
+        zNlMTObT7QOR/k8XIT8Bc8znLrmmkUwAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ToolStripOpen.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2211,21 +2358,21 @@
   <data name="ToolStripExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMlSURBVDhPjZNdTJtlFMd7o4lemyVTkyWDmGUYjWgisJB1
-        MqDiOreYcGtiMpNFzYwx2S7URujGxkAIgc0EF4xSFBjhs2xsFih9VygrtENKgQK20JaP0vYFLLSUvT+f
-        AXfE6D85N0/O+Z3PR/VvcrVr09xtBa3C/nA1a97af/5vzfScPzTZqdW7O/KjK66fWLRfx3U3d+PPxpwy
-        d8Ppl/fdDspu//S5KePZC5NdBZ6Ao4qdeBBlc4H12Va2/B34+r/iyc/ZXscv2Z9bGzNe2A/b03T3uTy3
-        UTvgtX7HVuQJsAmKTDL8mOmWc2y5b5LwNbE+UYOn4xNGazOHRmrf0e4GTxrP1tkMWiU8ZSAWGiM818uc
-        TThabjBx/0tmey4Sc1cSc+iIe+6wvdDE6rAeV8N5bDXpDarJem1SiftIhEYIj1URsusJ9F3C017IUPUJ
-        tldHITYFKz0of9WA6zL4DSRn9NiqjiRV4x0fyE/j87Axzra/jTXHNWJOnbAr+NvP7L6x3A2+WpSJK8RM
-        apaN2ay5KrFUHJdV423vy083BeDvaQFxQcjElusGMdtFlrvOkJwuh5kyEpKG1e4Mlvo0LD38ENlZhqX8
-        GaAlX97ZBbhhXZQbHRKQByQ9VayZC0kMaJBNJ1h9lM+yKZeg8T2C7flEhq9jKT0mAE2n9wCiBWQbhHtF
-        v52w2IIy9Q3RQQ0rUg5LvTki+CQLzVn4flMLYDEW3WuyyvLjyYSSXBSbmxXZzSL7PVhqFoOqR/HdImTV
-        iMxqgl3ZzDdmMFeXTrD7MyJSMZLupbjK+av64YzpMpuBPgHxQERAAgZYqBOAalbMeSJzFvNN7xJoLSRs
-        LcHf+TXDlQVYvj9qFi0cf95Rl3Vh9E6mx9v/LTuRQTELu6jidxRvNYsPTolt5BIdLiVkLsJ5+yPM+hTv
-        QHHKF3bd4Rd3j+mZnLcyDz2+/fbVwZr0aEAqEkMVkKjE2thN5NFS3PUfI107smHRHy236l99ZT/soGzV
-        b6YNVrxhuK97XQmNVDB/7xJDP6ixXE2521+U+v9/pVSalveo5FivVJIqWfSpe3d/QCrVP4NEard267CN
-        AAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMmSURBVDhPjZNdSJtnFMdzs8F2OyjsAwpVRqljY24wtUjT
+        WTVzTdcy8HYw6KBso6MM2outYZrW1uoU0XrhimNVN7XiZ3S2ixrzNiY2auqMUaMu0SR+xCSvumhi7Pvb
+        U/VOxvaHc/Nwzu98Pqp/k7Ndm+Jqy2sV9oezWfPuwfN/a7b3wpGpTq3e1ZEbWXX+xJL9Fs4H2Zt/NmaV
+        uBrOvHbgdlh2+xcvTBvOXZzqynP7xyrYjQVQthbZmGtl29eBd+AKT3/O9Iz9kvmVpTHtpYOwfc10n89x
+        GbSDHst1tsNPgS1QZBKhJ8y0nGfbdYe4t4mNySrcHZ8zWpNuHal5X7sXPGU4V2ut0yqh6XqiwXFC833M
+        24Sj+TaTv3/DXO8loq5yomM6Yu577Cw2sTasx9lwAVtVaoNq6r42ocS8xIMjhMYrCNr1+Psv427Px1p5
+        kp21UYhOw2ovyl9V4LwKvnoSs3psFUcTqomOj+VnsQXYnGDH18b62E2iDp2wa/jaz+69sdIN3hqUyWtE
+        jWpWDJmsO8sxl52QVRNtH8nPtgTg7xkBcULQyLbzNlHbJVa6zpKYKYXZEuKShrXuNJb7NSw/+gTZUYK5
+        9DmgJVfe3QO4YEOUG7EKyEMS7grWTfnEBzXIxpOsPc5lxZhNwPAhgfZcwsO3MBcfF4CmM/sA0QKyDUJ9
+        ot9OWGpBmf6OyJCGVSmL5b4sEXyKxeYMvL+qBbAQs+5NWTVYfSquJJbE5uZEdpPI3gPLzWJQdSjeuwQt
+        GpFZTaArk4XGNOZrUwl0f0lYKkTSvRJTOe6rH80ar7Ll7xcQN4QFxF8Pi7UCUMmqKUdkzmCh6QP8rfmE
+        LEX4Or9luDwP8w/HTKKFEy+O1WZcHL2X7vYMfM9ueEjMwi6q+A3FU8nSw9NiG9lEhosJmgpwVH+KSZ/k
+        GSxM+tque/XlvWN6Lsfd9CNPqt+7MVSVGvFLBWKoAhKRWB+/gzxajKvuM6SbRzfN+mOlFv0brx+EHZat
+        8p2UobK363t0bynBkTIWei5j/VGN+UbSg4GC5P//K6XilJzHRcf7pKJkyaxP3r/7Q1Kp/gF1tWqw+5e5
+        UwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ToolStripExport.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">

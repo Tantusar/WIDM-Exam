@@ -41,7 +41,7 @@ Public Class FrmExecutie
         FrmStartExecutie.TextBox1.Text = ""
         FrmStartExecutie.TextBox2.Text = ""
         FrmStartExecutie.TextBox3.Text = ""
-
+        FrmStartExecutie.TextBox4.Text = ""
         Close()
     End Sub
 End Class

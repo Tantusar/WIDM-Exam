@@ -22,6 +22,7 @@ Partial Class FrmEnterName
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEnterName))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -39,11 +40,18 @@ Partial Class FrmEnterName
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.tmToBack = New System.Windows.Forms.Timer(Me.components)
+        Me.pnlBelgium = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.lNameBelgium = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout
         Me.Panel2.SuspendLayout
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.WMP1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel3.SuspendLayout
+        Me.pnlBelgium.SuspendLayout
+        CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'Panel1
@@ -154,11 +162,47 @@ Partial Class FrmEnterName
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(128,Byte),Integer))
         Me.Label5.Name = "Label5"
         '
+        'tmToBack
+        '
+        Me.tmToBack.Enabled = true
+        Me.tmToBack.Interval = 50
+        '
+        'pnlBelgium
+        '
+        resources.ApplyResources(Me.pnlBelgium, "pnlBelgium")
+        Me.pnlBelgium.Controls.Add(Me.PictureBox2)
+        Me.pnlBelgium.Controls.Add(Me.TextBox4)
+        Me.pnlBelgium.Controls.Add(Me.lNameBelgium)
+        Me.pnlBelgium.Name = "pnlBelgium"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.LightBlue
+        resources.ApplyResources(Me.PictureBox2, "PictureBox2")
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.TabStop = false
+        '
+        'TextBox4
+        '
+        Me.TextBox4.BackColor = System.Drawing.Color.Black
+        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
+        resources.ApplyResources(Me.TextBox4, "TextBox4")
+        Me.TextBox4.ForeColor = System.Drawing.Color.White
+        Me.TextBox4.Name = "TextBox4"
+        '
+        'lNameBelgium
+        '
+        resources.ApplyResources(Me.lNameBelgium, "lNameBelgium")
+        Me.lNameBelgium.BackColor = System.Drawing.Color.Transparent
+        Me.lNameBelgium.ForeColor = System.Drawing.Color.White
+        Me.lNameBelgium.Name = "lNameBelgium"
+        '
         'FrmEnterName
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
+        Me.Controls.Add(Me.pnlBelgium)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.WMP1)
@@ -176,6 +220,9 @@ Partial Class FrmEnterName
         CType(Me.WMP1,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel3.ResumeLayout(false)
         Me.Panel3.PerformLayout
+        Me.pnlBelgium.ResumeLayout(false)
+        Me.pnlBelgium.PerformLayout
+        CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub
@@ -195,5 +242,9 @@ End Sub
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
-
+    Friend WithEvents tmToBack As Timer
+    Friend WithEvents pnlBelgium As Panel
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents lNameBelgium As Label
 End Class

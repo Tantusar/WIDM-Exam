@@ -8,6 +8,12 @@
         NewStyle
         Old
         Us
+        Belgium
+    End Enum
+
+    Enum Position
+        TopLeft
+        TopRight
     End Enum
 
     Public Name As String
@@ -27,8 +33,10 @@
 
     Public LogoTestEnabled As Boolean
     Public LogoTest As String ' = Image.FromFile(CurDir() & "\" & name & "\logoTest.png")
+    Public LogoTestPosition As Position = Position.TopLeft
     Public LogoIntroEnabled As Boolean
     Public LogoIntro As String ' = Image.FromFile(CurDir() & "\" & name & "\logoIntro.png")
+    Public LogoIntroPosition As Position = Position.TopLeft
 
     Public BackgroundTestEnabled As Boolean
     Public BackgroundTest As String ' = Image.FromFile(CurDir() & "\" & name & "\backgroundTest.png")
