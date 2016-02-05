@@ -117,18 +117,90 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;txtAuthor.Name" xml:space="preserve">
+    <value>txtAuthor</value>
+  </data>
+  <data name="&gt;&gt;txtAuthor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAuthor.Parent" xml:space="preserve">
+    <value>grpGeneral</value>
+  </data>
+  <data name="&gt;&gt;txtAuthor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>grpGeneral</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
+    <value>txtName</value>
+  </data>
+  <data name="&gt;&gt;txtName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
+    <value>grpGeneral</value>
+  </data>
+  <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lName.Name" xml:space="preserve">
+    <value>lName</value>
+  </data>
+  <data name="&gt;&gt;lName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lName.Parent" xml:space="preserve">
+    <value>grpGeneral</value>
+  </data>
+  <data name="&gt;&gt;lName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="grpGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 28</value>
+  </data>
+  <data name="grpGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 78</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="grpGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="grpGeneral.Text" xml:space="preserve">
+    <value>Thema-instellingen</value>
+  </data>
+  <data name="&gt;&gt;grpGeneral.Name" xml:space="preserve">
+    <value>grpGeneral</value>
+  </data>
+  <data name="&gt;&gt;grpGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpGeneral.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpGeneral.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtAuthor.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtAuthor.Location" type="System.Drawing.Point, System.Drawing">
     <value>126, 42</value>
   </data>
   <data name="txtAuthor.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtAuthor.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -222,35 +294,347 @@
   <data name="&gt;&gt;lName.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="grpGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 28</value>
+  <data name="&gt;&gt;comboBackgroundTestSizeMode.Name" xml:space="preserve">
+    <value>comboBackgroundTestSizeMode</value>
   </data>
-  <data name="grpGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 78</value>
+  <data name="&gt;&gt;comboBackgroundTestSizeMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="grpGeneral.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;comboBackgroundTestSizeMode.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;comboBackgroundTestSizeMode.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="grpGeneral.Text" xml:space="preserve">
-    <value>Thema-instellingen</value>
+  <data name="&gt;&gt;comboLogoPosition.Name" xml:space="preserve">
+    <value>comboLogoPosition</value>
   </data>
-  <data name="&gt;&gt;grpGeneral.Name" xml:space="preserve">
-    <value>grpGeneral</value>
+  <data name="&gt;&gt;comboLogoPosition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;grpGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;comboLogoPosition.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
   </data>
-  <data name="&gt;&gt;grpGeneral.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;comboLogoPosition.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;grpGeneral.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rQuestionBackground.Name" xml:space="preserve">
+    <value>rQuestionBackground</value>
+  </data>
+  <data name="&gt;&gt;rQuestionBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rQuestionBackground.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;rQuestionBackground.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnQuestionBackground.Name" xml:space="preserve">
+    <value>btnQuestionBackground</value>
+  </data>
+  <data name="&gt;&gt;btnQuestionBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnQuestionBackground.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnQuestionBackground.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lQuestionBackground.Name" xml:space="preserve">
+    <value>lQuestionBackground</value>
+  </data>
+  <data name="&gt;&gt;lQuestionBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lQuestionBackground.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;lQuestionBackground.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboAlignment.Name" xml:space="preserve">
+    <value>comboAlignment</value>
+  </data>
+  <data name="&gt;&gt;comboAlignment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboAlignment.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;comboAlignment.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lAlignment.Name" xml:space="preserve">
+    <value>lAlignment</value>
+  </data>
+  <data name="&gt;&gt;lAlignment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lAlignment.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;lAlignment.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="&gt;&gt;rColorClick.Name" xml:space="preserve">
+    <value>rColorClick</value>
+  </data>
+  <data name="&gt;&gt;rColorClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rColorClick.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;rColorClick.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;btnColorClick.Name" xml:space="preserve">
+    <value>btnColorClick</value>
+  </data>
+  <data name="&gt;&gt;btnColorClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnColorClick.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnColorClick.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lColorClick.Name" xml:space="preserve">
+    <value>lColorClick</value>
+  </data>
+  <data name="&gt;&gt;lColorClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lColorClick.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;lColorClick.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;rLogoQuestion.Name" xml:space="preserve">
+    <value>rLogoQuestion</value>
+  </data>
+  <data name="&gt;&gt;rLogoQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rLogoQuestion.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;rLogoQuestion.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;rBackgroundTest.Name" xml:space="preserve">
+    <value>rBackgroundTest</value>
+  </data>
+  <data name="&gt;&gt;rBackgroundTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rBackgroundTest.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;rBackgroundTest.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;rHover.Name" xml:space="preserve">
+    <value>rHover</value>
+  </data>
+  <data name="&gt;&gt;rHover.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rHover.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;rHover.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;btnButtonNormal.Name" xml:space="preserve">
+    <value>btnButtonNormal</value>
+  </data>
+  <data name="&gt;&gt;btnButtonNormal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnButtonNormal.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnButtonNormal.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnButtonHover.Name" xml:space="preserve">
+    <value>btnButtonHover</value>
+  </data>
+  <data name="&gt;&gt;btnButtonHover.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnButtonHover.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnButtonHover.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;btnButtonClick.Name" xml:space="preserve">
+    <value>btnButtonClick</value>
+  </data>
+  <data name="&gt;&gt;btnButtonClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnButtonClick.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnButtonClick.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;lButtonAnswers.Name" xml:space="preserve">
+    <value>lButtonAnswers</value>
+  </data>
+  <data name="&gt;&gt;lButtonAnswers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lButtonAnswers.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;lButtonAnswers.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundImage.Name" xml:space="preserve">
+    <value>btnBackgroundImage</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundImage.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundImage.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;btnFontAnswers.Name" xml:space="preserve">
+    <value>btnFontAnswers</value>
+  </data>
+  <data name="&gt;&gt;btnFontAnswers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFontAnswers.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnFontAnswers.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;lFontAnswers.Name" xml:space="preserve">
+    <value>lFontAnswers</value>
+  </data>
+  <data name="&gt;&gt;lFontAnswers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lFontAnswers.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;lFontAnswers.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundColor.Name" xml:space="preserve">
+    <value>btnBackgroundColor</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundColor.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundColor.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;lBackgroundColor.Name" xml:space="preserve">
+    <value>lBackgroundColor</value>
+  </data>
+  <data name="&gt;&gt;lBackgroundColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lBackgroundColor.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;lBackgroundColor.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;btnLogoQuestion.Name" xml:space="preserve">
+    <value>btnLogoQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnLogoQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLogoQuestion.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnLogoQuestion.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;lLogo.Name" xml:space="preserve">
+    <value>lLogo</value>
+  </data>
+  <data name="&gt;&gt;lLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lLogo.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;lLogo.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;btnFontQuestion.Name" xml:space="preserve">
+    <value>btnFontQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnFontQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFontQuestion.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;btnFontQuestion.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;lFont.Name" xml:space="preserve">
+    <value>lFont</value>
+  </data>
+  <data name="&gt;&gt;lFont.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lFont.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;lFont.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="grpQuestion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 112</value>
+  </data>
+  <data name="grpQuestion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 253</value>
+  </data>
+  <data name="grpQuestion.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="grpQuestion.Text" xml:space="preserve">
+    <value>Vraag</value>
+  </data>
+  <data name="&gt;&gt;grpQuestion.Name" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;grpQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpQuestion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpQuestion.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="comboLogoPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 102</value>
+    <value>118, 102</value>
   </data>
   <data name="comboLogoPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 21</value>
+    <value>156, 21</value>
   </data>
   <data name="comboLogoPosition.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -265,8 +649,11 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;comboLogoPosition.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
+  <metadata name="ToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>900, 56</value>
+  </metadata>
   <data name="rQuestionBackground.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -279,9 +666,6 @@
   <data name="rQuestionBackground.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
   </data>
-  <metadata name="ToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>900, 56</value>
-  </metadata>
   <data name="rQuestionBackground.ToolTip" xml:space="preserve">
     <value>Laat een logo linksboven zien voor de vraag</value>
   </data>
@@ -295,7 +679,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;rQuestionBackground.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnQuestionBackground.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -322,7 +706,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnQuestionBackground.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lQuestionBackground.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 72</value>
@@ -334,7 +718,7 @@
     <value>33</value>
   </data>
   <data name="lQuestionBackground.Text" xml:space="preserve">
-    <value>Vraag achtergrond</value>
+    <value>Vraag achtergrond:</value>
   </data>
   <data name="lQuestionBackground.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -349,13 +733,13 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lQuestionBackground.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="comboAlignment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 44</value>
+    <value>118, 44</value>
   </data>
   <data name="comboAlignment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 21</value>
+    <value>256, 21</value>
   </data>
   <data name="comboAlignment.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -370,7 +754,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;comboAlignment.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lAlignment.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 45</value>
@@ -382,7 +766,7 @@
     <value>32</value>
   </data>
   <data name="lAlignment.Text" xml:space="preserve">
-    <value>Vraag uitlijning</value>
+    <value>Vraag uitlijning:</value>
   </data>
   <data name="lAlignment.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -397,7 +781,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lAlignment.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="rColorClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -424,7 +808,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;rColorClick.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnColorClick.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -451,7 +835,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnColorClick.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lColorClick.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 217</value>
@@ -478,7 +862,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lColorClick.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="rLogoQuestion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -505,7 +889,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;rLogoQuestion.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="rBackgroundTest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -532,7 +916,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;rBackgroundTest.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="rHover.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -559,7 +943,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;rHover.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="btnButtonNormal.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 187</value>
@@ -583,7 +967,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnButtonNormal.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnButtonHover.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -610,7 +994,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnButtonHover.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="btnButtonClick.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 187</value>
@@ -634,7 +1018,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnButtonClick.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lButtonAnswers.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 188</value>
@@ -661,7 +1045,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lButtonAnswers.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="btnBackgroundImage.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -688,7 +1072,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnBackgroundImage.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="btnFontAnswers.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 158</value>
@@ -712,7 +1096,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnFontAnswers.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="lFontAnswers.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 159</value>
@@ -739,7 +1123,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lFontAnswers.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="btnBackgroundColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 129</value>
@@ -763,7 +1147,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnBackgroundColor.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="lBackgroundColor.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 130</value>
@@ -790,7 +1174,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lBackgroundColor.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="btnLogoQuestion.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -817,7 +1201,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnLogoQuestion.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="lLogo.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 101</value>
@@ -844,7 +1228,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lLogo.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="btnFontQuestion.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 15</value>
@@ -868,7 +1252,7 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;btnFontQuestion.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="lFont.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 16</value>
@@ -895,34 +1279,58 @@
     <value>grpQuestion</value>
   </data>
   <data name="&gt;&gt;lFont.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="grpQuestion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 112</value>
-  </data>
-  <data name="grpQuestion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 253</value>
-  </data>
-  <data name="grpQuestion.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="grpQuestion.Text" xml:space="preserve">
-    <value>Vraag</value>
-  </data>
-  <data name="&gt;&gt;grpQuestion.Name" xml:space="preserve">
-    <value>grpQuestion</value>
-  </data>
-  <data name="&gt;&gt;grpQuestion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpQuestion.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;grpQuestion.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>25</value>
   </data>
   <data name="grpExample.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;btnReload.Name" xml:space="preserve">
+    <value>btnReload</value>
+  </data>
+  <data name="&gt;&gt;btnReload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReload.Parent" xml:space="preserve">
+    <value>grpExample</value>
+  </data>
+  <data name="&gt;&gt;btnReload.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabExample.Name" xml:space="preserve">
+    <value>tabExample</value>
+  </data>
+  <data name="&gt;&gt;tabExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabExample.Parent" xml:space="preserve">
+    <value>grpExample</value>
+  </data>
+  <data name="&gt;&gt;tabExample.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grpExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>395, 122</value>
+  </data>
+  <data name="grpExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>530, 453</value>
+  </data>
+  <data name="grpExample.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="grpExample.Text" xml:space="preserve">
+    <value>Voorbeeld</value>
+  </data>
+  <data name="&gt;&gt;grpExample.Name" xml:space="preserve">
+    <value>grpExample</value>
+  </data>
+  <data name="&gt;&gt;grpExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpExample.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpExample.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="btnReload.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -951,8 +1359,191 @@
   <data name="&gt;&gt;btnReload.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;tabTest.Name" xml:space="preserve">
+    <value>tabTest</value>
+  </data>
+  <data name="&gt;&gt;tabTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabTest.Parent" xml:space="preserve">
+    <value>tabExample</value>
+  </data>
+  <data name="&gt;&gt;tabTest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabIntro.Name" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;tabIntro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabIntro.Parent" xml:space="preserve">
+    <value>tabExample</value>
+  </data>
+  <data name="&gt;&gt;tabIntro.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;green.Name" xml:space="preserve">
+    <value>green</value>
+  </data>
+  <data name="&gt;&gt;green.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;green.Parent" xml:space="preserve">
+    <value>tabExample</value>
+  </data>
+  <data name="&gt;&gt;green.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;red.Name" xml:space="preserve">
+    <value>red</value>
+  </data>
+  <data name="&gt;&gt;red.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;red.Parent" xml:space="preserve">
+    <value>tabExample</value>
+  </data>
+  <data name="&gt;&gt;red.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabExample.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="tabExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 434</value>
+  </data>
+  <data name="tabExample.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tabExample.Name" xml:space="preserve">
+    <value>tabExample</value>
+  </data>
+  <data name="&gt;&gt;tabExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabExample.Parent" xml:space="preserve">
+    <value>grpExample</value>
+  </data>
+  <data name="&gt;&gt;tabExample.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleTest.Name" xml:space="preserve">
+    <value>pnlExampleTest</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleTest.Parent" xml:space="preserve">
+    <value>tabTest</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleTest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabTest.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>516, 408</value>
+  </data>
+  <data name="tabTest.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;tabTest.Name" xml:space="preserve">
+    <value>tabTest</value>
+  </data>
+  <data name="&gt;&gt;tabTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabTest.Parent" xml:space="preserve">
+    <value>tabExample</value>
+  </data>
+  <data name="&gt;&gt;tabTest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="pnlExampleTest.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
+  </data>
+  <data name="&gt;&gt;lAnswer.Name" xml:space="preserve">
+    <value>lAnswer</value>
+  </data>
+  <data name="&gt;&gt;lAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lAnswer.Parent" xml:space="preserve">
+    <value>pnlExampleTest</value>
+  </data>
+  <data name="&gt;&gt;lAnswer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;picAnswer.Name" xml:space="preserve">
+    <value>picAnswer</value>
+  </data>
+  <data name="&gt;&gt;picAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picAnswer.Parent" xml:space="preserve">
+    <value>pnlExampleTest</value>
+  </data>
+  <data name="&gt;&gt;picAnswer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;picLogo.Name" xml:space="preserve">
+    <value>picLogo</value>
+  </data>
+  <data name="&gt;&gt;picLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picLogo.Parent" xml:space="preserve">
+    <value>pnlExampleTest</value>
+  </data>
+  <data name="&gt;&gt;picLogo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lQuestion.Name" xml:space="preserve">
+    <value>lQuestion</value>
+  </data>
+  <data name="&gt;&gt;lQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lQuestion.Parent" xml:space="preserve">
+    <value>pnlExampleTest</value>
+  </data>
+  <data name="&gt;&gt;lQuestion.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pnlExampleTest.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlExampleTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pnlExampleTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 402</value>
+  </data>
+  <data name="pnlExampleTest.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleTest.Name" xml:space="preserve">
+    <value>pnlExampleTest</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleTest.Parent" xml:space="preserve">
+    <value>tabTest</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleTest.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lAnswer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14.25pt</value>
@@ -1042,7 +1633,7 @@
     <value>146, 41</value>
   </data>
   <data name="lQuestion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 48</value>
+    <value>353, 48</value>
   </data>
   <data name="lQuestion.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1065,62 +1656,191 @@
   <data name="&gt;&gt;lQuestion.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="pnlExampleTest.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;pnlExampleIntro.Name" xml:space="preserve">
+    <value>pnlExampleIntro</value>
   </data>
-  <data name="pnlExampleTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="pnlExampleTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 376</value>
-  </data>
-  <data name="pnlExampleTest.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;pnlExampleTest.Name" xml:space="preserve">
-    <value>pnlExampleTest</value>
-  </data>
-  <data name="&gt;&gt;pnlExampleTest.Type" xml:space="preserve">
+  <data name="&gt;&gt;pnlExampleIntro.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pnlExampleTest.Parent" xml:space="preserve">
-    <value>tabTest</value>
+  <data name="&gt;&gt;pnlExampleIntro.Parent" xml:space="preserve">
+    <value>tabIntro</value>
   </data>
-  <data name="&gt;&gt;pnlExampleTest.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pnlExampleIntro.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabTest.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tabTest.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabIntro.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabTest.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabIntro.Size" type="System.Drawing.Size, System.Drawing">
     <value>516, 382</value>
   </data>
-  <data name="tabTest.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="tabIntro.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="tabTest.Text" xml:space="preserve">
-    <value>Test</value>
+  <data name="tabIntro.Text" xml:space="preserve">
+    <value>Naam invoeren</value>
   </data>
-  <data name="&gt;&gt;tabTest.Name" xml:space="preserve">
-    <value>tabTest</value>
+  <data name="&gt;&gt;tabIntro.Name" xml:space="preserve">
+    <value>tabIntro</value>
   </data>
-  <data name="&gt;&gt;tabTest.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabIntro.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabTest.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabIntro.Parent" xml:space="preserve">
     <value>tabExample</value>
   </data>
-  <data name="&gt;&gt;tabTest.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;tabIntro.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="pnlExampleIntro.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
+  <data name="&gt;&gt;pnlBelgium.Name" xml:space="preserve">
+    <value>pnlBelgium</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.Parent" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pnlOld.Name" xml:space="preserve">
+    <value>pnlOld</value>
+  </data>
+  <data name="&gt;&gt;pnlOld.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlOld.Parent" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlOld.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnlUS.Name" xml:space="preserve">
+    <value>pnlUS</value>
+  </data>
+  <data name="&gt;&gt;pnlUS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlUS.Parent" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlUS.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pnlNew.Name" xml:space="preserve">
+    <value>pnlNew</value>
+  </data>
+  <data name="&gt;&gt;pnlNew.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlNew.Parent" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlNew.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;picLogoIntro.Name" xml:space="preserve">
+    <value>picLogoIntro</value>
+  </data>
+  <data name="&gt;&gt;picLogoIntro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picLogoIntro.Parent" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;picLogoIntro.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="pnlExampleIntro.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlExampleIntro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pnlExampleIntro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 376</value>
+  </data>
+  <data name="pnlExampleIntro.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleIntro.Name" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleIntro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleIntro.Parent" xml:space="preserve">
+    <value>tabIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlExampleIntro.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="pnlBelgium.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.Name" xml:space="preserve">
+    <value>PictureBox2</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.Parent" xml:space="preserve">
+    <value>pnlBelgium</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.Name" xml:space="preserve">
+    <value>TextBox4</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.Parent" xml:space="preserve">
+    <value>pnlBelgium</value>
+  </data>
+  <data name="&gt;&gt;TextBox4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lNameBelgium.Name" xml:space="preserve">
+    <value>lNameBelgium</value>
+  </data>
+  <data name="&gt;&gt;lNameBelgium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lNameBelgium.Parent" xml:space="preserve">
+    <value>pnlBelgium</value>
+  </data>
+  <data name="&gt;&gt;lNameBelgium.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlBelgium.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 48</value>
+  </data>
+  <data name="pnlBelgium.Size" type="System.Drawing.Size, System.Drawing">
+    <value>438, 100</value>
+  </data>
+  <data name="pnlBelgium.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.Name" xml:space="preserve">
+    <value>pnlBelgium</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.Parent" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlBelgium.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="PictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1203,29 +1923,80 @@
   <data name="&gt;&gt;lNameBelgium.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="pnlBelgium.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 49</value>
-  </data>
-  <data name="pnlBelgium.Size" type="System.Drawing.Size, System.Drawing">
-    <value>438, 100</value>
-  </data>
-  <data name="pnlBelgium.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="&gt;&gt;pnlBelgium.Name" xml:space="preserve">
-    <value>pnlBelgium</value>
-  </data>
-  <data name="&gt;&gt;pnlBelgium.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlBelgium.Parent" xml:space="preserve">
-    <value>pnlExampleIntro</value>
-  </data>
-  <data name="&gt;&gt;pnlBelgium.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="pnlOld.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>pnlOld</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lOldname.Name" xml:space="preserve">
+    <value>lOldname</value>
+  </data>
+  <data name="&gt;&gt;lOldname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lOldname.Parent" xml:space="preserve">
+    <value>pnlOld</value>
+  </data>
+  <data name="&gt;&gt;lOldname.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lOldtext.Name" xml:space="preserve">
+    <value>lOldtext</value>
+  </data>
+  <data name="&gt;&gt;lOldtext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lOldtext.Parent" xml:space="preserve">
+    <value>pnlOld</value>
+  </data>
+  <data name="&gt;&gt;lOldtext.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lOldbutton.Name" xml:space="preserve">
+    <value>lOldbutton</value>
+  </data>
+  <data name="&gt;&gt;lOldbutton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lOldbutton.Parent" xml:space="preserve">
+    <value>pnlOld</value>
+  </data>
+  <data name="&gt;&gt;lOldbutton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pnlOld.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 262</value>
+  </data>
+  <data name="pnlOld.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 128</value>
+  </data>
+  <data name="pnlOld.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="pnlOld.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnlOld.Name" xml:space="preserve">
+    <value>pnlOld</value>
+  </data>
+  <data name="&gt;&gt;pnlOld.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlOld.Parent" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlOld.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1344,35 +2115,59 @@
   <data name="&gt;&gt;lOldbutton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="pnlOld.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 263</value>
-  </data>
-  <data name="pnlOld.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 128</value>
-  </data>
-  <data name="pnlOld.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="pnlOld.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pnlOld.Name" xml:space="preserve">
-    <value>pnlOld</value>
-  </data>
-  <data name="&gt;&gt;pnlOld.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlOld.Parent" xml:space="preserve">
-    <value>pnlExampleIntro</value>
-  </data>
-  <data name="&gt;&gt;pnlOld.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="pnlUS.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="pnlUS.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
+  </data>
+  <data name="&gt;&gt;lUStext.Name" xml:space="preserve">
+    <value>lUStext</value>
+  </data>
+  <data name="&gt;&gt;lUStext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lUStext.Parent" xml:space="preserve">
+    <value>pnlUS</value>
+  </data>
+  <data name="&gt;&gt;lUStext.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lUSname.Name" xml:space="preserve">
+    <value>lUSname</value>
+  </data>
+  <data name="&gt;&gt;lUSname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lUSname.Parent" xml:space="preserve">
+    <value>pnlUS</value>
+  </data>
+  <data name="&gt;&gt;lUSname.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlUS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>246, 133</value>
+  </data>
+  <data name="pnlUS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 159</value>
+  </data>
+  <data name="pnlUS.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="pnlUS.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnlUS.Name" xml:space="preserve">
+    <value>pnlUS</value>
+  </data>
+  <data name="&gt;&gt;pnlUS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlUS.Parent" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlUS.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="lUStext.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 36pt</value>
@@ -1434,32 +2229,65 @@
   <data name="&gt;&gt;lUSname.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pnlUS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 134</value>
-  </data>
-  <data name="pnlUS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 159</value>
-  </data>
-  <data name="pnlUS.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="pnlUS.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pnlUS.Name" xml:space="preserve">
-    <value>pnlUS</value>
-  </data>
-  <data name="&gt;&gt;pnlUS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlUS.Parent" xml:space="preserve">
-    <value>pnlExampleIntro</value>
-  </data>
-  <data name="&gt;&gt;pnlUS.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="pnlNew.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="&gt;&gt;Label11.Name" xml:space="preserve">
+    <value>Label11</value>
+  </data>
+  <data name="&gt;&gt;Label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label11.Parent" xml:space="preserve">
+    <value>pnlNew</value>
+  </data>
+  <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lNewtext.Name" xml:space="preserve">
+    <value>lNewtext</value>
+  </data>
+  <data name="&gt;&gt;lNewtext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lNewtext.Parent" xml:space="preserve">
+    <value>pnlNew</value>
+  </data>
+  <data name="&gt;&gt;lNewtext.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lNewname.Name" xml:space="preserve">
+    <value>lNewname</value>
+  </data>
+  <data name="&gt;&gt;lNewname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lNewname.Parent" xml:space="preserve">
+    <value>pnlNew</value>
+  </data>
+  <data name="&gt;&gt;lNewname.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 204</value>
+  </data>
+  <data name="pnlNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 82</value>
+  </data>
+  <data name="pnlNew.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;pnlNew.Name" xml:space="preserve">
+    <value>pnlNew</value>
+  </data>
+  <data name="&gt;&gt;pnlNew.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlNew.Parent" xml:space="preserve">
+    <value>pnlExampleIntro</value>
+  </data>
+  <data name="&gt;&gt;pnlNew.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="Label11.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 20.25pt</value>
@@ -1551,27 +2379,6 @@
   <data name="&gt;&gt;lNewname.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="pnlNew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 205</value>
-  </data>
-  <data name="pnlNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 82</value>
-  </data>
-  <data name="pnlNew.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;pnlNew.Name" xml:space="preserve">
-    <value>pnlNew</value>
-  </data>
-  <data name="&gt;&gt;pnlNew.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlNew.Parent" xml:space="preserve">
-    <value>pnlExampleIntro</value>
-  </data>
-  <data name="&gt;&gt;pnlNew.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="picLogoIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, -1</value>
   </data>
@@ -1595,57 +2402,6 @@
   </data>
   <data name="&gt;&gt;picLogoIntro.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="pnlExampleIntro.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pnlExampleIntro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="pnlExampleIntro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 376</value>
-  </data>
-  <data name="pnlExampleIntro.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;pnlExampleIntro.Name" xml:space="preserve">
-    <value>pnlExampleIntro</value>
-  </data>
-  <data name="&gt;&gt;pnlExampleIntro.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlExampleIntro.Parent" xml:space="preserve">
-    <value>tabIntro</value>
-  </data>
-  <data name="&gt;&gt;pnlExampleIntro.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabIntro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabIntro.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabIntro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>516, 382</value>
-  </data>
-  <data name="tabIntro.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabIntro.Text" xml:space="preserve">
-    <value>Naam invoeren</value>
-  </data>
-  <data name="&gt;&gt;tabIntro.Name" xml:space="preserve">
-    <value>tabIntro</value>
-  </data>
-  <data name="&gt;&gt;tabIntro.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabIntro.Parent" xml:space="preserve">
-    <value>tabExample</value>
-  </data>
-  <data name="&gt;&gt;tabIntro.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="green.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -1701,59 +2457,32 @@
   <data name="&gt;&gt;red.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tabExample.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="comboBackgroundIntroSizeMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 103</value>
   </data>
-  <data name="tabExample.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+  <data name="comboBackgroundIntroSizeMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
   </data>
-  <data name="tabExample.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 408</value>
+  <data name="comboBackgroundIntroSizeMode.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
   </data>
-  <data name="tabExample.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;comboBackgroundIntroSizeMode.Name" xml:space="preserve">
+    <value>comboBackgroundIntroSizeMode</value>
   </data>
-  <data name="&gt;&gt;tabExample.Name" xml:space="preserve">
-    <value>tabExample</value>
+  <data name="&gt;&gt;comboBackgroundIntroSizeMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabExample.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;comboBackgroundIntroSizeMode.Parent" xml:space="preserve">
+    <value>grpIntro</value>
   </data>
-  <data name="&gt;&gt;tabExample.Parent" xml:space="preserve">
-    <value>grpExample</value>
-  </data>
-  <data name="&gt;&gt;tabExample.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="grpExample.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 122</value>
-  </data>
-  <data name="grpExample.Size" type="System.Drawing.Size, System.Drawing">
-    <value>530, 427</value>
-  </data>
-  <data name="grpExample.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="grpExample.Text" xml:space="preserve">
-    <value>Voorbeeld</value>
-  </data>
-  <data name="&gt;&gt;grpExample.Name" xml:space="preserve">
-    <value>grpExample</value>
-  </data>
-  <data name="&gt;&gt;grpExample.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpExample.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;grpExample.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;comboBackgroundIntroSizeMode.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="comboIntroPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 75</value>
+    <value>118, 75</value>
   </data>
   <data name="comboIntroPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 21</value>
+    <value>156, 21</value>
   </data>
   <data name="comboIntroPosition.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -1768,7 +2497,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;comboIntroPosition.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="rLogoIntro.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1795,7 +2524,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;rLogoIntro.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnIntroTextfield.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 44</value>
@@ -1819,7 +2548,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnIntroTextfield.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lIntroTextfield.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 45</value>
@@ -1846,7 +2575,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;lIntroTextfield.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="rBackgroundIntro.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1873,7 +2602,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;rBackgroundIntro.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnFontIntroText.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 15</value>
@@ -1897,7 +2626,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnFontIntroText.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="comboStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 131</value>
@@ -1918,7 +2647,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;comboStyle.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lFontIntroText.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 16</value>
@@ -1945,7 +2674,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;lFontIntroText.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 130</value>
@@ -1972,7 +2701,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;lStyle.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="btnBackgroundImageIntro.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1999,7 +2728,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnBackgroundImageIntro.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lLogoIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 74</value>
@@ -2026,7 +2755,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;lLogoIntro.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnBackgroundColorIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 102</value>
@@ -2050,7 +2779,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnBackgroundColorIntro.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="btnLogoIntro.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2077,7 +2806,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnLogoIntro.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnBackgroundIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 103</value>
@@ -2104,7 +2833,7 @@
     <value>grpIntro</value>
   </data>
   <data name="&gt;&gt;btnBackgroundIntro.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="grpIntro.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 371</value>
@@ -2129,6 +2858,66 @@
   </data>
   <data name="&gt;&gt;grpIntro.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnRed.Name" xml:space="preserve">
+    <value>btnRed</value>
+  </data>
+  <data name="&gt;&gt;btnRed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRed.Parent" xml:space="preserve">
+    <value>grpScreens</value>
+  </data>
+  <data name="&gt;&gt;btnRed.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lScreens.Name" xml:space="preserve">
+    <value>lScreens</value>
+  </data>
+  <data name="&gt;&gt;lScreens.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lScreens.Parent" xml:space="preserve">
+    <value>grpScreens</value>
+  </data>
+  <data name="&gt;&gt;lScreens.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnGreen.Name" xml:space="preserve">
+    <value>btnGreen</value>
+  </data>
+  <data name="&gt;&gt;btnGreen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGreen.Parent" xml:space="preserve">
+    <value>grpScreens</value>
+  </data>
+  <data name="&gt;&gt;btnGreen.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="grpScreens.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 543</value>
+  </data>
+  <data name="grpScreens.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 49</value>
+  </data>
+  <data name="grpScreens.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="grpScreens.Text" xml:space="preserve">
+    <value>Schermen</value>
+  </data>
+  <data name="&gt;&gt;grpScreens.Name" xml:space="preserve">
+    <value>grpScreens</value>
+  </data>
+  <data name="&gt;&gt;grpScreens.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpScreens.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpScreens.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnRed.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 15</value>
@@ -2205,30 +2994,6 @@
   <data name="&gt;&gt;btnGreen.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="grpScreens.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 543</value>
-  </data>
-  <data name="grpScreens.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 49</value>
-  </data>
-  <data name="grpScreens.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="grpScreens.Text" xml:space="preserve">
-    <value>Schermen</value>
-  </data>
-  <data name="&gt;&gt;grpScreens.Name" xml:space="preserve">
-    <value>grpScreens</value>
-  </data>
-  <data name="&gt;&gt;grpScreens.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpScreens.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;grpScreens.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="FontDialogQuestion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -2301,89 +3066,6 @@
   <metadata name="ToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>674, 56</value>
   </metadata>
-  <data name="ToolStripSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVDhPjZJZTxNRHMX7hXygy+ASv4WPxrAVugABRGTT
-        aGKMGkGikUBBqoWwiiK7HUBTRShULBi0LKULQinQFeiUbsf/3CpPhDDJyc3M3PM75y4STsOXKjR8g1zL
-        W0h+TjsY47S6FKflQf+YLhVO4ErxJC4X8cgsGAtcLebnZZrRaxLx4dR8y6IzgkWngGg8BYEUOU4ieJTA
-        bjAGXzjO3oVYEnuhOKZmf6f0Vkf8xmPTPqcezpVwWqNt0RHBvV4vIjEy08S8p7PwH8SxS4ZwJMHAIRrd
-        +8dY80RhtPoxad0HV8JHCTARtBLgbvcOmyRKBHhDMfgP4yxZbLBDbew7UaxtC6hud+HLcgAKdWOKAIMx
-        i/2IAB42SVR+nRleGg+iSUSpVeAwAYdXTBewsiWg0uBEj8kDhWoUBNClzOuHuNPlgYsqitr0HVN6gqUf
-        CEls+WInZttWBLdfb6Bj6g/kBcMigMfMCgE6t1l1JaUX1JtR+HweRSR1wxyU9F3891/lravQG12Q5w8R
-        gI5p2hZGTccmrY1EY02HGzXtolyoMrgo0YEK/QbK2+woa11D+at16EbskCs/pAGm5XDaTEobSQQRzZVv
-        nKzyrTYCkPFmyyppBS8HViHLe58GTC0Fyez+J9dJOjNTcoXezsxlZCxttqGk+Rfq+5Yhy+0XAUbw1gCq
-        DW523udRUeNPPOlagjSnD5KLtInjCwFWV6Aje/Q550yJd0Lz4gcetC9Amt1LgEIeoxY/NUgDTOufzpQI
-        UDV8x/02CwG6IcnUNqeG5nwEcJ67gbJuDrUtZmRkPUxJpCrjRv+3PfRP75663tNUq5tFVdMMMq4bfBKF
-        +uMzhXp8RJ497leoxuh6jrAbJs8fhEw5QEf1DtLct7RhvVS5h1K7WfKFrM5QRnbn17/OXhA7P556IgAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ToolStripSave.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 22</value>
-  </data>
-  <data name="ToolStripSave.Text" xml:space="preserve">
-    <value>Opslaan</value>
-  </data>
-  <data name="ToolStripOpen.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIQSURBVDhP3Y/LS1RRHMfPor27/oQW2dhjcipatAkiCNpE
-        LapVBCUDxQRCEZSL0YlgQpxaRBSSGKQZPQiixdDKUdN7dW7OdWY0R23wDjn3/X58O1dv4bRoG3Q4H845
-        i8/3+zvkP1nz7+Ns7e0pZ+UPKh8OL1ZfdexcfBlva+FTvC2fP7Yj0gkpPE9YQeADCOgO2bq7ZgNr+S57
-        dfy89Yv69DWzNp6q8W8OnI10QrjXnVLgmbDWstCX+qEvP4NRG0XgijRLQ+CpFHnr7TYhCILNjyW4SCek
-        PLxf8R2Zyjlo1QEoX3uwMdmFxlQSYjENce4uRPYWmkw3JUUnE1AeO6hGOg0Y6XRcYx0il0NzJgPh8w0Y
-        wgRtVaL28JR+TxB+jxnZa0Z6OMEhZ/P/vkUxAE/fFD2Dh1XPwVxNw/jWDb1yBRp/AZ5WAjO0PSCXsAPP
-        gKcU4Iof4fwYhb3+hIr3YSzfhlFNQl+4CG3+NNTicXgqC+bBtoDC44TlOwqcjXewhSHa+hDmCm1dClsv
-        Qyudg8qdhDJ7FPLMPrjKl9aA8BE4IpUHYX3vh1nroXIKevkSlc/Q1hNQ2COQpzsgTe2iAZOtAQv3YnVD
-        4qRi/oWvVZ5CLT+CymehlnqhcHegFG9CnktBZpOQmasoTQwGXDYuRTohfG/7dT6zZ5jr291gMjHzr/TF
-        zNlMTObT7QOR/k8XIT8Bc8znLrmmkUwAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ToolStripOpen.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 22</value>
-  </data>
-  <data name="ToolStripOpen.Text" xml:space="preserve">
-    <value>Openen</value>
-  </data>
-  <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="ToolStripExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMmSURBVDhPjZNdSJtnFMdzs8F2OyjsAwpVRqljY24wtUjT
-        WTVzTdcy8HYw6KBso6MM2outYZrW1uoU0XrhimNVN7XiZ3S2ixrzNiY2auqMUaMu0SR+xCSvumhi7Pvb
-        U/VOxvaHc/Nwzu98Pqp/k7Ndm+Jqy2sV9oezWfPuwfN/a7b3wpGpTq3e1ZEbWXX+xJL9Fs4H2Zt/NmaV
-        uBrOvHbgdlh2+xcvTBvOXZzqynP7xyrYjQVQthbZmGtl29eBd+AKT3/O9Iz9kvmVpTHtpYOwfc10n89x
-        GbSDHst1tsNPgS1QZBKhJ8y0nGfbdYe4t4mNySrcHZ8zWpNuHal5X7sXPGU4V2ut0yqh6XqiwXFC833M
-        24Sj+TaTv3/DXO8loq5yomM6Yu577Cw2sTasx9lwAVtVaoNq6r42ocS8xIMjhMYrCNr1+Psv427Px1p5
-        kp21UYhOw2ovyl9V4LwKvnoSs3psFUcTqomOj+VnsQXYnGDH18b62E2iDp2wa/jaz+69sdIN3hqUyWtE
-        jWpWDJmsO8sxl52QVRNtH8nPtgTg7xkBcULQyLbzNlHbJVa6zpKYKYXZEuKShrXuNJb7NSw/+gTZUYK5
-        9DmgJVfe3QO4YEOUG7EKyEMS7grWTfnEBzXIxpOsPc5lxZhNwPAhgfZcwsO3MBcfF4CmM/sA0QKyDUJ9
-        ot9OWGpBmf6OyJCGVSmL5b4sEXyKxeYMvL+qBbAQs+5NWTVYfSquJJbE5uZEdpPI3gPLzWJQdSjeuwQt
-        GpFZTaArk4XGNOZrUwl0f0lYKkTSvRJTOe6rH80ar7Ll7xcQN4QFxF8Pi7UCUMmqKUdkzmCh6QP8rfmE
-        LEX4Or9luDwP8w/HTKKFEy+O1WZcHL2X7vYMfM9ueEjMwi6q+A3FU8nSw9NiG9lEhosJmgpwVH+KSZ/k
-        GSxM+tque/XlvWN6Lsfd9CNPqt+7MVSVGvFLBWKoAhKRWB+/gzxajKvuM6SbRzfN+mOlFv0brx+EHZat
-        8p2UobK363t0bynBkTIWei5j/VGN+UbSg4GC5P//K6XilJzHRcf7pKJkyaxP3r/7Q1Kp/gF1tWqw+5e5
-        UwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ToolStripExport.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ToolStripExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 22</value>
-  </data>
-  <data name="ToolStripExport.Text" xml:space="preserve">
-    <value>Exporteren</value>
-  </data>
   <data name="ToolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -2408,12 +3090,98 @@
   <data name="&gt;&gt;ToolStrip1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="ToolStripSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVDhPjZJZTxNRHMX7hXygy+ASv4WPxrAVugABRGTT
+        aKKJGkGiwVBAqoWwiiK7HUBTRShULBhIWUoXhFKgK9Ap3Y7/uVWeCGGSk5uZued3zl0knIYvVWj4BrmW
+        t5D8nHYwxml1KU7Lg/4xXSmcwLXiSVwt4pFZMBa4XszPyzSjNyTiw6n5lkVnBItOAdF4CgIpcpJE8DiB
+        vWAMvnCcvQuxJPZDcUzOrKT0Vkf81lPTAacezpVwWqNt0RHBg14vIjEy08S857PwH8axR4ZwJMHAIRrd
+        BydY90RhtPoxaT0AV8JHCTARtBLgfvcumyRKBHhDMfiP4ixZbLBLbey7UazvCKhud+HbcgAKdWOKAIMx
+        i/2YAB42SVR+nRleGg+jSUSpVeAoAYdXTBewui2g0uBEj8kDhWoUBNClzBtHuNflgYsqitrynVB6gqUf
+        Ckls+2KnZtt2BHffbqJj6g/kBcMigMfMKgE6d1h1JaUX1JtR+HIeRSR1wxyU9F3891/lrWvQG12Q5w8R
+        gI5p2hZGTccWrY1EY02HGzXtolyoMrgo0YEK/SbK2+woa11H+ZsNNI/YIVd+SgNMy+G0mZQ2kggimivf
+        OVnlO20EIOPtljXSKhoH1iDL+5gGTC0Fyez+J9dpOjNTcoXezsxlZCzV2VCiW0F93zJkuf0iwAjeGkC1
+        wc3O+yIqev0bz7qWIM3pg+QybeL4QoDVFejInnzNOVfindC8+oVH7QuQZvcSoJDHqMVPDdIA08aXcyUC
+        VA0/8bDNQoBuSDK1TamhOR8BnBduoKybQ22LGRlZj1MSqcq42f9jH/3Te2eu9yzVNs+iqmkGGTcNPolC
+        /fmFQj0+Is8e9ytUY3Q9R9gNk+cPQqYcoKP6AGnue9qwXqrcQ6ndLPlSVmcoI7vz+1+4ahAyH5NnwgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ToolStripSave.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ToolStripSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 22</value>
+  </data>
+  <data name="ToolStripSave.Text" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="ToolStripOpen.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIQSURBVDhP3Y/LaxNBHMfn4L03/wQP1tRHbFQ8eBFEELyI
+        HtSTCFoCSoSCImgPaSNCpDT2IOIDSwVbKz4QxEPw1NjabpqsyTZJa7etoRts9v3e7NfZdpXGg1fBYT7M
+        zOHz/f6G/Cer9C6a59+ccJb/oPr+4ELtZdf2hRfRjjY+Rjuy2SPbQp2Q3LOY5fstAD7dAZt312xgNdtj
+        r0yetX5Rn7li8pMJnnu973SoE8K+6pZ8z4S1moa+OAh96TEMfhy+K9IsDb6nUuTNt9uEIAg2NxFjQ52Q
+        yuhepeXIVM5Aqw1B+dqH9akeNKbjEItJiIXbEPM30GR6KQk6mYDKxH411GnAWLfjGmsQ2QyasykIn67B
+        ED7TViVsD07p9wTB95ix3WaoBxMccDb+37IoBuDpG6JncLDqGZgrSRjfeqFXL0HjzsHTymBGtgZkYrbv
+        GfCUHFzxA5wf47DXHlLxLoylmzBqcejz56GVTkItHoWn5sHc2xKQexCzWo4CZ/0tbGGEtt6HuUxbF4PW
+        i9DKZ6Cyx6HMHYY8uweu8qU9IHj4jkjlp7C+D8Lk+6icgF65QOVTtPUYlPwhyDNdkKZ30ICp9oD5O5G6
+        IbFSIfu8pVUfQa0MQ+XSUMv9UNhbUIrXIRcSkPNxyMxllHJPfDYdlUKdEK6/8yqX2jXKDuxsMKmI+VcG
+        IuZcKiJzyc6hUP+ni5CfcGvnKvqVi0AAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ToolStripOpen.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ToolStripOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 22</value>
+  </data>
+  <data name="ToolStripOpen.Text" xml:space="preserve">
+    <value>Openen</value>
+  </data>
+  <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="ToolStripExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMmSURBVDhPjZNdTJtlFMd7o4leerFkarJkELMMoxFNBBay
+        TgZUXOcWE25NTGayqJkxJtuF2gjd2BgIIcAucMFsAwVG+GwnmwVK37WUFdohpUABW2jLRyl9AQstZe/P
+        Z8AdMfpPzs2Tc37n81H9m9wd2jRPe0GbsD/cLZp39p//W9M95w9NdGn1ns786LL7ZxYc13Hfz934symn
+        zNN4+tV9t4NyOD5/YdJw9sJEd4E36KxiJx5C2ZxnfaaNrUAn/v5vePpLts95J/tLa1PGS/the5oynsvz
+        GLQDPusPbK0+BTZBkUlGnjDVeo4tz00S/mbWx2vwdn7GSF3m4HDde9rd4AnD2XrbXa0SmWwgFh4lMtvL
+        rF04Wm4w/vvXzPRcJOapJObUEffeZnu+mZUhPe7G89hr0htVE3e0SSXuJxEeJjJaRdihJ9h3CW9HIYPV
+        J9heGYHYJCz3oPxVA+7LEGggOa3HXnUkqRrr/Eh+Fp+DjTG2A+2sOa8Rc+mEXSHQcWb3jSUj+OtQxq8Q
+        M6lZMmSz5q7EUnFcVo21fyg/2xSAv6cExA1hE1vuG8TsF1nqPkNyqhymy0hIGlaMGSz2aVh89DGyqwxL
+        +XNAa768swvwwLooNzooIA9JeqtYMxeSGNAgm06w8jifJVMuIcMHhDryWR26jqX0mAA0n94DiBaQ7RDp
+        Ff12wUIryuR3RG0alqUcFntzRPBJ5luy8P+qFsBiLLo3ZJW59mRCSS6Izc2I7GaR/QEstohB3UPx1xK2
+        akRmNaHubOaaMpitTydk/IJVqRhJ90pc5bqrfjRtusxmsE9AvLAqIMEGmK8XgGqWzXkicxZzze8TbCsk
+        Yi0h0PUtQ5UFWH48ahYtHH/RWZ91YeR2ptfX/z07qzYxC4eo4jcUXzULD0+JbeQSHSolbC7CdesTzPoU
+        30BxylcO3eGXd4/puVy1mYee3Hr3qq0mPRqUisRQBSQqsTZ6E3mkFM+9T5GuHdmw6I+WW/Wvv7YfdlD2
+        6rfTbBVvNRh1byrh4QrmHlxi8Cc1lqsp9/uLUv//r5RK0/IelxzrlUpSJYs+de/uD0il+gdoJmqpgUtl
+        KAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ToolStripExport.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ToolStripExport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 22</value>
+  </data>
+  <data name="ToolStripExport.Text" xml:space="preserve">
+    <value>Exporteren</value>
+  </data>
   <metadata name="OpenTheme.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>781, 56</value>
   </metadata>
   <data name="OpenTheme.Filter" xml:space="preserve">
     <value>WIDM thema's (.widmthema)|*.widmthema</value>
   </data>
+  <metadata name="ToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>900, 56</value>
+  </metadata>
   <data name="rMusicTest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2461,6 +3229,102 @@
   </data>
   <data name="&gt;&gt;rMusicExecution.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnMusicExecution.Name" xml:space="preserve">
+    <value>btnMusicExecution</value>
+  </data>
+  <data name="&gt;&gt;btnMusicExecution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMusicExecution.Parent" xml:space="preserve">
+    <value>grpMusic</value>
+  </data>
+  <data name="&gt;&gt;btnMusicExecution.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnMusicTest.Name" xml:space="preserve">
+    <value>btnMusicTest</value>
+  </data>
+  <data name="&gt;&gt;btnMusicTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMusicTest.Parent" xml:space="preserve">
+    <value>grpMusic</value>
+  </data>
+  <data name="&gt;&gt;btnMusicTest.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtMusicExecution.Name" xml:space="preserve">
+    <value>txtMusicExecution</value>
+  </data>
+  <data name="&gt;&gt;txtMusicExecution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMusicExecution.Parent" xml:space="preserve">
+    <value>grpMusic</value>
+  </data>
+  <data name="&gt;&gt;txtMusicExecution.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtMusicTest.Name" xml:space="preserve">
+    <value>txtMusicTest</value>
+  </data>
+  <data name="&gt;&gt;txtMusicTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMusicTest.Parent" xml:space="preserve">
+    <value>grpMusic</value>
+  </data>
+  <data name="&gt;&gt;txtMusicTest.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lMusicExecution.Name" xml:space="preserve">
+    <value>lMusicExecution</value>
+  </data>
+  <data name="&gt;&gt;lMusicExecution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lMusicExecution.Parent" xml:space="preserve">
+    <value>grpMusic</value>
+  </data>
+  <data name="&gt;&gt;lMusicExecution.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lMusicTest.Name" xml:space="preserve">
+    <value>lMusicTest</value>
+  </data>
+  <data name="&gt;&gt;lMusicTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lMusicTest.Parent" xml:space="preserve">
+    <value>grpMusic</value>
+  </data>
+  <data name="&gt;&gt;lMusicTest.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="grpMusic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>395, 28</value>
+  </data>
+  <data name="grpMusic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 88</value>
+  </data>
+  <data name="grpMusic.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="grpMusic.Text" xml:space="preserve">
+    <value>Muziek</value>
+  </data>
+  <data name="&gt;&gt;grpMusic.Name" xml:space="preserve">
+    <value>grpMusic</value>
+  </data>
+  <data name="&gt;&gt;grpMusic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpMusic.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpMusic.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnMusicExecution.Location" type="System.Drawing.Point, System.Drawing">
     <value>283, 47</value>
@@ -2618,30 +3482,6 @@
   <data name="&gt;&gt;lMusicTest.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="grpMusic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 28</value>
-  </data>
-  <data name="grpMusic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 88</value>
-  </data>
-  <data name="grpMusic.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="grpMusic.Text" xml:space="preserve">
-    <value>Muziek</value>
-  </data>
-  <data name="&gt;&gt;grpMusic.Name" xml:space="preserve">
-    <value>grpMusic</value>
-  </data>
-  <data name="&gt;&gt;grpMusic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpMusic.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;grpMusic.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="FontIntroText.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>992, 56</value>
   </metadata>
@@ -2675,6 +3515,27 @@
   <data name="SaveExport.Filter" xml:space="preserve">
     <value>(*.zip)|*.zip</value>
   </data>
+  <data name="comboBackgroundTestSizeMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 130</value>
+  </data>
+  <data name="comboBackgroundTestSizeMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="comboBackgroundTestSizeMode.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;comboBackgroundTestSizeMode.Name" xml:space="preserve">
+    <value>comboBackgroundTestSizeMode</value>
+  </data>
+  <data name="&gt;&gt;comboBackgroundTestSizeMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBackgroundTestSizeMode.Parent" xml:space="preserve">
+    <value>grpQuestion</value>
+  </data>
+  <data name="&gt;&gt;comboBackgroundTestSizeMode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2685,7 +3546,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>937, 561</value>
+    <value>937, 587</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

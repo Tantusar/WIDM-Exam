@@ -96,6 +96,7 @@ Public Class FrmTest
         End If
         If CurrentTheme.BackgroundTestEnabled Then
             BackgroundImage = CurrentTheme.ImgBackgroundTest
+            BackgroundImageLayout = CurrentTheme.BackgroundTestSizeMode
         Else
             BackgroundImage = Nothing
         End If
@@ -429,7 +430,7 @@ Public Class FrmTest
     Sub Buttonhover(sender As Object, e As EventArgs)
         Try
             If CurrentTheme.ButtonHoverEnabled Then
-                sender.image = CurrentTheme.ButtonHover
+                sender.Image = CurrentTheme.ImgButtonHover
                 If CurrentTheme.ColorClickEnabled Then
                     Dim correspondingLabel As String
                     correspondingLabel = sender.name.replace("b", "l")
@@ -444,7 +445,7 @@ Public Class FrmTest
     Sub Buttonleave(sender As Object, e As EventArgs)
         Try
             If CurrentTheme.ButtonHoverEnabled Then
-                sender.image = CurrentTheme.Button
+                sender.Image = CurrentTheme.ImgButton
                 If CurrentTheme.ColorClickEnabled Then
                     Dim correspondingLabel As String
                     correspondingLabel = sender.name.replace("b", "l")

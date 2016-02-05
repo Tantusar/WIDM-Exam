@@ -77,6 +77,8 @@ Public Class FrmTheme
         comboAlignment.SelectedItem = _currentTheme.QuestionAlignment
         comboLogoPosition.SelectedItem = _currentTheme.LogoTestPosition
         comboIntroPosition.SelectedItem = _currentTheme.LogoIntroPosition
+        comboBackgroundTestSizeMode.SelectedItem = _currentTheme.BackgroundTestSizeMode
+        comboBackgroundIntroSizeMode.SelectedItem = _currentTheme.BackgroundIntroSizeMode
 
         If _currentTheme.BackgroundIntroEnabled Then
             pnlExampleIntro.BackgroundImage = _currentTheme.ImgBackgroundIntro
@@ -178,10 +180,13 @@ Public Class FrmTheme
     End Sub
 
     Private Sub FrmTheme_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        _currentTheme = New Theme()
         comboStyle.DataSource = [Enum].GetValues(GetType(Theme.Style))
         comboLogoPosition.DataSource = [Enum].GetValues(GetType(Theme.Position))
         comboIntroPosition.DataSource = [Enum].GetValues(GetType(Theme.Position))
         comboAlignment.DataSource = [Enum].GetValues(GetType(ContentAlignment))
+        comboBackgroundIntroSizeMode.DataSource = [Enum].GetValues(GetType(PictureBoxSizeMode))
+        comboBackgroundTestSizeMode.DataSource = [Enum].GetValues(GetType(PictureBoxSizeMode))
     End Sub
 
     Sub New()
@@ -740,5 +745,13 @@ Public Class FrmTheme
 
     Private Sub comboIntroLogo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboIntroPosition.SelectedIndexChanged
         _currentTheme.LogoIntroPosition = CType(comboIntroPosition.SelectedValue, Theme.Position)
+    End Sub
+
+    Private Sub comboBackgroundTestSizeMode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBackgroundTestSizeMode.SelectedIndexChanged
+        _currentTheme.BackgroundTestSizeMode = CType(comboBackgroundTestSizeMode.SelectedValue, PictureBoxSizeMode)
+    End Sub
+
+    Private Sub comboBackgroundIntroSizeMode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBackgroundIntroSizeMode.SelectedIndexChanged
+        _currentTheme.BackgroundIntroSizeMode = CType(comboBackgroundIntroSizeMode.SelectedValue, PictureBoxSizeMode)
     End Sub
 End Class
