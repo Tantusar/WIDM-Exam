@@ -250,6 +250,7 @@ Public Class FrmEnterName
         End If
         If CurrentTheme.BackgroundIntroEnabled Then
             BackgroundImage = CurrentTheme.ImgBackgroundIntro
+            BackgroundImageLayout = CurrentTheme.BackgroundIntroSizeMode
         Else
             BackgroundImage = Nothing
         End If

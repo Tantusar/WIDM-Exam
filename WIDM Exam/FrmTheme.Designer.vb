@@ -30,6 +30,7 @@ Partial Class FrmTheme
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.lName = New System.Windows.Forms.Label()
         Me.grpQuestion = New System.Windows.Forms.GroupBox()
+        Me.comboLogoPosition = New System.Windows.Forms.ComboBox()
         Me.rQuestionBackground = New System.Windows.Forms.CheckBox()
         Me.btnQuestionBackground = New System.Windows.Forms.Button()
         Me.lQuestionBackground = New System.Windows.Forms.Label()
@@ -65,6 +66,10 @@ Partial Class FrmTheme
         Me.lQuestion = New System.Windows.Forms.Label()
         Me.tabIntro = New System.Windows.Forms.TabPage()
         Me.pnlExampleIntro = New System.Windows.Forms.Panel()
+        Me.pnlBelgium = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.lNameBelgium = New System.Windows.Forms.Label()
         Me.pnlOld = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lOldname = New System.Windows.Forms.Label()
@@ -81,6 +86,7 @@ Partial Class FrmTheme
         Me.green = New System.Windows.Forms.TabPage()
         Me.red = New System.Windows.Forms.TabPage()
         Me.grpIntro = New System.Windows.Forms.GroupBox()
+        Me.comboIntroPosition = New System.Windows.Forms.ComboBox()
         Me.rLogoIntro = New System.Windows.Forms.CheckBox()
         Me.btnIntroTextfield = New System.Windows.Forms.Button()
         Me.lIntroTextfield = New System.Windows.Forms.Label()
@@ -135,12 +141,8 @@ Partial Class FrmTheme
         Me.OpenMusicTest = New System.Windows.Forms.OpenFileDialog()
         Me.OpenMusicExecution = New System.Windows.Forms.OpenFileDialog()
         Me.SaveExport = New System.Windows.Forms.SaveFileDialog()
-        Me.comboLogoPosition = New System.Windows.Forms.ComboBox()
-        Me.comboIntroPosition = New System.Windows.Forms.ComboBox()
-        Me.pnlBelgium = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.lNameBelgium = New System.Windows.Forms.Label()
+        Me.comboBackgroundTestSizeMode = New System.Windows.Forms.ComboBox()
+        Me.comboBackgroundIntroSizeMode = New System.Windows.Forms.ComboBox()
         Me.grpGeneral.SuspendLayout
         Me.grpQuestion.SuspendLayout
         Me.grpExample.SuspendLayout
@@ -151,6 +153,8 @@ Partial Class FrmTheme
         CType(Me.picLogo,System.ComponentModel.ISupportInitialize).BeginInit
         Me.tabIntro.SuspendLayout
         Me.pnlExampleIntro.SuspendLayout
+        Me.pnlBelgium.SuspendLayout
+        CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).BeginInit
         Me.pnlOld.SuspendLayout
         Me.pnlUS.SuspendLayout
         Me.pnlNew.SuspendLayout
@@ -159,8 +163,6 @@ Partial Class FrmTheme
         Me.grpScreens.SuspendLayout
         Me.ToolStrip1.SuspendLayout
         Me.grpMusic.SuspendLayout
-        Me.pnlBelgium.SuspendLayout
-        CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'grpGeneral
@@ -195,6 +197,7 @@ Partial Class FrmTheme
         '
         'grpQuestion
         '
+        Me.grpQuestion.Controls.Add(Me.comboBackgroundTestSizeMode)
         Me.grpQuestion.Controls.Add(Me.comboLogoPosition)
         Me.grpQuestion.Controls.Add(Me.rQuestionBackground)
         Me.grpQuestion.Controls.Add(Me.btnQuestionBackground)
@@ -223,6 +226,13 @@ Partial Class FrmTheme
         resources.ApplyResources(Me.grpQuestion, "grpQuestion")
         Me.grpQuestion.Name = "grpQuestion"
         Me.grpQuestion.TabStop = false
+        '
+        'comboLogoPosition
+        '
+        Me.comboLogoPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboLogoPosition.FormattingEnabled = true
+        resources.ApplyResources(Me.comboLogoPosition, "comboLogoPosition")
+        Me.comboLogoPosition.Name = "comboLogoPosition"
         '
         'rQuestionBackground
         '
@@ -452,6 +462,36 @@ Partial Class FrmTheme
         Me.pnlExampleIntro.Controls.Add(Me.picLogoIntro)
         Me.pnlExampleIntro.Name = "pnlExampleIntro"
         '
+        'pnlBelgium
+        '
+        resources.ApplyResources(Me.pnlBelgium, "pnlBelgium")
+        Me.pnlBelgium.Controls.Add(Me.PictureBox2)
+        Me.pnlBelgium.Controls.Add(Me.TextBox4)
+        Me.pnlBelgium.Controls.Add(Me.lNameBelgium)
+        Me.pnlBelgium.Name = "pnlBelgium"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.LightBlue
+        resources.ApplyResources(Me.PictureBox2, "PictureBox2")
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.TabStop = false
+        '
+        'TextBox4
+        '
+        Me.TextBox4.BackColor = System.Drawing.Color.Black
+        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
+        resources.ApplyResources(Me.TextBox4, "TextBox4")
+        Me.TextBox4.ForeColor = System.Drawing.Color.White
+        Me.TextBox4.Name = "TextBox4"
+        '
+        'lNameBelgium
+        '
+        resources.ApplyResources(Me.lNameBelgium, "lNameBelgium")
+        Me.lNameBelgium.BackColor = System.Drawing.Color.Transparent
+        Me.lNameBelgium.ForeColor = System.Drawing.Color.White
+        Me.lNameBelgium.Name = "lNameBelgium"
+        '
         'pnlOld
         '
         resources.ApplyResources(Me.pnlOld, "pnlOld")
@@ -556,6 +596,7 @@ Partial Class FrmTheme
         '
         'grpIntro
         '
+        Me.grpIntro.Controls.Add(Me.comboBackgroundIntroSizeMode)
         Me.grpIntro.Controls.Add(Me.comboIntroPosition)
         Me.grpIntro.Controls.Add(Me.rLogoIntro)
         Me.grpIntro.Controls.Add(Me.btnIntroTextfield)
@@ -573,6 +614,13 @@ Partial Class FrmTheme
         resources.ApplyResources(Me.grpIntro, "grpIntro")
         Me.grpIntro.Name = "grpIntro"
         Me.grpIntro.TabStop = false
+        '
+        'comboIntroPosition
+        '
+        Me.comboIntroPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboIntroPosition.FormattingEnabled = true
+        resources.ApplyResources(Me.comboIntroPosition, "comboIntroPosition")
+        Me.comboIntroPosition.Name = "comboIntroPosition"
         '
         'rLogoIntro
         '
@@ -848,49 +896,19 @@ Partial Class FrmTheme
         '
         resources.ApplyResources(Me.SaveExport, "SaveExport")
         '
-        'comboLogoPosition
+        'comboBackgroundTestSizeMode
         '
-        Me.comboLogoPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboLogoPosition.FormattingEnabled = true
-        resources.ApplyResources(Me.comboLogoPosition, "comboLogoPosition")
-        Me.comboLogoPosition.Name = "comboLogoPosition"
+        Me.comboBackgroundTestSizeMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboBackgroundTestSizeMode.FormattingEnabled = true
+        resources.ApplyResources(Me.comboBackgroundTestSizeMode, "comboBackgroundTestSizeMode")
+        Me.comboBackgroundTestSizeMode.Name = "comboBackgroundTestSizeMode"
         '
-        'comboIntroPosition
+        'comboBackgroundIntroSizeMode
         '
-        Me.comboIntroPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboIntroPosition.FormattingEnabled = true
-        resources.ApplyResources(Me.comboIntroPosition, "comboIntroPosition")
-        Me.comboIntroPosition.Name = "comboIntroPosition"
-        '
-        'pnlBelgium
-        '
-        resources.ApplyResources(Me.pnlBelgium, "pnlBelgium")
-        Me.pnlBelgium.Controls.Add(Me.PictureBox2)
-        Me.pnlBelgium.Controls.Add(Me.TextBox4)
-        Me.pnlBelgium.Controls.Add(Me.lNameBelgium)
-        Me.pnlBelgium.Name = "pnlBelgium"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.LightBlue
-        resources.ApplyResources(Me.PictureBox2, "PictureBox2")
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.TabStop = false
-        '
-        'TextBox4
-        '
-        Me.TextBox4.BackColor = System.Drawing.Color.Black
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        resources.ApplyResources(Me.TextBox4, "TextBox4")
-        Me.TextBox4.ForeColor = System.Drawing.Color.White
-        Me.TextBox4.Name = "TextBox4"
-        '
-        'lNameBelgium
-        '
-        resources.ApplyResources(Me.lNameBelgium, "lNameBelgium")
-        Me.lNameBelgium.BackColor = System.Drawing.Color.Transparent
-        Me.lNameBelgium.ForeColor = System.Drawing.Color.White
-        Me.lNameBelgium.Name = "lNameBelgium"
+        Me.comboBackgroundIntroSizeMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboBackgroundIntroSizeMode.FormattingEnabled = true
+        resources.ApplyResources(Me.comboBackgroundIntroSizeMode, "comboBackgroundIntroSizeMode")
+        Me.comboBackgroundIntroSizeMode.Name = "comboBackgroundIntroSizeMode"
         '
         'FrmTheme
         '
@@ -917,6 +935,9 @@ Partial Class FrmTheme
         CType(Me.picLogo,System.ComponentModel.ISupportInitialize).EndInit
         Me.tabIntro.ResumeLayout(false)
         Me.pnlExampleIntro.ResumeLayout(false)
+        Me.pnlBelgium.ResumeLayout(false)
+        Me.pnlBelgium.PerformLayout
+        CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).EndInit
         Me.pnlOld.ResumeLayout(false)
         Me.pnlOld.PerformLayout
         Me.pnlUS.ResumeLayout(false)
@@ -931,9 +952,6 @@ Partial Class FrmTheme
         Me.ToolStrip1.PerformLayout
         Me.grpMusic.ResumeLayout(false)
         Me.grpMusic.PerformLayout
-        Me.pnlBelgium.ResumeLayout(false)
-        Me.pnlBelgium.PerformLayout
-        CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -1056,4 +1074,6 @@ End Sub
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents lNameBelgium As Label
+    Friend WithEvents comboBackgroundTestSizeMode As ComboBox
+    Friend WithEvents comboBackgroundIntroSizeMode As ComboBox
 End Class

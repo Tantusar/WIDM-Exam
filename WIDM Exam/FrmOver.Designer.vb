@@ -57,7 +57,7 @@ Partial Class FrmOver
         'PictureBox3
         '
         resources.ApplyResources(Me.PictureBox3, "PictureBox3")
-        Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(113,Byte),Integer), CType(CType(222,Byte),Integer), CType(CType(75,Byte),Integer))
+        Me.PictureBox3.BackColor = System.Drawing.Color.Black
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox3.Image = Global.WIDM_Exam.My.Resources.Resources.Koenvh_inverted_text

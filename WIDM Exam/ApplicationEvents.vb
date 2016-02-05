@@ -21,6 +21,10 @@ Namespace My
                 FrmOpenTest.btnLanguage.Image = Resources.nl
                 'CurrentThread.CurrentCulture = New CultureInfo("NL")
             End If
+            If My.Settings.MustUpgrade = True Then
+                My.Settings.MustUpgrade = False 
+                My.Settings.Upgrade()
+            End If
             AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf KaboomHandler
         End Sub
 

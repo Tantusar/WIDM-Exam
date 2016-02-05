@@ -40,8 +40,10 @@
 
     Public BackgroundTestEnabled As Boolean
     Public BackgroundTest As String ' = Image.FromFile(CurDir() & "\" & name & "\backgroundTest.png")
+    Public BackgroundTestSizeMode As PictureBoxSizeMode = PictureBoxSizeMode.Zoom
     Public BackgroundIntroEnabled As Boolean
     Public BackgroundIntro As String ' = Image.FromFile(CurDir() & "\" & name & "\backgroundIntro.png")
+    Public BackgroundIntroSizeMode As PictureBoxSizeMode = PictureBoxSizeMode.Zoom
 
     Public BackgroundColorTest As Color
     Public BackgroundColorIntro As Color
