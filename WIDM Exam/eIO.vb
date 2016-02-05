@@ -288,10 +288,12 @@ Module eIo
 
     Public Function SaveGroupmode()
         Try
-            Dim objStreamWriter As New IO.StreamWriter(My.Settings.folder & "\group.widm")
-            objStreamWriter.Write(JsonConvert.SerializeObject(CurrentGroup, Newtonsoft.Json.Formatting.Indented))
-            objStreamWriter.Close()
-            Return True
+            If My.Settings.folder <> "" Then
+                Dim objStreamWriter As New IO.StreamWriter(My.Settings.folder & "\group.widm")
+                objStreamWriter.Write(JsonConvert.SerializeObject(CurrentGroup, Newtonsoft.Json.Formatting.Indented))
+                objStreamWriter.Close()
+                Return True
+            End If
         Catch ex As Exception
             Log(ex.ToString())
             Return False
