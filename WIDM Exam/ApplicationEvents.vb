@@ -22,8 +22,8 @@ Namespace My
                 'CurrentThread.CurrentCulture = New CultureInfo("NL")
             End If
             If My.Settings.MustUpgrade = True Then
-                My.Settings.MustUpgrade = False 
                 My.Settings.Upgrade()
+                My.Settings.MustUpgrade = False 
             End If
             AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf KaboomHandler
         End Sub

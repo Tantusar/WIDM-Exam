@@ -180,7 +180,9 @@ Public Class FrmTheme
     End Sub
 
     Private Sub FrmTheme_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        _currentTheme = New Theme()
+        If _currentTheme Is Nothing Then
+            _currentTheme = New Theme()
+        End If
         comboStyle.DataSource = [Enum].GetValues(GetType(Theme.Style))
         comboLogoPosition.DataSource = [Enum].GetValues(GetType(Theme.Position))
         comboIntroPosition.DataSource = [Enum].GetValues(GetType(Theme.Position))
