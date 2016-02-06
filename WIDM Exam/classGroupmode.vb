@@ -1,7 +1,7 @@
 ﻿Public Class Groupmode
     Public Author As String
     Public Version As String = Application.ProductVersion.ToString()
-    Public Mole As New Candidate
+    Public Mole As String
     Public CurrentEpisode As Integer = 1
     Public Password As String
     Public Candidates As New SortedDictionary(Of String, Candidate)
@@ -9,7 +9,6 @@
     Public Screens As New SortedDictionary(Of String, ScreenExecution)
 
     Sub New()
-        Mole = New Candidate()
         Candidates = New SortedDictionary(Of String, Candidate)
         Episodes = New SortedDictionary(Of Integer, Episode)
         Screens = New SortedDictionary(Of String, ScreenExecution)

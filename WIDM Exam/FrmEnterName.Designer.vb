@@ -165,7 +165,6 @@ Partial Class FrmEnterName
         'tmToBack
         '
         Me.tmToBack.Enabled = true
-        Me.tmToBack.Interval = 50
         '
         'pnlBelgium
         '
