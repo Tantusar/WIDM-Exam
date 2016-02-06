@@ -592,7 +592,7 @@ Public Class FrmStartExecutie
     End Sub
 
     Private Sub tmToBack_Tick(sender As Object, e As EventArgs) Handles tmToBack.Tick
-        tmToBack.Stop()
+        'tmToBack.Stop()
         If CurrentTheme.LogoIntroPosition = Theme.Position.TopRight Then
             PictureBox1.Location = New Point(Me.Width - PictureBox1.Size.Width - 50, PictureBox1.Location.Y)
         End If

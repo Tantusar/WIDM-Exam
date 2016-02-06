@@ -225,7 +225,7 @@ Module eIo
                     .Items.Add(item.Name)
                 Next
                 '.Items.Add(GetLang("geen"))
-                .SelectedItem = CurrentGroup.Mole.Name
+                .SelectedItem = CurrentGroup.Mole
             End With
             Return True
         Catch ex As Exception
@@ -293,6 +293,8 @@ Module eIo
                 objStreamWriter.Write(JsonConvert.SerializeObject(CurrentGroup, Newtonsoft.Json.Formatting.Indented))
                 objStreamWriter.Close()
                 Return True
+            Else
+                Return False
             End If
         Catch ex As Exception
             Log(ex.ToString())

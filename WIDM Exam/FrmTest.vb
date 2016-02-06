@@ -665,9 +665,9 @@ Public Class FrmTest
             Close()
         End Try
         'Fixing overlap by the question and image
-        txtQuestion.SendToBack()
         smallLogo.SendToBack()
-    End Sub
+        txtQuestion.SendToBack()
+        End Sub
 
     Private Sub NextQuestion()
         'Setting everything to default
@@ -719,7 +719,7 @@ Public Class FrmTest
             FrmResult.Show()
             FrmResult.Activate()
         ElseIf FrmOpenTest.rGroep.Checked Then
-            If FrmEnterName.TextBox1.Text = CurrentGroup.Mole.Name And _moleText <> "" Then
+            If FrmEnterName.TextBox1.Text = CurrentGroup.Mole And _moleText <> "" Then
                 MsgBox(_moleText, MsgBoxStyle.Information)
             End If
             Dim result = 0
