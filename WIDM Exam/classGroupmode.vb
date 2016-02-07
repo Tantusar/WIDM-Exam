@@ -73,19 +73,20 @@
         Return CandidateEdit(name, newName, active, CurrentEpisode)
     End Function
 
-    Public Function AnswerAdd(ByVal number As Integer, ByVal question As String, ByVal candidate As String, ByVal answer As String, ByVal episode As Integer)
+    Public Function AnswerAdd(ByVal number As Integer, ByVal question As String, ByVal candidate As String, ByVal answer As String, ByVal correct As Boolean, ByVal episode As Integer)
         EpisodeExists(episode)
         Dim givenAnswer As New GivenAnswer
         givenAnswer.Number = number
         givenAnswer.Question = question
         givenAnswer.Candidate = candidate
         givenAnswer.Answer = answer
+        givenAnswer.Correct = correct
         Episodes(episode).Answers.Add(givenAnswer)
         Return True
     End Function
 
-    Public Function AnswerAdd(ByVal number As Integer, ByVal question As String, ByVal candidate As String, ByVal answer As String)
-        Return AnswerAdd(number, question, candidate, answer, CurrentEpisode)
+    Public Function AnswerAdd(ByVal number As Integer, ByVal question As String, ByVal candidate As String, ByVal answer As String, ByVal correct As Boolean)
+        Return AnswerAdd(number, question, candidate, answer, correct, CurrentEpisode)
     End Function
 
     Public Function AnswerRemove(ByVal index As Integer, ByVal episode As Integer)
@@ -204,6 +205,7 @@ Public Class GivenAnswer
     Public Question As String
     Public Candidate As String
     Public Answer As String
+    Public Correct As Boolean = False
 End Class
 
 Public Class ExecutionResult

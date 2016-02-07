@@ -34,7 +34,19 @@ Public Class FrmEnterName
         End If
     End Sub
 
-    Private Sub CloseNow()
+    Private Sub ExitTest()
+        Dim response
+        If My.Settings.language = "en" Then
+            response = MsgBox("Do you want to exit the quiz?",
+                              MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
+        Else
+            response = MsgBox("Weet u zeker dat u de test wilt afsluiten?",
+                              MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
+        End If
+
+        If response = MsgBoxResult.Yes Then
+            Close()
+        End If
     End Sub
 
     Private Sub FrmEnterName_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -73,20 +85,7 @@ Public Class FrmEnterName
     End Sub
 
     Private Sub FrmEnterName_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        If e.KeyCode = Keys.Escape Then
-            Dim response
-            If My.Settings.language = "en" Then
-                response = MsgBox("Do you want to exit the quiz?",
-                                  MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-            Else
-                response = MsgBox("Weet u zeker dat u de test wilt afsluiten?",
-                                  MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-            End If
-
-            If response = MsgBoxResult.Yes Then
-                Close()
-            End If
-        End If
+        ExitTest()
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -152,7 +151,7 @@ Public Class FrmEnterName
         TextBox4.Font = CurrentTheme.FontIntroTextfield
         TextBox4.BackColor = CurrentTheme.BackgroundColorIntro
         pnlBelgium.BackColor = CurrentTheme.BackgroundColorIntro
-        TextBox4.ForeColor = CurrentTheme.ColorIntroTextField
+        TextBox4.ForeColor = CurrentTheme.ColorIntroTextfield
         lNameBelgium.ForeColor = CurrentTheme.ColorIntroText
 
         'If FrmOpenTest.rLucidaConsole.Checked Then
@@ -385,17 +384,7 @@ Public Class FrmEnterName
 
         End If
         If e.KeyCode = Keys.Escape Then
-            Dim response
-            If My.Settings.language = "en" Then
-                response = MsgBox("Do you want to exit the quiz?",
-                                  MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-            Else
-                response = MsgBox("Weet u zeker dat u de test wilt afsluiten?",
-                                  MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-            End If
-            If response = MsgBoxResult.Yes Then
-                Close()
-            End If
+            ExitTest()
         End If
     End Sub
 
@@ -419,17 +408,7 @@ Public Class FrmEnterName
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-        Dim response
-        If My.Settings.language = "en" Then
-            response = MsgBox("Do you want to exit the quiz?",
-                              MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-        Else
-            response = MsgBox("Weet u zeker dat u de test wilt afsluiten?",
-                              MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-        End If
-        If response = MsgBoxResult.Yes Then
-            Close()
-        End If
+        ExitTest()
         '    If FrmOpenTest.rGroep.Checked Then
         '        If My.Settings.password = "" Then
         '            Close()
@@ -454,33 +433,12 @@ Public Class FrmEnterName
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-        Dim response
-        If My.Settings.language = "en" Then
-            response = MsgBox("Do you want to exit the quiz?",
-                              MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-        Else
-            response = MsgBox("Weet u zeker dat u de test wilt afsluiten?",
-                              MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-        End If
-        If response = MsgBoxResult.Yes Then
-            Close()
-        End If
+        ExitTest()
     End Sub
 
     Private Sub TextBox3_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox3.KeyDown
         If e.KeyCode = Keys.Escape Then
-            Dim response
-            If My.Settings.language = "en" Then
-                response = MsgBox("Do you want to exit the quiz?",
-                                  MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-            Else
-                response = MsgBox("Weet u zeker dat u de test wilt afsluiten?",
-                                  MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-            End If
-
-            If response = MsgBoxResult.Yes Then
-                Close()
-            End If
+            ExitTest()
         End If
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
@@ -516,18 +474,7 @@ Public Class FrmEnterName
     End Sub
 
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-        Dim response
-        If My.Settings.language = "en" Then
-            response = MsgBox("Do you want to exit the quiz?",
-                              MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-        Else
-            response = MsgBox("Weet u zeker dat u de test wilt afsluiten?",
-                              MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-        End If
-
-        If response = MsgBoxResult.Yes Then
-            Close()
-        End If
+        ExitTest()
     End Sub
 
     Private Sub tmToBack_Tick(sender As Object, e As EventArgs) Handles tmToBack.Tick
@@ -543,23 +490,20 @@ Public Class FrmEnterName
 
     Private Sub TextBox4_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox4.KeyDown
         If e.KeyCode = Keys.Escape Then
-            Dim response
-            If My.Settings.language = "en" Then
-                response = MsgBox("Do you want to exit the quiz?",
-                                  MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-            Else
-                response = MsgBox("Weet u zeker dat u de test wilt afsluiten?",
-                                  MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2)
-            End If
-
-            If response = MsgBoxResult.Yes Then
-                Close()
-            End If
+            ExitTest()
         End If
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
             TextBox1.Text = TextBox4.Text
             PressedEnter()
         End If
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+        ExitTest()
     End Sub
 End Class

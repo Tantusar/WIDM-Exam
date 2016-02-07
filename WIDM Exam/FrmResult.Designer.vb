@@ -29,7 +29,12 @@ Partial Class FrmResult
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.txtNaam = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.SuspendLayout()
+        Me.listAnswers = New ComponentOwl.BetterListView.BetterListView()
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.btnExport = New System.Windows.Forms.Button()
+        Me.SaveFileHTMLExport = New System.Windows.Forms.SaveFileDialog()
+        CType(Me.listAnswers,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'Label2
         '
@@ -58,30 +63,66 @@ Partial Class FrmResult
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.Control
         resources.ApplyResources(Me.Button1, "Button1")
+        Me.Button1.BackColor = System.Drawing.SystemColors.Control
         Me.Button1.Name = "Button1"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Button1.UseVisualStyleBackColor = false
+        '
+        'listAnswers
+        '
+        resources.ApplyResources(Me.listAnswers, "listAnswers")
+        Me.listAnswers.Columns.Add(CType(resources.GetObject("listAnswers.Columns"),ComponentOwl.BetterListView.BetterListViewColumnHeader))
+        Me.listAnswers.Columns.Add(CType(resources.GetObject("listAnswers.Columns1"),ComponentOwl.BetterListView.BetterListViewColumnHeader))
+        Me.listAnswers.Columns.Add(CType(resources.GetObject("listAnswers.Columns2"),ComponentOwl.BetterListView.BetterListViewColumnHeader))
+        Me.listAnswers.Columns.Add(CType(resources.GetObject("listAnswers.Columns3"),ComponentOwl.BetterListView.BetterListViewColumnHeader))
+        Me.listAnswers.GridLines = ComponentOwl.BetterListView.BetterListViewGridLines.Grid
+        Me.listAnswers.Name = "listAnswers"
+        '
+        'btnClose
+        '
+        resources.ApplyResources(Me.btnClose, "btnClose")
+        Me.btnClose.BackColor = System.Drawing.SystemColors.Control
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.UseVisualStyleBackColor = false
+        '
+        'btnExport
+        '
+        resources.ApplyResources(Me.btnExport, "btnExport")
+        Me.btnExport.BackColor = System.Drawing.SystemColors.Control
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.UseVisualStyleBackColor = false
+        '
+        'SaveFileHTMLExport
+        '
+        resources.ApplyResources(Me.SaveFileHTMLExport, "SaveFileHTMLExport")
         '
         'FrmResult
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
+        Me.Controls.Add(Me.btnExport)
+        Me.Controls.Add(Me.btnClose)
+        Me.Controls.Add(Me.listAnswers)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtNaam)
         Me.Controls.Add(Me.txtScore)
         Me.Controls.Add(Me.Label2)
-        Me.DoubleBuffered = True
+        Me.DoubleBuffered = true
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmResult"
-        Me.TopMost = True
-        Me.ResumeLayout(False)
+        Me.TopMost = true
+        CType(Me.listAnswers,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtScore As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents txtNaam As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents listAnswers As ComponentOwl.BetterListView.BetterListView
+    Friend WithEvents btnClose As Button
+    Friend WithEvents btnExport As Button
+    Friend WithEvents SaveFileHTMLExport As SaveFileDialog
 End Class

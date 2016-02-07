@@ -139,6 +139,11 @@ Module eIo
                     newItem.SubItems.Add(answer.Question)
                     newItem.SubItems.Add(answer.Candidate)
                     newItem.SubItems.Add(answer.Answer)
+                    If answer.Correct Then
+                        newItem.SubItems.Add(My.Resources.tick)
+                    Else
+                        newItem.SubItems.Add(My.Resources.cross)
+                    End If
                     newItem.Group = .Groups(answer.Candidate)
                     .Items.Add(newItem)
                 Next
@@ -245,6 +250,7 @@ Module eIo
                     FrmOpenTest.comboThemes.Items.Add(Path.GetFileName(foundFile))
                 End If
             Next
+            FrmOpenTest.comboThemes.SelectedItem = My.Settings.CurrentTheme
         Catch ex As Exception
             Log(ex.ToString())
         End Try
@@ -262,23 +268,27 @@ Module eIo
 
     Public Function LoadGroupmode()
         Try
-            If Not My.Computer.FileSystem.FileExists(My.Settings.folder & "\group.widm") Then
-                File.Create(My.Settings.folder & "\group.widm").Dispose()
-                CurrentGroup = New Groupmode()
-                Return True
-            Else
-                Dim objStreamReader As New IO.StreamReader(My.Settings.folder & "\group.widm")
-                Dim temp As String = objStreamReader.ReadToEnd()
-                'MsgBox(temp)
-                CurrentGroup = JsonConvert.DeserializeObject(Of Groupmode)(temp)
-
-                'Check validity of object. To prevent an empty file causing issues. (when disabling autosave)
-                If CurrentGroup Is Nothing Then
+            If My.Settings.folder <> "" Then
+                If Not My.Computer.FileSystem.FileExists(My.Settings.folder & "\group.widm") Then
+                    File.Create(My.Settings.folder & "\group.widm").Dispose()
                     CurrentGroup = New Groupmode()
+                    Return True
+                Else
+                    Dim objStreamReader As New IO.StreamReader(My.Settings.folder & "\group.widm")
+                    Dim temp As String = objStreamReader.ReadToEnd()
+                    'MsgBox(temp)
+                    CurrentGroup = JsonConvert.DeserializeObject(Of Groupmode)(temp)
+
+                    'Check validity of object. To prevent an empty file causing issues. (when disabling autosave)
+                    If CurrentGroup Is Nothing Then
+                        CurrentGroup = New Groupmode()
+                    End If
+                    'MsgBox(CurrentGroup.episodes(1).number)
+                    objStreamReader.Close()
+                    Return True
                 End If
-                'MsgBox(CurrentGroup.episodes(1).number)
-                objStreamReader.Close()
-                Return True
+            Else
+                Return False
             End If
         Catch ex As Exception
             Log(ex.ToString())

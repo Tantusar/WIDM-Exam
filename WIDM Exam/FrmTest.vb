@@ -2,6 +2,7 @@
 Imports System.Net
 Imports System.Security.Cryptography
 Imports System.Xml
+Imports ComponentOwl.BetterListView
 Imports Newtonsoft.Json
 
 Public Class FrmTest
@@ -19,12 +20,15 @@ Public Class FrmTest
     Dim _b As PictureBox
     Public S As PictureBox
     Dim _correctanswertemp As String
+    Dim _questionCorrect As Boolean = False
     Dim _amountQuestions As Integer
     Dim _amountAnswers As Integer = 0
     Dim _wedstrijdantwoordentemp As String = ""
     Dim _buttonpressed As Boolean = False
     Dim _moleText As String
     Dim _rand As New Random
+
+    Public _givenAnswer As New List(Of GivenAnswer)
 
     Dim _test As New Test
     Dim _questions As New List(Of Question)
@@ -667,7 +671,7 @@ Public Class FrmTest
         'Fixing overlap by the question and image
         smallLogo.SendToBack()
         txtQuestion.SendToBack()
-        End Sub
+    End Sub
 
     Private Sub NextQuestion()
         'Setting everything to default
@@ -684,6 +688,7 @@ Public Class FrmTest
         _locationValue = 0
         _amountAnswers = 0
         _buttonpressed = False
+        _questionCorrect = False
         t1.Text = ""
         'Deleting all PictureBoxes and Labels, with exceptions
         For i As Integer = Me.Controls.Count - 1 To 0 Step -1
@@ -714,7 +719,17 @@ Public Class FrmTest
             Else
                 FrmResult.txtScore.Text = _answersRight & " antwoorden goed in " & Val(_time) / 10 & " seconden."
             End If
-
+            For Each item In _givenAnswer
+                Dim newItem As New BetterListViewItem(item.Number)
+                newItem.SubItems.Add(item.Question)
+                newItem.SubItems.Add(item.Answer)
+                If item.Correct Then
+                    newItem.SubItems.Add(My.Resources.tick)
+                Else
+                    newItem.SubItems.Add(My.Resources.cross)
+                End If
+                FrmResult.listAnswers.Items.Add(newItem)
+            Next
 
             FrmResult.Show()
             FrmResult.Activate()
@@ -828,13 +843,23 @@ Public Class FrmTest
     Private Sub CorrectAnswer()
         ' MsgBox(_answersRight & " + " & _questions(_question - 1).Points)
         _answersRight = _answersRight + _questions(_question - 1).Points
-
+        _questionCorrect = True
     End Sub
 
     Private Sub SaveLastQuestion()
         If FrmOpenTest.rGroep.Checked Then
-            CurrentGroup.AnswerAdd(_questionDisplay, _questions(_question - 1).Text, FrmEnterName.TextBox1.Text, _answer)
+            CurrentGroup.AnswerAdd(_questionDisplay, _questions(_question - 1).Text, FrmEnterName.TextBox1.Text, _answer, _questionCorrect)
             ReloadAnswers()
+        ElseIf FrmOpenTest.rAlleen.Checked Then
+            Dim givenAnswer As New GivenAnswer
+            givenAnswer.Number = _questionDisplay
+            givenAnswer.Question = _questions(_question - 1).Text
+            givenAnswer.Answer = _answer
+            givenAnswer.Candidate = FrmEnterName.TextBox1.Text
+            If _questionCorrect Then
+                givenAnswer.Correct = True
+            End If
+            _givenAnswer.Add(givenAnswer)
         End If
     End Sub
 

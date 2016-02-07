@@ -45,6 +45,8 @@ Partial Class FrmEnterName
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.lNameBelgium = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout
         Me.Panel2.SuspendLayout
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -147,6 +149,7 @@ Partial Class FrmEnterName
         resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.BackgroundImage = Global.WIDM_Exam.My.Resources.Resources.Background_enter_name_US
+        Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.TextBox3)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Name = "Panel3"
@@ -169,6 +172,7 @@ Partial Class FrmEnterName
         'pnlBelgium
         '
         resources.ApplyResources(Me.pnlBelgium, "pnlBelgium")
+        Me.pnlBelgium.Controls.Add(Me.Label6)
         Me.pnlBelgium.Controls.Add(Me.PictureBox2)
         Me.pnlBelgium.Controls.Add(Me.TextBox4)
         Me.pnlBelgium.Controls.Add(Me.lNameBelgium)
@@ -195,6 +199,20 @@ Partial Class FrmEnterName
         Me.lNameBelgium.BackColor = System.Drawing.Color.Transparent
         Me.lNameBelgium.ForeColor = System.Drawing.Color.White
         Me.lNameBelgium.Name = "lNameBelgium"
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        resources.ApplyResources(Me.Label6, "Label6")
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Name = "Label6"
+        '
+        'Label7
+        '
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        resources.ApplyResources(Me.Label7, "Label7")
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(128,Byte),Integer))
+        Me.Label7.Name = "Label7"
         '
         'FrmEnterName
         '
@@ -246,4 +264,6 @@ End Sub
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents lNameBelgium As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
 End Class
