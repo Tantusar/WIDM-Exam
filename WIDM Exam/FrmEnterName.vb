@@ -21,6 +21,7 @@ Public Class FrmEnterName
                         _checkTested.Items.Add(TextBox1.Text)
                         Try
                             ComboBox1.Items.Remove(TextBox1.Text)
+                            ComboBox2.Items.Remove(TextBox1.Text)
                         Catch ex As Exception
                         End Try
                         Start()
@@ -130,6 +131,7 @@ Public Class FrmEnterName
         End If
 
         ComboBox1.Visible = True
+        ComboBox2.Visible = True
         TextBox1.Visible = True
 
         'Default
@@ -138,6 +140,9 @@ Public Class FrmEnterName
 
         Label1.ForeColor = CurrentTheme.ColorIntroText
         TextBox1.ForeColor = CurrentTheme.ColorIntroTextfield
+
+        ComboBox1.Font = New Font(CurrentTheme.FontIntroText.OriginalFontName, 16, FontStyle.Regular)
+
         'US
         Label5.Font = CurrentTheme.FontIntroText
         TextBox3.Font = CurrentTheme.FontIntroTextfield
@@ -153,6 +158,7 @@ Public Class FrmEnterName
         pnlBelgium.BackColor = CurrentTheme.BackgroundColorIntro
         TextBox4.ForeColor = CurrentTheme.ColorIntroTextfield
         lNameBelgium.ForeColor = CurrentTheme.ColorIntroText
+        ComboBox2.Font = New Font(CurrentTheme.FontIntroText.OriginalFontName, 24, FontStyle.Regular)
 
         'If FrmOpenTest.rLucidaConsole.Checked Then
         '    'Default
@@ -350,13 +356,16 @@ Public Class FrmEnterName
             If FrmOpenTest.rCombobox.Checked Then
                 For Each item In CurrentGroup.Candidates.Values
                     ComboBox1.Items.Add(item.Name)
+                    ComboBox2.Items.Add(item.Name)
                 Next
                 TextBox1.Visible = False
             Else
                 ComboBox1.Visible = False
+                ComboBox2.Visible = False
             End If
         Else
             ComboBox1.Visible = False
+            ComboBox2.Visible = False
         End If
     End Sub
 
@@ -478,7 +487,7 @@ Public Class FrmEnterName
     End Sub
 
     Private Sub tmToBack_Tick(sender As Object, e As EventArgs) Handles tmToBack.Tick
-        tmToBack.Stop()
+        'tmToBack.Stop()
         If CurrentTheme.LogoIntroPosition = Theme.Position.TopRight Then
             PictureBox1.Location = New Point(Me.Width - PictureBox1.Size.Width - 50, PictureBox1.Location.Y)
         End If
@@ -500,10 +509,15 @@ Public Class FrmEnterName
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
+        ExitTest()
     End Sub
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
         ExitTest()
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        TextBox1.Text = ComboBox2.SelectedItem
+        PressedEnter()
     End Sub
 End Class

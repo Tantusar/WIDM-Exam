@@ -182,9 +182,9 @@ Module eIo
                     'columnEpisode.SortMethod = BetterListViewSortMethod.Auto
                     .Columns.Add(columnEpisode)
 
-                    FrmOpenTest.listCandidateActive.Items.Add(GetLang("Aflevering") & ep.Key)
+                    FrmOpenTest.listCandidateActive.Items.Add(GetLang("Aflevering") & ep.Key, True)
                 Next
-                FrmOpenTest.listCandidateActive.SetItemChecked(0, True)
+                'FrmOpenTest.listCandidateActive.SetItemChecked(0, True)
 
                 For Each candidate In CurrentGroup.Candidates.Values
                     'Dim item As New OLVListItem(candidate.name)

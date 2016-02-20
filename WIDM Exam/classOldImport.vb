@@ -312,3 +312,157 @@ Class OldImport
         End If
     End Function
 End Class
+
+Class GroupImport
+    Dim _group As New Groupmode
+    Public Function LoadXML(ByVal folder As String, ByVal ep As Integer)
+        Try
+
+            _group.CurrentEpisode = ep
+            Dim candidates() As String = {""}
+            Dim mole As String = ""
+            Dim answers() As String = {""}
+            Dim execution() As String = {""}
+            Dim screens() As String = {""}
+
+            Dim document As XmlReader
+            document = New XmlTextReader(folder & "\afl" & ep & ".widm")
+            While (document.Read())
+
+                Dim type = document.NodeType
+
+
+                If (type = XmlNodeType.Element) Then
+                    If (document.Name = "candidates") Then
+                        candidates = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
+                    End If
+                    If (document.Name = "mole") Then
+                        mole = WebUtility.HtmlDecode(document.ReadInnerXml.ToString)
+                    End If
+                    If (document.Name = "answers") Then
+                        answers = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
+                    End If
+                    If (document.Name = "execution") Then
+                        execution = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
+                    End If
+                    If (document.Name = "screens") Then
+                        screens = (WebUtility.HtmlDecode(document.ReadInnerXml.ToString)).Split(vbNewLine)
+                    End If
+                End If
+
+            End While
+            ' MsgBox("")
+            document.Close()
+
+            If ep = 1 Then
+                'Do not pollute the candidate list.
+                For Each item As String In candidates.Skip(1)
+                    Dim can As New Candidate
+                    can.Name = Replace(item, vbLf, "")
+                    _group.CandidateAdd(can)
+                Next
+                
+            End If
+            If mole <> "" Then
+                _group.Mole = mole
+            End If
+
+
+            For Each line As String In answers.Skip(1)  '// loop thru array list.
+                Dim lineArray() As String = line.Split("#") '// separate by "#" character.
+                'Dim newItem As New ListViewItem() '// add text Item.
+                'Dim answ As New GivenAnswer
+                'answ.Number = Replace(lineArray(0).ToString.PadLeft(3), vbLf, "")
+                'answ.Question = lineArray(1)
+                'answ.Candidate = lineArray(2)
+                'answ.Answer = lineArray(3)
+                'answ.Correct = False
+                'Try
+                '    newItem.SubItems.Add()
+                '    newItem.SubItems.Add()
+                '    newItem.SubItems.Add()
+                'Catch ex As Exception
+
+                'End Try
+
+                'End If
+                _group.AnswerAdd(Replace(lineArray(0).ToString.PadLeft(3), vbLf, ""), lineArray(1), lineArray(2), lineArray(3), False)
+            Next
+
+
+            For Each line2 As String In execution.Skip(1)   '// loop thru array list.
+                Dim lineArray() As String = line2.Split("#") '// separate by "#" character.
+                'Dim newItem As New ListViewItem(Replace(lineArray(0).ToString.PadLeft(3), vbLf, "")) '// add text Item.
+
+                'Try
+                '    newItem.SubItems.Add(lineArray(1))
+                '    newItem.SubItems.Add(lineArray(2))
+                '    newItem.SubItems.Add(lineArray(3))
+                '    'newItem.SubItems.Add(lineArray(4))
+                '    Try
+                '        'MsgBox("Y")
+                '        newItem.SubItems.Add(lineArray(4))
+                '    Catch ex As Exception
+                '        'MsgBox("N")
+                '        newItem.SubItems.Add("0")
+                '    End Try
+
+                'Catch ex As Exception
+                '    MsgBox(ex.Message)
+                'End Try
+
+                'End If
+                Dim jokers As Integer
+                If lineArray.Count >= 4 AndAlso lineArray(4) = "Vrijstelling" Then
+                    jokers = FrmOpenTest.VrijstellingInt
+                Else
+                    jokers = lineArray(4)
+                End If
+                _group.ExecutionAdd(Replace(lineArray(0).ToString.PadLeft(3), vbLf, ""), lineArray(1), lineArray(2), lineArray(3), jokers)
+                'FrmOpenTest.listviewExecutie.Items.Add(newItem) '// add Item to ListView.
+            Next
+
+            For Each line3 As String In screens.Skip(1)    '// loop thru array list.
+                Dim lineArray() As String = line3.Split("#") '// separate by "#" character.
+                'Dim newItem As New ListViewItem(WebUtility.HtmlDecode(Replace(lineArray(0).ToString.PadLeft(3), vbLf, ""))) '// add text Item.
+
+                'Try
+                '    newItem.SubItems.Add(lineArray(1))
+                '    newItem.SubItems.Add(lineArray(2))
+                'Catch ex As Exception
+
+                'End Try
+
+                'End If
+                'FrmOpenTest.listviewScherm.Items.Add(newItem) '// add Item to ListView.
+                _group.ScreenAdd(Replace(lineArray(0).ToString.PadLeft(3), vbLf, ""), lineArray(1))
+            Next
+            Return True
+        Catch ex As Exception
+            Log(ex.ToString())
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+            Return False
+        End Try
+    End Function
+
+    Public Function Convert(ByVal folder As String, ByVal epCount As Integer)
+        For i = 1 To epCount
+            LoadXML(folder, i)
+        Next
+        Return True
+    End Function
+
+    Public Function Save(ByVal fileName As String)
+        Try
+            _group.CurrentEpisode = 1
+            Dim objStreamWriter As New IO.StreamWriter(fileName)
+            objStreamWriter.Write(JsonConvert.SerializeObject(_group, Newtonsoft.Json.Formatting.Indented))
+            objStreamWriter.Close()
+            Return True
+        Catch ex As Exception
+            Log(ex.ToString())
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+            Return False
+        End Try
+    End Function
+End Class

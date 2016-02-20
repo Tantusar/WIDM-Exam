@@ -871,6 +871,7 @@ Public Class FrmTest
             'smallLogo.Anchor = AnchorStyles.Top Or AnchorStyles.Right
             smallLogo.Location = New Point(Me.Width - smallLogo.Size.Width - 15, smallLogo.Location.Y)
             txtQuestion.Location = New Point(96, txtQuestion.Location.Y)
+            txtQuestion.Size = New Size(txtQuestion.Size.Width - 96 - smallLogo.Size.Width - 15, txtQuestion.Size.Height)
         End If
     End Sub
 

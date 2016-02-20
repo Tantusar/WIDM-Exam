@@ -54,14 +54,16 @@ Public Class FrmTestMaken
             rGroepsModusTest.Checked = True
         End If
 
-        NumericUpDown1.Value = CurrentGroup.CurrentEpisode
-        NumericUpDown1.Minimum = 1
-
         _test = New Test()
         _test.Author = ""
         _test.Comment = ""
         _test.MoleText = ""
         _test.Questions = {}
+
+        NumericUpDown1.Value = CurrentGroup.CurrentEpisode
+        NumericUpDown1.Minimum = 1
+
+
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)

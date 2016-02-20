@@ -38,15 +38,16 @@ Partial Class FrmEnterName
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.WMP1 = New AxWMPLib.AxWindowsMediaPlayer()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tmToBack = New System.Windows.Forms.Timer(Me.components)
         Me.pnlBelgium = New System.Windows.Forms.Panel()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.lNameBelgium = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout
         Me.Panel2.SuspendLayout
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -154,6 +155,13 @@ Partial Class FrmEnterName
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Name = "Panel3"
         '
+        'Label7
+        '
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        resources.ApplyResources(Me.Label7, "Label7")
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(128,Byte),Integer))
+        Me.Label7.Name = "Label7"
+        '
         'TextBox3
         '
         resources.ApplyResources(Me.TextBox3, "TextBox3")
@@ -168,15 +176,33 @@ Partial Class FrmEnterName
         'tmToBack
         '
         Me.tmToBack.Enabled = true
+        Me.tmToBack.Interval = 50
         '
         'pnlBelgium
         '
         resources.ApplyResources(Me.pnlBelgium, "pnlBelgium")
+        Me.pnlBelgium.Controls.Add(Me.ComboBox2)
         Me.pnlBelgium.Controls.Add(Me.Label6)
         Me.pnlBelgium.Controls.Add(Me.PictureBox2)
         Me.pnlBelgium.Controls.Add(Me.TextBox4)
         Me.pnlBelgium.Controls.Add(Me.lNameBelgium)
         Me.pnlBelgium.Name = "pnlBelgium"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.Color.Black
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        resources.ApplyResources(Me.ComboBox2, "ComboBox2")
+        Me.ComboBox2.ForeColor = System.Drawing.Color.White
+        Me.ComboBox2.FormattingEnabled = true
+        Me.ComboBox2.Name = "ComboBox2"
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        resources.ApplyResources(Me.Label6, "Label6")
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Name = "Label6"
         '
         'PictureBox2
         '
@@ -199,20 +225,6 @@ Partial Class FrmEnterName
         Me.lNameBelgium.BackColor = System.Drawing.Color.Transparent
         Me.lNameBelgium.ForeColor = System.Drawing.Color.White
         Me.lNameBelgium.Name = "lNameBelgium"
-        '
-        'Label6
-        '
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        resources.ApplyResources(Me.Label6, "Label6")
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Name = "Label6"
-        '
-        'Label7
-        '
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        resources.ApplyResources(Me.Label7, "Label7")
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(128,Byte),Integer))
-        Me.Label7.Name = "Label7"
         '
         'FrmEnterName
         '
@@ -266,4 +278,5 @@ End Sub
     Friend WithEvents lNameBelgium As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents ComboBox2 As ComboBox
 End Class

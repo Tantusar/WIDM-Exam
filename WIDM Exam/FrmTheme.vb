@@ -73,13 +73,6 @@ Public Class FrmTheme
         lAnswer.ForeColor = _currentTheme.ColorAnswers
         picAnswer.Image = _currentTheme.ImgButton
 
-        comboStyle.SelectedItem = _currentTheme.IntroStyle
-        comboAlignment.SelectedItem = _currentTheme.QuestionAlignment
-        comboLogoPosition.SelectedItem = _currentTheme.LogoTestPosition
-        comboIntroPosition.SelectedItem = _currentTheme.LogoIntroPosition
-        comboBackgroundTestSizeMode.SelectedItem = _currentTheme.BackgroundTestSizeMode
-        comboBackgroundIntroSizeMode.SelectedItem = _currentTheme.BackgroundIntroSizeMode
-
         If _currentTheme.BackgroundIntroEnabled Then
             pnlExampleIntro.BackgroundImage = _currentTheme.ImgBackgroundIntro
         Else
@@ -163,6 +156,12 @@ Public Class FrmTheme
 
         End Try
 
+        comboStyle.SelectedItem = _currentTheme.IntroStyle
+        comboAlignment.SelectedItem = _currentTheme.QuestionAlignment
+        comboLogoPosition.SelectedItem = _currentTheme.LogoTestPosition
+        comboIntroPosition.SelectedItem = _currentTheme.LogoIntroPosition
+        comboBackgroundTestSizeMode.SelectedItem = _currentTheme.BackgroundTestSizeMode
+        comboBackgroundIntroSizeMode.SelectedItem = _currentTheme.BackgroundIntroSizeMode
     End Sub
 
     Private Sub btnFontQuestion_Click(sender As Object, e As EventArgs) Handles btnFontQuestion.Click
@@ -434,7 +433,12 @@ Public Class FrmTheme
 
     Private Sub btnReload_Click(sender As Object, e As EventArgs) Handles btnReload.Click
         ReloadExamples()
-
+        'Dim frm As New FrmTest
+        'frm.TopLevel = False
+        'frm.Parent = pnlExampleTest 'tabExample.TabPages(0)
+        'frm.Show()
+        'pnlExampleTest.AutoScroll = True
+        'pnlExampleTest.Hide()
     End Sub
 
     Private Sub picAnswer_Click(sender As Object, e As EventArgs) Handles picAnswer.Click

@@ -145,6 +145,39 @@
   <data name="btnConvert.Text" xml:space="preserve">
     <value>Convert</value>
   </data>
+  <data name="GroupBox2.Text" xml:space="preserve">
+    <value>Group mode</value>
+  </data>
+  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>Episode count:</value>
+  </data>
+  <data name="btnConvertGroup.Text" xml:space="preserve">
+    <value>Convert</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Location old group mode (v2.1):</value>
+  </data>
+  <data name="btnNewGroup.Text" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 13</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Location new group mode:</value>
+  </data>
+  <data name="btnOldGroup.Text" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>It works, but there may be additional features that have only been added after the old version. Please check whether everything has been converted correctly.</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAMDAAAAEAIACoJQAANgAAACAgAAABACAAqBAAAN4lAAAQEAAAAQAgAGgEAACGNgAAKAAAADAA
@@ -402,6 +435,6 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>WIDM Exam convert quiz</value>
+    <value>WIDM Exam convert</value>
   </data>
 </root>

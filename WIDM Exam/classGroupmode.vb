@@ -164,6 +164,9 @@
     End Function
 
     Public Function ScreenAdd(ByVal name As String, ByVal location As String)
+        If Screens.ContainsKey(name) Then
+            ScreenRemove(name)
+        End If
         Dim screen As New ScreenExecution
         screen.Name = name
         screen.Location = location

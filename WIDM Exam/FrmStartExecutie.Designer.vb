@@ -185,7 +185,7 @@ Partial Class FrmStartExecutie
         'tmToBack
         '
         Me.tmToBack.Enabled = true
-        Me.tmToBack.Interval = 125
+        Me.tmToBack.Interval = 50
         '
         'pnlBelgium
         '

@@ -33,4 +33,24 @@
             comboVersion.SelectedItem = OldImport.FileVersion.v2
         End If
     End Sub
+
+    Private Sub btnConvertGroup_Click(sender As Object, e As EventArgs) Handles btnConvertGroup.Click
+        Dim convert As New GroupImport
+        If convert.Convert(txtOldGroup.Text, numEpisodeCount.Value) = True Then
+            convert.Save(txtNewGroup.Text)
+            MsgBox(GetLang("SavedSuccess"), MsgBoxStyle.Information)
+        End If
+    End Sub
+
+    Private Sub btnOldGroup_Click(sender As Object, e As EventArgs) Handles btnOldGroup.Click
+        If FolderOldGroup.ShowDialog() = DialogResult.OK Then
+            txtOldGroup.Text = FolderOldGroup.SelectedPath
+        End If
+    End Sub
+
+    Private Sub btnNewGroup_Click(sender As Object, e As EventArgs) Handles btnNewGroup.Click
+        If SaveNewGroup.ShowDialog() = DialogResult.OK Then
+            txtNewGroup.Text = SaveNewGroup.FileName
+        End If
+    End Sub
 End Class
