@@ -1,7 +1,8 @@
-﻿Imports Newtonsoft.Json
+﻿Imports System.Drawing.Text
+Imports Newtonsoft.Json
 
 <JsonObject(MemberSerialization.OptOut)>
- Public Class Theme
+Public Class Theme
     Dim _afbeeldingenFolder = CurDir() & "\Afbeeldingen"
 
     Enum Style
@@ -69,18 +70,44 @@
     Public MusicExecutionEnabled As Boolean
     Public MusicExecution As String
 
+    Function IsFontInstalled(ByVal font As String) As Boolean
+        Dim fontFamilies() As FontFamily
+
+        Dim installedFontCollection As New InstalledFontCollection()
+
+        ' Get the array of FontFamily objects.
+        fontFamilies = installedFontCollection.Families
+
+        ' The loop below creates a large string that is a comma-separated
+        ' list of all font family names.
+        For Each family In fontFamilies
+            If family.Name = font Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+
+    Function IsFontInstalled() As Boolean
+        If IsFontInstalled(FontQuestion.OriginalFontName) And IsFontInstalled(FontAnswers.OriginalFontName) And IsFontInstalled(FontIntroText.OriginalFontName) And IsFontInstalled(FontIntroTextfield.OriginalFontName) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
     Sub New()
 
     End Sub
 
     Sub New(_name As String)
-        name = _name
+        Name = _name
     End Sub
 
     <JsonIgnore()> ReadOnly Property ImgLogoTest As Image
         Get
             Try
-                Return Image.FromFile(_afbeeldingenFolder & logoTest)
+                Return Image.FromFile(_afbeeldingenFolder & LogoTest)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -91,7 +118,7 @@
     <JsonIgnore()> ReadOnly Property ImgLogoIntro As Image
         Get
             Try
-                Return Image.FromFile(_afbeeldingenFolder & logoIntro)
+                Return Image.FromFile(_afbeeldingenFolder & LogoIntro)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -102,7 +129,7 @@
     <JsonIgnore()> ReadOnly Property ImgBackgroundTest As Image
         Get
             Try
-                Return Image.FromFile(_afbeeldingenFolder & backgroundTest)
+                Return Image.FromFile(_afbeeldingenFolder & BackgroundTest)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -113,7 +140,7 @@
     <JsonIgnore()> ReadOnly Property ImgBackgroundIntro As Image
         Get
             Try
-                Return Image.FromFile(_afbeeldingenFolder & backgroundIntro)
+                Return Image.FromFile(_afbeeldingenFolder & BackgroundIntro)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -124,7 +151,7 @@
     <JsonIgnore()> ReadOnly Property ImgQuestionBackground As Image
         Get
             Try
-                Return Image.FromFile(_afbeeldingenFolder & questionBackground)
+                Return Image.FromFile(_afbeeldingenFolder & QuestionBackground)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -135,7 +162,7 @@
     <JsonIgnore()> ReadOnly Property ImgButton As Image
         Get
             Try
-                Return Image.FromFile(_afbeeldingenFolder & button)
+                Return Image.FromFile(_afbeeldingenFolder & Button)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -146,7 +173,7 @@
     <JsonIgnore()> ReadOnly Property ImgButtonClick As Image
         Get
             Try
-                Return Image.FromFile(_afbeeldingenFolder & buttonClick)
+                Return Image.FromFile(_afbeeldingenFolder & ButtonClick)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -157,7 +184,7 @@
     <JsonIgnore()> ReadOnly Property ImgButtonHover As Image
         Get
             Try
-                Return Image.FromFile(_afbeeldingenFolder & buttonHover)
+                Return Image.FromFile(_afbeeldingenFolder & ButtonHover)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -168,7 +195,7 @@
     <JsonIgnore()> ReadOnly Property ImgGreenScreen As Image
         Get
             Try
-                Return Image.FromFile(_afbeeldingenFolder & greenScreen)
+                Return Image.FromFile(_afbeeldingenFolder & GreenScreen)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing
@@ -179,7 +206,7 @@
     <JsonIgnore()> ReadOnly Property ImgRedScreen As Image
         Get
             Try
-                Return Image.FromFile(_afbeeldingenFolder & redScreen)
+                Return Image.FromFile(_afbeeldingenFolder & RedScreen)
             Catch ex As Exception
                 Console.WriteLine(ex.Message)
                 Return Nothing

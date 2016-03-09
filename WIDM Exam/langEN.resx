@@ -175,7 +175,7 @@
     <value>Choose a file from the folder "Afbeeldingen"</value>
   </data>
   <data name="FontNotInstalled" xml:space="preserve">
-    <value>The font {0} was not found. Please install this font for this CurrentTheme.</value>
+    <value>A required font for this theme was not found. Please install this font.</value>
   </data>
   <data name="SaveChanges" xml:space="preserve">
     <value>Do you want to save the changes before exiting?</value>

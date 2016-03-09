@@ -182,7 +182,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Het lettertype {0} is niet geïnstalleerd. Installeer deze voor dit thema..
+        '''  Looks up a localized string similar to Een vereist lettertype is niet geïnstalleerd. Installeer deze voor dit thema. (Vaak is deze te vinden in de map &quot;Lettertypen&quot;).
         '''</summary>
         Friend Shared ReadOnly Property FontNotInstalled() As String
             Get

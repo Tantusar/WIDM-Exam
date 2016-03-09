@@ -175,7 +175,7 @@
     <value>Kies een bestand uit de map "Afbeeldingen"</value>
   </data>
   <data name="FontNotInstalled" xml:space="preserve">
-    <value>Het lettertype {0} is niet geïnstalleerd. Installeer deze voor dit thema.</value>
+    <value>Een vereist lettertype is niet geïnstalleerd. Installeer deze voor dit thema. (Vaak is deze te vinden in de map "Lettertypen")</value>
   </data>
   <data name="SaveChanges" xml:space="preserve">
     <value>Wilt u de wijzigingen opslaan alvorens af te sluiten?</value>

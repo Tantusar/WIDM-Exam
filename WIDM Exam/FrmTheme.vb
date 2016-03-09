@@ -9,16 +9,16 @@ Public Class FrmTheme
 
     Dim _currentTheme As New Theme
 
-    Public Shared Function IsFontInstalled(ByVal fontName As String) As Boolean
-        Try
-            Using testFont As Font = New Font(fontName, 10)
-                Return CBool(String.Compare(fontName, testFont.Name, StringComparison.InvariantCultureIgnoreCase) = 0)
-            End Using
-        Catch ex As Exception
-            Console.WriteLine(ex.Message)
-            Return False
-        End Try
-    End Function
+    'Public Shared Function IsFontInstalled(ByVal fontName As String) As Boolean
+    '    Try
+    '        Using testFont As Font = New Font(fontName, 10)
+    '            Return CBool(String.Compare(fontName, testFont.Name, StringComparison.InvariantCultureIgnoreCase) = 0)
+    '        End Using
+    '    Catch ex As Exception
+    '        Console.WriteLine(ex.Message)
+    '        Return False
+    '    End Try
+    'End Function
 
     Sub ReloadExamples()
         _saved = False
@@ -148,10 +148,9 @@ Public Class FrmTheme
         tabExample.TabPages("red").BackgroundImage = _currentTheme.ImgRedScreen
 
         Try
-            IsFontInstalled(_currentTheme.FontQuestion.Name)
-            IsFontInstalled(_currentTheme.FontAnswers.Name)
-            IsFontInstalled(_currentTheme.FontIntroText.Name)
-            IsFontInstalled(_currentTheme.FontIntroTextfield.Name)
+            If _currentTheme.IsFontInstalled() = False Then
+                MsgBox(GetLang("FontNotInstalled"), MsgBoxStyle.Exclamation)
+            End If
         Catch ex As Exception
 
         End Try

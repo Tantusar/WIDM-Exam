@@ -46,6 +46,7 @@ Partial Class FrmTest
         '
         'smallLogo
         '
+        Me.smallLogo.BackColor = System.Drawing.Color.Transparent
         resources.ApplyResources(Me.smallLogo, "smallLogo")
         Me.smallLogo.Name = "smallLogo"
         Me.smallLogo.TabStop = false
