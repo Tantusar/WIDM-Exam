@@ -107,7 +107,7 @@ Module eIo
                 For Each result In CurrentGroup.Episodes(CurrentGroup.CurrentEpisode).ExecutionResults.Values
                     Dim newItem As New BetterListViewItem(result.Candidate)
                     newItem.SubItems.Add(result.AnswersRight)
-                    newItem.SubItems.Add(result.Time)
+                    newItem.SubItems.Add(result.Time / 10)
                     newItem.SubItems.Add(result.Screen)
                     If result.Jokers = "214748364" Then
                         newItem.SubItems.Add(FrmOpenTest.Vrijstelling)

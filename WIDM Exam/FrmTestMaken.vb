@@ -187,11 +187,17 @@ Public Class FrmTestMaken
                             Else
                                 newItem = New ListViewItem(OpenVraag) '// add text Item.
                                 newItem.SubItems.Add(item.Text)
+                                newItem.SubItems.Add("")
+                                newItem.SubItems.Add("")
+                                newItem.SubItems.Add("")
+                                newItem.SubItems.Add("")
                             End If
                         Else
                             newItem = New ListViewItem(TekstTussendoor) '// add text Item.
                             newItem.SubItems.Add(item.Text1)
                             newItem.SubItems.Add(item.Text2)
+                            newItem.SubItems.Add("")
+                            newItem.SubItems.Add("")
                         End If
                         'Look whether the database with existing questions is building. Will cause duplicates if not properly handled.
                         If buildDatabase = True Then
@@ -251,8 +257,11 @@ Public Class FrmTestMaken
             Button3.Enabled = False
             Button4.Enabled = False
         Else
-            Button3.Enabled = True
-            Button4.Enabled = True
+            If listPanel.SelectedItems(0).SubItems(0).Text = Vraag Or listPanel.SelectedItems(0).SubItems(0).Text = OpenVraag Then
+                Button3.Enabled = True
+            ElseIf listPanel.SelectedItems(0).SubItems(0).Text = TekstTussendoor Then
+                Button4.Enabled = True
+            End If
         End If
     End Sub
     Private Sub Save()
@@ -358,6 +367,7 @@ Public Class FrmTestMaken
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
         If ComboBox1.SelectedItem = "" Then
             If My.Settings.language = "en" Then
                 MsgBox("Are you sure there is no right answer?", MsgBoxStyle.Exclamation)
@@ -373,9 +383,9 @@ Public Class FrmTestMaken
                 For Each lvi In listPanel.SelectedItems
                     lvi.Name = "b" & ComboBox1.SelectedIndex + 1
                     If txtAnswers.Text <> "" Then
-                        lvi.SubItems(0).Text = "Vraag" '// add text Item.
+                        lvi.SubItems(0).Text = Vraag '// add text Item.
                     Else
-                        lvi.SubItems(0).Text = "Open vraag" '// add text Item.
+                        lvi.SubItems(0).Text = OpenVraag '// add text Item.
                     End If
                     lvi.SubItems(1).Text = txtQuestion.Text
                     lvi.SubItems(2).Text = Replace(txtAnswers.Text, vbNewLine, "##")
@@ -807,9 +817,11 @@ Public Class FrmTestMaken
         Handles txtQuestion.SelectedIndexChanged
         For Each item As ListViewItem In listDB.Items
             If item.SubItems(1).Text = txtQuestion.Text Then
-                txtAnswers.Text = Replace(item.SubItems(2).Text, "##", vbNewLine)
-                ComboBox1.SelectedIndex = Replace(item.SubItems(5).Text, "b", "") - 1
-                'Exit For
+                If Not item.SubItems(0).Text = OpenVraag Then
+                    txtAnswers.Text = Replace(item.SubItems(2).Text, "##", vbNewLine)
+                    ComboBox1.SelectedIndex = Replace(item.SubItems(5).Text, "b", "") - 1
+                    'Exit For
+                End If
             End If
         Next
     End Sub
