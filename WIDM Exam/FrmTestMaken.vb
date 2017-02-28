@@ -62,7 +62,7 @@ Public Class FrmTestMaken
 
         NumericUpDown1.Value = CurrentGroup.CurrentEpisode
         NumericUpDown1.Minimum = 1
-
+        txtAmountOfQuestions.Text = listPanel.Items.Count
 
     End Sub
 
@@ -98,6 +98,7 @@ Public Class FrmTestMaken
             txtAnswers.Clear()
             ComboBox1.Items.Clear()
             txtQuestion.Text = ""
+            txtAmountOfQuestions.Text = listPanel.Items.Count
         Else
             If My.Settings.language = "en" Then
                 MsgBox("Are you sure there isn't a right answer?", MsgBoxStyle.Exclamation)
@@ -138,7 +139,7 @@ Public Class FrmTestMaken
         newItem.SubItems.Add(txtTekst2.Text) '// add SubItem.
 
         listPanel.Items.Add(newItem) '// add Item to ListView.
-
+        txtAmountOfQuestions.Text = listPanel.Items.Count
         txtTekst1.Clear()
         txtTekst2.Clear()
     End Sub
@@ -499,7 +500,7 @@ Public Class FrmTestMaken
 
             End If
         End If
-
+        txtAmountOfQuestions.Text = listPanel.Items.Count
         'loadtest()
         'If rNormalTest.Checked Then
         '    If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
@@ -640,6 +641,7 @@ Public Class FrmTestMaken
             End If
         End If
         'End If
+        txtAmountOfQuestions.Text = listPanel.Items.Count
     End Sub
 
     Private Sub rNormalTest_CheckedChanged(sender As Object, e As EventArgs) Handles rNormalTest.CheckedChanged
@@ -858,6 +860,7 @@ Public Class FrmTestMaken
                 End If
             End If
         End If
+        txtAmountOfQuestions.Text = listPanel.Items.Count
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -877,6 +880,7 @@ Public Class FrmTestMaken
         For Each i As ListViewItem In listPanel.SelectedItems
             listPanel.Items.Remove(i)
         Next
+        txtAmountOfQuestions.Text = listPanel.Items.Count
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click

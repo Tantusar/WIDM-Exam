@@ -21,6 +21,7 @@ Public Class FrmExecutie
         FrmStartExecutie.TextBox1.Text = ""
         FrmStartExecutie.TextBox2.Text = ""
         FrmStartExecutie.TextBox3.Text = ""
+        FrmStartExecutie.TextBox4.Text = ""
         'If FrmOpenTest.rMuziekDoorspelen.Checked Then
         '    frmStartExecutie.WMP2.Ctlcontrols.play()
         'Else

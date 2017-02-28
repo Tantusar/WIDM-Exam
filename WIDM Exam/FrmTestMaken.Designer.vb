@@ -88,6 +88,7 @@ Partial Class FrmTestMaken
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
+        Me.txtAmountOfQuestions = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SplitContainer1.Panel1.SuspendLayout
         Me.SplitContainer1.Panel2.SuspendLayout
@@ -111,6 +112,7 @@ Partial Class FrmTestMaken
         '
         'SplitContainer1.Panel1
         '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.txtAmountOfQuestions)
         Me.SplitContainer1.Panel1.Controls.Add(Me.listPanel)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button8)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button7)
@@ -488,6 +490,11 @@ Partial Class FrmTestMaken
         '
         resources.ApplyResources(Me.OpenFileDialog4, "OpenFileDialog4")
         '
+        'txtAmountOfQuestions
+        '
+        resources.ApplyResources(Me.txtAmountOfQuestions, "txtAmountOfQuestions")
+        Me.txtAmountOfQuestions.Name = "txtAmountOfQuestions"
+        '
         'FrmTestMaken
         '
         resources.ApplyResources(Me, "$this")
@@ -584,4 +591,5 @@ End Sub
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents txtAmountOfQuestions As Label
 End Class
