@@ -57,10 +57,9 @@ Partial Class FrmOver
         'PictureBox3
         '
         resources.ApplyResources(Me.PictureBox3, "PictureBox3")
-        Me.PictureBox3.BackColor = System.Drawing.Color.Black
-        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Image = Global.WIDM_Exam.My.Resources.Resources.Koenvh_inverted_text
+        Me.PictureBox3.Image = Global.WIDM_Exam.My.Resources.Resources.Koenvh_fat_text_small
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.TabStop = false
         '

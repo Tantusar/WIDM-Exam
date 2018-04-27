@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Wie is de Mol test- en executiesoftware")>
 <Assembly: AssemblyCompany("Koenvh")>
 <Assembly: AssemblyProduct("WIDM Exam")>
-<Assembly: AssemblyCopyright("")>
+<Assembly: AssemblyCopyright("© Koenvh")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(false)>
@@ -30,5 +30,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("3.0.2.2")>
-<Assembly: AssemblyFileVersion("3.0.2.2")>
+<Assembly: AssemblyVersion("3.0.3.0")>
+<Assembly: AssemblyFileVersion("3.0.3.0")>

@@ -385,6 +385,7 @@
     <None Include="Resources\Header 2016.png" />
     <None Include="Resources\Concept white text bordered.png" />
     <None Include="Resources\Concept white text.png" />
+    <None Include="Resources\Koenvh fat text small.png" />
     <Content Include="Wie is de Mol Examen_32512.ico" />
   </ItemGroup>
   <ItemGroup>

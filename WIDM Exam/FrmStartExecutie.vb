@@ -192,8 +192,8 @@ Public Class FrmStartExecutie
         '    Close()
 
         'End If
-        If FrmOpenTest.rGeluidTest.Checked = False Then
-            WMP2.settings.mute = True
+        If FrmOpenTest.rMuziekAfspelen.Checked = False Then
+            WMP2.settings.volume = 0
         End If
         'WMP1.settings.volume = WMP1.settings.volume / 2
         Panel1.Top = (Me.Height / 2) - (Panel1.Height / 2)

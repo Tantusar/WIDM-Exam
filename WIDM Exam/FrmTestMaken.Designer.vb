@@ -24,19 +24,18 @@ Partial Class FrmTestMaken
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTestMaken))
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.txtAmountOfQuestions = New System.Windows.Forms.Label()
         Me.listPanel = New System.Windows.Forms.ListView()
-        Me.cmType = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.cmQuestion = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.cmAnswers = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.cmRightAnswer = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.cmAnswersCount = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.cmRawRightAnswer = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.cmType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.cmQuestion = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.cmAnswers = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.cmRightAnswer = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.cmAnswersCount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.cmRawRightAnswer = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtQuestion = New System.Windows.Forms.ComboBox()
@@ -52,12 +51,12 @@ Partial Class FrmTestMaken
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.listDB = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -88,54 +87,32 @@ Partial Class FrmTestMaken
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog4 = New System.Windows.Forms.OpenFileDialog()
-        Me.txtAmountOfQuestions = New System.Windows.Forms.Label()
-        CType(Me.SplitContainer1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SplitContainer1.Panel1.SuspendLayout
-        Me.SplitContainer1.Panel2.SuspendLayout
-        Me.SplitContainer1.SuspendLayout
-        CType(Me.SplitContainer2,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SplitContainer2.Panel1.SuspendLayout
-        Me.SplitContainer2.Panel2.SuspendLayout
-        Me.SplitContainer2.SuspendLayout
-        Me.GroupBox2.SuspendLayout
-        Me.GroupBox1.SuspendLayout
-        Me.GroupBox3.SuspendLayout
-        Me.ToolStrip2.SuspendLayout
-        CType(Me.NumericUpDown1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel3.SuspendLayout
-        Me.SuspendLayout
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.ToolStrip2.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        Me.SuspendLayout()
         '
-        'SplitContainer1
+        'txtAmountOfQuestions
         '
-        resources.ApplyResources(Me.SplitContainer1, "SplitContainer1")
-        Me.SplitContainer1.Name = "SplitContainer1"
-        '
-        'SplitContainer1.Panel1
-        '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.txtAmountOfQuestions)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.listPanel)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Button8)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Button7)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Button5)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Button6)
-        '
-        'SplitContainer1.Panel2
-        '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
+        resources.ApplyResources(Me.txtAmountOfQuestions, "txtAmountOfQuestions")
+        Me.txtAmountOfQuestions.Name = "txtAmountOfQuestions"
         '
         'listPanel
         '
         resources.ApplyResources(Me.listPanel, "listPanel")
         Me.listPanel.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.cmType, Me.cmQuestion, Me.cmAnswers, Me.cmRightAnswer, Me.cmAnswersCount, Me.cmRawRightAnswer})
-        Me.listPanel.FullRowSelect = true
-        Me.listPanel.GridLines = true
-        Me.listPanel.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {CType(resources.GetObject("listPanel.Groups"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups1"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups2"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups3"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups4"),System.Windows.Forms.ListViewGroup)})
+        Me.listPanel.FullRowSelect = True
+        Me.listPanel.GridLines = True
+        Me.listPanel.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {CType(resources.GetObject("listPanel.Groups"), System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups1"), System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups2"), System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups3"), System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listPanel.Groups4"), System.Windows.Forms.ListViewGroup)})
         Me.listPanel.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.listPanel.MultiSelect = false
+        Me.listPanel.MultiSelect = False
         Me.listPanel.Name = "listPanel"
-        Me.listPanel.ShowGroups = false
-        Me.listPanel.ShowItemToolTips = true
-        Me.listPanel.UseCompatibleStateImageBehavior = false
+        Me.listPanel.ShowGroups = False
+        Me.listPanel.ShowItemToolTips = True
+        Me.listPanel.UseCompatibleStateImageBehavior = False
         Me.listPanel.View = System.Windows.Forms.View.Details
         '
         'cmType
@@ -167,44 +144,32 @@ Partial Class FrmTestMaken
         resources.ApplyResources(Me.Button8, "Button8")
         Me.Button8.Name = "Button8"
         Me.ToolTip1.SetToolTip(Me.Button8, resources.GetString("Button8.ToolTip"))
-        Me.Button8.UseVisualStyleBackColor = true
+        Me.Button8.UseVisualStyleBackColor = True
         '
         'Button7
         '
         resources.ApplyResources(Me.Button7, "Button7")
         Me.Button7.Name = "Button7"
         Me.ToolTip1.SetToolTip(Me.Button7, resources.GetString("Button7.ToolTip"))
-        Me.Button7.UseVisualStyleBackColor = true
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'Button5
         '
         resources.ApplyResources(Me.Button5, "Button5")
         Me.Button5.Name = "Button5"
         Me.ToolTip1.SetToolTip(Me.Button5, resources.GetString("Button5.ToolTip"))
-        Me.Button5.UseVisualStyleBackColor = true
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Button6
         '
         resources.ApplyResources(Me.Button6, "Button6")
         Me.Button6.Name = "Button6"
         Me.ToolTip1.SetToolTip(Me.Button6, resources.GetString("Button6.ToolTip"))
-        Me.Button6.UseVisualStyleBackColor = true
-        '
-        'SplitContainer2
-        '
-        resources.ApplyResources(Me.SplitContainer2, "SplitContainer2")
-        Me.SplitContainer2.Name = "SplitContainer2"
-        '
-        'SplitContainer2.Panel1
-        '
-        Me.SplitContainer2.Panel1.Controls.Add(Me.GroupBox2)
-        '
-        'SplitContainer2.Panel2
-        '
-        Me.SplitContainer2.Panel2.Controls.Add(Me.GroupBox3)
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.txtQuestion)
         Me.GroupBox2.Controls.Add(Me.Button3)
@@ -216,9 +181,8 @@ Partial Class FrmTestMaken
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.TabStop = false
+        Me.GroupBox2.TabStop = False
         '
         'Label10
         '
@@ -228,20 +192,20 @@ Partial Class FrmTestMaken
         'txtQuestion
         '
         resources.ApplyResources(Me.txtQuestion, "txtQuestion")
-        Me.txtQuestion.FormattingEnabled = true
+        Me.txtQuestion.FormattingEnabled = True
         Me.txtQuestion.Name = "txtQuestion"
         '
         'Button3
         '
         resources.ApplyResources(Me.Button3, "Button3")
         Me.Button3.Name = "Button3"
-        Me.Button3.UseVisualStyleBackColor = true
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Button1
         '
         resources.ApplyResources(Me.Button1, "Button1")
         Me.Button1.Name = "Button1"
-        Me.Button1.UseVisualStyleBackColor = true
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -263,7 +227,7 @@ Partial Class FrmTestMaken
         Me.GroupBox1.Controls.Add(Me.Label4)
         resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.TabStop = false
+        Me.GroupBox1.TabStop = False
         '
         'Label4
         '
@@ -274,7 +238,7 @@ Partial Class FrmTestMaken
         '
         resources.ApplyResources(Me.ComboBox1, "ComboBox1")
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = true
+        Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Name = "ComboBox1"
         '
         'Label2
@@ -289,6 +253,7 @@ Partial Class FrmTestMaken
         '
         'GroupBox3
         '
+        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
         Me.GroupBox3.Controls.Add(Me.listDB)
         Me.GroupBox3.Controls.Add(Me.Button4)
         Me.GroupBox3.Controls.Add(Me.Button2)
@@ -296,23 +261,22 @@ Partial Class FrmTestMaken
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.txtTekst2)
         Me.GroupBox3.Controls.Add(Me.txtTekst1)
-        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.TabStop = false
+        Me.GroupBox3.TabStop = False
         '
         'listDB
         '
         Me.listDB.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
-        Me.listDB.FullRowSelect = true
-        Me.listDB.GridLines = true
-        Me.listDB.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {CType(resources.GetObject("listDB.Groups"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups1"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups2"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups3"),System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups4"),System.Windows.Forms.ListViewGroup)})
+        Me.listDB.FullRowSelect = True
+        Me.listDB.GridLines = True
+        Me.listDB.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {CType(resources.GetObject("listDB.Groups"), System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups1"), System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups2"), System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups3"), System.Windows.Forms.ListViewGroup), CType(resources.GetObject("listDB.Groups4"), System.Windows.Forms.ListViewGroup)})
         Me.listDB.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         resources.ApplyResources(Me.listDB, "listDB")
-        Me.listDB.MultiSelect = false
+        Me.listDB.MultiSelect = False
         Me.listDB.Name = "listDB"
-        Me.listDB.ShowGroups = false
-        Me.listDB.ShowItemToolTips = true
-        Me.listDB.UseCompatibleStateImageBehavior = false
+        Me.listDB.ShowGroups = False
+        Me.listDB.ShowItemToolTips = True
+        Me.listDB.UseCompatibleStateImageBehavior = False
         Me.listDB.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
@@ -339,13 +303,13 @@ Partial Class FrmTestMaken
         '
         resources.ApplyResources(Me.Button4, "Button4")
         Me.Button4.Name = "Button4"
-        Me.Button4.UseVisualStyleBackColor = true
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Button2
         '
         resources.ApplyResources(Me.Button2, "Button2")
         Me.Button2.Name = "Button2"
-        Me.Button2.UseVisualStyleBackColor = true
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -456,27 +420,27 @@ Partial Class FrmTestMaken
         '
         resources.ApplyResources(Me.LinkLabel2, "LinkLabel2")
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.TabStop = true
+        Me.LinkLabel2.TabStop = True
         '
         'LinkLabel1
         '
         resources.ApplyResources(Me.LinkLabel1, "LinkLabel1")
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.TabStop = true
+        Me.LinkLabel1.TabStop = True
         '
         'rGroepsModusTest
         '
         resources.ApplyResources(Me.rGroepsModusTest, "rGroepsModusTest")
         Me.rGroepsModusTest.Name = "rGroepsModusTest"
-        Me.rGroepsModusTest.UseVisualStyleBackColor = true
+        Me.rGroepsModusTest.UseVisualStyleBackColor = True
         '
         'rNormalTest
         '
         resources.ApplyResources(Me.rNormalTest, "rNormalTest")
-        Me.rNormalTest.Checked = true
+        Me.rNormalTest.Checked = True
         Me.rNormalTest.Name = "rNormalTest"
-        Me.rNormalTest.TabStop = true
-        Me.rNormalTest.UseVisualStyleBackColor = true
+        Me.rNormalTest.TabStop = True
+        Me.rNormalTest.UseVisualStyleBackColor = True
         '
         'OpenFileDialog2
         '
@@ -490,30 +454,24 @@ Partial Class FrmTestMaken
         '
         resources.ApplyResources(Me.OpenFileDialog4, "OpenFileDialog4")
         '
-        'txtAmountOfQuestions
-        '
-        resources.ApplyResources(Me.txtAmountOfQuestions, "txtAmountOfQuestions")
-        Me.txtAmountOfQuestions.Name = "txtAmountOfQuestions"
-        '
         'FrmTestMaken
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.txtAmountOfQuestions)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.listPanel)
+        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.rGroepsModusTest)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.rNormalTest)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.ToolStrip2)
-        Me.Controls.Add(Me.SplitContainer1)
+        Me.Controls.Add(Me.Button6)
         Me.Name = "FrmTestMaken"
-        Me.SplitContainer1.Panel1.ResumeLayout(false)
-        Me.SplitContainer1.Panel2.ResumeLayout(false)
-        CType(Me.SplitContainer1,System.ComponentModel.ISupportInitialize).EndInit
-        Me.SplitContainer1.ResumeLayout(false)
-        Me.SplitContainer2.Panel1.ResumeLayout(false)
-        Me.SplitContainer2.Panel2.ResumeLayout(false)
-        CType(Me.SplitContainer2,System.ComponentModel.ISupportInitialize).EndInit
-        Me.SplitContainer2.ResumeLayout(false)
-        Me.GroupBox2.ResumeLayout(false)
+        Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout
         Me.GroupBox1.ResumeLayout(false)
         Me.GroupBox3.ResumeLayout(false)
@@ -588,8 +546,6 @@ End Sub
     Friend WithEvents cmRawRightAnswer As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents ToolStripExtraInfo As ToolStripButton
-    Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents txtAmountOfQuestions As Label
 End Class
