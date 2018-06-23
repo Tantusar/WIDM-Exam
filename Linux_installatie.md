@@ -11,11 +11,11 @@ sudo apt install wine-stable winehq-stable
 ```
 sudo apt install winetricks
 ```
-* Installeer mono-vbnc
+* _Installeer mono-vbnc_ (waarschijnlijk niet nodig)
 ```
 sudo apt install mono-vbnc
 ```
-* Installeer zenity
+* _Installeer zenity_ (waarschijnlijk niet nodig)
 ```
 sudo apt install zenity
 ```
