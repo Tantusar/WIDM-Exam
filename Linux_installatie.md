@@ -24,6 +24,8 @@ sudo apt install zenity
 ```
 sudo apt install ttf-mscorefonts-installer
 ```
-* In Winetricks, ga naar "Install an application", dan "Cancel" en vervolgens "Run winecfg" en schakel "Allow the window manager to control the windows" uit (onder Graphics)
+* In Winetricks, ga naar "Install an application", dan "Cancel" en vervolgens "Run winecfg" en schakel "Allow the window manager to control the windows" uit (onder Graphics).
 * Download de .zip-versie van WIDM Exam en pak deze in een map uit. Start vervolgens WIDM Exam.exe met de Wine Windows Program Loader
 * Selecteer het thema WIDM2016 onder Opmaak
+
+* Mocht je tijdens de test de taakbalk zien, open dan winecfg en stel een virtual desktop in.
