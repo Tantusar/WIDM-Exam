@@ -29,9 +29,9 @@ Class ExecutionItemComparer
                 itemB.SubItems(2).Text = 1
             End If
 
-            Dim valueA As Double = CInt(itemA.SubItems(1).Text) + jokersA + (1 / CInt(itemA.SubItems(2).Text))
+            Dim valueA As Double = CInt(itemA.SubItems(1).Text) + jokersA + (1 / CDbl(itemA.SubItems(2).Text))
 
-            Dim valueB As Double = CInt(itemB.SubItems(1).Text) + jokersB + (1 / CInt(itemB.SubItems(2).Text))
+            Dim valueB As Double = CInt(itemB.SubItems(1).Text) + jokersB + (1 / CDbl(itemB.SubItems(2).Text))
 
             Dim result As Double = valueB.CompareTo(valueA)
 

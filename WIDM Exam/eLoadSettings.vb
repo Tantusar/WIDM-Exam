@@ -77,14 +77,14 @@ Module ELoadSettings
         FrmOpenTest.txtFolder.Text = My.Settings.folder
         'FrmOpenTest.numAflevering.Value = Val(My.Settings.aflevering)
 
-        Dim strHostName As String = Dns.GetHostName()
-        Dim iphe As IPHostEntry = Dns.GetHostEntry(strHostName)
+        'Dim strHostName As String = Dns.GetHostName()
+        'Dim iphe As IPHostEntry = Dns.GetHostEntry(strHostName)
 
-        For Each ipheal As IPAddress In iphe.AddressList
-            If ipheal.AddressFamily = AddressFamily.InterNetwork Then
-                FrmOpenTest.txtThisIP.Text = ipheal.ToString()
-            End If
-        Next
+        'For Each ipheal As IPAddress In iphe.AddressList
+        '    If ipheal.AddressFamily = AddressFamily.InterNetwork Then
+        '        FrmOpenTest.txtThisIP.Text = ipheal.ToString()
+        '    End If
+        'Next
 
         If My.Settings.groepsmodus = True Then
             FrmOpenTest.rGroep.Checked = True
