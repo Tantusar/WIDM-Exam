@@ -22,4 +22,4 @@ sudo apt install zenity
 
 Een paar kleine dingen:
 * Mocht tijdens de test de taakbalk te zien zijn, open dan winecfg en stel een virtual desktop in.
-* In Winetricks is het ook mogelijk extra lettertypen te installeren. Voor het standaardthema is het lettertype Lucida benodigt.
+* In Winetricks is het ook mogelijk extra lettertypen te installeren. Voor het standaardthema is het lettertype Lucida nodig.
